@@ -1,5 +1,5 @@
 //
-//  InfoViewController.swift
+//  StartGameViewController.swift
 //  TheHat
 //
 //  Created by Vadim Drobinin on 21/10/14.
@@ -8,18 +8,19 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class StartGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation

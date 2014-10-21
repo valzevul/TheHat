@@ -13,8 +13,9 @@ class StartScreenViewController: UIViewController {
     
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var multiplayerGameButton: UIButton!
-    @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var settingsBarButton: UIBarButtonItem!
+    @IBOutlet weak var infoBarButton: UIBarButtonItem!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +32,11 @@ class StartScreenViewController: UIViewController {
     }
     @IBAction func multiplayerGameAction(sender: UIButton) {
     }
-    @IBAction func settingsAction(sender: UIButton) {
+    @IBAction func infoBarButtonAction(sender: UIBarButtonItem) {
     }
-    @IBAction func infoAction(sender: UIButton) {
+    @IBAction func settingsBarButtonAction(sender: UIBarButtonItem) {
     }
+
     
     
 

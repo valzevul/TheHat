@@ -9,8 +9,7 @@
 import UIKit
 
 class NewGameSettingsViewController: UIViewController {
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,10 +20,7 @@ class NewGameSettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func cancelButtonAction(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
 
     /*
     // MARK: - Navigation

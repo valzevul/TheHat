@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="CV3-VY-bXy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="apH-eQ-ads">
+            <objects>
+                <navigationController id="CV3-VY-bXy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pod-w6-afs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="lrO-v2-mz8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EoB-7v-bUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="128"/>
+        </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -27,16 +43,6 @@
                                     <action selector="multiplayerGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qtS-3w-Lai"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8W-kY-cdR">
-                                <rect key="frame" x="274" y="518" width="30" height="30"/>
-                                <state key="normal" title="Info">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="infoAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgk-96-Fow"/>
-                                    <segue destination="168-pE-xPM" kind="modal" id="9T5-mx-Qik"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-ei-1Av">
                                 <rect key="frame" x="105" y="265" width="110" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
@@ -45,58 +51,42 @@
                                 </state>
                                 <connections>
                                     <action selector="newGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xy7-cp-n7a"/>
-                                    <segue destination="scA-MM-lt5" kind="modal" id="Sm3-SS-Cai"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-A5-gX8">
-                                <rect key="frame" x="16" y="518" width="57" height="30"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="settingsAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7fN-0r-khe"/>
-                                    <segue destination="tGr-XW-NGP" kind="modal" id="MET-Th-6FX"/>
+                                    <segue destination="wcP-yq-1c3" kind="push" id="WJz-yr-H3c"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="U8W-kY-cdR" secondAttribute="bottom" constant="20" id="E22-R0-zVf"/>
                             <constraint firstItem="eXo-vb-BEo" firstAttribute="top" secondItem="vwq-ei-1Av" secondAttribute="bottom" constant="26" id="Fd8-Y1-Y5b"/>
-                            <constraint firstItem="U8W-kY-cdR" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="KIs-HY-Ewp"/>
                             <constraint firstAttribute="centerX" secondItem="eXo-vb-BEo" secondAttribute="centerX" id="dqE-gO-FIc"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="c6c-A5-gX8" secondAttribute="bottom" constant="20" id="epb-hH-746"/>
-                            <constraint firstItem="c6c-A5-gX8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="m10-ba-8QJ"/>
                             <constraint firstAttribute="centerX" secondItem="vwq-ei-1Av" secondAttribute="centerX" id="qUm-sg-dQv"/>
                             <constraint firstAttribute="centerY" secondItem="vwq-ei-1Av" secondAttribute="centerY" id="xLy-Ib-s0w"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Tcj-XF-f9S">
+                        <barButtonItem key="leftBarButtonItem" image="settings" id="Z7R-S7-arN">
+                            <connections>
+                                <action selector="settingsBarButtonAction:" destination="vXZ-lx-hvc" id="AnV-8q-Un8"/>
+                                <segue destination="YY1-9T-7qf" kind="push" id="aOF-wi-Jxv"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="info" id="cOt-Ex-I3Z">
+                            <connections>
+                                <action selector="infoBarButtonAction:" destination="vXZ-lx-hvc" id="7gt-nA-NLg"/>
+                                <segue destination="HWV-bu-K4e" kind="push" id="PZ1-Kr-7Ap"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="infoButton" destination="U8W-kY-cdR" id="cO2-cY-8gb"/>
+                        <outlet property="infoBarButton" destination="cOt-Ex-I3Z" id="y4L-Pg-kb2"/>
                         <outlet property="multiplayerGameButton" destination="eXo-vb-BEo" id="GOz-tq-l8O"/>
                         <outlet property="newGameButton" destination="vwq-ei-1Av" id="XFm-Sx-RtQ"/>
-                        <outlet property="settingsButton" destination="c6c-A5-gX8" id="iob-A1-sdN"/>
+                        <outlet property="settingsBarButton" destination="Z7R-S7-arN" id="6U4-Ng-CZX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74.133333333333326" y="128.74666666666667"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rjX-XT-od0">
-            <objects>
-                <navigationController id="scA-MM-lt5" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UgX-uU-ajw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="wcP-yq-1c3" kind="relationship" relationship="rootViewController" id="1Yu-ug-Pe9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ju-9A-gsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="548" y="128"/>
+            <point key="canvasLocation" x="86" y="128"/>
         </scene>
         <!--New Game Settings-->
         <scene sceneID="Dkh-qB-r7X">
@@ -109,38 +99,50 @@
                     <view key="view" contentMode="scaleToFill" id="Y9M-QY-hcq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DAp-mE-Upp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DAp-mE-Upp" firstAttribute="top" secondItem="Y9M-QY-hcq" secondAttribute="topMargin" id="Kgu-B0-1s6"/>
+                            <constraint firstItem="1XQ-Ev-Pm8" firstAttribute="top" secondItem="DAp-mE-Upp" secondAttribute="bottom" id="OXX-3D-Q7N"/>
+                            <constraint firstItem="DAp-mE-Upp" firstAttribute="leading" secondItem="Y9M-QY-hcq" secondAttribute="leadingMargin" constant="-16" id="pJA-5W-ATB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DAp-mE-Upp" secondAttribute="trailing" constant="-16" id="r54-ZT-aXh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Game Settings" id="ekk-kX-Qyp">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z0W-1t-vdm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nA5-zG-JXa">
                             <connections>
-                                <action selector="cancelButtonAction:" destination="wcP-yq-1c3" id="8pE-Mj-ybh"/>
+                                <segue destination="cUt-5j-hzo" kind="push" id="HWT-hy-5na"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="z0W-1t-vdm" id="1wa-wy-f7K"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPj-pN-q6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="128"/>
+            <point key="canvasLocation" x="607" y="128"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="vhx-Yf-B4I">
+        <!--Title-->
+        <scene sceneID="19l-vF-UHG">
             <objects>
-                <navigationController id="168-pE-xPM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WcG-LZ-HDo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="HWV-bu-K4e" kind="relationship" relationship="rootViewController" id="Wnm-UE-lot"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Si3-kp-WCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="cUt-5j-hzo" customClass="StartGameViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NcQ-mj-yOd"/>
+                        <viewControllerLayoutGuide type="bottom" id="6mx-o1-H1e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4ZP-Ro-2o3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="exg-iS-HKr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SzB-Dq-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="900"/>
+            <point key="canvasLocation" x="1105" y="128"/>
         </scene>
         <!--Settings-->
         <scene sceneID="hSW-Lg-xBH">
@@ -155,20 +157,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="caW-oq-nls">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0Q4-K0-CNt">
-                            <connections>
-                                <action selector="cancelButtonAction:" destination="YY1-9T-7qf" id="BeD-Qz-hzW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="0Q4-K0-CNt" id="dl3-f1-4QY"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Settings" id="caW-oq-nls"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I91-Sl-sHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="1616"/>
+            <point key="canvasLocation" x="-158" y="906"/>
         </scene>
         <!--Info-->
         <scene sceneID="e5I-0C-nOO">
@@ -200,38 +193,17 @@
                             <constraint firstAttribute="trailingMargin" secondItem="nSl-Wi-Eop" secondAttribute="trailing" constant="29" id="t20-x9-Lfx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3zE-CA-e9F">
-                            <connections>
-                                <action selector="cancelButtonAction:" destination="HWV-bu-K4e" id="RaM-rO-MHy"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cancelButton" destination="3zE-CA-e9F" id="pXX-s2-7rr"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1q-0t-plx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="1616"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="StD-sG-M3H">
-            <objects>
-                <navigationController id="tGr-XW-NGP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x3E-Zy-JqH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YY1-9T-7qf" kind="relationship" relationship="rootViewController" id="dZi-67-4ff"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7kY-0x-4kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-332" y="900"/>
+            <point key="canvasLocation" x="284" y="906"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info" width="32" height="32"/>
+        <image name="settings" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
