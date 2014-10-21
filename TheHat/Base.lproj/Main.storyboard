@@ -1,25 +1,88 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="StartScreenViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXo-vb-BEo">
+                                <rect key="frame" x="106" y="329" width="108" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="Multiplayer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="multiplayerGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qtS-3w-Lai"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8W-kY-cdR">
+                                <rect key="frame" x="274" y="518" width="30" height="30"/>
+                                <state key="normal" title="Info">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="infoAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgk-96-Fow"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-ei-1Av">
+                                <rect key="frame" x="105" y="265" width="110" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <state key="normal" title="New Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xy7-cp-n7a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-A5-gX8">
+                                <rect key="frame" x="16" y="518" width="57" height="30"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7fN-0r-khe"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="U8W-kY-cdR" secondAttribute="bottom" constant="20" id="E22-R0-zVf"/>
+                            <constraint firstItem="eXo-vb-BEo" firstAttribute="top" secondItem="vwq-ei-1Av" secondAttribute="bottom" constant="26" id="Fd8-Y1-Y5b"/>
+                            <constraint firstItem="U8W-kY-cdR" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="KIs-HY-Ewp"/>
+                            <constraint firstAttribute="centerX" secondItem="eXo-vb-BEo" secondAttribute="centerX" id="dqE-gO-FIc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="c6c-A5-gX8" secondAttribute="bottom" constant="20" id="epb-hH-746"/>
+                            <constraint firstItem="c6c-A5-gX8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="m10-ba-8QJ"/>
+                            <constraint firstAttribute="centerX" secondItem="vwq-ei-1Av" secondAttribute="centerX" id="qUm-sg-dQv"/>
+                            <constraint firstAttribute="centerY" secondItem="vwq-ei-1Av" secondAttribute="centerY" id="xLy-Ib-s0w"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoButton" destination="U8W-kY-cdR" id="cO2-cY-8gb"/>
+                        <outlet property="multiplayerGameButton" destination="eXo-vb-BEo" id="GOz-tq-l8O"/>
+                        <outlet property="newGameButton" destination="vwq-ei-1Av" id="XFm-Sx-RtQ"/>
+                        <outlet property="settingsButton" destination="c6c-A5-gX8" id="iob-A1-sdN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="74.133333333333326" y="128.74666666666667"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
