@@ -22,6 +22,7 @@
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
+		82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		829FB55919F6BEF80090BFB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
 				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
 				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
 				829FB55C19F6C05F0090BFB5 /* Word.swift */,
@@ -264,6 +267,7 @@
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
 				8200357019F656EB00CB62FB /* SettingsViewController.swift in Sources */,
+				82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */,
 				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
