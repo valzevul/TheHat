@@ -1,5 +1,5 @@
 //
-//  StartGameViewController.swift
+//  GameRoundViewController.swift
 //  TheHat
 //
 //  Created by Vadim Drobinin on 21/10/14.
@@ -8,34 +8,46 @@
 
 import UIKit
 
-class StartGameViewController: UIViewController {
+class GameRoundViewController: UIViewController {
 
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var settingsButton: UIBarButtonItem!
-    
-    @IBOutlet weak var wordsLeftLabel: UILabel!
-    @IBOutlet weak var playerALabel: UILabel!
-    @IBOutlet weak var playerBLabel: UILabel!
+    var currentState = 5
+    var amount = 10
+    var state = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        // TODO: Game() object
-        // TODO: List of Player objects
-        
-        // TODO: Choose two random players
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func playButtonAction(sender: UIButton) {
-    }
-    @IBAction func settingsButtonAction(sender: UIBarButtonItem) {
+
+    @IBAction func didPan(sender: UIPanGestureRecognizer) {
+        let currentPoint = sender.translationInView(self.view).x
+        amount -= 1
+        
+        
+        // TODO: create normal change of state
+        if (currentPoint < 0) {
+            currentState -= 1
+        } else {
+            currentState += 1
+        }
+        
+        if (amount == 0) {
+            amount = 10
+            if (currentState < 0) {
+                state = "Fail"
+            } else {
+                state = "Guessed"
+            }
+            
+            currentState = 5
+            println(state)
+        }
     }
 
     /*

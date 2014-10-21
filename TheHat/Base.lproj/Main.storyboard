@@ -125,7 +125,7 @@
             </objects>
             <point key="canvasLocation" x="607" y="128"/>
         </scene>
-        <!--Title-->
+        <!--Round N-->
         <scene sceneID="19l-vF-UHG">
             <objects>
                 <viewController id="cUt-5j-hzo" customClass="StartGameViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,13 +136,100 @@
                     <view key="view" contentMode="scaleToFill" id="4ZP-Ro-2o3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-OM-SPu">
+                                <rect key="frame" x="16" y="273" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words left: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6T-jz-nsD">
+                                <rect key="frame" x="216" y="80" width="88" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-Jw-pgc">
+                                <rect key="frame" x="136" y="432" width="49" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonAction:" destination="cUt-5j-hzo" eventType="touchUpInside" id="hGs-y1-vuD"/>
+                                    <segue destination="EEx-wo-lxw" kind="push" id="8Hz-qx-Q9o"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Previous result: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bF-oU-Vaw">
+                                <rect key="frame" x="16" y="80" width="115" height="16"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Ff-vfS">
+                                <rect key="frame" x="216" y="273" width="65" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="exg-iS-HKr"/>
+                    <navigationItem key="navigationItem" title="Round N" id="exg-iS-HKr">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="ROh-S4-bWM">
+                            <connections>
+                                <action selector="settingsButtonAction:" destination="cUt-5j-hzo" id="CAI-Gq-LP8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playButton" destination="fbn-Jw-pgc" id="Hqp-qU-ick"/>
+                        <outlet property="playerALabel" destination="SO0-OM-SPu" id="pME-5F-ko6"/>
+                        <outlet property="playerBLabel" destination="WsX-Ff-vfS" id="jWM-vO-ab2"/>
+                        <outlet property="settingsButton" destination="ROh-S4-bWM" id="HSJ-Zr-vRm"/>
+                        <outlet property="wordsLeftLabel" destination="h6T-jz-nsD" id="6QI-YA-swW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SzB-Dq-gqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1105" y="128"/>
+        </scene>
+        <!--Game Round View Controller-->
+        <scene sceneID="5WF-Cy-25V">
+            <objects>
+                <viewController id="EEx-wo-lxw" customClass="GameRoundViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4fk-rM-n0z"/>
+                        <viewControllerLayoutGuide type="bottom" id="MYT-e7-72p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wvL-PX-QVh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One long word to guess" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-YY-SH1">
+                                <rect key="frame" x="53" y="172" width="214" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TqZ-o4-YZp" appends="YES" id="G1g-1c-XX1"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="8pB-gN-tKA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mu2-3e-DBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="TqZ-o4-YZp">
+                    <connections>
+                        <action selector="didPan:" destination="EEx-wo-lxw" id="bxC-tH-jaQ"/>
+                        <outlet property="delegate" destination="EEx-wo-lxw" id="CN8-gC-DIR"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1654" y="128"/>
         </scene>
         <!--Settings-->
         <scene sceneID="hSW-Lg-xBH">
