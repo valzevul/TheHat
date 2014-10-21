@@ -34,6 +34,7 @@
                                 </state>
                                 <connections>
                                     <action selector="infoAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lgk-96-Fow"/>
+                                    <segue destination="168-pE-xPM" kind="modal" id="9T5-mx-Qik"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-ei-1Av">
@@ -44,6 +45,7 @@
                                 </state>
                                 <connections>
                                     <action selector="newGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xy7-cp-n7a"/>
+                                    <segue destination="scA-MM-lt5" kind="modal" id="Sm3-SS-Cai"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6c-A5-gX8">
@@ -53,6 +55,7 @@
                                 </state>
                                 <connections>
                                     <action selector="settingsAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7fN-0r-khe"/>
+                                    <segue destination="tGr-XW-NGP" kind="modal" id="MET-Th-6FX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -78,6 +81,138 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="74.133333333333326" y="128.74666666666667"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rjX-XT-od0">
+            <objects>
+                <navigationController id="scA-MM-lt5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UgX-uU-ajw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wcP-yq-1c3" kind="relationship" relationship="rootViewController" id="1Yu-ug-Pe9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ju-9A-gsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="548" y="128"/>
+        </scene>
+        <!--New Game Settings View Controller-->
+        <scene sceneID="Dkh-qB-r7X">
+            <objects>
+                <viewController id="wcP-yq-1c3" customClass="NewGameSettingsViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q4w-c5-tvr"/>
+                        <viewControllerLayoutGuide type="bottom" id="1XQ-Ev-Pm8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y9M-QY-hcq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ekk-kX-Qyp">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z0W-1t-vdm">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="wcP-yq-1c3" id="8pE-Mj-ybh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="z0W-1t-vdm" id="1wa-wy-f7K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPj-pN-q6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vhx-Yf-B4I">
+            <objects>
+                <navigationController id="168-pE-xPM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WcG-LZ-HDo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HWV-bu-K4e" kind="relationship" relationship="rootViewController" id="Wnm-UE-lot"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Si3-kp-WCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="900"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="hSW-Lg-xBH">
+            <objects>
+                <viewController id="YY1-9T-7qf" customClass="SettingsViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2s-pb-Yg6"/>
+                        <viewControllerLayoutGuide type="bottom" id="due-Id-Jw2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pPO-Qv-SFQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="caW-oq-nls">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0Q4-K0-CNt">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="YY1-9T-7qf" id="BeD-Qz-hzW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="0Q4-K0-CNt" id="dl3-f1-4QY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I91-Sl-sHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="1616"/>
+        </scene>
+        <!--Info View Controller-->
+        <scene sceneID="e5I-0C-nOO">
+            <objects>
+                <viewController id="HWV-bu-K4e" customClass="InfoViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hPa-8Y-lyb"/>
+                        <viewControllerLayoutGuide type="bottom" id="acw-jI-rGZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bSG-bu-lkg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="StT-5M-CoE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3zE-CA-e9F">
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="HWV-bu-K4e" id="RaM-rO-MHy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="3zE-CA-e9F" id="pXX-s2-7rr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W1q-0t-plx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="1616"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="StD-sG-M3H">
+            <objects>
+                <navigationController id="tGr-XW-NGP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x3E-Zy-JqH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YY1-9T-7qf" kind="relationship" relationship="rootViewController" id="dZi-67-4ff"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kY-0x-4kP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="900"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
