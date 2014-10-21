@@ -10,19 +10,27 @@ import UIKit
 
 class GameRoundViewController: UIViewController {
 
+    @IBOutlet weak var timerLabel: UILabel!
     var currentState = 5
     var amount = 10
-    var state = ""
+    
+    var timer = NSTimer()
+    var counter = 0
+    var timeLeft = 0
+    
+    let max_time = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startTimer()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        startTimer()
     }
 
     @IBAction func didPan(sender: UIPanGestureRecognizer) {
@@ -40,16 +48,38 @@ class GameRoundViewController: UIViewController {
         if (amount == 0) {
             amount = 10
             if (currentState < 0) {
-                state = "Fail"
+                wordFailed()
             } else {
-                state = "Guessed"
+                wordGuessed()
             }
             
             currentState = 5
-            println(state)
         }
     }
 
+    func wordGuessed() {
+        println("Guessed")
+    }
+    
+    func wordFailed() {
+        println("Failed")
+    }
+    
+    func startTimer() {
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
+    
+    func update() -> Void {
+        timeLeft = max_time - ++counter
+        timerLabel.text = String(timeLeft)
+        
+        if (counter == max_time) {
+            timer.invalidate()
+            performSegueWithIdentifier("timerFinished", sender: self)
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
