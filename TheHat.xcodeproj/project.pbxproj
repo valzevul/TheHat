@@ -14,6 +14,7 @@
 		8234604719F67EBC00989B3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8234604619F67EBC00989B3A /* Media.xcassets */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604B19F687B800989B3A /* RoundResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604A19F687B800989B3A /* RoundResultsViewController.swift */; };
+		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
@@ -39,6 +40,7 @@
 		8234604619F67EBC00989B3A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
 		8234604A19F687B800989B3A /* RoundResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsViewController.swift; sourceTree = "<group>"; };
+		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
 		8267530319F619A800071464 /* TheHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267530719F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267530819F619A800071464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				8200357319F65CE400CB62FB /* StartGameViewController.swift */,
 				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
 				8234604A19F687B800989B3A /* RoundResultsViewController.swift */,
+				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
 				8200357019F656EB00CB62FB /* SettingsViewController.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
+				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

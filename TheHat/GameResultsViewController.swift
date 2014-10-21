@@ -1,5 +1,5 @@
 //
-//  RoundResultsViewController.swift
+//  GameResultsViewController.swift
 //  TheHat
 //
 //  Created by Vadim Drobinin on 21/10/14.
@@ -8,9 +8,8 @@
 
 import UIKit
 
-class RoundResultsViewController: UIViewController {
+class GameResultsViewController: UIViewController {
 
-    @IBOutlet weak var showResultsButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +21,6 @@ class RoundResultsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showResultsAction(sender: UIBarButtonItem) {
-    }
 
     /*
     // MARK: - Navigation
