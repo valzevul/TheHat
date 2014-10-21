@@ -19,6 +19,9 @@
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
 		8267531F19F619A800071464 /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
+		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
+		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
+		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		8267531819F619A800071464 /* TheHatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheHatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267531D19F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267531E19F619A800071464 /* TheHatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHatTests.swift; sourceTree = "<group>"; };
+		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
+				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
 				8267530819F619A800071464 /* AppDelegate.swift */,
 				8267530C19F619A800071464 /* Main.storyboard */,
@@ -139,6 +146,16 @@
 				8267531D19F619A800071464 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		829FB55919F6BEF80090BFB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
+				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
+				829FB55C19F6C05F0090BFB5 /* Word.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,7 +264,10 @@
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
 				8200357019F656EB00CB62FB /* SettingsViewController.swift in Sources */,
+				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
+				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
+				829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
 			);
