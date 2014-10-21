@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="548" y="128"/>
         </scene>
-        <!--New Game Settings View Controller-->
+        <!--New Game Settings-->
         <scene sceneID="Dkh-qB-r7X">
             <objects>
                 <viewController id="wcP-yq-1c3" customClass="NewGameSettingsViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
@@ -111,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ekk-kX-Qyp">
+                    <navigationItem key="navigationItem" title="New Game Settings" id="ekk-kX-Qyp">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="z0W-1t-vdm">
                             <connections>
                                 <action selector="cancelButtonAction:" destination="wcP-yq-1c3" id="8pE-Mj-ybh"/>
@@ -142,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="74" y="900"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="hSW-Lg-xBH">
             <objects>
                 <viewController id="YY1-9T-7qf" customClass="SettingsViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="caW-oq-nls">
+                    <navigationItem key="navigationItem" title="Settings" id="caW-oq-nls">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0Q4-K0-CNt">
                             <connections>
                                 <action selector="cancelButtonAction:" destination="YY1-9T-7qf" id="BeD-Qz-hzW"/>
@@ -170,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="-332" y="1616"/>
         </scene>
-        <!--Info View Controller-->
+        <!--Info-->
         <scene sceneID="e5I-0C-nOO">
             <objects>
                 <viewController id="HWV-bu-K4e" customClass="InfoViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
@@ -181,9 +181,26 @@
                     <view key="view" contentMode="scaleToFill" id="bSG-bu-lkg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
+                                <rect key="frame" x="45" y="64" width="230" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="504" id="Cxg-dB-7gl"/>
+                                </constraints>
+                                <string key="text">The Hat is a word guessing game, also known as Charades. In the form most played today, it is an acting game in which one player acts out a word or phrase, often by miming similar-sounding words, and the other players guess the word or phrase. This version is based on the server api by parallel-p/thehat.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="leading" secondItem="bSG-bu-lkg" secondAttribute="leadingMargin" constant="29" id="CQG-65-bvd"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" id="nPD-14-oyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nSl-Wi-Eop" secondAttribute="trailing" constant="29" id="t20-x9-Lfx"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="StT-5M-CoE">
+                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="3zE-CA-e9F">
                             <connections>
                                 <action selector="cancelButtonAction:" destination="HWV-bu-K4e" id="RaM-rO-MHy"/>
