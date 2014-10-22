@@ -287,12 +287,18 @@
                     <view key="view" contentMode="scaleToFill" id="fpY-n6-doC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BK6-nQ-jAH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game Results" id="kfx-Xs-2zT">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YD2-66-CBM">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="push" id="Ui1-Bt-rGL"/>
+                                <segue destination="vXZ-lx-hvc" kind="push" identifier="mainMenu" id="Ui1-Bt-rGL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

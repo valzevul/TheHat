@@ -27,8 +27,11 @@ class StartGameViewController: UIViewController {
         // TODO: List of Player objects
         if (gameObject != nil) {
             
-            playerALabel.text = gameObject!.players[0].name
-            playerBLabel.text = gameObject!.players[1].name
+            playerALabel.text = gameObject!.players[0].name // For dev purposes only
+            playerBLabel.text = gameObject!.players[1].name // For dev purposes only
+            
+            wordsLeftLabel.text = String(gameObject!.wordsLeft)
+
             
         }
         

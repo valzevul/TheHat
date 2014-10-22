@@ -14,7 +14,14 @@ public class Game {
     var privateNumberOfPlayers: Int
     
     let numberOfWords: Int
+    let numberOfWordsLeft: Int
     
+    
+    public var wordsLeft: Int {
+        get {
+            return numberOfWordsLeft
+        }
+    }
     
     public var numberOfPlayers: Int {
         get {
@@ -24,6 +31,7 @@ public class Game {
     
     init(numberOfPlayers: Int = 10, numberOfWords: Int = 10) {
         self.numberOfWords = numberOfWords
+        self.numberOfWordsLeft = numberOfWords
         self.privateNumberOfPlayers = numberOfPlayers
     }
     
