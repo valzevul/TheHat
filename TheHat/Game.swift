@@ -32,11 +32,13 @@ public class Game {
     }
     
     class func getRandomName(idx: Int) -> String {
-        return String(idx) // For dev purposes only
+        var name = ""
+        name = String(idx) // For dev purposes only!
+        return name
     }
     
     class func getRandomWord(owner: Player, seed: Int) -> Word {
-        var text = "Test\(seed)"// For dev purposes only
+        var text = "Test\(seed)"// For dev purposes only!
         return Word(owner: owner, text: text)
     }
     

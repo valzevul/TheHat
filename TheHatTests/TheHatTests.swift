@@ -23,27 +23,14 @@ class TheHatTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock() {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
-    func testGameCreationNumberOfPlayers() {
-        
+    func testGameNumberOfPlayers() {
         var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
         var numberOfPlayers = gameObject.numberOfPlayers
         
         XCTAssertEqual(10, numberOfPlayers, "Number of players isn't equal to the expected")
     }
     
-    func testGameCreationAddPlayer() {
+    func testGameAddPlayer() {
         var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
         var numberOfPlayers = gameObject.numberOfPlayers
         
@@ -59,6 +46,19 @@ class TheHatTests: XCTestCase {
         var newNumberOfPlayers = gameObject.numberOfPlayers
         
         XCTAssertEqual(numberOfPlayers + 3, newNumberOfPlayers, "Number of players isn't equal to the expected")
+    }
+    
+    func testGameRandomNames() {
+        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
+        var isNameEmpty = false
+        
+        for player in gameObject.players {
+            if (player.name == "") {
+                isNameEmpty = true
+            }
+        }
+        
+        XCTAssertEqual(false, isNameEmpty, "Some players has empty names")
     }
     
 }
