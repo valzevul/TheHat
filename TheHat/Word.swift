@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Word {
+public struct Word {
     
     let owner: Player
     let text: String

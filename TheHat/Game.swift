@@ -8,18 +8,26 @@
 
 import Foundation
 
-class Game {
+public class Game {
     
     var players = [Player]()
-    let numberOfPlayers: Int
+    var privateNumberOfPlayers: Int
+    
     let numberOfWords: Int
     
-    init(numberOfPlayers: Int = 10, numberOfWords: Int = 10) {
-        self.numberOfPlayers = numberOfPlayers
-        self.numberOfWords = numberOfWords
+    
+    public var numberOfPlayers: Int {
+        get {
+            return players.count
+        }
     }
     
-    func addPlayer(player: Player) {
+    init(numberOfPlayers: Int = 10, numberOfWords: Int = 10) {
+        self.numberOfWords = numberOfWords
+        self.privateNumberOfPlayers = numberOfPlayers
+    }
+    
+    public func addPlayer(player: Player) {
         players.append(player)
     }
     
@@ -32,7 +40,7 @@ class Game {
         return Word(owner: owner, text: text)
     }
     
-    class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
+    public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
         var newRandomGame = Game(numberOfPlayers: numberOfPlayers, numberOfWords: numberOfWords)
         
         for idx in 1...numberOfPlayers {
@@ -44,8 +52,10 @@ class Game {
                 newPlayer.addWord(randomWord)
             }
             
+            newRandomGame.addPlayer(newPlayer)
         }
         
         return newRandomGame
     }
+
 }

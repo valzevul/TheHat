@@ -9,6 +9,8 @@
 import UIKit
 import XCTest
 
+import TheHat
+
 class TheHatTests: XCTestCase {
     
     override func setUp() {
@@ -31,6 +33,32 @@ class TheHatTests: XCTestCase {
         self.measureBlock() {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testGameCreationNumberOfPlayers() {
+        
+        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
+        var numberOfPlayers = gameObject.numberOfPlayers
+        
+        XCTAssertEqual(10, numberOfPlayers, "Number of players isn't equal to the expected")
+    }
+    
+    func testGameCreationAddPlayer() {
+        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
+        var numberOfPlayers = gameObject.numberOfPlayers
+        
+        var newPlayer = Player(name: "Test 1")
+        gameObject.addPlayer(newPlayer)
+        
+        newPlayer = Player(name: "Test 2")
+        gameObject.addPlayer(newPlayer)
+        
+        newPlayer = Player(name: "Test 3")
+        gameObject.addPlayer(newPlayer)
+        
+        var newNumberOfPlayers = gameObject.numberOfPlayers
+        
+        XCTAssertEqual(numberOfPlayers + 3, newNumberOfPlayers, "Number of players isn't equal to the expected")
     }
     
 }

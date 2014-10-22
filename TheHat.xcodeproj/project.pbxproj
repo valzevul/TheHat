@@ -23,6 +23,10 @@
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
+		82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
+		82C7085819F7D9CC00D184B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
+		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
+		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -281,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */,
+				82C7085819F7D9CC00D184B8 /* Player.swift in Sources */,
+				82C7085B19F7DAA700D184B8 /* Word.swift in Sources */,
 				8267531F19F619A800071464 /* TheHatTests.swift in Sources */,
+				82C7085A19F7DA9800D184B8 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

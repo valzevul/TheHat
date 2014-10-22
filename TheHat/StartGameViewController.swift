@@ -17,9 +17,13 @@ class StartGameViewController: UIViewController {
     @IBOutlet weak var playerALabel: UILabel!
     @IBOutlet weak var playerBLabel: UILabel!
     
+    var game = Game.createRandomGame(10, numberOfWords: 10)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        println(game.players)
+        
         // Do any additional setup after loading the view.
         
         // TODO: Game() object

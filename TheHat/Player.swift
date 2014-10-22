@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Player {
+public class Player {
     
     var words = [Word]()
     var name: String?
