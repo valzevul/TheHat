@@ -29,6 +29,8 @@ class TheHatTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - Tests for Game
+    
     func testGameNumberOfPlayers() {
         var numberOfPlayers = gameObject!.numberOfPlayers
         
@@ -64,4 +66,21 @@ class TheHatTests: XCTestCase {
         XCTAssertEqual(false, isNameEmpty, "Some players has empty names")
     }
     
+    // MARK: - Tests for Word
+    
+    func testWordOwner() {
+        let newPlayer = Player(name: "Tester")
+        let newWord = Word(owner: newPlayer, text: "Test")
+        
+        let owner = newWord.getOwner()
+        XCTAssertEqual(owner.name!, newPlayer.name!, "Players are different")
+    }
+    
+    func testWordText() {
+        let newPlayer = Player(name: "Tester")
+        let newWord = Word(owner: newPlayer, text: "Test")
+        
+        let text = newWord.getText()
+        XCTAssertEqual(text, "Test", "Players are different")
+    }
 }

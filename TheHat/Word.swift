@@ -17,4 +17,12 @@ public struct Word {
         self.owner = owner
         self.text = text
     }
+    
+    public func getOwner() -> Player {
+        return owner
+    }
+    
+    public func getText() -> String {
+        return text
+    }
 }
