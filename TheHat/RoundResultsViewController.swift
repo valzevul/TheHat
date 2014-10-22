@@ -10,6 +10,8 @@ import UIKit
 
 class RoundResultsViewController: UIViewController {
 
+    var gameObject: Game?
+    
     @IBOutlet weak var showResultsButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,13 @@ class RoundResultsViewController: UIViewController {
     }
     
     @IBAction func showResultsAction(sender: UIBarButtonItem) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showGameResults") {
+            var gameResultsVC = segue.destinationViewController as GameResultsViewController;
+            gameResultsVC.gameObject = gameObject
+        }
     }
 
     /*

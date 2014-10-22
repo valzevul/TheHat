@@ -17,17 +17,20 @@ class StartGameViewController: UIViewController {
     @IBOutlet weak var playerALabel: UILabel!
     @IBOutlet weak var playerBLabel: UILabel!
     
-    var game = Game.createRandomGame(10, numberOfWords: 10)
+    var gameObject: Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(game.players)
-        
         // Do any additional setup after loading the view.
         
-        // TODO: Game() object
         // TODO: List of Player objects
+        if (gameObject != nil) {
+            
+            playerALabel.text = gameObject!.players[0].name
+            playerBLabel.text = gameObject!.players[1].name
+            
+        }
         
         // TODO: Choose two random players
     }
@@ -40,6 +43,13 @@ class StartGameViewController: UIViewController {
     @IBAction func playButtonAction(sender: UIButton) {
     }
     @IBAction func settingsButtonAction(sender: UIBarButtonItem) {
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "startNewRound") {
+            var gameRoundVC = segue.destinationViewController as GameRoundViewController;
+            gameRoundVC.gameObject = gameObject
+        }
     }
 
     /*

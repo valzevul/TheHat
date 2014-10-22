@@ -14,6 +14,8 @@ class GameRoundViewController: UIViewController {
     var currentState = 5
     var amount = 10
     
+    var gameObject: Game?
+    
     var timer = NSTimer()
     var counter = 0
     var timeLeft = 0
@@ -81,6 +83,13 @@ class GameRoundViewController: UIViewController {
             performSegueWithIdentifier("timerFinished", sender: self)
         }
         
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "timerFinished") {
+            var roundResultsVC = segue.destinationViewController as RoundResultsViewController;
+            roundResultsVC.gameObject = gameObject
+        }
     }
     
     /*

@@ -10,15 +10,27 @@ import UIKit
 
 class NewGameSettingsViewController: UIViewController {
     
+    var gameObject: Game?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        // TODO: Game() object
+        gameObject = Game.createRandomGame(10, numberOfWords: 10)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showNewRoundInfo") {
+            var startGameVC = segue.destinationViewController as StartGameViewController;
+            startGameVC.gameObject = gameObject
+        }
     }
 
 

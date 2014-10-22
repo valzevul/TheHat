@@ -10,6 +10,8 @@ import UIKit
 
 class GameResultsViewController: UIViewController {
 
+    var gameObject: Game?    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
