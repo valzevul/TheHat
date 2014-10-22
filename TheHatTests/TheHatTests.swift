@@ -13,9 +13,15 @@ import TheHat
 
 class TheHatTests: XCTestCase {
     
+    let NUMBER_OF_PLAYERS = 10;
+    let NUMBER_OF_WORDS = 10;
+    
+    var gameObject: Game?
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        gameObject = Game.createRandomGame(NUMBER_OF_PLAYERS, numberOfWords: NUMBER_OF_WORDS)
     }
     
     override func tearDown() {
@@ -24,35 +30,32 @@ class TheHatTests: XCTestCase {
     }
     
     func testGameNumberOfPlayers() {
-        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
-        var numberOfPlayers = gameObject.numberOfPlayers
+        var numberOfPlayers = gameObject!.numberOfPlayers
         
-        XCTAssertEqual(10, numberOfPlayers, "Number of players isn't equal to the expected")
+        XCTAssertEqual(NUMBER_OF_PLAYERS, numberOfPlayers, "Number of players isn't equal to the expected")
     }
     
     func testGameAddPlayer() {
-        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
-        var numberOfPlayers = gameObject.numberOfPlayers
+        var numberOfPlayers = gameObject!.numberOfPlayers
         
         var newPlayer = Player(name: "Test 1")
-        gameObject.addPlayer(newPlayer)
+        gameObject!.addPlayer(newPlayer)
         
         newPlayer = Player(name: "Test 2")
-        gameObject.addPlayer(newPlayer)
+        gameObject!.addPlayer(newPlayer)
         
         newPlayer = Player(name: "Test 3")
-        gameObject.addPlayer(newPlayer)
+        gameObject!.addPlayer(newPlayer)
         
-        var newNumberOfPlayers = gameObject.numberOfPlayers
+        var newNumberOfPlayers = gameObject!.numberOfPlayers
         
         XCTAssertEqual(numberOfPlayers + 3, newNumberOfPlayers, "Number of players isn't equal to the expected")
     }
     
     func testGameRandomNames() {
-        var gameObject: Game = Game.createRandomGame(10, numberOfWords: 10)
         var isNameEmpty = false
         
-        for player in gameObject.players {
+        for player in gameObject!.players {
             if (player.name == "") {
                 isNameEmpty = true
             }
