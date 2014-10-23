@@ -137,8 +137,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-OM-SPu">
-                                <rect key="frame" x="61" y="273" width="64" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-OM-SPu">
+                                <rect key="frame" x="61" y="274" width="63" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -163,8 +163,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Ff-vfS">
-                                <rect key="frame" x="194" y="273" width="65" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Ff-vfS">
+                                <rect key="frame" x="195" y="274" width="64" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,9 +180,9 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="fbn-Jw-pgc" secondAttribute="centerX" id="190-jO-I4V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WsX-Ff-vfS" secondAttribute="trailing" constant="45" id="2Cf-Kk-1yx"/>
+                            <constraint firstItem="0bF-oU-Vaw" firstAttribute="top" secondItem="NcQ-mj-yOd" secondAttribute="bottom" constant="14" id="9Lk-bI-hJr"/>
                             <constraint firstItem="h6T-jz-nsD" firstAttribute="top" secondItem="0bF-oU-Vaw" secondAttribute="bottom" constant="13" id="Ak7-oP-LQy"/>
                             <constraint firstItem="h6T-jz-nsD" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="C1i-2q-lep"/>
-                            <constraint firstItem="0bF-oU-Vaw" firstAttribute="top" secondItem="NcQ-mj-yOd" secondAttribute="bottom" constant="14" id="IdH-mf-ywB"/>
                             <constraint firstItem="SO0-OM-SPu" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" constant="45" id="SbH-Zg-6hX"/>
                             <constraint firstItem="0bF-oU-Vaw" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="YLm-A0-dbb"/>
                             <constraint firstAttribute="centerY" secondItem="SO0-OM-SPu" secondAttribute="centerY" constant="0.5" id="fYd-d9-ZMa"/>
@@ -294,6 +294,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="showResultsButton" destination="ynf-lq-Cip" id="eIZ-yU-gH8"/>
+                        <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="EU1-Sb-0Wu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZL-QA-jrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +363,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
                                 <rect key="frame" x="45" y="64" width="230" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">The Hat is a word guessing game, also known as Charades. In the form most played today, it is an acting game in which one player acts out a word or phrase, often by miming similar-sounding words, and the other players guess the word or phrase. This version is based on the server api by parallel-p/thehat.</string>
@@ -372,10 +373,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" constant="44" id="6NL-v8-p3n"/>
-                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="leading" secondItem="bSG-bu-lkg" secondAttribute="leadingMargin" constant="29" id="CCw-Pl-NRi"/>
-                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="bottom" secondItem="acw-jI-rGZ" secondAttribute="top" id="Gnp-Ih-1x6"/>
-                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="centerX" secondItem="bSG-bu-lkg" secondAttribute="centerX" id="Vzg-YV-2hs"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="centerX" secondItem="bSG-bu-lkg" secondAttribute="centerX" id="JYg-XG-O6P"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="leading" secondItem="bSG-bu-lkg" secondAttribute="leadingMargin" constant="29" id="PR6-6O-CBP"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" id="uoX-ie-NhD"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="bottom" secondItem="acw-jI-rGZ" secondAttribute="top" id="ybc-Ru-asj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE"/>
@@ -396,6 +397,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="HWT-hy-5na"/>
         <segue reference="lrO-v2-mz8"/>
     </inferredMetricsTieBreakers>
 </document>
