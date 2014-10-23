@@ -137,15 +137,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-OM-SPu">
-                                <rect key="frame" x="16" y="273" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO0-OM-SPu">
+                                <rect key="frame" x="61" y="273" width="64" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-Jw-pgc">
-                                <rect key="frame" x="136" y="432" width="49" height="36"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbn-Jw-pgc">
+                                <rect key="frame" x="122" y="436" width="76" height="49"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="31"/>
                                 <state key="normal" title="PLAY">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -154,29 +154,45 @@
                                     <segue destination="EEx-wo-lxw" kind="push" identifier="startNewRound" id="8Hz-qx-Q9o"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Previous result: ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bF-oU-Vaw">
-                                <rect key="frame" x="16" y="80" width="100" height="16"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous result: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bF-oU-Vaw">
+                                <rect key="frame" x="16" y="78" width="132" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="ySf-pV-7Lp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Ff-vfS">
-                                <rect key="frame" x="216" y="273" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Player B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-Ff-vfS">
+                                <rect key="frame" x="194" y="273" width="65" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words left: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6T-jz-nsD">
-                                <rect key="frame" x="216" y="80" width="73" height="16"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words left: 999" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6T-jz-nsD">
+                                <rect key="frame" x="16" y="109" width="101" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="fbn-Jw-pgc" secondAttribute="centerX" id="190-jO-I4V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WsX-Ff-vfS" secondAttribute="trailing" constant="45" id="2Cf-Kk-1yx"/>
+                            <constraint firstItem="h6T-jz-nsD" firstAttribute="top" secondItem="0bF-oU-Vaw" secondAttribute="bottom" constant="13" id="Ak7-oP-LQy"/>
+                            <constraint firstItem="h6T-jz-nsD" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="C1i-2q-lep"/>
+                            <constraint firstItem="0bF-oU-Vaw" firstAttribute="top" secondItem="NcQ-mj-yOd" secondAttribute="bottom" constant="14" id="IdH-mf-ywB"/>
+                            <constraint firstItem="SO0-OM-SPu" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" constant="45" id="SbH-Zg-6hX"/>
+                            <constraint firstItem="0bF-oU-Vaw" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="YLm-A0-dbb"/>
+                            <constraint firstAttribute="centerY" secondItem="SO0-OM-SPu" secondAttribute="centerY" constant="0.5" id="fYd-d9-ZMa"/>
+                            <constraint firstItem="6mx-o1-H1e" firstAttribute="top" secondItem="fbn-Jw-pgc" secondAttribute="bottom" constant="83" id="fhG-Is-yYK"/>
+                            <constraint firstAttribute="centerY" secondItem="WsX-Ff-vfS" secondAttribute="centerY" constant="0.5" id="qQK-SH-Ifl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Round N" id="exg-iS-HKr">
                         <barButtonItem key="rightBarButtonItem" image="settings" id="ROh-S4-bWM">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="settingsButtonAction:" destination="cUt-5j-hzo" id="CAI-Gq-LP8"/>
                             </connections>
@@ -207,21 +223,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="One long word to guess" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-YY-SH1">
-                                <rect key="frame" x="53" y="272" width="214" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59:59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-O9-55B">
+                                <rect key="frame" x="253" y="72" width="51" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="59:59" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4r-O9-55B">
-                                <rect key="frame" x="258" y="72" width="46" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One long word to guess" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-YY-SH1">
+                                <rect key="frame" x="53" y="272" width="214" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="bnK-YY-SH1" secondAttribute="centerX" id="1nz-F4-3QR"/>
+                            <constraint firstItem="S4r-O9-55B" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="8" id="4g0-RN-EmM"/>
+                            <constraint firstItem="S4r-O9-55B" firstAttribute="trailing" secondItem="wvL-PX-QVh" secondAttribute="trailingMargin" id="Px5-FZ-KBw"/>
+                            <constraint firstAttribute="centerY" secondItem="bnK-YY-SH1" secondAttribute="centerY" id="lqd-BG-uy6"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="TqZ-o4-YZp" appends="YES" id="G1g-1c-XX1"/>
                         </connections>
