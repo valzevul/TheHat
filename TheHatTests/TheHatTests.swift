@@ -20,7 +20,7 @@ class TheHatTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
         gameObject = Game.createRandomGame(NUMBER_OF_PLAYERS, numberOfWords: NUMBER_OF_WORDS)
     }
     
@@ -35,6 +35,17 @@ class TheHatTests: XCTestCase {
         var numberOfPlayers = gameObject!.numberOfPlayers
         
         XCTAssertEqual(NUMBER_OF_PLAYERS, numberOfPlayers, "Number of players isn't equal to the expected")
+    }
+    
+    func testGameGetPlayerByIndex() {
+        var newPlayer = Player(name: "Test 1")
+        var newWord = Word(owner: newPlayer, text: "Test for word")
+        newPlayer.addWord(newWord)
+        newPlayer.addWord(newWord)
+        gameObject!.addPlayer(newPlayer)
+        
+        var returnedPlayer = gameObject!.getPlayerByIndex(gameObject!.numberOfPlayers - 1)
+        XCTAssertEqual(newPlayer.name!, returnedPlayer.name!)
     }
     
     func testGameAddPlayer() {
@@ -83,4 +94,5 @@ class TheHatTests: XCTestCase {
         let text = newWord.getText()
         XCTAssertEqual(text, "Test", "Players are different")
     }
+    
 }
