@@ -338,7 +338,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
                                 <rect key="frame" x="45" y="64" width="230" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">The Hat is a word guessing game, also known as Charades. In the form most played today, it is an acting game in which one player acts out a word or phrase, often by miming similar-sounding words, and the other players guess the word or phrase. This version is based on the server api by parallel-p/thehat.</string>
@@ -372,6 +372,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ui1-Bt-rGL"/>
+        <segue reference="lrO-v2-mz8"/>
     </inferredMetricsTieBreakers>
 </document>

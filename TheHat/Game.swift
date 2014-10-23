@@ -16,7 +16,6 @@ public class Game {
     let numberOfWords: Int
     let numberOfWordsLeft: Int
     
-    
     public var wordsLeft: Int {
         get {
             return numberOfWordsLeft
@@ -68,4 +67,8 @@ public class Game {
         return newRandomGame
     }
 
+    public func getPlayerByIndex(index: Int) -> Player {
+        return players[index]
+    }
+    
 }
