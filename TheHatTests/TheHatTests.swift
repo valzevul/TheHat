@@ -95,4 +95,16 @@ class TheHatTests: XCTestCase {
         XCTAssertEqual(text, "Test", "Players are different")
     }
     
+    // MARK: - Tests for Tournament System
+    // TODO: Tests for TS
+    
+    func testTournamentSystemGetNewPair() {
+        
+        var ts = TournamentSystem(game: gameObject!)
+        
+        XCTAssertEqual(0, ts.currentResult)
+        XCTAssertEqual(NUMBER_OF_PLAYERS * NUMBER_OF_WORDS, ts.wordsLeft())
+        
+    }
+    
 }

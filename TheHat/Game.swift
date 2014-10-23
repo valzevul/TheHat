@@ -32,7 +32,7 @@ public class Game {
     
     init(numberOfPlayers: Int = 10, numberOfWords: Int = 10) {
         self.numberOfWords = numberOfWords
-        self.numberOfWordsLeft = numberOfWords
+        self.numberOfWordsLeft = numberOfWords * numberOfPlayers
         self.privateNumberOfPlayers = numberOfPlayers
     }
     
