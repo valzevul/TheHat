@@ -11,6 +11,7 @@ import UIKit
 class NewGameSettingsViewController: UIViewController {
     
     var gameObject: Game?
+    var tSystem: TournamentSystem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,8 @@ class NewGameSettingsViewController: UIViewController {
         
         // TODO: Game() object
         gameObject = Game.createRandomGame(10, numberOfWords: 10)
+        tSystem = TournamentSystem(game: gameObject!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +33,7 @@ class NewGameSettingsViewController: UIViewController {
         if (segue.identifier == "showNewRoundInfo") {
             var startGameVC = segue.destinationViewController as StartGameViewController;
             startGameVC.gameObject = gameObject
+            startGameVC.tSystem = tSystem
         }
     }
 

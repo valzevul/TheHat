@@ -13,29 +13,32 @@ class StartGameViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     
+    @IBOutlet weak var previousPairResultLabel: UILabel!
     @IBOutlet weak var wordsLeftLabel: UILabel!
     @IBOutlet weak var playerALabel: UILabel!
     @IBOutlet weak var playerBLabel: UILabel!
     
     var gameObject: Game?
+    var tSystem: TournamentSystem?
+    var currentPair: (Player, Player)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        
-        // TODO: List of Player objects
-        if (gameObject != nil) {
+        if (tSystem != nil) {
             
-            playerALabel.text = gameObject!.players[0].name // For dev purposes only
-            playerBLabel.text = gameObject!.players[1].name // For dev purposes only
+            currentPair = tSystem!.getNextPair()
             
-            wordsLeftLabel.text = String(gameObject!.wordsLeft)
-
+            playerALabel.text = currentPair!.0.name
+            playerBLabel.text = currentPair!.1.name
             
+            if let prevResult = tSystem!.getPreviousResult() {
+                previousPairResultLabel.text = "Previous result: \(prevResult)"
+            }
+            
+            wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
         }
         
-        // TODO: Choose two random players
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +55,7 @@ class StartGameViewController: UIViewController {
         if (segue.identifier == "startNewRound") {
             var gameRoundVC = segue.destinationViewController as GameRoundViewController;
             gameRoundVC.gameObject = gameObject
+            gameRoundVC.tSystem = tSystem
         }
     }
 

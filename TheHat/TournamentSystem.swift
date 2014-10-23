@@ -14,11 +14,22 @@ class TournamentSystem {
     var player2_idx: Int = 1
     
     var playedRoundsNumber: Int = 0
+    var currentResult: Int = 0
     
     var gameObject: Game
     
     init(game: Game) {
         gameObject = game
+    }
+    
+    func wordsLeft() -> Int {
+        return gameObject.wordsLeft
+    }
+    
+    func getNewWord() -> Word {
+        //
+        
+        return Word(owner: Player(name: "Test"), text: "Tttt") // For dev purposes only! 
     }
     
     func getNextPair() -> (Player, Player) {
@@ -42,8 +53,19 @@ class TournamentSystem {
         
     }
     
-    func finishCurrentRound() {
-        
+    func wordGuessed() {
+        currentResult += 1
+    }
+
+    func wordFailed() {
+        // ???
     }
     
+    func finishCurrentRound() {
+        // ???
+    }
+    
+    func getPreviousResult() -> Int? {
+        return currentResult
+    }
 }

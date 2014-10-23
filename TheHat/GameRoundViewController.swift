@@ -10,17 +10,21 @@ import UIKit
 
 class GameRoundViewController: UIViewController {
 
+    @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     var currentState = 5
     var amount = 10
     
     var gameObject: Game?
+    var tSystem: TournamentSystem?
     
     var timer = NSTimer()
     var counter = 0
     var timeLeft = 0
     
     let max_time = 20
+    
+    var currentWord: Word?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,10 +68,14 @@ class GameRoundViewController: UIViewController {
 
     func wordGuessed() {
         println("Guessed")
+        tSystem!.wordGuessed()
+        currentWord = tSystem!.getNewWord()
+        wordLabel.text = currentWord!.getText()
     }
     
     func wordFailed() {
         println("Failed")
+        tSystem!.wordFailed()
     }
     
     func startTimer() {
