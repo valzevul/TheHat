@@ -11,6 +11,8 @@ import Foundation
 public class Game {
     
     var players = [Player]()
+    public var words = [Word]()
+    
     var privateNumberOfPlayers: Int
     
     let numberOfWords: Int
@@ -36,6 +38,9 @@ public class Game {
     
     public func addPlayer(player: Player) {
         players.append(player)
+        for word in player.words {
+            words.append(word)
+        }
     }
     
     class func getRandomName(idx: Int) -> String {

@@ -16,7 +16,7 @@ class TournamentSystem {
     var playedRoundsNumber: Int = 0
     var currentResult: Int = 0
     
-    var gameObject: Game
+    let gameObject: Game
     
     init(game: Game) {
         gameObject = game
@@ -27,9 +27,7 @@ class TournamentSystem {
     }
     
     func getNewWord() -> Word {
-        //
-        
-        return Word(owner: Player(name: "Test"), text: "Tttt") // For dev purposes only! 
+        return gameObject.words.removeLast()
     }
     
     func getNextPair() -> (Player, Player) {
@@ -59,6 +57,10 @@ class TournamentSystem {
 
     func wordFailed() {
         // ???
+    }
+    
+    func wordMissed(word: Word) {
+        gameObject.words.append(word)
     }
     
     func finishCurrentRound() {
