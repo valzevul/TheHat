@@ -277,8 +277,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Elc-5H-GU4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="574"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-qx-zCW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -294,6 +294,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="showResultsButton" destination="ynf-lq-Cip" id="eIZ-yU-gH8"/>
+                        <outlet property="tableView" destination="vAr-ri-7ci" id="1fa-dW-dcH"/>
                         <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="EU1-Sb-0Wu"/>
                     </connections>
                 </viewController>
@@ -397,7 +398,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HWT-hy-5na"/>
         <segue reference="lrO-v2-mz8"/>
+        <segue reference="EU1-Sb-0Wu"/>
     </inferredMetricsTieBreakers>
 </document>

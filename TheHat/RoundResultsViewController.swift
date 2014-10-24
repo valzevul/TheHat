@@ -8,9 +8,12 @@
 
 import UIKit
 
-class RoundResultsViewController: UIViewController {
+class RoundResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet var tableView: UIView!
     var gameObject: Game?
+    var tSystem: TournamentSystem?
+    var currentWord: Word?
     
     @IBOutlet weak var showResultsButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -26,6 +29,17 @@ class RoundResultsViewController: UIViewController {
     }
     
     @IBAction func showResultsAction(sender: UIBarButtonItem) {
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("foo", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel!.text = currentWord!.getText()
+        return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

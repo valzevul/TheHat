@@ -97,6 +97,8 @@ class GameRoundViewController: UIViewController {
         if (segue.identifier == "timerFinished") {
             var roundResultsVC = segue.destinationViewController as RoundResultsViewController;
             roundResultsVC.gameObject = gameObject
+            roundResultsVC.tSystem = tSystem
+            roundResultsVC.currentWord = currentWord
         }
     }
     
