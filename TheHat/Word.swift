@@ -10,8 +10,8 @@ import Foundation
 
 public struct Word {
     
-    let owner: Player
-    let text: String
+    private let owner: Player
+    private let text: String
     
     init(owner: Player, text: String) {
         self.owner = owner

@@ -280,6 +280,19 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-qx-zCW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Pxp-ea-9vJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pxp-ea-9vJ" id="N2l-Ww-j9S">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pRd-KT-5qo" id="0xM-OX-zK9"/>
+                                    <outlet property="delegate" destination="pRd-KT-5qo" id="nJb-XD-Cc2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -294,7 +307,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="showResultsButton" destination="ynf-lq-Cip" id="eIZ-yU-gH8"/>
-                        <outlet property="tableView" destination="vAr-ri-7ci" id="1fa-dW-dcH"/>
+                        <outlet property="view" destination="ZDQ-qx-zCW" id="v2d-UV-svL"/>
                         <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="EU1-Sb-0Wu"/>
                     </connections>
                 </viewController>

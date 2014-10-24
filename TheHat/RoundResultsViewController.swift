@@ -14,6 +14,8 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentWord: Word?
+    var cells = ["test", "Guessed", "Failed", "Missed"]
+    
     
     @IBOutlet weak var showResultsButton: UIBarButtonItem!
     override func viewDidLoad() {
@@ -21,6 +23,7 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
 
         // Do any additional setup after loading the view.
         self.navigationItem.setHidesBackButton(true, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,16 +34,24 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
     @IBAction func showResultsAction(sender: UIBarButtonItem) {
     }
     
+    
+    // TODO:
+    // Implement this one:
+    // http://www.appcoda.com/swipeable-uitableviewcell-tutorial/
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.cells.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
-        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("foo", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel!.text = currentWord!.getText()
+        cell.textLabel?.text = self.cells[indexPath.row]
+        
         return cell
     }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {

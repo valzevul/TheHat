@@ -32,6 +32,8 @@ class GameRoundViewController: UIViewController {
         self.navigationItem.setHidesBackButton(true, animated: true)
         
         startTimer()
+        currentWord = tSystem!.getNewWord()
+        wordLabel.text = currentWord?.getText()
         // Do any additional setup after loading the view.
     }
 
