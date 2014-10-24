@@ -22,8 +22,8 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.cells[0] = currentWord!.getText()
         self.navigationItem.setHidesBackButton(true, animated: true)
-
     }
 
     override func didReceiveMemoryWarning() {
