@@ -20,7 +20,7 @@ class Dictionary {
     }
     
     func shuffle() {
-        sort(&textWords) {(_, _) in arc4random() % 2 == 0}
+        textWords = sorted(textWords) {_, _ in arc4random() % 2 == 0}
     }
     
 }

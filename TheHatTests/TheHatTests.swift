@@ -96,7 +96,6 @@ class TheHatTests: XCTestCase {
     }
     
     // MARK: - Tests for Tournament System
-    // TODO: Tests for TS
     
     func testTournamentSystemGetNewPair() {
         
@@ -106,5 +105,35 @@ class TheHatTests: XCTestCase {
         XCTAssertEqual(NUMBER_OF_PLAYERS * NUMBER_OF_WORDS, ts.wordsLeft())
         
     }
+    
+    // MARK: - Tests for Dictionary
+    
+    func testDictionaryShuffle() {
+        
+        var d = Dictionary()
+        
+        var word = d.getNewWordByIndex(0)
+        d.shuffle()
+        var newWord = d.getNewWordByIndex(0)
+        XCTAssertNotEqual(word!, newWord!)
+    }
+    
+    func testDictionaryWrongIndex() {
+        
+        var d = Dictionary()
+        
+        var word = d.getNewWordByIndex(-5)
+        XCTAssertNil(word)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }

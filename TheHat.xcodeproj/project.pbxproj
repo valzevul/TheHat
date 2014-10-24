@@ -12,6 +12,7 @@
 		8200357219F656F100CB62FB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357119F656F100CB62FB /* InfoViewController.swift */; };
 		8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357319F65CE400CB62FB /* StartGameViewController.swift */; };
 		8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
+		822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604719F67EBC00989B3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8234604619F67EBC00989B3A /* Media.xcassets */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
@@ -294,6 +295,7 @@
 				8284A96A19F9931C009A6544 /* TournamentSystem.swift in Sources */,
 				82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */,
 				82C7085819F7D9CC00D184B8 /* Player.swift in Sources */,
+				822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */,
 				82C7085B19F7DAA700D184B8 /* Word.swift in Sources */,
 				82C7085A19F7DA9800D184B8 /* Game.swift in Sources */,
 			);
