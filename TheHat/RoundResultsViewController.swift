@@ -14,7 +14,7 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentWord: Word?
-    var cells = ["test", "Guessed", "Failed", "Missed"]
+    var cells = ["", "Guessed", "Failed", "Missed"]
     
     
     @IBOutlet weak var showResultsButton: UIBarButtonItem!
@@ -22,7 +22,7 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.cells[0] = currentWord!.getText()
+        self.cells[0] = "Last word: \(currentWord!.getText())"
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
 
@@ -42,6 +42,24 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cells.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        switch (indexPath.row) {
+        case 1:
+            println("guessed")
+            tSystem!.wordGuessed()
+        case 2:
+            println("failed")
+            tSystem!.wordFailed()
+        case 3:
+            println("missed")
+            tSystem!.wordMissed(currentWord!)
+        default:
+            println("other row")
+        }
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
