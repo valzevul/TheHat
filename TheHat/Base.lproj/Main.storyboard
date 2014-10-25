@@ -394,7 +394,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Jhon Doe" borderStyle="roundedRect" placeholder="Your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpr-OA-XnD">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="John Doe" borderStyle="roundedRect" placeholder="Your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpr-OA-XnD">
                                                     <rect key="frame" x="203" y="7" width="109" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
@@ -509,6 +509,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="0Sh-wg-OeJ"/>
+                    <connections>
+                        <outlet property="additionalTimeField" destination="Jle-4J-5VB" id="EVW-69-BaX"/>
+                        <outlet property="difficultnessSlider" destination="4yR-YK-7gm" id="ISU-P7-Wd2"/>
+                        <outlet property="gameTimeField" destination="V79-9R-qdG" id="ppD-4a-bKL"/>
+                        <outlet property="playersNameFIeld" destination="kpr-OA-XnD" id="fhh-Dh-9hL"/>
+                        <outlet property="playersNumberField" destination="Fci-2q-dNN" id="0RV-G6-Hrc"/>
+                        <outlet property="showTutorialSwitch" destination="8Ac-to-agk" id="mpz-7N-Le9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbk-ns-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
