@@ -8,16 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		8200356E19F656E300CB62FB /* NewGameSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200356D19F656E300CB62FB /* NewGameSettingsViewController.swift */; };
-		8200357019F656EB00CB62FB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200356F19F656EB00CB62FB /* SettingsViewController.swift */; };
 		8200357219F656F100CB62FB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357119F656F100CB62FB /* InfoViewController.swift */; };
 		8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357319F65CE400CB62FB /* StartGameViewController.swift */; };
 		8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
 		822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
+		822AD27C19FBE83300E201DA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AD27B19FBE83300E201DA /* Settings.swift */; };
+		822AD27E19FBE99A00E201DA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 822AD27D19FBE99A00E201DA /* Settings.bundle */; };
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604719F67EBC00989B3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8234604619F67EBC00989B3A /* Media.xcassets */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604B19F687B800989B3A /* RoundResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604A19F687B800989B3A /* RoundResultsViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
+		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
@@ -45,14 +47,16 @@
 
 /* Begin PBXFileReference section */
 		8200356D19F656E300CB62FB /* NewGameSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameSettingsViewController.swift; sourceTree = "<group>"; };
-		8200356F19F656EB00CB62FB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8200357119F656F100CB62FB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8200357319F65CE400CB62FB /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		8206B67A19FA7A8600BA45A0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		822AD27D19FBE99A00E201DA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8234604619F67EBC00989B3A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
 		8234604A19F687B800989B3A /* RoundResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsViewController.swift; sourceTree = "<group>"; };
 		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8267530319F619A800071464 /* TheHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267530719F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267530819F619A800071464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,16 +93,26 @@
 		8200356C19F656C100CB62FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8267530819F619A800071464 /* AppDelegate.swift */,
 				8267530A19F619A800071464 /* StartScreenViewController.swift */,
 				8200356D19F656E300CB62FB /* NewGameSettingsViewController.swift */,
-				8200356F19F656EB00CB62FB /* SettingsViewController.swift */,
 				8200357119F656F100CB62FB /* InfoViewController.swift */,
 				8200357319F65CE400CB62FB /* StartGameViewController.swift */,
 				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
 				8234604A19F687B800989B3A /* RoundResultsViewController.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
+				82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		822AD27F19FBE9CF00E201DA /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				8267531119F619A800071464 /* LaunchScreen.xib */,
+				8234604619F67EBC00989B3A /* Media.xcassets */,
+			);
+			name = Media;
 			sourceTree = "<group>";
 		};
 		826752FA19F619A700071464 = {
@@ -122,13 +136,12 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
+				8267530C19F619A800071464 /* Main.storyboard */,
 				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
-				8267530819F619A800071464 /* AppDelegate.swift */,
-				8267530C19F619A800071464 /* Main.storyboard */,
-				8267531119F619A800071464 /* LaunchScreen.xib */,
+				822AD27F19FBE9CF00E201DA /* Media */,
+				822AD27D19FBE99A00E201DA /* Settings.bundle */,
 				8267530619F619A800071464 /* Supporting Files */,
-				8234604619F67EBC00989B3A /* Media.xcassets */,
 			);
 			path = TheHat;
 			sourceTree = "<group>";
@@ -166,6 +179,7 @@
 				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
 				829FB55C19F6C05F0090BFB5 /* Word.swift */,
 				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
+				822AD27B19FBE83300E201DA /* Settings.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				822AD27E19FBE99A00E201DA /* Settings.bundle in Resources */,
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
 				8234604719F67EBC00989B3A /* Media.xcassets in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
@@ -275,12 +290,13 @@
 				8200356E19F656E300CB62FB /* NewGameSettingsViewController.swift in Sources */,
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
-				8200357019F656EB00CB62FB /* SettingsViewController.swift in Sources */,
 				82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */,
 				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
+				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
 				829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */,
+				82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */,
 				8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
