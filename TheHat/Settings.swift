@@ -11,3 +11,15 @@ import Foundation
 struct Settings {
     static var keys = ["", "showTutorial", "playersName", "playersNumber", "difficultness", "gameTime", "additionalTime"]
 }
+
+class LocalSettings {
+    
+    var gameType: Int // 0: Casual, 1: Random, 2: Custom
+    var wordsSource: String
+    
+    init(gameType: Int, wordsSource: String) {
+        self.gameType = gameType
+        self.wordsSource = wordsSource
+    }
+    
+}

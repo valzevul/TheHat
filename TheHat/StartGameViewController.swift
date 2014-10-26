@@ -21,6 +21,7 @@ class StartGameViewController: UIViewController {
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentPair: (Player, Player)?
+    var lSettings: LocalSettings?
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -73,7 +73,7 @@ public class Game {
     }
 
     public func getPlayerByIndex(index: Int) -> Player {
-        return players[index]
+        return players[index] // TODO: or nil in case of empty array or index > count
     }
     
 }

@@ -51,7 +51,7 @@
                                 </state>
                                 <connections>
                                     <action selector="newGameAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Xy7-cp-n7a"/>
-                                    <segue destination="wcP-yq-1c3" kind="push" identifier="startNewGame" id="WJz-yr-H3c"/>
+                                    <segue destination="iFh-Sq-qrq" kind="push" id="2C8-eu-2PM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,42 +88,96 @@
             </objects>
             <point key="canvasLocation" x="86" y="128"/>
         </scene>
-        <!--New Game Settings-->
-        <scene sceneID="Dkh-qB-r7X">
+        <!--Start New Game-->
+        <scene sceneID="2HV-wH-0XT">
             <objects>
-                <viewController id="wcP-yq-1c3" customClass="NewGameSettingsViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q4w-c5-tvr"/>
-                        <viewControllerLayoutGuide type="bottom" id="1XQ-Ev-Pm8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y9M-QY-hcq">
+                <tableViewController id="iFh-Sq-qrq" customClass="NewGameSettingsTableViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vrh-yK-x0j">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DAp-mE-Upp">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DAp-mE-Upp" firstAttribute="top" secondItem="Y9M-QY-hcq" secondAttribute="topMargin" id="Kgu-B0-1s6"/>
-                            <constraint firstItem="1XQ-Ev-Pm8" firstAttribute="top" secondItem="DAp-mE-Upp" secondAttribute="bottom" id="OXX-3D-Q7N"/>
-                            <constraint firstItem="DAp-mE-Upp" firstAttribute="leading" secondItem="Y9M-QY-hcq" secondAttribute="leadingMargin" constant="-16" id="pJA-5W-ATB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DAp-mE-Upp" secondAttribute="trailing" constant="-16" id="r54-ZT-aXh"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="New Game Settings" id="ekk-kX-Qyp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nA5-zG-JXa">
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Current Game Settings" id="rPg-WT-dCf">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cnf-fy-1Zc">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnf-fy-1Zc" id="JsD-Ox-Ddg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-Dx-7rC">
+                                                    <rect key="frame" x="8" y="8" width="84" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select game type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv4-2G-r6s">
+                                                    <rect key="frame" x="8" y="27" width="78" height="12"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-0e-e1e">
+                                                    <rect key="frame" x="115" y="7" width="197" height="29"/>
+                                                    <segments>
+                                                        <segment title="Casual"/>
+                                                        <segment title="Random"/>
+                                                        <segment title="Custom"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="gameTypeChanged:" destination="iFh-Sq-qrq" eventType="valueChanged" id="Sdu-mx-Q3U"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TeK-SO-ga6">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TeK-SO-ga6" id="8kK-CV-Xpc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
+                                                    <rect key="frame" x="8" y="8" width="110" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
+                                                    <rect key="frame" x="8" y="26" width="81" height="12"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://thehat.ru/words.txt" borderStyle="roundedRect" placeholder="http://thehat.ru/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
+                                                    <rect key="frame" x="126" y="7" width="183" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="iFh-Sq-qrq" id="vOs-lZ-2Sp"/>
+                            <outlet property="delegate" destination="iFh-Sq-qrq" id="bIS-DH-JCc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Start New Game" id="zT2-Hf-ZqV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="TgI-bt-ROL">
                             <connections>
-                                <segue destination="cUt-5j-hzo" kind="push" identifier="showNewRoundInfo" id="HWT-hy-5na"/>
+                                <segue destination="cUt-5j-hzo" kind="push" identifier="showNewRoundInfo" id="Q01-ED-a2z"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPj-pN-q6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="gameTypeSegmentedControl" destination="4f2-0e-e1e" id="pex-Eb-3kN"/>
+                        <outlet property="wordsSourceTextField" destination="qE4-Gs-YjD" id="XzY-BA-7xD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGA-T9-KkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="607" y="128"/>
+            <point key="canvasLocation" x="611" y="127"/>
         </scene>
         <!--Round N-->
         <scene sceneID="19l-vF-UHG">
@@ -574,7 +628,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Q01-ED-a2z"/>
         <segue reference="lrO-v2-mz8"/>
-        <segue reference="HWT-hy-5na"/>
     </inferredMetricsTieBreakers>
 </document>
