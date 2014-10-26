@@ -17,6 +17,7 @@ class GameRoundViewController: UIViewController {
     
     var gameObject: Game?
     var tSystem: TournamentSystem?
+    var lSettings: LocalSettings?
     
     var timer = NSTimer()
     var counter = 0

@@ -49,7 +49,7 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showNewRoundInfo") {
-            var startGameVC = segue.destinationViewController as StartGameViewController;
+            var startGameVC = segue.destinationViewController as ListOfPlayersTableViewController;
             startGameVC.gameObject = gameObject
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings

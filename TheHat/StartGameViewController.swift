@@ -57,6 +57,7 @@ class StartGameViewController: UIViewController {
             var gameRoundVC = segue.destinationViewController as GameRoundViewController;
             gameRoundVC.gameObject = gameObject
             gameRoundVC.tSystem = tSystem
+            gameRoundVC.lSettings = lSettings
         }
     }
 
