@@ -25,16 +25,60 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         playersNumberField.delegate = self
         gameTimeField.delegate = self
         additionalTimeField.delegate = self
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadSettings()
+    }
+    
+    func loadSettings() {
+        var namePreference = NSUserDefaults.standardUserDefaults()
+        
+        if let tutorial = namePreference.stringForKey("showTutorial") {
+            var switchOn = true
+            if (tutorial != "true") {
+                let switchOn = false
+            }
+            showTutorialSwitch.setOn(switchOn, animated: true)
+        }
+        
+        if let pName = namePreference.stringForKey("playersName") {
+            playersNameFIeld.text = pName
+        }
+        if let pNumber = namePreference.stringForKey("playersNumber") {
+            playersNumberField.text = pNumber
+        }
+        if let diff = namePreference.stringForKey("difficultness") {
+            difficultnessSlider.value = (diff as NSString).floatValue
+        }
+        if let gTime = namePreference.stringForKey("gameTime") {
+            gameTimeField.text = gTime
+        }
+        if let aTime = namePreference.stringForKey("additionalTime") {
+            additionalTimeField.text = aTime
+        }
+    }
+    
+    
+    @IBAction func tutorialSwitchValueDidChanged(sender: UISwitch) {
+        sender.resignFirstResponder()
+        NSUserDefaults.standardUserDefaults().setValue(sender.on, forKey:Settings.keys[sender.tag])
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    @IBAction func diffSliderValueDidChanged(sender: UISlider) {
+        sender.resignFirstResponder()
+        NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func textFieldDidEndEditing(textField: UITextField) { //Handle the text changes here
-        println(textField.text); //the textView parameter is the textView where text was changed
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder();
+        NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey:Settings.keys[textField.tag])
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
 }

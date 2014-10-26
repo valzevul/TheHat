@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Settings {
+    static var keys = ["", "showTutorial", "playersName", "playersNumber", "difficultness", "gameTime", "additionalTime"]
+}
