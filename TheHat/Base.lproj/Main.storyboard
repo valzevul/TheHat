@@ -213,6 +213,49 @@
             </objects>
             <point key="canvasLocation" x="1160" y="128"/>
         </scene>
+        <!--Current Round Settings-->
+        <scene sceneID="kYI-fD-ZUP">
+            <objects>
+                <tableViewController id="jL8-dn-nzi" customClass="CurrentRoundSettingsTableViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="F73-BL-88f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Current Round Settings" id="n1v-os-FyO">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5KG-Ch-82c">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5KG-Ch-82c" id="mjU-Ly-mUc">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="PN4-Yj-egO">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PN4-Yj-egO" id="Hkq-gC-Xul">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="EAk-sN-x66">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EAk-sN-x66" id="pqu-NZ-nin">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="jL8-dn-nzi" id="Ptj-4X-CZ3"/>
+                            <outlet property="delegate" destination="jL8-dn-nzi" id="zAs-VF-gU2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Current Round Settings" id="yy2-zr-aQA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vQ-ff-LmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="-617"/>
+        </scene>
         <!--Round N-->
         <scene sceneID="19l-vF-UHG">
             <objects>
@@ -276,10 +319,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Round N" id="exg-iS-HKr">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="settings" id="ROh-S4-bWM">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="ROh-S4-bWM">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="settingsButtonAction:" destination="cUt-5j-hzo" id="CAI-Gq-LP8"/>
+                                <segue destination="jL8-dn-nzi" kind="push" identifier="RoundSettingsSegue" id="irG-ol-qft"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -651,6 +695,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="lrO-v2-mz8"/>
-        <segue reference="1Rg-Vm-W8i"/>
+        <segue reference="gUm-sP-u0h"/>
     </inferredMetricsTieBreakers>
 </document>
