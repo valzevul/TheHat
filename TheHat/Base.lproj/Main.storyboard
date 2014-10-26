@@ -265,7 +265,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First player" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbK-wk-hhx">
-                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <rect key="frame" x="198" y="5" width="114" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -290,7 +290,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Second player" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6go-eB-PDt">
-                                                    <rect key="frame" x="215" y="7" width="97" height="30"/>
+                                                    <rect key="frame" x="198" y="5" width="114" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
