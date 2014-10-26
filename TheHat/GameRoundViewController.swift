@@ -23,12 +23,17 @@ class GameRoundViewController: UIViewController {
     var counter = 0
     var timeLeft = 0
     
-    let max_time = 20
+    var gameTime: Int?
     
     var currentWord: Word?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var namePreference = NSUserDefaults.standardUserDefaults()
+        if let gTime = namePreference.stringForKey("gameTime") {
+            gameTime = gTime.toInt()
+        }
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         
@@ -86,10 +91,10 @@ class GameRoundViewController: UIViewController {
     }
     
     func update() -> Void {
-        timeLeft = max_time - ++counter
+        timeLeft = gameTime! - ++counter
         timerLabel.text = String(timeLeft)
         
-        if (counter == max_time) {
+        if (counter == gameTime!) {
             timer.invalidate()
             performSegueWithIdentifier("timerFinished", sender: self)
         }
