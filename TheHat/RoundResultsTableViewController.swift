@@ -1,37 +1,33 @@
 //
-//  RoundResultsViewController.swift
+//  RoundResultsTableViewController.swift
 //  TheHat
 //
-//  Created by Vadim Drobinin on 21/10/14.
+//  Created by Vadim Drobinin on 26/10/14.
 //  Copyright (c) 2014 Vadim Drobinin. All rights reserved.
 //
 
 import UIKit
 
-class RoundResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RoundResultsTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet var tableView: UIView!
+    @IBOutlet weak var finishGameButton: UIBarButtonItem!
+    
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentWord: Word?
     var cells = ["", "Guessed", "Failed", "Missed"]
     
-    
-    @IBOutlet weak var showResultsButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.cells[0] = "Last word: \(currentWord!.getText())"
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func showResultsAction(sender: UIBarButtonItem) {
     }
     
     
@@ -40,11 +36,11 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
     // http://www.appcoda.com/swipeable-uitableviewcell-tutorial/
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cells.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         switch (indexPath.row) {
         case 1:
@@ -62,14 +58,14 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         
         cell.textLabel?.text = self.cells[indexPath.row]
         
         return cell
     }
-
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {
@@ -77,15 +73,5 @@ class RoundResultsViewController: UIViewController, UITableViewDelegate, UITable
             gameResultsVC.gameObject = gameObject
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

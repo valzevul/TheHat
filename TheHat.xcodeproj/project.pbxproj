@@ -15,7 +15,6 @@
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604719F67EBC00989B3A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8234604619F67EBC00989B3A /* Media.xcassets */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
-		8234604B19F687B800989B3A /* RoundResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604A19F687B800989B3A /* RoundResultsViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
 		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
@@ -24,6 +23,7 @@
 		8284A96A19F9931C009A6544 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */; };
 		8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */; };
+		8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */; };
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
@@ -52,7 +52,6 @@
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8234604619F67EBC00989B3A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
-		8234604A19F687B800989B3A /* RoundResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsViewController.swift; sourceTree = "<group>"; };
 		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
 		82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8267530319F619A800071464 /* TheHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +65,7 @@
 		8267531E19F619A800071464 /* TheHatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHatTests.swift; sourceTree = "<group>"; };
 		8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameSettingsTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPlayersTableViewController.swift; sourceTree = "<group>"; };
+		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -93,12 +93,12 @@
 		8200356C19F656C100CB62FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */,
 				8267530819F619A800071464 /* AppDelegate.swift */,
 				8267530A19F619A800071464 /* StartScreenViewController.swift */,
 				8200357119F656F100CB62FB /* InfoViewController.swift */,
 				8200357319F65CE400CB62FB /* StartGameViewController.swift */,
 				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
-				8234604A19F687B800989B3A /* RoundResultsViewController.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 				82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */,
 				8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */,
@@ -284,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8234604B19F687B800989B3A /* RoundResultsViewController.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
@@ -297,6 +296,7 @@
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
 				829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */,
 				82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */,
+				8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */,
 				8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,

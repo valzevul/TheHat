@@ -98,21 +98,11 @@ class GameRoundViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {
-            var roundResultsVC = segue.destinationViewController as RoundResultsViewController;
+            var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
             roundResultsVC.gameObject = gameObject
             roundResultsVC.tSystem = tSystem
             roundResultsVC.currentWord = currentWord
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
