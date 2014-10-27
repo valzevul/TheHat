@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class CustomTableViewCell: MGSwipeTableCell {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var wordResultImage: UIImageView!

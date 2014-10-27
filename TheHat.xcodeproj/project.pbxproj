@@ -34,6 +34,8 @@
 		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */; };
 		82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
+		82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185219FEB8A1006BE02E /* MGSwipeButton.m */; };
+		82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 		82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,11 @@
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		82E0184E19FEB0E7006BE02E /* ActiveWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWord.swift; sourceTree = "<group>"; };
+		82E0185119FEB8A1006BE02E /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		82E0185219FEB8A1006BE02E /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
+		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +133,7 @@
 		826752FA19F619A700071464 = {
 			isa = PBXGroup;
 			children = (
+				82E0185719FEB954006BE02E /* Header.h */,
 				8267530519F619A800071464 /* TheHat */,
 				8267531B19F619A800071464 /* TheHatTests */,
 				8267530419F619A800071464 /* Products */,
@@ -156,6 +164,7 @@
 		8267530619F619A800071464 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				82E0185019FEB8A1006BE02E /* MGSwipeTableCell */,
 				8267530719F619A800071464 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -191,6 +200,17 @@
 				82E0184E19FEB0E7006BE02E /* ActiveWord.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		82E0185019FEB8A1006BE02E /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				82E0185119FEB8A1006BE02E /* MGSwipeButton.h */,
+				82E0185219FEB8A1006BE02E /* MGSwipeButton.m */,
+				82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */,
+				82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */,
+			);
+			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +315,7 @@
 			files = (
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
+				82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */,
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
 				8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */,
@@ -302,6 +323,7 @@
 				82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */,
 				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
+				82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */,
 				82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */,
 				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
 				8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */,
@@ -443,6 +465,7 @@
 				INFOPLIST_FILE = TheHat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = Header.h;
 			};
 			name = Debug;
 		};
@@ -453,6 +476,7 @@
 				INFOPLIST_FILE = TheHat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Header.h;
 			};
 			name = Release;
 		};

@@ -68,7 +68,12 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         
         cell.wordLabel?.text = word.getText()
         cell.wordResultImage.image = image
-        
+        cell.leftSwipeSettings.transition = MGSwipeTransition.Transition3D
+        cell.leftButtons = [
+                            MGSwipeButton(title: "OK", backgroundColor: UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 0.7)),
+                            MGSwipeButton(title: "F", backgroundColor: UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.7)),
+                            MGSwipeButton(title: "?", backgroundColor: UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.7))
+                            ]
         return cell
     }
     
