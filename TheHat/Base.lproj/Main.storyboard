@@ -410,8 +410,11 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wn2-oc-UBZ" id="EaR-Hx-HUD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-tT-QDF">
-                                            <rect key="frame" x="13" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-tT-QDF">
+                                            <rect key="frame" x="13" y="12" width="246" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="246" id="1zO-bs-99q"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -420,6 +423,10 @@
                                             <rect key="frame" x="267" y="11" width="45" height="22"/>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="leading" secondItem="EaR-Hx-HUD" secondAttribute="leadingMargin" constant="5" id="eAr-zc-JON"/>
+                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="4" id="fMK-jP-CNG"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="wordLabel" destination="EZH-tT-QDF" id="mPE-Jo-IMx"/>
@@ -447,7 +454,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2w-4C-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="923"/>
+            <point key="canvasLocation" x="1160" y="922"/>
         </scene>
         <!--A → B-->
         <scene sceneID="5WF-Cy-25V">

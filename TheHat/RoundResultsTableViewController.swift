@@ -59,9 +59,8 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = self.cells[indexPath.row]
+        let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
+        cell.wordLabel?.text = self.cells[indexPath.row]
         
         return cell
     }
