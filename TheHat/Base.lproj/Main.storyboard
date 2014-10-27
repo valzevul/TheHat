@@ -399,19 +399,26 @@
         <scene sceneID="AMH-T3-ndG">
             <objects>
                 <tableViewController id="47S-Yw-Ce2" customClass="RoundResultsTableViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="21s-bi-f3H">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" id="21s-bi-f3H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="CustomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="wn2-oc-UBZ" customClass="CustomTableViewCell" customModule="TheHat" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="CustomCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="61" id="wn2-oc-UBZ" customClass="CustomTableViewCell" customModule="TheHat" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wn2-oc-UBZ" id="EaR-Hx-HUD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="?" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
+                                            <rect key="frame" x="259" y="11" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="anl-TS-wQS"/>
+                                                <constraint firstAttribute="width" constant="40" id="uqK-xd-goj"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-tT-QDF">
-                                            <rect key="frame" x="13" y="12" width="246" height="21"/>
+                                            <rect key="frame" x="18" y="20" width="246" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="246" id="1zO-bs-99q"/>
                                             </constraints>
@@ -419,13 +426,12 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
-                                            <rect key="frame" x="267" y="11" width="45" height="22"/>
-                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="leading" secondItem="EaR-Hx-HUD" secondAttribute="leadingMargin" constant="5" id="eAr-zc-JON"/>
-                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="4" id="fMK-jP-CNG"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2ye-Qf-Jej" secondAttribute="trailing" constant="13" id="Ul3-t7-TOm"/>
+                                        <constraint firstItem="2ye-Qf-Jej" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="3" id="c9E-Ww-wKo"/>
+                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="leading" secondItem="EaR-Hx-HUD" secondAttribute="leadingMargin" constant="10" id="eAr-zc-JON"/>
+                                        <constraint firstItem="EZH-tT-QDF" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="12" id="fMK-jP-CNG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -454,7 +460,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2w-4C-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="922"/>
+            <point key="canvasLocation" x="1160" y="921"/>
         </scene>
         <!--A → B-->
         <scene sceneID="5WF-Cy-25V">
@@ -762,6 +768,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="?" width="66" height="66"/>
         <image name="exit" width="32" height="32"/>
         <image name="info" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>

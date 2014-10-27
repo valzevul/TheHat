@@ -18,13 +18,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     var cells = [ActiveWord(owner: Player(name: "A"), text: "lol", status: "OK"),
                 ActiveWord(owner: Player(name: "B"), text: "lol2", status: "OK"),
                 ActiveWord(owner: Player(name: "C"), text: "lol3", status: "OK"),
-                ActiveWord(owner: Player(name: "D"), text: "lol4", status: "F")] // For dev purposes only!
+                ActiveWord(owner: Player(name: "D"), text: "lol4", status: "Failed")] // For dev purposes only!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.cells.append(ActiveWord(word: currentWord!, status: "OK"))
+        self.cells.append(ActiveWord(word: currentWord!, status: "?"))
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
@@ -63,8 +63,11 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
-        cell.wordLabel?.text = self.cells[indexPath.row].getText()
-        cell.wordResultImage = UIImageView(image: UIImage(named: self.cells[indexPath.row].getStatus()))
+        let word = self.cells[indexPath.row]
+        let image = UIImage(named: word.getStatus());
+        
+        cell.wordLabel?.text = word.getText()
+        cell.wordResultImage.image = image
         
         return cell
     }
