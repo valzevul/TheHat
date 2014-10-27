@@ -15,13 +15,16 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentWord: Word?
-    var cells = ["", "Guessed", "Failed", "Missed"]
+    var cells = [ActiveWord(owner: Player(name: "A"), text: "lol", status: "OK"),
+                ActiveWord(owner: Player(name: "B"), text: "lol2", status: "OK"),
+                ActiveWord(owner: Player(name: "C"), text: "lol3", status: "OK"),
+                ActiveWord(owner: Player(name: "D"), text: "lol4", status: "F")] // For dev purposes only!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.cells[0] = "Last word: \(currentWord!.getText())"
+        self.cells.append(ActiveWord(word: currentWord!, status: "OK"))
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
@@ -60,7 +63,8 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
-        cell.wordLabel?.text = self.cells[indexPath.row]
+        cell.wordLabel?.text = self.cells[indexPath.row].getText()
+        cell.wordResultImage = UIImageView(image: UIImage(named: self.cells[indexPath.row].getStatus()))
         
         return cell
     }

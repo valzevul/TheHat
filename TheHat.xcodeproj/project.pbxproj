@@ -33,6 +33,7 @@
 		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */; };
+		82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 		82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		82E0184E19FEB0E7006BE02E /* ActiveWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWord.swift; sourceTree = "<group>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
 				822AD27B19FBE83300E201DA /* Settings.swift */,
 				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
+				82E0184E19FEB0E7006BE02E /* ActiveWord.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */,
 				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
+				82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */,
 				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
 				8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,
