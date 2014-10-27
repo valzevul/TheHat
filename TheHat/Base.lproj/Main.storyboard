@@ -454,18 +454,20 @@
                             <outlet property="delegate" destination="47S-Yw-Ce2" id="6eb-ky-HbO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4c3-Ge-VRY">
-                        <barButtonItem key="rightBarButtonItem" image="exit" id="EjR-5m-KmD">
+                    <navigationItem key="navigationItem" id="Dp7-W0-scE">
+                        <barButtonItem key="leftBarButtonItem" image="exit" id="q4g-c1-WD7">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <segue destination="Els-PM-bmz" kind="push" identifier="finishGameSegue" id="JcV-uv-jg0"/>
+                                <segue destination="Els-PM-bmz" kind="push" identifier="showGameResults" id="V9E-Il-wgN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="RDD-jK-HwP">
+                            <connections>
+                                <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="O9i-6f-Tt7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="finishGameButton" destination="EjR-5m-KmD" id="2FJ-Nj-E8V"/>
-                        <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="1Rg-Vm-W8i"/>
-                    </connections>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2w-4C-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -788,7 +790,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1Rg-Vm-W8i"/>
+        <segue reference="O9i-6f-Tt7"/>
         <segue reference="lrO-v2-mz8"/>
     </inferredMetricsTieBreakers>
 </document>
