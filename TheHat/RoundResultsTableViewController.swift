@@ -40,11 +40,17 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch (index) {
         case 0:
-            println("OK")
+            self.cells[cell.tag].changeStatus("OK")
+            let image = UIImage(named: "OK")
+            (cell as CustomTableViewCell).wordResultImage.image = image
         case 1:
-            println("F")
+            self.cells[cell.tag].changeStatus("Failed")
+            let image = UIImage(named: "Failed")
+            (cell as CustomTableViewCell).wordResultImage.image = image
         case 2:
-            println("?")
+            self.cells[cell.tag].changeStatus("?")
+            let image = UIImage(named: "?")
+            (cell as CustomTableViewCell).wordResultImage.image = image
         default:
             println("x")
         }
@@ -54,7 +60,8 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
         let word = self.cells[indexPath.row]
-        let image = UIImage(named: word.getStatus());
+        cell.tag = indexPath.row
+        let image = UIImage(named: word.getStatus())
         
         cell.delegate = self
         
