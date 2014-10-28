@@ -147,7 +147,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://thehat.ru/words.txt" borderStyle="roundedRect" placeholder="http://thehat.ru/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://drobinin.com/projects/thehat/words.txt" borderStyle="roundedRect" placeholder="http://drobinin.com/projects/thehat/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
                                                     <rect key="frame" x="126" y="7" width="183" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
