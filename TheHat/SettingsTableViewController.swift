@@ -17,6 +17,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var difficultnessSlider: UISlider!
     @IBOutlet weak var gameTimeField: UITextField!
     @IBOutlet weak var additionalTimeField: UITextField!
+    @IBOutlet weak var wordsPerPlayerField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         playersNumberField.delegate = self
         gameTimeField.delegate = self
         additionalTimeField.delegate = self
+        wordsPerPlayerField.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,6 +60,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         }
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTimeField.text = aTime
+        }
+        if let pWords = namePreference.stringForKey("playerWords") {
+            wordsPerPlayerField.text = pWords
         }
     }
     

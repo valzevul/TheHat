@@ -20,9 +20,13 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     override func viewDidLoad() {
         super.viewDidLoad()
         wordsSourceTextField.delegate = self
+        var namePreference = NSUserDefaults.standardUserDefaults()
+        if let pWords = namePreference.stringForKey("playerWords") {
+            if let pNumber = namePreference.stringForKey("playersNumber") {
+                gameObject = Game.createRandomGame(pNumber.toInt()!, numberOfWords: pWords.toInt()!)
+            }
+        }
         
-        // TODO: Game() object
-        gameObject = Game.createRandomGame(10, numberOfWords: 10)
         tSystem = TournamentSystem(game: gameObject!)
         lSettings = LocalSettings(gameType: gameTypeSegmentedControl.selectedSegmentIndex, wordsSource: wordsSourceTextField.text!)
         
