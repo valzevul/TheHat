@@ -26,6 +26,7 @@
 		8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */; };
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
+		82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerTableCell.swift; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */,
 				8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */,
 				82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */,
+				82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */,
 				82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */,
 			);
 			name = ViewControllers;
@@ -333,6 +336,7 @@
 				8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */,
 				8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
+				82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

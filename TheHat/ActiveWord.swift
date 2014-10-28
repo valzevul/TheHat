@@ -9,9 +9,11 @@
 import Foundation
 
 
-class ActiveWord: Word {
+public class ActiveWord: Word {
     
     private var status: String = ""
+    public var guessedTime: Int? // For statistics
+    public var attemptsNumber: Int? // For statistics
     
     init(owner: Player, text: String, status: String) {
         super.init(owner: owner, text: text)
@@ -31,4 +33,5 @@ class ActiveWord: Word {
     func getStatus() -> String {
         return status
     }
+
 }
