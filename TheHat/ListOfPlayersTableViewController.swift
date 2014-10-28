@@ -39,7 +39,32 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        println("test")
+        
+        let alertController = UIAlertController(title: "Change player's name", message: "Input new player's name:", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "New name"
+        }
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            let c = (cell as CustomPlayerTableCell)
+            c.playerLabel?.text = (alertController.textFields![0] as UITextField).text
+            self.gameObject!.players[cell.tag].name = c.playerLabel?.text
+        }
+        alertController.addAction(OKAction)
+        
+        
+        self.presentViewController(alertController, animated: true) {
+            // ...
+        }
+        
+        
         return true
     }
     
