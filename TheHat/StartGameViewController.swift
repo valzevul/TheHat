@@ -35,6 +35,7 @@ class StartGameViewController: UIViewController {
             
             if let prevResult = tSystem!.getPreviousResult() {
                 previousPairResultLabel.text = "Previous result: \(prevResult)"
+                tSystem!.clean()
             }
             
             wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"

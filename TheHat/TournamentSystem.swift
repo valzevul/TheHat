@@ -54,6 +54,10 @@ class TournamentSystem {
         shuffleWords()
     }
     
+    func clean() {
+        currentResult = 0
+    }
+    
     func shuffleWords() {
         
     }
