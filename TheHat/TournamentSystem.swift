@@ -39,6 +39,10 @@ class TournamentSystem {
         
         player1_idx += 2
         player2_idx += 2
+        if (player2_idx > gameObject.players.count) {
+            player1_idx = 0
+            player2_idx = 1
+        }
         
         currentPair = (player_1, player_2)
         return currentPair
