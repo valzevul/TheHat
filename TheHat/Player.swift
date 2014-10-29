@@ -13,6 +13,9 @@ public class Player {
     var words = [Word]()
     var name: String?
     
+    var scoreExplained = 0
+    var scoreGuessed = 0
+    
     init(name: String) {
         self.name = name
     }

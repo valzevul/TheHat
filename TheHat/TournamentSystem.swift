@@ -16,7 +16,9 @@ class TournamentSystem {
     var playedRoundsNumber: Int = 0
     var currentResult: Int = 0
     
+    var currentPair: (Player, Player)?
     let gameObject: Game
+    
     
     init(game: Game) {
         gameObject = game
@@ -30,7 +32,7 @@ class TournamentSystem {
         return gameObject.words.removeLast()
     }
     
-    func getNextPair() -> (Player, Player) {
+    func getNextPair() -> (Player, Player)? {
         
         var player_1 = gameObject.getPlayerByIndex(player1_idx)
         var player_2 = gameObject.getPlayerByIndex(player2_idx)
@@ -38,7 +40,8 @@ class TournamentSystem {
         player1_idx += 2
         player2_idx += 2
         
-        return (player_1, player_2)
+        currentPair = (player_1, player_2)
+        return currentPair
     }
     
     func startNextRound() {
@@ -53,6 +56,8 @@ class TournamentSystem {
     
     func wordGuessed(word: ActiveWord) {
         currentResult += 1
+        (currentPair!.0).scoreExplained += 1
+        (currentPair!.1).scoreGuessed += 1
         word.changeStatus("OK")
     }
 
