@@ -26,7 +26,7 @@ class TournamentSystem {
         return gameObject.wordsLeft
     }
     
-    func getNewWord() -> Word {
+    func getNewWord() -> ActiveWord {
         return gameObject.words.removeLast()
     }
     
@@ -51,15 +51,17 @@ class TournamentSystem {
         
     }
     
-    func wordGuessed() {
+    func wordGuessed(word: ActiveWord) {
         currentResult += 1
+        word.changeStatus("OK")
     }
 
-    func wordFailed() {
-        // ???
+    func wordFailed(word: ActiveWord) {
+        word.changeStatus("F")
+        finishCurrentRound()
     }
     
-    func wordMissed(word: Word) {
+    func wordMissed(word: ActiveWord) {
         gameObject.words.append(word)
     }
     

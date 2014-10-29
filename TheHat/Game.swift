@@ -11,7 +11,7 @@ import Foundation
 public class Game {
     
     var players = [Player]()
-    public var words = [Word]()
+    public var words = [ActiveWord]() // Words with statuses and statistics
     
     var privateNumberOfPlayers: Int
     
@@ -30,7 +30,7 @@ public class Game {
         }
     }
     
-    init(numberOfPlayers: Int = 10, numberOfWords: Int = 10) {
+    init(numberOfPlayers: Int, numberOfWords: Int) {
         self.numberOfWords = numberOfWords
         self.numberOfWordsLeft = numberOfWords * numberOfPlayers
         self.privateNumberOfPlayers = numberOfPlayers
@@ -39,7 +39,7 @@ public class Game {
     public func addPlayer(player: Player) {
         players.append(player)
         for word in player.words {
-            words.append(word)
+            words.append(ActiveWord(word: word, status: "?"))
         }
     }
     

@@ -25,7 +25,7 @@ class GameRoundViewController: UIViewController {
     
     var gameTime: Int?
     
-    var currentWord: Word?
+    var currentWord: ActiveWord?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,14 +77,14 @@ class GameRoundViewController: UIViewController {
 
     func wordGuessed() {
         println("Guessed")
-        tSystem!.wordGuessed()
+        tSystem!.wordGuessed(currentWord!)
         currentWord = tSystem!.getNewWord()
         wordLabel.text = currentWord!.getText()
     }
     
     func wordFailed() {
         println("Failed")
-        tSystem!.wordFailed()
+        tSystem!.wordFailed(currentWord!)
     }
     
     func startTimer() {
