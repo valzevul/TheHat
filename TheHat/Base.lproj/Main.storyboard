@@ -858,7 +858,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="O9i-6f-Tt7"/>
         <segue reference="Ui1-Bt-rGL"/>
-        <segue reference="gUm-sP-u0h"/>
     </inferredMetricsTieBreakers>
 </document>

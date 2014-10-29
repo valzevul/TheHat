@@ -36,7 +36,7 @@ class TournamentSystem {
         var player_2 = gameObject.getPlayerByIndex(player2_idx)
         
         player1_idx += 2
-        player2_idx += 3
+        player2_idx += 2
         
         return (player_1, player_2)
     }

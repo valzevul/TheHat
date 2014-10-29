@@ -107,6 +107,7 @@ class GameRoundViewController: UIViewController {
             var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
             roundResultsVC.gameObject = gameObject
             roundResultsVC.tSystem = tSystem
+            roundResultsVC.lSettings = lSettings
             roundResultsVC.currentWord = currentWord
         }
     }

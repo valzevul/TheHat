@@ -13,6 +13,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     @IBOutlet weak var finishGameButton: UIBarButtonItem!
     
     var gameObject: Game?
+    var lSettings: LocalSettings?
     var tSystem: TournamentSystem?
     var currentWord: Word?
     var cells = [ActiveWord(owner: Player(name: "A"), text: "lol", status: "OK"),
@@ -75,11 +76,15 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         return cell
     }
     
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {
             var gameResultsVC = segue.destinationViewController as GameResultsViewController;
             gameResultsVC.gameObject = gameObject
+        } else if (segue.identifier == "nextRoundSegue") {
+            var nextRound = segue.destinationViewController as StartGameViewController;
+            nextRound.gameObject = gameObject
+            nextRound.tSystem = tSystem
+            nextRound.lSettings = lSettings
         }
     }
 
