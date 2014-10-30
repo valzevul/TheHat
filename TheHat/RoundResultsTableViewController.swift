@@ -47,12 +47,15 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         case 0:
             self.cells[cell.tag].changeStatus("OK")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = OKColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "OK"
         case 1:
             self.cells[cell.tag].changeStatus("Failed")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = FColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "F"
         case 2:
             self.cells[cell.tag].changeStatus("?")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = MColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "?"
         default:
             println("x")
         }
@@ -67,10 +70,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         switch (word.getStatus()) {
             case "OK":
                 cell.wordResultImage.backgroundColor = OKColor
+                cell.wordResultLabel.text = "OK"
             case "F":
                 cell.wordResultImage.backgroundColor = FColor
+                cell.wordResultLabel.text = "F"
             default:
                 cell.wordResultImage.backgroundColor = MColor
+                cell.wordResultLabel.text = "?"
         }
         
         cell.delegate = self

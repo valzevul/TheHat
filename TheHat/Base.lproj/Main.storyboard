@@ -451,21 +451,21 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wn2-oc-UBZ" id="EaR-Hx-HUD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
-                                            <rect key="frame" x="259" y="11" width="40" height="40"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
+                                            <rect key="frame" x="259" y="12" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="anl-TS-wQS"/>
                                                 <constraint firstAttribute="width" constant="40" id="uqK-xd-goj"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to edit →" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-rG-vyi">
-                                            <rect key="frame" x="18" y="40" width="72" height="12"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe to edit →" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLP-rG-vyi">
+                                            <rect key="frame" x="18" y="41" width="72" height="12"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-tT-QDF">
-                                            <rect key="frame" x="18" y="11" width="246" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZH-tT-QDF">
+                                            <rect key="frame" x="18" y="12" width="246" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="246" id="1zO-bs-99q"/>
                                                 <constraint firstAttribute="height" constant="21" id="mkU-HW-CWN"/>
@@ -474,10 +474,22 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2s-qi-Pi9">
+                                            <rect key="frame" x="264" y="17" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Uuw-9R-R3o"/>
+                                                <constraint firstAttribute="height" constant="30" id="jMM-V0-WWw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="b2s-qi-Pi9" firstAttribute="centerY" secondItem="2ye-Qf-Jej" secondAttribute="centerY" id="Elm-Di-OtP"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="2ye-Qf-Jej" secondAttribute="trailing" constant="13" id="Ul3-t7-TOm"/>
                                         <constraint firstItem="2ye-Qf-Jej" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="3" id="c9E-Ww-wKo"/>
+                                        <constraint firstItem="b2s-qi-Pi9" firstAttribute="centerX" secondItem="2ye-Qf-Jej" secondAttribute="centerX" id="cSs-ah-He9"/>
                                         <constraint firstItem="EZH-tT-QDF" firstAttribute="leading" secondItem="EaR-Hx-HUD" secondAttribute="leadingMargin" constant="10" id="eAr-zc-JON"/>
                                         <constraint firstItem="EZH-tT-QDF" firstAttribute="top" secondItem="EaR-Hx-HUD" secondAttribute="topMargin" constant="3" id="fMK-jP-CNG"/>
                                         <constraint firstItem="iLP-rG-vyi" firstAttribute="top" secondItem="EZH-tT-QDF" secondAttribute="bottom" constant="8" id="gi4-8x-aoc"/>
@@ -487,6 +499,7 @@
                                 <connections>
                                     <outlet property="wordLabel" destination="EZH-tT-QDF" id="mPE-Jo-IMx"/>
                                     <outlet property="wordResultImage" destination="2ye-Qf-Jej" id="3Ey-1o-CtX"/>
+                                    <outlet property="wordResultLabel" destination="b2s-qi-Pi9" id="6o4-gn-JlH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -496,7 +509,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Dp7-W0-scE">
-                        <barButtonItem key="leftBarButtonItem" image="exit" id="q4g-c1-WD7">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="q4g-c1-WD7">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Els-PM-bmz" kind="push" identifier="showGameResults" id="V9E-Il-wgN"/>
@@ -512,7 +525,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2w-4C-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="921"/>
+            <point key="canvasLocation" x="1160" y="920"/>
         </scene>
         <!--A → B-->
         <scene sceneID="5WF-Cy-25V">
@@ -847,7 +860,6 @@
     </scenes>
     <resources>
         <image name="blank_user" width="128" height="128"/>
-        <image name="exit" width="32" height="32"/>
         <image name="info" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
     </resources>

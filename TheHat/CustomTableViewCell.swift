@@ -12,6 +12,8 @@ class CustomTableViewCell: MGSwipeTableCell {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var wordResultImage: UIImageView!
+    @IBOutlet weak var wordResultLabel: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
