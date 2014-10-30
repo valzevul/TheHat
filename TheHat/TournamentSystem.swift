@@ -13,6 +13,8 @@ class TournamentSystem {
     var player1_idx: Int = 0
     var player2_idx: Int = 1
     
+    var currentActiveWords = [ActiveWord]() // Current round played (!) words
+    
     var playedRoundsNumber: Int = 0
     var currentResult: Int = 0
     
@@ -67,15 +69,18 @@ class TournamentSystem {
         (currentPair!.0).scoreExplained += 1
         (currentPair!.1).scoreGuessed += 1
         word.changeStatus("OK")
+        currentActiveWords.append(word)
     }
 
     func wordFailed(word: ActiveWord) {
         word.changeStatus("F")
+        currentActiveWords.append(word)
         finishCurrentRound()
     }
     
     func wordMissed(word: ActiveWord) {
         gameObject.words.append(word)
+        currentActiveWords.append(word)
     }
     
     func finishCurrentRound() {

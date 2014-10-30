@@ -28,6 +28,8 @@ class StartGameViewController: UIViewController {
         
         if (tSystem != nil) {
             
+            tSystem!.currentActiveWords = [] // Wipe previous played words
+            
             currentPair = tSystem!.getNextPair()
             
             playerALabel.text = currentPair!.0.name

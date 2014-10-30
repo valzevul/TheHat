@@ -24,7 +24,6 @@ class GameRoundViewController: UIViewController {
     var timeLeft = 0
     
     var gameTime: Int?
-    
     var currentWord: ActiveWord?
     
     override func viewDidLoad() {
@@ -83,8 +82,10 @@ class GameRoundViewController: UIViewController {
     }
     
     func wordFailed() {
-        println("Failed")
+        timer.invalidate()
         tSystem!.wordFailed(currentWord!)
+        println("Failed")
+        performSegueWithIdentifier("timerFinished", sender: self) // TODO: Change segue to "wordFailed"
     }
     
     func startTimer() {
@@ -95,7 +96,8 @@ class GameRoundViewController: UIViewController {
         timeLeft = gameTime! - ++counter
         timerLabel.text = String(timeLeft)
         
-        if (counter == gameTime!) {
+        if (timeLeft == 0) {
+            tSystem!.wordMissed(currentWord!)
             timer.invalidate()
             performSegueWithIdentifier("timerFinished", sender: self)
         }

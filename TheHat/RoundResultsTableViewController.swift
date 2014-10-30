@@ -24,8 +24,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.cells.append(ActiveWord(word: currentWord!, status: "?"))
+        self.cells = tSystem!.currentActiveWords
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
