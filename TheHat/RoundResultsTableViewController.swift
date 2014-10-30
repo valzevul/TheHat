@@ -24,7 +24,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cells = tSystem!.currentActiveWords
+        self.cells = tSystem!.currentActiveWords // Know issue: failed words show twice
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
