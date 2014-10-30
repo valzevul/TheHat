@@ -451,7 +451,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wn2-oc-UBZ" id="EaR-Hx-HUD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="?" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ye-Qf-Jej">
                                             <rect key="frame" x="259" y="11" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="anl-TS-wQS"/>
@@ -846,7 +846,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="?" width="66" height="66"/>
         <image name="blank_user" width="128" height="128"/>
         <image name="exit" width="32" height="32"/>
         <image name="info" width="32" height="32"/>

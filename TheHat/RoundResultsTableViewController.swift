@@ -12,6 +12,10 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
 
     @IBOutlet weak var finishGameButton: UIBarButtonItem!
     
+    let OKColor = UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)
+    let FColor = UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)
+    let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
+    
     var gameObject: Game?
     var lSettings: LocalSettings?
     var tSystem: TournamentSystem?
@@ -42,16 +46,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         switch (index) {
         case 0:
             self.cells[cell.tag].changeStatus("OK")
-            let image = UIImage(named: "OK")
-            (cell as CustomTableViewCell).wordResultImage.image = image
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = OKColor
         case 1:
             self.cells[cell.tag].changeStatus("Failed")
-            let image = UIImage(named: "Failed")
-            (cell as CustomTableViewCell).wordResultImage.image = image
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = FColor
         case 2:
             self.cells[cell.tag].changeStatus("?")
-            let image = UIImage(named: "?")
-            (cell as CustomTableViewCell).wordResultImage.image = image
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = MColor
         default:
             println("x")
         }
@@ -62,17 +63,24 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
         let word = self.cells[indexPath.row]
         cell.tag = indexPath.row
-        let image = UIImage(named: word.getStatus())
+        
+        switch (word.getStatus()) {
+            case "OK":
+                cell.wordResultImage.backgroundColor = OKColor
+            case "F":
+                cell.wordResultImage.backgroundColor = FColor
+            default:
+                cell.wordResultImage.backgroundColor = MColor
+        }
         
         cell.delegate = self
         
         cell.wordLabel?.text = word.getText()
-        cell.wordResultImage.image = image
         cell.leftSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.leftButtons = [
-            MGSwipeButton(title: "OK", backgroundColor: UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)),
-            MGSwipeButton(title: "F", backgroundColor: UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)),
-            MGSwipeButton(title: "?", backgroundColor: UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7))]
+            MGSwipeButton(title: "OK", backgroundColor: OKColor),
+            MGSwipeButton(title: "F", backgroundColor: FColor),
+            MGSwipeButton(title: "?", backgroundColor: MColor)]
         return cell
     }
     
