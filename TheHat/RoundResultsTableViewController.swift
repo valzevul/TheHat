@@ -20,10 +20,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     var lSettings: LocalSettings?
     var tSystem: TournamentSystem?
     var currentWord: Word?
-    var cells = [ActiveWord(owner: Player(name: "A"), text: "lol", status: "OK"),
-                ActiveWord(owner: Player(name: "B"), text: "lol2", status: "OK"),
-                ActiveWord(owner: Player(name: "C"), text: "lol3", status: "OK"),
-                ActiveWord(owner: Player(name: "D"), text: "lol4", status: "Failed")] // For dev purposes only!
+    var cells = [ActiveWord]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
