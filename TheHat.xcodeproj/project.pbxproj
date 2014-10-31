@@ -40,7 +40,6 @@
 		82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 		82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */; };
-		82F1C0101A03B59B00CABE56 /* twitter logo mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 82F1C00F1A03B59B00CABE56 /* twitter logo mask.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,6 @@
 		82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
-		82F1C00F1A03B59B00CABE56 /* twitter logo mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter logo mask.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +109,6 @@
 		8200356C19F656C100CB62FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				82F1C00F1A03B59B00CABE56 /* twitter logo mask.png */,
 				8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */,
 				8267530819F619A800071464 /* AppDelegate.swift */,
 				8267530A19F619A800071464 /* StartScreenViewController.swift */,
@@ -308,7 +305,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82F1C0101A03B59B00CABE56 /* twitter logo mask.png in Resources */,
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
