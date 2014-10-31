@@ -28,6 +28,8 @@
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */; };
 		82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B3D1F21A02D9F600239116 /* Media.xcassets */; };
+		82C5DBF01A03BCA100896DEB /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C5DBEE1A03BCA100896DEB /* TutorialViewController.swift */; };
+		82C5DBF11A03BCA100896DEB /* TutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82C5DBEF1A03BCA100896DEB /* TutorialViewController.xib */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
@@ -76,6 +78,8 @@
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerTableCell.swift; sourceTree = "<group>"; };
 		82B3D1F21A02D9F600239116 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		82C5DBEE1A03BCA100896DEB /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		82C5DBEF1A03BCA100896DEB /* TutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TutorialViewController.xib; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */,
 				82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */,
 				82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */,
+				82C5DBF21A03BCA600896DEB /* Tutorial Screen */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -205,6 +210,15 @@
 				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		82C5DBF21A03BCA600896DEB /* Tutorial Screen */ = {
+			isa = PBXGroup;
+			children = (
+				82C5DBEE1A03BCA100896DEB /* TutorialViewController.swift */,
+				82C5DBEF1A03BCA100896DEB /* TutorialViewController.xib */,
+			);
+			name = "Tutorial Screen";
 			sourceTree = "<group>";
 		};
 		82E0185019FEB8A1006BE02E /* MGSwipeTableCell */ = {
@@ -307,6 +321,7 @@
 			files = (
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
+				82C5DBF11A03BCA100896DEB /* TutorialViewController.xib in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +351,7 @@
 				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
 				82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */,
+				82C5DBF01A03BCA100896DEB /* TutorialViewController.swift in Sources */,
 				82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */,
 				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
 				8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */,
