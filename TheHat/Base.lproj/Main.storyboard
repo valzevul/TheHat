@@ -603,7 +603,7 @@
                     <navigationItem key="navigationItem" title="Game Results" id="kfx-Xs-2zT">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="YD2-66-CBM">
                             <connections>
-                                <segue destination="vXZ-lx-hvc" kind="push" identifier="mainMenu" id="Ui1-Bt-rGL"/>
+                                <action selector="endGameButtonAction:" destination="Els-PM-bmz" id="u9s-D7-qGd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -878,6 +878,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="O9i-6f-Tt7"/>
-        <segue reference="Ui1-Bt-rGL"/>
     </inferredMetricsTieBreakers>
 </document>
