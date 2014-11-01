@@ -45,7 +45,7 @@ public class Game {
     
     class func getRandomName(idx: Int) -> String {
         var name = ""
-        name = String(idx) // For dev purposes only!
+        name = "Player " + String(idx) // For dev purposes only!
         return name
     }
     

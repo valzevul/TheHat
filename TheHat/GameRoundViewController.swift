@@ -49,29 +49,13 @@ class GameRoundViewController: UIViewController {
         
         startTimer()
     }
-
-    @IBAction func didPan(sender: UIPanGestureRecognizer) {
-        let currentPoint = sender.translationInView(self.view).x
-        amount -= 1
-        
-        
-        // TODO: create normal change of state
-        if (currentPoint < 0) {
-            currentState -= 1
-        } else {
-            currentState += 1
-        }
-        
-        if (amount == 0) {
-            amount = 10
-            if (currentState < 0) {
-                wordFailed()
-            } else {
-                wordGuessed()
-            }
-            
-            currentState = 5
-        }
+    
+    @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
+        wordFailed()
+    }
+    
+    @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
+        wordGuessed()
     }
 
     func wordGuessed() {

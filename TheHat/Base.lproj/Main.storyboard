@@ -561,7 +561,8 @@
                             <constraint firstItem="S4r-O9-55B" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="8" id="wmt-f2-d6T"/>
                         </constraints>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="TqZ-o4-YZp" appends="YES" id="G1g-1c-XX1"/>
+                            <outletCollection property="gestureRecognizers" destination="f3k-RD-6Yh" appends="YES" id="Zaf-45-ACV"/>
+                            <outletCollection property="gestureRecognizers" destination="MZb-aD-0R1" appends="YES" id="IqT-XJ-aS5"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="A → B" id="8pB-gN-tKA"/>
@@ -572,12 +573,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu2-3e-DBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="TqZ-o4-YZp">
+                <swipeGestureRecognizer direction="left" id="f3k-RD-6Yh">
                     <connections>
-                        <action selector="didPan:" destination="EEx-wo-lxw" id="bxC-tH-jaQ"/>
-                        <outlet property="delegate" destination="EEx-wo-lxw" id="CN8-gC-DIR"/>
+                        <action selector="didLeftSwipe:" destination="EEx-wo-lxw" id="5SK-tY-Vgk"/>
                     </connections>
-                </panGestureRecognizer>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="MZb-aD-0R1">
+                    <connections>
+                        <action selector="didRightSwipe:" destination="EEx-wo-lxw" id="Xwf-f5-60X"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1709" y="928"/>
         </scene>
