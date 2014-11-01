@@ -60,15 +60,22 @@ class GameRoundViewController: UIViewController {
 
     func wordGuessed() {
         println("Guessed")
+        currentWord!.attemptsNumber += 1
+        currentWord?.guessedTime += counter
+        
+        
         tSystem!.wordGuessed(currentWord!)
         currentWord = tSystem!.getNewWord()
         wordLabel.text = currentWord!.getText()
     }
     
     func wordFailed() {
+        println("Failed")
+        currentWord!.attemptsNumber += 1
+        currentWord?.guessedTime += counter
+        
         timer.invalidate()
         tSystem!.wordFailed(currentWord!)
-        println("Failed")
         performSegueWithIdentifier("timerFinished", sender: self) // TODO: Change segue to "wordFailed"
     }
     
@@ -81,6 +88,9 @@ class GameRoundViewController: UIViewController {
         timerLabel.text = String(timeLeft)
         
         if (timeLeft == 0) {
+            currentWord!.attemptsNumber += 1
+            currentWord?.guessedTime += counter
+            
             tSystem!.wordMissed(currentWord!)
             timer.invalidate()
             performSegueWithIdentifier("timerFinished", sender: self)

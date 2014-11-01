@@ -12,8 +12,8 @@ import Foundation
 public class ActiveWord: Word {
     
     private var status: String = ""
-    public var guessedTime: Int? // For statistics
-    public var attemptsNumber: Int? // For statistics
+    public var guessedTime = 0 // For statistics
+    public var attemptsNumber = 0 // For statistics
     
     init(owner: Player, text: String, status: String) {
         super.init(owner: owner, text: text)
