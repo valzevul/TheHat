@@ -11,7 +11,7 @@ import Foundation
 
 public class ActiveWord: Word {
     
-    private var status: String = ""
+    private var status: String = "" // ?, OK or Failed
     private var guessedTime = 0 // For statistics, sec
     private var attemptsNumber = 0 // For statistics, attempts
     
@@ -26,26 +26,23 @@ public class ActiveWord: Word {
         
     }
     
-    func changeStatus(status: String) {
-        self.status = status
-    }
-    
     func getStatus() -> String {
         return status
+    }
+    func changeStatus(status: String) {
+        self.status = status
     }
     
     func getTime() -> Int {
         return guessedTime
     }
-    
     func incTime(time: Int) {
-        guessedTime = time
+        guessedTime += time
     }
     
     func getAttemptsNumber() -> Int {
         return attemptsNumber
     }
-    
     func incAttemptsNumber() {
         attemptsNumber += 1
     }

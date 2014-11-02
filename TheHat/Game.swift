@@ -10,17 +10,13 @@ import Foundation
 
 public class Game {
     
-    var players = [Player]()
+    var players = [Player]() // List of players
     public var words = [ActiveWord]() // Words with statuses and statistics
-    
-    var privateNumberOfPlayers: Int
-    
-    let numberOfWords: Int
-    let numberOfWordsLeft: Int
+    let numberOfWords: Int?
     
     public var wordsLeft: Int {
         get {
-            return numberOfWordsLeft
+            return words.count
         }
     }
     
@@ -30,10 +26,18 @@ public class Game {
         }
     }
     
-    init(numberOfPlayers: Int, numberOfWords: Int) {
-        self.numberOfWords = numberOfWords
-        self.numberOfWordsLeft = numberOfWords * numberOfPlayers
-        self.privateNumberOfPlayers = numberOfPlayers
+    init(numberOfPlayers: Int, words: Int) {
+        self.numberOfWords = words
+        self.addPlayer(getNewPlayer(1, numberOfWords: words))
+    }
+    
+    func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
+        let player = Player(name: Game.getRandomName(idx))
+        for i in 0..<numberOfWords {
+            let word = Game.getRandomWord(player, seed: i)
+            player.addWord(word)
+        }
+        return player
     }
     
     public func addPlayer(player: Player) {
@@ -55,17 +59,10 @@ public class Game {
     }
     
     public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
-        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, numberOfWords: numberOfWords)
+        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords)
         
-        for idx in 1...numberOfPlayers {
-            var randomName = getRandomName(idx)
-            var newPlayer = Player(name: randomName)
-            
-            for cntr in 1...numberOfWords {
-                var randomWord = getRandomWord(newPlayer, seed: cntr)
-                newPlayer.addWord(randomWord)
-            }
-            
+        for idx in 2...numberOfPlayers {
+            let newPlayer = newRandomGame.getNewPlayer(idx, numberOfWords: numberOfWords)
             newRandomGame.addPlayer(newPlayer)
         }
         
