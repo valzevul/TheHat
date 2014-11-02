@@ -12,8 +12,8 @@ import Foundation
 public class ActiveWord: Word {
     
     private var status: String = ""
-    public var guessedTime = 0 // For statistics
-    public var attemptsNumber = 0 // For statistics
+    private var guessedTime = 0 // For statistics, sec
+    private var attemptsNumber = 0 // For statistics, attempts
     
     init(owner: Player, text: String, status: String) {
         super.init(owner: owner, text: text)
@@ -33,5 +33,20 @@ public class ActiveWord: Word {
     func getStatus() -> String {
         return status
     }
-
+    
+    func getTime() -> Int {
+        return guessedTime
+    }
+    
+    func incTime(time: Int) {
+        guessedTime = time
+    }
+    
+    func getAttemptsNumber() -> Int {
+        return attemptsNumber
+    }
+    
+    func incAttemptsNumber() {
+        attemptsNumber += 1
+    }
 }

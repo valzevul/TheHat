@@ -50,6 +50,8 @@ class GameRoundViewController: UIViewController {
         startTimer()
     }
     
+    
+    
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
     }
@@ -60,8 +62,8 @@ class GameRoundViewController: UIViewController {
 
     func wordGuessed() {
         println("Guessed")
-        currentWord!.attemptsNumber += 1
-        currentWord?.guessedTime += counter
+        currentWord!.incAttemptsNumber()
+        currentWord?.incTime(counter)
         
         
         tSystem!.wordGuessed(currentWord!)
@@ -71,8 +73,8 @@ class GameRoundViewController: UIViewController {
     
     func wordFailed() {
         println("Failed")
-        currentWord!.attemptsNumber += 1
-        currentWord?.guessedTime += counter
+        currentWord!.incAttemptsNumber()
+        currentWord?.incTime(counter)
         
         timer.invalidate()
         tSystem!.wordFailed(currentWord!)
@@ -88,8 +90,9 @@ class GameRoundViewController: UIViewController {
         timerLabel.text = String(timeLeft)
         
         if (timeLeft == 0) {
-            currentWord!.attemptsNumber += 1
-            currentWord?.guessedTime += counter
+            
+            currentWord!.incAttemptsNumber()
+            currentWord?.incTime(counter)
             
             tSystem!.wordMissed(currentWord!)
             timer.invalidate()

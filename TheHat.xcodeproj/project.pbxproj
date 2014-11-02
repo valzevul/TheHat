@@ -113,18 +113,11 @@
 		8200356C19F656C100CB62FB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */,
 				8267530819F619A800071464 /* AppDelegate.swift */,
-				8267530A19F619A800071464 /* StartScreenViewController.swift */,
-				8200357119F656F100CB62FB /* InfoViewController.swift */,
-				8200357319F65CE400CB62FB /* StartGameViewController.swift */,
-				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
-				82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */,
-				8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */,
-				82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */,
-				82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */,
-				82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */,
+				824A481C1A06096500C1C9C6 /* Main Menu */,
+				824A481D1A06097D00C1C9C6 /* Round */,
+				824A481E1A06098B00C1C9C6 /* Settings */,
 				82C5DBF21A03BCA600896DEB /* Tutorial Screen */,
 			);
 			name = ViewControllers;
@@ -137,6 +130,37 @@
 				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 			);
 			name = Media;
+			sourceTree = "<group>";
+		};
+		824A481C1A06096500C1C9C6 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8267530A19F619A800071464 /* StartScreenViewController.swift */,
+				8200357119F656F100CB62FB /* InfoViewController.swift */,
+			);
+			name = "Main Menu";
+			sourceTree = "<group>";
+		};
+		824A481D1A06097D00C1C9C6 /* Round */ = {
+			isa = PBXGroup;
+			children = (
+				8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */,
+				8200357319F65CE400CB62FB /* StartGameViewController.swift */,
+				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
+				8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */,
+				82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */,
+			);
+			name = Round;
+			sourceTree = "<group>";
+		};
+		824A481E1A06098B00C1C9C6 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */,
+				82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */,
+				82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		826752FA19F619A700071464 = {
