@@ -114,6 +114,7 @@ class TheHatTests: XCTestCase {
         
         var word = d.getNewWordByIndex(0)
         d.shuffle()
+        d.shuffle()
         var newWord = d.getNewWordByIndex(0)
         XCTAssertNotEqual(word!, newWord!)
     }
