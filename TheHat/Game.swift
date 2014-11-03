@@ -12,11 +12,11 @@ public class Game {
     
     var players = [Player]() // List of players
     public var words = [ActiveWord]() // Words with statuses and statistics
-    let numberOfWords: Int?
+    let numberOfWords: Int? // Predicted number of words
     
     public var wordsLeft: Int {
         get {
-            return words.count
+            return words.count // TODO: change for avoiding guessed words
         }
     }
     
