@@ -12,8 +12,6 @@ class GameRoundViewController: UIViewController {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    var currentState = 5
-    var amount = 10
     
     var gameObject: Game?
     var tSystem: TournamentSystem?
@@ -78,7 +76,7 @@ class GameRoundViewController: UIViewController {
         
         timer.invalidate()
         tSystem!.wordFailed(currentWord!)
-        performSegueWithIdentifier("timerFinished", sender: self) // TODO: Change segue to "wordFailed"
+        performSegueWithIdentifier("timerFinished", sender: self) // TODO: Change segue to "wordFailed" & Fix redundant segue for failed word
     }
     
     func startTimer() {

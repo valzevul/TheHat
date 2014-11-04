@@ -910,7 +910,7 @@ Cgo
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1q-0t-plx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="928"/>
+            <point key="canvasLocation" x="84" y="928"/>
         </scene>
     </scenes>
     <resources>
