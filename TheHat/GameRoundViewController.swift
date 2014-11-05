@@ -49,12 +49,25 @@ class GameRoundViewController: UIViewController {
     }
     
     
-    
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
+        
+        UIView.animateWithDuration(NSTimeInterval(1.0), animations: { () -> Void in
+            self.wordLabel.textColor = UIColor.greenColor()
+        }) { (Bool) -> Void in
+            self.wordLabel.textColor = UIColor.blackColor()
+            return
+        }
     }
     
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
+        UIView.animateWithDuration(NSTimeInterval(1.0), animations: { () -> Void in
+            self.wordLabel.textColor = UIColor.greenColor()
+            }) { (Bool) -> Void in
+                self.wordLabel.textColor = UIColor.blackColor()
+                return
+        }
+        
         wordGuessed()
     }
 

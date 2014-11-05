@@ -32,7 +32,7 @@ class TournamentSystem {
     
     func getNewWord() -> ActiveWord {
         return gameObject.words.removeLast()
-    }
+    } // Returns new word and remove it from the list
     
     func getNextPair() -> (Player, Player)? {
         
@@ -48,16 +48,17 @@ class TournamentSystem {
         
         currentPair = (player_1, player_2)
         return currentPair
-    }
+    } // Generate a new pair for the "odd" game
     
     func startNextRound() {
         playedRoundsNumber += 1
         var currentPair = getNextPair()
         shuffleWords()
-    }
+    } // Imitate new game round
     
     func clean() {
         currentResult = 0
+        shuffleWords()
     }
     
     func shuffleWords() {
