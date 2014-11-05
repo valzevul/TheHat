@@ -22,6 +22,7 @@ class GameRoundViewController: UIViewController {
     var timeLeft = 0
     
     var gameTime: Int?
+    var additionalTime: Int?
     var currentWord: ActiveWord?
     
     override func viewDidLoad() {
@@ -31,6 +32,11 @@ class GameRoundViewController: UIViewController {
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTime = gTime.toInt()
         }
+        
+        if let aTime = namePreference.stringForKey("additionalTime") {
+            additionalTime = aTime.toInt()
+        }
+        
         
         timerLabel.text = "\(gameTime!)"
         
@@ -51,23 +57,9 @@ class GameRoundViewController: UIViewController {
     
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
-        
-        UIView.animateWithDuration(NSTimeInterval(1.0), animations: { () -> Void in
-            self.wordLabel.textColor = UIColor.greenColor()
-        }) { (Bool) -> Void in
-            self.wordLabel.textColor = UIColor.blackColor()
-            return
-        }
     }
     
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
-        UIView.animateWithDuration(NSTimeInterval(1.0), animations: { () -> Void in
-            self.wordLabel.textColor = UIColor.greenColor()
-            }) { (Bool) -> Void in
-                self.wordLabel.textColor = UIColor.blackColor()
-                return
-        }
-        
         wordGuessed()
     }
 
@@ -99,6 +91,12 @@ class GameRoundViewController: UIViewController {
     func update() -> Void {
         timeLeft = gameTime! - ++counter
         timerLabel.text = String(timeLeft)
+        
+        if (timeLeft < additionalTime) {
+            UIView.animateWithDuration(1.0, animations: {
+                self.timerLabel.textColor = UIColor.redColor()
+            })
+        }
         
         if (timeLeft == 0) {
             
