@@ -67,10 +67,7 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
         if (segue.identifier == "RoundSettingsSegue") {
             var roundSettingsVC = segue.destinationViewController as CurrentRoundSettingsTableViewController;
             roundSettingsVC.delegate = self
-            
-            roundSettingsVC.gameObject = gameObject
             roundSettingsVC.tSystem = tSystem
-            roundSettingsVC.lSettings = lSettings
         }
     }
     

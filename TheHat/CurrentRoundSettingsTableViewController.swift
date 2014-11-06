@@ -16,10 +16,7 @@ protocol RoundSettingsDelegate {
 class CurrentRoundSettingsTableViewController: UITableViewController {
 
     var delegate:RoundSettingsDelegate? = nil
-    
-    var gameObject: Game?
     var tSystem: TournamentSystem?
-    var lSettings: LocalSettings?
     
     @IBOutlet weak var firstPlayerNameTextField: UITextField!
     @IBOutlet weak var secondPlayerNameTextField: UITextField!
@@ -29,12 +26,6 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
         
         firstPlayerNameTextField.text = tSystem!.currentPair!.0.name
         secondPlayerNameTextField.text = tSystem!.currentPair!.1.name
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     @IBAction func didFirstPlayerNameEdit(sender: UITextField) {
@@ -44,15 +35,10 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
         }
     }
     
-    
     @IBAction func didSecondPlayerNameEdit(sender: UITextField) {
         tSystem!.currentPair!.1.name = secondPlayerNameTextField.text
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if (delegate != nil) {
+            delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
+        }
     }
 }
