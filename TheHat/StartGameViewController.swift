@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartGameViewController: UIViewController {
+class StartGameViewController: UIViewController, RoundSettingsDelegate {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
@@ -64,6 +64,22 @@ class StartGameViewController: UIViewController {
             gameRoundVC.tSystem = tSystem
             gameRoundVC.lSettings = lSettings
         }
+        if (segue.identifier == "RoundSettingsSegue") {
+            var roundSettingsVC = segue.destinationViewController as CurrentRoundSettingsTableViewController;
+            roundSettingsVC.delegate = self
+            
+            roundSettingsVC.gameObject = gameObject
+            roundSettingsVC.tSystem = tSystem
+            roundSettingsVC.lSettings = lSettings
+        }
+    }
+    
+    func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
+        currentPair!.0.name = firstName
+        currentPair!.1.name = secondName
+        
+        playerALabel.text = currentPair!.0.name
+        playerBLabel.text = currentPair!.1.name
     }
 
     /*

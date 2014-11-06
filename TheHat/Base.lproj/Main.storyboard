@@ -309,6 +309,9 @@
                                                     <rect key="frame" x="198" y="5" width="114" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="didFirstPlayerNameEdit:" destination="jL8-dn-nzi" eventType="editingDidEnd" id="a6K-nN-GI5"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -334,6 +337,9 @@
                                                     <rect key="frame" x="198" y="5" width="114" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="didSecondPlayerNameEdit:" destination="jL8-dn-nzi" eventType="editingDidEnd" id="tpD-eU-P3q"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -347,6 +353,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Current Round Settings" id="yy2-zr-aQA"/>
+                    <connections>
+                        <outlet property="firstPlayerNameTextField" destination="zbK-wk-hhx" id="fpC-p1-Awn"/>
+                        <outlet property="secondPlayerNameTextField" destination="6go-eB-PDt" id="N5E-z1-JH5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vQ-ff-LmE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
