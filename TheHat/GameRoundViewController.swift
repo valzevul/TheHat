@@ -92,13 +92,13 @@ class GameRoundViewController: UIViewController {
         timeLeft = gameTime! - ++counter
         timerLabel.text = String(timeLeft)
         
-        if (timeLeft < additionalTime) {
+        if (timeLeft < 1) {
             UIView.animateWithDuration(1.0, animations: {
                 self.timerLabel.textColor = UIColor.redColor()
             })
         }
         
-        if (timeLeft == 0) {
+        if (timeLeft == (additionalTime! * (-1) - 1)) {
             
             currentWord!.incAttemptsNumber()
             currentWord?.incTime(counter)
