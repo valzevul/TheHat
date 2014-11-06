@@ -28,6 +28,8 @@ class StartGameViewController: UIViewController {
         
         if (tSystem != nil) {
             
+            self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
+            
             tSystem!.currentActiveWords = [] // Wipe previous played words
             
             currentPair = tSystem!.getNextPair()

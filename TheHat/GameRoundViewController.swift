@@ -28,6 +28,8 @@ class GameRoundViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "\(tSystem!.currentPair!.0.name!) → \(tSystem!.currentPair!.1.name!)"
+        
         var namePreference = NSUserDefaults.standardUserDefaults()
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTime = gTime.toInt()
@@ -112,6 +114,7 @@ class GameRoundViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {
+            tSystem?.playedRoundsNumber += 1
             var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
             roundResultsVC.gameObject = gameObject
             roundResultsVC.tSystem = tSystem
