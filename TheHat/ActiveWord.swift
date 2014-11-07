@@ -15,6 +15,8 @@ public class ActiveWord: Word {
     private var guessedTime = 0 // For statistics, sec
     private var attemptsNumber = 0 // For statistics, attempts
     
+    // MARK: - Initializers
+    
     init(owner: Player, text: String, status: String) {
         super.init(owner: owner, text: text)
         self.status = status
@@ -23,8 +25,9 @@ public class ActiveWord: Word {
     init(word: Word, status: String) {
         super.init(owner: word.getOwner(), text: word.getText())
         self.status = status
-        
     }
+    
+    // MARK: - Status
     
     func getStatus() -> String {
         return status
@@ -32,6 +35,8 @@ public class ActiveWord: Word {
     func changeStatus(status: String) {
         self.status = status
     }
+    
+    // MARK: - Statistics
     
     func getTime() -> Int {
         return guessedTime

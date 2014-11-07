@@ -16,7 +16,7 @@ struct Settings {
 class LocalSettings {
     
     var gameType: Int // 0: Casual, 1: Random, 2: Custom
-    var wordsSource: String
+    var wordsSource: String // URL
     
     init(gameType: Int, wordsSource: String) {
         self.gameType = gameType

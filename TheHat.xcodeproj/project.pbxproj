@@ -114,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				8267530819F619A800071464 /* AppDelegate.swift */,
-				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 				824A481C1A06096500C1C9C6 /* Main Menu */,
 				824A481D1A06097D00C1C9C6 /* Round */,
 				824A481E1A06098B00C1C9C6 /* Settings */,
@@ -132,9 +131,30 @@
 			name = Media;
 			sourceTree = "<group>";
 		};
+		823AECCE1A0CF5E200FC1889 /* Word */ = {
+			isa = PBXGroup;
+			children = (
+				829FB55C19F6C05F0090BFB5 /* Word.swift */,
+				82E0184E19FEB0E7006BE02E /* ActiveWord.swift */,
+			);
+			name = Word;
+			sourceTree = "<group>";
+		};
+		823AECCF1A0CF7AA00FC1889 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
+				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
+				822AD27B19FBE83300E201DA /* Settings.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
+				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
 				8267530A19F619A800071464 /* StartScreenViewController.swift */,
 				8200357119F656F100CB62FB /* InfoViewController.swift */,
 			);
@@ -224,14 +244,10 @@
 		829FB55919F6BEF80090BFB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
-				82E0184E19FEB0E7006BE02E /* ActiveWord.swift */,
-				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
+				823AECCE1A0CF5E200FC1889 /* Word */,
+				823AECCF1A0CF7AA00FC1889 /* Controller */,
 				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
-				829FB55C19F6C05F0090BFB5 /* Word.swift */,
 				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
-				822AD27B19FBE83300E201DA /* Settings.swift */,
-				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

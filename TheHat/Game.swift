@@ -11,9 +11,9 @@ import Foundation
 public class Game {
     
     var players = [Player]() // List of players
-    public var words = [ActiveWord]() // Words with statuses and statistics
     let numberOfWords: Int? // Predicted number of words
     
+    public var words = [ActiveWord]() // Words with statuses and statistics
     public var wordsLeft: Int {
         get {
             return words.count // TODO: change for avoiding guessed words
@@ -31,7 +31,9 @@ public class Game {
         self.addPlayer(getNewPlayer(1, numberOfWords: words))
     }
     
-    func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
+    // MARK: - Player
+    
+    public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
         for i in 0..<numberOfWords {
             let word = Game.getRandomWord(player, seed: i)
@@ -47,16 +49,24 @@ public class Game {
         }
     }
     
+    public func getPlayerByIndex(index: Int) -> Player {
+        return players[index] // TODO: or nil in case of empty array or index > count
+    }
+    
     class func getRandomName(idx: Int) -> String {
         var name = ""
         name = "Player " + String(idx) // For dev purposes only!
         return name
     }
     
+    // MARK: - Word
+    
     class func getRandomWord(owner: Player, seed: Int) -> Word {
         var text = "Test\(seed)"// For dev purposes only!
         return Word(owner: owner, text: text)
     }
+    
+    // MARK: - Game
     
     public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
         var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords)
@@ -67,10 +77,6 @@ public class Game {
         }
         
         return newRandomGame
-    }
-
-    public func getPlayerByIndex(index: Int) -> Player {
-        return players[index] // TODO: or nil in case of empty array or index > count
     }
     
 }
