@@ -68,6 +68,25 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return true
     }
     
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(45)
+    }
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = CGRectMake(100, 100, 100, 50)
+        button.setTitle("+", forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
+        button.addTarget(self, action: "addPlayerAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return button
+    }
+    
+    func addPlayerAction(sender:UIButton!)
+    {
+        println("Add new player")
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
         cell.tag = indexPath.row
