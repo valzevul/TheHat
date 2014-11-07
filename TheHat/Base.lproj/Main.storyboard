@@ -527,6 +527,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="RDD-jK-HwP">
                             <connections>
+                                <action selector="nextRoundButtonAction:" destination="47S-Yw-Ce2" id="E8S-ct-2pr"/>
                                 <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="O9i-6f-Tt7"/>
                             </connections>
                         </barButtonItem>

@@ -42,6 +42,9 @@ class GameRoundViewController: UIViewController {
         
         startTimer()
         currentWord = tSystem!.getNewWord()
+        if (currentWord == nil) {
+            performSegueWithIdentifier("timerFinished", sender: nil)
+        }
         wordLabel.text = currentWord?.getText()
     }
     
@@ -72,7 +75,11 @@ class GameRoundViewController: UIViewController {
         
         tSystem!.wordGuessed(currentWord!)
         currentWord = tSystem!.getNewWord()
-        wordLabel.text = currentWord!.getText()
+        if (currentWord == nil) {
+            performSegueWithIdentifier("timerFinished", sender: nil)
+        } else {
+            wordLabel.text = currentWord!.getText()
+        }
     }
     
     // MARK: - Timer
@@ -92,11 +99,12 @@ class GameRoundViewController: UIViewController {
         }
         
         if (timeLeft == (additionalTime! * (-1) - 1)) {
+            if (currentWord != nil) {
+                currentWord!.incAttemptsNumber()
+                currentWord?.incTime(counter)
             
-            currentWord!.incAttemptsNumber()
-            currentWord?.incTime(counter)
-            
-            tSystem!.wordMissed(currentWord!)
+                tSystem!.wordMissed(currentWord!)
+            }
             timer.invalidate()
             performSegueWithIdentifier("timerFinished", sender: self)
         }

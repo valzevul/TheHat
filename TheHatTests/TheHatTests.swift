@@ -127,14 +127,4 @@ class TheHatTests: XCTestCase {
         XCTAssertNil(word)
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

@@ -30,8 +30,12 @@ class TournamentSystem {
         return gameObject.wordsLeft
     }
     
-    func getNewWord() -> ActiveWord { // Returns new word and remove it from the list
-        return gameObject.words.removeLast()
+    func getNewWord() -> ActiveWord? { // Returns new word and remove it from the list
+        if (gameObject.words.count > 0) {
+            return gameObject.words.removeLast()
+        } else {
+            return nil
+        }
     }
     
     func shuffleWords() {

@@ -125,8 +125,6 @@
 		822AD27F19FBE9CF00E201DA /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				8267531119F619A800071464 /* LaunchScreen.xib */,
-				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -140,14 +138,14 @@
 			name = Word;
 			sourceTree = "<group>";
 		};
-		823AECCF1A0CF7AA00FC1889 /* Controller */ = {
+		823AECCF1A0CF7AA00FC1889 /* Game */ = {
 			isa = PBXGroup;
 			children = (
 				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
 				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
 				822AD27B19FBE83300E201DA /* Settings.swift */,
 			);
-			name = Controller;
+			name = Game;
 			sourceTree = "<group>";
 		};
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
@@ -205,8 +203,10 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
-				82F1C00C1A03B2DC00CABE56 /* Data */,
 				8267530C19F619A800071464 /* Main.storyboard */,
+				8267531119F619A800071464 /* LaunchScreen.xib */,
+				82B3D1F21A02D9F600239116 /* Media.xcassets */,
+				82F1C00C1A03B2DC00CABE56 /* Data */,
 				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
 				822AD27F19FBE9CF00E201DA /* Media */,
@@ -245,7 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				823AECCE1A0CF5E200FC1889 /* Word */,
-				823AECCF1A0CF7AA00FC1889 /* Controller */,
+				823AECCF1A0CF7AA00FC1889 /* Game */,
 				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
 				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
 			);

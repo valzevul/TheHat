@@ -88,6 +88,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     // MARK: - Segue
     
+    @IBAction func nextRoundButtonAction(sender: UIBarButtonItem) {
+        if (tSystem!.wordsLeft() == 0) {
+            performSegueWithIdentifier("showGameResults", sender: nil)
+        } else {
+            performSegueWithIdentifier("nextRoundSegue", sender: nil)
+        }
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {
             var gameResultsVC = segue.destinationViewController as GameResultsViewController;
