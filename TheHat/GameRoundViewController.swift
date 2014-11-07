@@ -16,49 +16,50 @@ class GameRoundViewController: UIViewController {
     var gameObject: Game?
     var tSystem: TournamentSystem?
     var lSettings: LocalSettings?
+    let namePreference = NSUserDefaults.standardUserDefaults()
     
-    var timer = NSTimer()
+    let timer = NSTimer()
     var counter = 0
     var timeLeft = 0
-    
     var gameTime: Int?
     var additionalTime: Int?
+    
     var currentWord: ActiveWord?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "\(tSystem!.currentPair!.0.name!) → \(tSystem!.currentPair!.1.name!)"
         
-        var namePreference = NSUserDefaults.standardUserDefaults()
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTime = gTime.toInt()
+            timerLabel.text = "\(gameTime!)"
         }
-        
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTime = aTime.toInt()
         }
-        
-        
-        timerLabel.text = "\(gameTime!)"
-        
-        self.navigationItem.setHidesBackButton(true, animated: true)
         
         startTimer()
         currentWord = tSystem!.getNewWord()
         wordLabel.text = currentWord?.getText()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-        startTimer()
-    }
     
+    // MARK: - Swipe Processing
     
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
+    }
+    
+    func wordFailed() {
+        currentWord!.incAttemptsNumber()
+        currentWord?.incTime(counter)
+        
+        timer.invalidate()
+        tSystem!.wordFailed(currentWord!)
+        
+        // TODO: Change segue to "wordFailed" & Fix redundant segue for failed word
+        performSegueWithIdentifier("timerFinished", sender: self)
     }
     
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
@@ -66,25 +67,15 @@ class GameRoundViewController: UIViewController {
     }
 
     func wordGuessed() {
-        println("Guessed")
         currentWord!.incAttemptsNumber()
         currentWord?.incTime(counter)
-        
         
         tSystem!.wordGuessed(currentWord!)
         currentWord = tSystem!.getNewWord()
         wordLabel.text = currentWord!.getText()
     }
     
-    func wordFailed() {
-        println("Failed")
-        currentWord!.incAttemptsNumber()
-        currentWord?.incTime(counter)
-        
-        timer.invalidate()
-        tSystem!.wordFailed(currentWord!)
-        performSegueWithIdentifier("timerFinished", sender: self) // TODO: Change segue to "wordFailed" & Fix redundant segue for failed word
-    }
+    // MARK: - Timer
     
     func startTimer() {
         var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
@@ -111,6 +102,8 @@ class GameRoundViewController: UIViewController {
         }
         
     }
+    
+    // MARK: - Segue
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {

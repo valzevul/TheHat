@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
+    // MARK: - Settings Fields
     
     @IBOutlet weak var showTutorialSwitch: UISwitch!
     @IBOutlet weak var playersNameFIeld: UITextField!
@@ -34,6 +35,8 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         
         loadSettings()
     }
+    
+    // MARK: - Settings Loading
     
     func loadSettings() {
         var namePreference = NSUserDefaults.standardUserDefaults()
@@ -66,6 +69,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    // MARK: - Settings Saving
     
     @IBAction func tutorialSwitchValueDidChanged(sender: UISwitch) {
         sender.resignFirstResponder()

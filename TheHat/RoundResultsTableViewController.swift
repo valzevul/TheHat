@@ -24,38 +24,16 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cells = tSystem!.currentActiveWords // WARNING: failed words show twice
         self.navigationItem.setHidesBackButton(true, animated: true)
+        
+        self.cells = tSystem!.currentActiveWords
+
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    // MARK: - New cell with word
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cells.count
-    }
-    
-    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        switch (index) {
-        case 0:
-            self.cells[cell.tag].changeStatus("OK")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = OKColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "OK"
-        case 1:
-            self.cells[cell.tag].changeStatus("Failed")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = FColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "F"
-        case 2:
-            self.cells[cell.tag].changeStatus("?")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = MColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "?"
-        default:
-            println("x")
-        }
-        return true
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -85,6 +63,30 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
             MGSwipeButton(title: "?", backgroundColor: MColor)]
         return cell
     }
+    
+    // MARK: - Swipe for cell
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch (index) {
+        case 0:
+            self.cells[cell.tag].changeStatus("OK")
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = OKColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "OK"
+        case 1:
+            self.cells[cell.tag].changeStatus("Failed")
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = FColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "F"
+        case 2:
+            self.cells[cell.tag].changeStatus("?")
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = MColor
+            (cell as CustomTableViewCell).wordResultLabel.text = "?"
+        default:
+            println("x")
+        }
+        return true
+    }
+    
+    // MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {

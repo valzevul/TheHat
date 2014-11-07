@@ -14,26 +14,33 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     var tSystem: TournamentSystem?
     var lSettings: LocalSettings?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "showStartRoundScreen") {
-            var startGameVC = segue.destinationViewController as StartGameViewController
-            startGameVC.gameObject = gameObject
-            startGameVC.tSystem = tSystem
-            startGameVC.lSettings = lSettings
-        }
+    
+    // MARK: - Add new player
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(45)
     }
-
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = CGRectMake(100, 100, 100, 50)
+        button.setTitle("+", forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
+        button.addTarget(self, action: "addPlayerAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return button
+    }
+    
+    func addPlayerAction(sender:UIButton!)
+    {
+        println("Add new player")
+    }
+    
+    // MARK: - Create new cell with existing player
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.gameObject!.players.count
     }
@@ -68,25 +75,6 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return true
     }
     
-    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat(45)
-    }
-    
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        button.frame = CGRectMake(100, 100, 100, 50)
-        button.setTitle("+", forState: UIControlState.Normal)
-        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
-        button.addTarget(self, action: "addPlayerAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        return button
-    }
-    
-    func addPlayerAction(sender:UIButton!)
-    {
-        println("Add new player")
-    }
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
         cell.tag = indexPath.row
@@ -103,6 +91,14 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             MGSwipeButton(title: "Delete", backgroundColor: UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7))]
         return cell
     }
-
-
+    
+    // MARK: - Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showStartRoundScreen") {
+            var startGameVC = segue.destinationViewController as StartGameViewController
+            startGameVC.gameObject = gameObject
+            startGameVC.tSystem = tSystem
+            startGameVC.lSettings = lSettings
+        }
+    }
 }

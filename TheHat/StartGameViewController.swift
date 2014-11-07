@@ -12,7 +12,6 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
-    
     @IBOutlet weak var previousPairResultLabel: UILabel!
     @IBOutlet weak var wordsLeftLabel: UILabel!
     @IBOutlet weak var playerALabel: UILabel!
@@ -28,12 +27,12 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
         
         if (tSystem != nil) {
             
-            self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
-            
             tSystem!.currentActiveWords = [] // Wipe previous played words
+
+            self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
+            wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
             
             currentPair = tSystem!.getNextPair()
-            
             playerALabel.text = currentPair!.0.name
             playerBLabel.text = currentPair!.1.name
             
@@ -41,21 +40,26 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
                 previousPairResultLabel.text = "Previous result: \(prevResult)"
                 tSystem!.clean()
             }
-            
-            wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
         }
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    // MARK: Settings Changed
+    
+    func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
+        currentPair!.0.name = firstName
+        currentPair!.1.name = secondName
+        
+        playerALabel.text = currentPair!.0.name
+        playerBLabel.text = currentPair!.1.name
+    }
+
     @IBAction func playButtonAction(sender: UIButton) {
     }
     @IBAction func settingsButtonAction(sender: UIBarButtonItem) {
     }
+    
+    // MARK: - Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "startNewRound") {
@@ -70,23 +74,5 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
             roundSettingsVC.tSystem = tSystem
         }
     }
-    
-    func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
-        currentPair!.0.name = firstName
-        currentPair!.1.name = secondName
-        
-        playerALabel.text = currentPair!.0.name
-        playerBLabel.text = currentPair!.1.name
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -8,18 +8,18 @@
 
 import UIKit
 
-protocol RoundSettingsDelegate {
+protocol RoundSettingsDelegate { // Delegete for changed settings
     
     func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String)
 }
 
 class CurrentRoundSettingsTableViewController: UITableViewController {
-
-    var delegate:RoundSettingsDelegate? = nil
-    var tSystem: TournamentSystem?
     
     @IBOutlet weak var firstPlayerNameTextField: UITextField!
     @IBOutlet weak var secondPlayerNameTextField: UITextField!
+    
+    var delegate:RoundSettingsDelegate? = nil
+    var tSystem: TournamentSystem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,8 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
         firstPlayerNameTextField.text = tSystem!.currentPair!.0.name
         secondPlayerNameTextField.text = tSystem!.currentPair!.1.name
     }
+    
+    // MARK: - Process Settings
     
     @IBAction func didFirstPlayerNameEdit(sender: UITextField) {
         tSystem!.currentPair!.0.name = firstPlayerNameTextField.text
