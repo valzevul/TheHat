@@ -23,6 +23,7 @@
 		8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */; };
 		8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */; };
 		8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */; };
+		828927E11A0EA5F500BB009E /* dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 828927DF1A0EA5F500BB009E /* dict.txt */; };
 		828A1B9F1A01794D00BE793D /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
@@ -74,6 +75,7 @@
 		8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameSettingsTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPlayersTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
+		828927DF1A0EA5F500BB009E /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict.txt; sourceTree = "<group>"; };
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerTableCell.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 		82F1C00C1A03B2DC00CABE56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				828927DF1A0EA5F500BB009E /* dict.txt */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
 				82C5DBF11A03BCA100896DEB /* TutorialViewController.xib in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
+				828927E11A0EA5F500BB009E /* dict.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -110,21 +110,33 @@ class TheHatTests: XCTestCase {
     
     func testDictionaryShuffle() {
         
-        var d = Dictionary()
+        var d = Dictionary(filename: "dict")
+        d.parse()
         
         var word = d.getNewWordByIndex(0)
+        
         d.shuffle()
-        d.shuffle()
+        
         var newWord = d.getNewWordByIndex(0)
+        
         XCTAssertNotEqual(word!, newWord!)
     }
     
     func testDictionaryWrongIndex() {
         
-        var d = Dictionary()
+        var d = Dictionary(filename: "dict")
         
         var word = d.getNewWordByIndex(-5)
         XCTAssertNil(word)
         
     }
+    
+    func testDictionaryParser() {
+        
+        var d = Dictionary(filename: "dict")
+        
+        d.parse()
+        
+    }
+    
 }
