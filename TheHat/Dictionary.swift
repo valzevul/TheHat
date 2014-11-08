@@ -8,36 +8,37 @@
 
 import Foundation
 
-extension Array
-    {
-    /** Randomizes the order of an array's elements. */
-    mutating func shuffle()
-    {
-        for _ in 0..<10
-        {
-            sort { (_,_) in arc4random() < arc4random() }
+extension Array { // Shuffle sort implementation
+    mutating func shuffle() {
+        for _ in 0..<10 {
+            sort {
+                (_,_) in arc4random() < arc4random()
+            }
         }
     }
 }
 
 class Dictionary {
     
-    var textWords = [String]()
     let filename: String
+    var textWords = [String]() // Words from file
+    
+    var wordsReturned = 0
     
     init(filename: String) {
         self.filename = filename
     }
     
-    func getNewWordByIndex(index: Int) -> String? {
+    func getNewWord() -> String? { // Returns new word
+        wordsReturned += 1
+        return getNewWordByIndex(wordsReturned - 1)
+    }
+    
+    func getNewWordByIndex(index: Int) -> String? { // Returns new word by index
         if (index < 0 || index >= textWords.count) {
             return nil
         }
         return textWords[index]
-    }
-    
-    func shuffle() {
-        textWords = sorted(textWords) {_, _ in arc4random() % 2 == 0}
     }
     
     func parse() {
@@ -54,7 +55,7 @@ class Dictionary {
             }
         }
         
-        shuffle()
+        textWords.shuffle()
     }
     
 }

@@ -39,7 +39,7 @@ public class Game {
     public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
         for i in 0..<numberOfWords {
-            let word = getRandomWord(player, seed: idx * 10 + i) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
+            let word = getRandomWord(player) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
             player.addWord(word)
         }
         return player
@@ -64,8 +64,8 @@ public class Game {
     
     // MARK: - Word
     
-    func getRandomWord(owner: Player, seed: Int) -> Word {
-        let text = self.dict.getNewWordByIndex(seed)
+    func getRandomWord(owner: Player) -> Word {
+        let text = self.dict.getNewWord()
         return Word(owner: owner, text: text!)
     }
     

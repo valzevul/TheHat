@@ -115,7 +115,7 @@ class TheHatTests: XCTestCase {
         
         var word = d.getNewWordByIndex(0)
         
-        d.shuffle()
+        d.textWords.shuffle()
         
         var newWord = d.getNewWordByIndex(0)
         
