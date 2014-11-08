@@ -36,7 +36,12 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     func addPlayerAction(sender:UIButton!)
     {
-        println("Add new player")
+        let newPlayerId = self.gameObject!.players.count + 1
+        let numberOfWords = gameObject!.numberOfWords!
+        let newPlayer = self.gameObject!.getNewPlayer(newPlayerId, numberOfWords: numberOfWords)
+        self.gameObject!.addPlayer(newPlayer)
+        
+        self.tableView.reloadData()
     }
     
     // MARK: - Create new cell with existing player
