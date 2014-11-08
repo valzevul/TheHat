@@ -54,7 +54,7 @@ class Dictionary {
             }
         }
         
-        println(textWords)
+        shuffle()
     }
     
 }

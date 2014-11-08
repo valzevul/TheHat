@@ -10,6 +10,7 @@ import Foundation
 
 public class Game {
     
+    let dict: Dictionary
     var players = [Player]() // List of players
     let numberOfWords: Int? // Predicted number of words
     
@@ -26,8 +27,10 @@ public class Game {
         }
     }
     
-    init(numberOfPlayers: Int, words: Int) {
+    init(numberOfPlayers: Int, words: Int, filename: String) {
         self.numberOfWords = words
+        dict = Dictionary(filename: filename)
+        dict.parse()
         self.addPlayer(getNewPlayer(1, numberOfWords: words))
     }
     
@@ -36,7 +39,7 @@ public class Game {
     public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
         for i in 0..<numberOfWords {
-            let word = Game.getRandomWord(player, seed: i)
+            let word = getRandomWord(player, seed: idx * 10 + i) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
             player.addWord(word)
         }
         return player
@@ -61,15 +64,15 @@ public class Game {
     
     // MARK: - Word
     
-    class func getRandomWord(owner: Player, seed: Int) -> Word {
-        var text = "Test\(seed)"// For dev purposes only!
-        return Word(owner: owner, text: text)
+    func getRandomWord(owner: Player, seed: Int) -> Word {
+        let text = self.dict.getNewWordByIndex(seed)
+        return Word(owner: owner, text: text!)
     }
     
     // MARK: - Game
     
     public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
-        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords)
+        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords, filename: "dict")
         
         for idx in 2...numberOfPlayers {
             let newPlayer = newRandomGame.getNewPlayer(idx, numberOfWords: numberOfWords)
