@@ -21,6 +21,51 @@
             </objects>
             <point key="canvasLocation" x="-480" y="128"/>
         </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="2s2-rl-Kh2">
+            <objects>
+                <viewController storyboardIdentifier="PageContentController" id="unZ-jG-flW" customClass="PageContentViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bws-Q1-4In"/>
+                        <viewControllerLayoutGuide type="bottom" id="7F1-X2-HjQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HFD-ED-9lD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-LV-RDP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
+                                <rect key="frame" x="139" y="126" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="leading" secondItem="9NQ-0p-ClC" secondAttribute="trailing" constant="-181" id="pqN-om-0uF"/>
+                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="421" id="t64-LS-cP4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Gn4-LV-RDP" id="n7p-jH-kOw"/>
+                        <outlet property="titleLabel" destination="9NQ-0p-ClC" id="gYk-v9-EOi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHA-bo-MPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="-2062"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="CIW-V5-r53">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="81c-fQ-w4d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIs-Zb-Rau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="-1346"/>
+        </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -82,11 +127,42 @@
                         <outlet property="multiplayerGameButton" destination="eXo-vb-BEo" id="GOz-tq-l8O"/>
                         <outlet property="newGameButton" destination="vwq-ei-1Av" id="XFm-Sx-RtQ"/>
                         <outlet property="settingsBarButton" destination="Z7R-S7-arN" id="6U4-Ng-CZX"/>
+                        <segue destination="3ry-M4-7Q2" kind="push" identifier="showTutorial" id="IkR-4i-xi8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="127"/>
+        </scene>
+        <!--Main Tutorial View Controller-->
+        <scene sceneID="D99-4h-6ln">
+            <objects>
+                <viewController id="3ry-M4-7Q2" customClass="MainTutorialViewController" customModule="TheHat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hMg-WB-L8v"/>
+                        <viewControllerLayoutGuide type="bottom" id="I7l-S6-aPc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vti-ES-Xmf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
+                                <rect key="frame" x="137" y="530" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backAction:" destination="3ry-M4-7Q2" eventType="touchUpInside" id="Jlz-Kv-yI6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9aU-jI-oCX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cu5-Tu-dJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="-632"/>
         </scene>
         <!--Start New Game-->
         <scene sceneID="2HV-wH-0XT">

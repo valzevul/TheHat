@@ -21,12 +21,25 @@ class StartScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.hidden = true
+    
         if (firstRun) { // Shows animated hat screen
             createLayerMask()
             setKeyFrameAnimation()
             firstRun = false
         }
+        
+        
+        
+        showTutorial()
     }
+    
+    func showTutorial() {
+        performSegueWithIdentifier("showTutorial", sender: nil)
+        
+    }
+    
+    // MARK: - Animation of the hat
     
     func createLayerMask() {
         self.mask = CALayer()
