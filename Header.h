@@ -9,7 +9,7 @@
 #ifndef TheHat_Header_h
 #define TheHat_Header_h
 
-#import "TheHat/MGSwipeTableCell/MGSwipeButton.h"
-#import "TheHat/MGSwipeTableCell/MGSwipeTableCell.h"
+#import "TheHat/Supporting Files/MGSwipeButton.h"
+#import "TheHat/Supporting Files/MGSwipeTableCell.h"
 
 #endif

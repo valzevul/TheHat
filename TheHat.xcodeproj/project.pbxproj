@@ -15,6 +15,7 @@
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
+		825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825A88581A0F71C900D35B8B /* Default-568h@2x.png */; };
 		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
 		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		825A88581A0F71C900D35B8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8267530319F619A800071464 /* TheHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267530719F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 		8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPlayersTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
 		828927DF1A0EA5F500BB009E /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict.txt; sourceTree = "<group>"; };
-		828927E71A0F541200BB009E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageContentViewController.swift; path = ../PageContentViewController.swift; sourceTree = "<group>"; };
+		828927E71A0F541200BB009E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageContentViewController.swift; path = /Users/valzevul/projects/ios/TheHat/TheHat/ViewControllers/PageContentViewController.swift; sourceTree = "<absolute>"; };
 		828927E91A0F58CC00BB009E /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		82E0185219FEB8A1006BE02E /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
 		82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
-		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = /Users/valzevul/projects/ios/TheHat/Header.h; sourceTree = "<absolute>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,14 +123,14 @@
 				824A481E1A06098B00C1C9C6 /* Settings */,
 				82C5DBF21A03BCA600896DEB /* Tutorial Screen */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		822AD27F19FBE9CF00E201DA /* Media */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Media;
+			path = Media;
 			sourceTree = "<group>";
 		};
 		823AECCE1A0CF5E200FC1889 /* Word */ = {
@@ -186,7 +188,7 @@
 		826752FA19F619A700071464 = {
 			isa = PBXGroup;
 			children = (
-				82E0185719FEB954006BE02E /* Header.h */,
+				825A88581A0F71C900D35B8B /* Default-568h@2x.png */,
 				8267530519F619A800071464 /* TheHat */,
 				8267531B19F619A800071464 /* TheHatTests */,
 				8267530419F619A800071464 /* Products */,
@@ -205,9 +207,11 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
+				82E0185719FEB954006BE02E /* Header.h */,
 				8267530C19F619A800071464 /* Main.storyboard */,
 				8267531119F619A800071464 /* LaunchScreen.xib */,
 				82B3D1F21A02D9F600239116 /* Media.xcassets */,
+				8267530719F619A800071464 /* Info.plist */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
 				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
@@ -220,10 +224,12 @@
 		8267530619F619A800071464 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82E0185019FEB8A1006BE02E /* MGSwipeTableCell */,
-				8267530719F619A800071464 /* Info.plist */,
+				82E0185119FEB8A1006BE02E /* MGSwipeButton.h */,
+				82E0185219FEB8A1006BE02E /* MGSwipeButton.m */,
+				82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */,
+				82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		8267531B19F619A800071464 /* TheHatTests */ = {
@@ -252,7 +258,8 @@
 				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
+			path = /Users/valzevul/projects/ios/TheHat/TheHat/Model;
+			sourceTree = "<absolute>";
 		};
 		82C5DBF21A03BCA600896DEB /* Tutorial Screen */ = {
 			isa = PBXGroup;
@@ -263,23 +270,12 @@
 			name = "Tutorial Screen";
 			sourceTree = "<group>";
 		};
-		82E0185019FEB8A1006BE02E /* MGSwipeTableCell */ = {
-			isa = PBXGroup;
-			children = (
-				82E0185119FEB8A1006BE02E /* MGSwipeButton.h */,
-				82E0185219FEB8A1006BE02E /* MGSwipeButton.m */,
-				82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */,
-				82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */,
-			);
-			path = MGSwipeTableCell;
-			sourceTree = "<group>";
-		};
 		82F1C00C1A03B2DC00CABE56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				828927DF1A0EA5F500BB009E /* dict.txt */,
 			);
-			name = Data;
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +361,7 @@
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
+				825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */,
 				828927E11A0EA5F500BB009E /* dict.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
