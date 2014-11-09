@@ -38,6 +38,7 @@
 		82C7085819F7D9CC00D184B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
+		82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */; };
 		82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */; };
 		82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185219FEB8A1006BE02E /* MGSwipeButton.m */; };
@@ -86,6 +87,7 @@
 		82B3D1F21A02D9F600239116 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
+		82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		82E0184E19FEB0E7006BE02E /* ActiveWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWord.swift; sourceTree = "<group>"; };
 		82E0185119FEB8A1006BE02E /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				8234604819F681FC00989B3A /* GameRoundViewController.swift */,
 				8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */,
 				82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */,
+				82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */,
 			);
 			name = Round;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */,
 				8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */,
 				8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */,
+				82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,

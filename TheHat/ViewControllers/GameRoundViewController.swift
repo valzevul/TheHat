@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class GameRoundViewController: UIViewController {
 
@@ -48,6 +49,22 @@ class GameRoundViewController: UIViewController {
         wordLabel.text = currentWord?.getText()
     }
     
+    // MARK: - Animation
+
+    func drawCircle(type: String) {
+        var circleWidth = CGFloat(100)
+        var circleHeight = circleWidth
+        
+        // Create a new CircleView
+        var circleView = CircleView(frame: CGRectMake(self.view.frame.width / 2 - 50, self.view.frame.height / 2 + 100, circleWidth, circleHeight))
+        
+        view.addSubview(circleView)
+        
+        // Animate the drawing of the circle over the course of 1 second
+        circleView.animateCircle(0.3, type: type)
+    }
+    
+    
     // MARK: - Swipe Processing
     
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
@@ -66,6 +83,7 @@ class GameRoundViewController: UIViewController {
     }
     
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
+        drawCircle("green")
         wordGuessed()
     }
 
