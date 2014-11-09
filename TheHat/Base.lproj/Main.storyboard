@@ -33,20 +33,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-LV-RDP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-LV-RDP">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
-                                <rect key="frame" x="139" y="126" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
+                                <rect key="frame" x="16" y="126" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="8KA-Ed-fXG"/>
+                                    <constraint firstAttribute="height" constant="21" id="K0E-yY-HOT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="leading" secondItem="9NQ-0p-ClC" secondAttribute="trailing" constant="-181" id="pqN-om-0uF"/>
-                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="421" id="t64-LS-cP4"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="width" secondItem="HFD-ED-9lD" secondAttribute="width" id="0sp-a3-bAM"/>
+                            <constraint firstAttribute="centerY" secondItem="9NQ-0p-ClC" secondAttribute="centerY" constant="147.5" id="CfD-YU-gJA"/>
+                            <constraint firstAttribute="centerX" secondItem="9NQ-0p-ClC" secondAttribute="centerX" id="RZH-e3-9We"/>
+                            <constraint firstAttribute="centerX" secondItem="Gn4-LV-RDP" secondAttribute="centerX" id="hSj-l3-Qyg"/>
+                            <constraint firstAttribute="centerY" secondItem="Gn4-LV-RDP" secondAttribute="centerY" id="l8L-I9-pKT"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="height" secondItem="HFD-ED-9lD" secondAttribute="height" id="nSH-96-Rvz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -56,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHA-bo-MPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="-2062"/>
+            <point key="canvasLocation" x="792" y="-632"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="CIW-V5-r53">
@@ -64,7 +72,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="81c-fQ-w4d" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIs-Zb-Rau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="90" y="-1346"/>
+            <point key="canvasLocation" x="438" y="-632"/>
         </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -147,8 +155,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
-                                <rect key="frame" x="137" y="530" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="118" y="530" width="84" height="30"/>
+                                <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

@@ -18,25 +18,29 @@ class StartScreenViewController: UIViewController {
     var mask: CALayer! // Animation mask
     var firstRun = true // Flag for animation
     
+    let namePreference = NSUserDefaults.standardUserDefaults()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.hidden = true
-    
         if (firstRun) { // Shows animated hat screen
             createLayerMask()
             setKeyFrameAnimation()
             firstRun = false
         }
         
-        
-        
-        showTutorial()
+        if let tutorial = namePreference.stringForKey("showTutorial") {
+            if (tutorial == "1") {
+                showTutorial()
+            }
+        } else {
+            showTutorial()
+            // TODO: add default settings about tutorial after the first show
+        }
     }
     
     func showTutorial() {
         performSegueWithIdentifier("showTutorial", sender: nil)
-        
     }
     
     // MARK: - Animation of the hat

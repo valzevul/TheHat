@@ -30,6 +30,7 @@ class MainTutorialViewController: UIViewController, UIPageViewControllerDataSour
     }
     
     @IBAction func backAction(sender: UIButton) {
+        self.navigationController?.navigationBar.hidden = false
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     

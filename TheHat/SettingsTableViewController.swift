@@ -39,14 +39,14 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Settings Loading
     
     func loadSettings() {
-        var namePreference = NSUserDefaults.standardUserDefaults()
+        let namePreference = NSUserDefaults.standardUserDefaults()
         
         if let tutorial = namePreference.stringForKey("showTutorial") {
-            var switchOn = true
-            if (tutorial != "true") {
-                let switchOn = false
+            if (tutorial == "1") {
+                showTutorialSwitch.setOn(true, animated: true)
+            } else {
+                showTutorialSwitch.setOn(false, animated: true)
             }
-            showTutorialSwitch.setOn(switchOn, animated: true)
         }
         
         if let pName = namePreference.stringForKey("playersName") {
