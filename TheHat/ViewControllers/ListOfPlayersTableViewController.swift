@@ -67,7 +67,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as CustomPlayerTableCell)
             c.playerLabel?.text = (alertController.textFields![0] as UITextField).text
-            self.gameObject!.players[cell.tag].name = c.playerLabel?.text
+            (self.gameObject!.players[cell.tag] as Player).setName(c.playerLabel!.text!)
         }
         alertController.addAction(OKAction)
         
@@ -82,24 +82,23 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
+
         cell.tag = indexPath.row
-        // let image = UIImage(named: word.getStatus())
-        
         cell.delegate = self
+        cell.playerLabel?.text = self.gameObject!.players[indexPath.row].getName()
         
-        cell.playerLabel?.text = self.gameObject!.players[indexPath.row].name
-        // cell.wordResultImage.image = image
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
             MGSwipeButton(title: "+ words", backgroundColor: UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)),
             MGSwipeButton(title: "Edit", backgroundColor: UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)),
             MGSwipeButton(title: "Delete", backgroundColor: UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7))]
+        
         return cell
     }
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "showStartRoundScreen") {
+            if (segue.identifier == "showStartRoundScreen") {
             var startGameVC = segue.destinationViewController as StartGameViewController
             startGameVC.gameObject = gameObject
             startGameVC.tSystem = tSystem

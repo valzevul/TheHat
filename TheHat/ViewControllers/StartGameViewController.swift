@@ -33,8 +33,8 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
             wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
             
             currentPair = tSystem!.getNextPair()
-            playerALabel.text = currentPair!.0.name
-            playerBLabel.text = currentPair!.1.name
+            playerALabel.text = currentPair!.0.getName()
+            playerBLabel.text = currentPair!.1.getName()
             
             if let prevResult = tSystem!.getPreviousResult() {
                 previousPairResultLabel.text = "Previous result: \(prevResult)"
@@ -47,11 +47,11 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
     // MARK: Settings Changed
     
     func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
-        currentPair!.0.name = firstName
-        currentPair!.1.name = secondName
+        currentPair!.0.setName(firstName)
+        currentPair!.1.setName(secondName)
         
-        playerALabel.text = currentPair!.0.name
-        playerBLabel.text = currentPair!.1.name
+        playerALabel.text = currentPair!.0.getName()
+        playerBLabel.text = currentPair!.1.getName()
     }
 
     @IBAction func playButtonAction(sender: UIButton) {

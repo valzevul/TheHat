@@ -31,7 +31,7 @@ class GameRoundViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationItem.title = "\(tSystem!.currentPair!.0.name!) → \(tSystem!.currentPair!.1.name!)"
+        self.navigationItem.title = "\(tSystem!.currentPair!.0.getName()!) → \(tSystem!.currentPair!.1.getName()!)"
         
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTime = gTime.toInt()

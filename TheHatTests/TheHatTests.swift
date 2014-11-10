@@ -45,7 +45,7 @@ class TheHatTests: XCTestCase {
         gameObject!.addPlayer(newPlayer)
         
         var returnedPlayer = gameObject!.getPlayerByIndex(gameObject!.numberOfPlayers - 1)
-        XCTAssertEqual(newPlayer.name!, returnedPlayer.name!)
+        XCTAssertEqual(newPlayer.getName()!, returnedPlayer.getName()!)
     }
     
     func testGameAddPlayer() {
@@ -69,7 +69,7 @@ class TheHatTests: XCTestCase {
         var isNameEmpty = false
         
         for player in gameObject!.players {
-            if (player.name == "") {
+            if (player.getName() == "") {
                 isNameEmpty = true
             }
         }
@@ -84,7 +84,7 @@ class TheHatTests: XCTestCase {
         let newWord = Word(owner: newPlayer, text: "Test")
         
         let owner = newWord.getOwner()
-        XCTAssertEqual(owner.name!, newPlayer.name!, "Players are different")
+        XCTAssertEqual(owner.getName()!, newPlayer.getName()!, "Players are different")
     }
     
     func testWordText() {

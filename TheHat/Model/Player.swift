@@ -10,18 +10,48 @@ import Foundation
 
 public class Player {
     
-    var words = [Word]()
-    var name: String?
+    private var words = [Word]()
+    private var name: String?
+    private var index: Int?
     
-    var scoreExplained = 0
-    var scoreGuessed = 0
+    private var scoreExplained = 0
+    private var scoreGuessed = 0
     
     init(name: String) {
         self.name = name
     }
     
     func addWord(word: Word) {
-        words.append(word)
+        self.words.append(word)
+    }
+    
+    func setIndex(index: Int) {
+        if (index >= 0) {
+            self.index = index
+        }
+    }
+    
+    func getWords() -> [Word] {
+        return words
+    }
+    
+    func getOverallScore() -> Int {
+        return self.scoreExplained + self.scoreGuessed
+    }
+    
+    func setName(name: String) {
+        self.name = name
+    }
+    
+    func getName() -> String? {
+        return self.name
+    }
+    
+    func incScoreExplained() {
+        self.scoreExplained += 1
+    }
+    
+    func incScoreGuessed() {
+        self.scoreGuessed += 1
     }
 }
-

@@ -44,8 +44,8 @@ class TournamentSystem {
     
     func wordGuessed(word: ActiveWord) {
         currentResult += 1
-        (currentPair!.0).scoreExplained += 1
-        (currentPair!.1).scoreGuessed += 1
+        (currentPair!.0).incScoreExplained()
+        (currentPair!.1).incScoreGuessed()
         word.changeStatus("OK")
         currentActiveWords.append(word)
     }

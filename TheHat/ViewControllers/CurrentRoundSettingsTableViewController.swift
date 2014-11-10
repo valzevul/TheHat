@@ -24,21 +24,21 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firstPlayerNameTextField.text = tSystem!.currentPair!.0.name
-        secondPlayerNameTextField.text = tSystem!.currentPair!.1.name
+        firstPlayerNameTextField.text = tSystem!.currentPair!.0.getName()
+        secondPlayerNameTextField.text = tSystem!.currentPair!.1.getName()
     }
     
     // MARK: - Process Settings
     
     @IBAction func didFirstPlayerNameEdit(sender: UITextField) {
-        tSystem!.currentPair!.0.name = firstPlayerNameTextField.text
+        tSystem!.currentPair!.0.setName(firstPlayerNameTextField.text)
         if (delegate != nil) {
             delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
         }
     }
     
     @IBAction func didSecondPlayerNameEdit(sender: UITextField) {
-        tSystem!.currentPair!.1.name = secondPlayerNameTextField.text
+        tSystem!.currentPair!.1.setName(secondPlayerNameTextField.text)
         if (delegate != nil) {
             delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
         }
