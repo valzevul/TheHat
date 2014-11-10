@@ -37,10 +37,6 @@ class CircleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func clear() {
-        layer.sublayers = nil
-    }
-    
     func animateCircle(duration: NSTimeInterval, type: String) {
         
         if (type == "green") {

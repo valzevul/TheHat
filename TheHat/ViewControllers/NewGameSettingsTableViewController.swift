@@ -27,6 +27,8 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
             if let pNumber = namePreference.stringForKey("playersNumber") {
                 gameObject = Game.createRandomGame(pNumber.toInt()!, numberOfWords: pWords.toInt()!)
             }
+        } else {
+            gameObject = Game.createRandomGame(4, numberOfWords: 10)
         }
         
         // Create Tournament System and Local Settings objects

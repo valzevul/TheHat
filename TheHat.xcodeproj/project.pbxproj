@@ -154,6 +154,17 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
+		823DD4611A10C3600005989A /* SwipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				82E0185119FEB8A1006BE02E /* MGSwipeButton.h */,
+				82E0185219FEB8A1006BE02E /* MGSwipeButton.m */,
+				82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */,
+				82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */,
+			);
+			name = SwipeCell;
+			sourceTree = "<group>";
+		};
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,10 +238,7 @@
 		8267530619F619A800071464 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				82E0185119FEB8A1006BE02E /* MGSwipeButton.h */,
-				82E0185219FEB8A1006BE02E /* MGSwipeButton.m */,
-				82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */,
-				82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */,
+				823DD4611A10C3600005989A /* SwipeCell */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

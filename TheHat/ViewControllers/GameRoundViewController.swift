@@ -47,9 +47,12 @@ class GameRoundViewController: UIViewController {
             performSegueWithIdentifier("timerFinished", sender: nil)
         }
         wordLabel.text = currentWord?.getText()
+       
     }
     
     // MARK: - Animation
+    
+    // TODO: Implement: https://github.com/cwRichardKim/TinderSimpleSwipeCards
 
     func drawCircle(type: String) {
         var circleWidth = CGFloat(100)
@@ -98,6 +101,7 @@ class GameRoundViewController: UIViewController {
         } else {
             wordLabel.text = currentWord!.getText()
         }
+        
     }
     
     // MARK: - Timer

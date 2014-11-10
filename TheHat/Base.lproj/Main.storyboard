@@ -154,7 +154,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
                                 <rect key="frame" x="118" y="530" width="84" height="30"/>
                                 <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,6 +165,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Yeg-k3-Vsr" secondAttribute="centerX" id="SSa-Up-TI0"/>
+                            <constraint firstItem="I7l-S6-aPc" firstAttribute="top" secondItem="Yeg-k3-Vsr" secondAttribute="bottom" constant="8" id="jfA-w4-zie"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9aU-jI-oCX"/>
                 </viewController>
