@@ -66,6 +66,8 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     // MARK: - Swipe for cell
     
+    // TODO: Update word in activeWords array!
+    
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch (index) {
         case 0:
@@ -89,9 +91,11 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     // MARK: - Segue
     
     @IBAction func nextRoundButtonAction(sender: UIBarButtonItem) {
-        if (tSystem!.wordsLeft() == 0) {
+        println("TEST")
+        if (tSystem!.wordsLeft() < 1) {
             performSegueWithIdentifier("showGameResults", sender: nil)
         } else {
+            println(tSystem!.wordsLeft())
             performSegueWithIdentifier("nextRoundSegue", sender: nil)
         }
     }

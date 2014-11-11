@@ -616,11 +616,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="RDD-jK-HwP">
                             <connections>
                                 <action selector="nextRoundButtonAction:" destination="47S-Yw-Ce2" id="E8S-ct-2pr"/>
-                                <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="O9i-6f-Tt7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <segue destination="cUt-5j-hzo" kind="push" identifier="nextRoundSegue" id="HVG-rt-qFZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t2w-4C-IR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1023,6 +1025,6 @@ Cgo
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="O9i-6f-Tt7"/>
+        <segue reference="HVG-rt-qFZ"/>
     </inferredMetricsTieBreakers>
 </document>
