@@ -55,6 +55,8 @@ class CircleView: UIView {
         animation.fromValue = 0
         animation.toValue = 1
         
+        animation.delegate = self
+        
         // Do a linear animation (i.e. the speed of the animation stays the same)
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         
@@ -65,5 +67,10 @@ class CircleView: UIView {
         // Do the actual animation
         circleLayer.addAnimation(animation, forKey: "animateCircle")
     }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        self.removeFromSuperview()
+    }
+    
 
 }
