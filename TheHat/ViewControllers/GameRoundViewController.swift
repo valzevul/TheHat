@@ -20,7 +20,7 @@ class GameRoundViewController: UIViewController {
     let namePreference = NSUserDefaults.standardUserDefaults()
     
     // Create singletone for this one to aboid crashes
-    var timer: NSTimer? = NSTimer()
+    var timer: NSTimer?
     
     var counter = 0
     var timeLeft = 0
@@ -28,6 +28,10 @@ class GameRoundViewController: UIViewController {
     var additionalTime: Int?
     
     var currentWord: ActiveWord?
+    
+    override func viewDidAppear(animated: Bool) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +46,6 @@ class GameRoundViewController: UIViewController {
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTime = aTime.toInt()
         }
-        
-        startTimer()
         
         currentWord = tSystem!.getNewWord()
         if (currentWord == nil) {
@@ -106,10 +108,6 @@ class GameRoundViewController: UIViewController {
     }
     
     // MARK: - Timer
-    
-    func startTimer() {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-    }
     
     func update() -> Void {
         timeLeft = gameTime! - ++counter

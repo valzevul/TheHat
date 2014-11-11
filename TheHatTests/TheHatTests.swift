@@ -183,6 +183,11 @@ class TheHatTests: XCTestCase {
         
         // Show overall results
         
+        for player in tSystem.gameObject.players {
+            
+            println("\(player.getName()): \n\t score: \(player.getOverallScore())")
+        }
+        
         // Save to statistics
         
         // Clean all

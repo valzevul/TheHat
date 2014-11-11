@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameResultsViewController: UIViewController {
+class GameResultsViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
     var gameObject: Game?    
     
@@ -19,5 +19,19 @@ class GameResultsViewController: UIViewController {
     
     @IBAction func endGameButtonAction(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return gameObject!.players.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
+        let player: Player = self.gameObject!.players[indexPath.row] as Player
+        
+        cell.playerLabel?.text = "\(player.getName()): \(player.getOverallScore()))"
+        
+        return cell
+
     }
 }
