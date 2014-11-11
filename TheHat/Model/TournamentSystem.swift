@@ -81,6 +81,7 @@ class TournamentSystem {
     // MARK: - Round
     
     func startNextRound() { // Imitate new game round
+        currentActiveWords = [ActiveWord]()
         playedRoundsNumber += 1
         var currentPair = getNextPair()
         shuffleWords()

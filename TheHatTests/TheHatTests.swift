@@ -139,4 +139,93 @@ class TheHatTests: XCTestCase {
         
     }
     
+    // MARK: - Tests for all game process
+    
+    // TODO: Test for the full game imitation
+    
+    func testFullGameImitation() {
+        
+        // Initialize settings
+        
+        // Get data for the game
+        let numberOfPlayers = 4
+        let numberOfWords = 5
+        
+        // Create game object && add players with random words
+        gameObject = Game.createRandomGame(numberOfPlayers, numberOfWords: numberOfWords)
+
+        // Create tournament system object
+        let tSystem = TournamentSystem(game: gameObject!)
+        
+        // While words in game
+        while (tSystem.wordsLeft() > 0) {
+        
+            // Start new round
+            tSystem.startNextRound()
+            
+            // While timer > -additionalTime
+            for i in 1..<5 {
+                if let currentWord = tSystem.getNewWord() {
+                    println(currentWord.getText())
+                    if (i <= 3) {
+                        tSystem.wordGuessed(currentWord)
+                    } else {
+                        tSystem.wordMissed(currentWord)
+                    }
+                }
+            }
+        
+            // Show results
+            for word in tSystem.currentActiveWords {
+                println("Word: \(word.getText()), status: \(word.getStatus())")
+            }
+        }
+        
+        // Show overall results
+        
+        // Save to statistics
+        
+        // Clean all
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
