@@ -17,7 +17,8 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
         self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
-    @IBAction func endGameButtonAction(sender: AnyObject) {
+    
+    @IBAction func didEndGameAction(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
@@ -26,10 +27,11 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
+        let cell: GameResultsTableViewCell = tableView.dequeueReusableCellWithIdentifier("GameResultsCell") as GameResultsTableViewCell
         let player: Player = self.gameObject!.players[indexPath.row] as Player
         
-        cell.playerLabel?.text = "\(player.getName()): \(player.getOverallScore()))"
+        cell.playerNameLabel?.text = "\(player.getName()!)"
+        cell.playerScoreLabel?.text = "\(player.getOverallScore())"
         
         return cell
 

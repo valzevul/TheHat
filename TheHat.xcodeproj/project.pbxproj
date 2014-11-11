@@ -15,6 +15,7 @@
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
+		82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */; };
 		825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825A88581A0F71C900D35B8B /* Default-568h@2x.png */; };
 		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
@@ -64,6 +65,7 @@
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
 		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
+		82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsTableViewCell.swift; sourceTree = "<group>"; };
 		825A88581A0F71C900D35B8B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8267530319F619A800071464 /* TheHat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheHat.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
 				8267530A19F619A800071464 /* StartScreenViewController.swift */,
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */,
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
 				82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */,
