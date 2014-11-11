@@ -91,11 +91,9 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     // MARK: - Segue
     
     @IBAction func nextRoundButtonAction(sender: UIBarButtonItem) {
-        println("TEST")
         if (tSystem!.wordsLeft() < 1) {
             performSegueWithIdentifier("showGameResults", sender: nil)
         } else {
-            println(tSystem!.wordsLeft())
             performSegueWithIdentifier("nextRoundSegue", sender: nil)
         }
     }
