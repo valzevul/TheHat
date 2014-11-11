@@ -19,7 +19,9 @@ class GameRoundViewController: UIViewController {
     var lSettings: LocalSettings?
     let namePreference = NSUserDefaults.standardUserDefaults()
     
-    let timer = NSTimer()
+    // Create singletone for this one to aboid crashes
+    var timer: NSTimer? = NSTimer()
+    
     var counter = 0
     var timeLeft = 0
     var gameTime: Int?
@@ -42,6 +44,7 @@ class GameRoundViewController: UIViewController {
         }
         
         startTimer()
+        
         currentWord = tSystem!.getNewWord()
         if (currentWord == nil) {
             performSegueWithIdentifier("timerFinished", sender: nil)
@@ -77,8 +80,6 @@ class GameRoundViewController: UIViewController {
     func wordFailed() {
         currentWord!.incAttemptsNumber()
         currentWord?.incTime(counter)
-        
-        timer.invalidate()
         tSystem!.wordFailed(currentWord!)
         
         // TODO: Change segue to "wordFailed" & Fix redundant segue for failed word
@@ -127,8 +128,10 @@ class GameRoundViewController: UIViewController {
             
                 tSystem!.wordMissed(currentWord!)
             }
-            timer.invalidate()
-            performSegueWithIdentifier("timerFinished", sender: self)
+            if (timer != nil ) {
+                timer!.invalidate()
+                performSegueWithIdentifier("timerFinished", sender: self)
+            }
         }
         
     }
@@ -137,6 +140,10 @@ class GameRoundViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {
+            if (timer != nil ) {
+                timer!.invalidate()
+                timer = nil
+            }
             tSystem?.playedRoundsNumber += 1
             var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
             roundResultsVC.gameObject = gameObject
