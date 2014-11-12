@@ -204,7 +204,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-0e-e1e">
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-0e-e1e">
                                                     <rect key="frame" x="115" y="7" width="197" height="29"/>
                                                     <segments>
                                                         <segment title="Casual"/>
@@ -235,7 +235,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://drobinin.com/projects/thehat/words.txt" borderStyle="roundedRect" placeholder="http://drobinin.com/projects/thehat/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://drobinin.com/projects/thehat/words.txt" borderStyle="roundedRect" placeholder="http://drobinin.com/projects/thehat/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
                                                     <rect key="frame" x="126" y="7" width="183" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -370,7 +370,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OIu-6z-fkp">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OIu-6z-fkp">
                                                     <rect key="frame" x="255" y="8" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
@@ -833,7 +833,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="E0F-g7-OD3">
+                                                <slider opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="80" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="E0F-g7-OD3">
                                                     <rect key="frame" x="196" y="8" width="118" height="31"/>
                                                     <connections>
                                                         <action selector="diffSliderValueDidChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="v20-uw-WkW"/>
