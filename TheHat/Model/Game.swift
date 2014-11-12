@@ -8,25 +8,39 @@
 
 import Foundation
 
+/// Game object with players, words, etc.
 public class Game {
     
+    /// Dictionary with a list of parsed words
     let dict: Dictionary
-    var players = [Player]() // List of players
-    let numberOfWords: Int? // Predicted number of words
-    
+    /// List of active words (with statuses and statistics)
     public var words = [ActiveWord]() // Words with statuses and statistics
+    
+    /// List of players
+    var players = [Player]()
+    /// Expected number of words based on number of players and default settings
+    let numberOfWords: Int?
+    
+    /// Active words left
     public var wordsLeft: Int {
         get {
-            return words.count // TODO: change for avoiding guessed words
+            return words.count
         }
     }
-    
+    /// Number of players
     public var numberOfPlayers: Int {
         get {
             return players.count
         }
     }
     
+    /**
+        Initializes new Game object.
+    
+        :param: numberOfPlayers Number of players
+        :param: words Number of words per player
+        :param: filename String name of the file with words
+    */
     init(numberOfPlayers: Int, words: Int, filename: String) {
         self.numberOfWords = words
         dict = Dictionary(filename: filename)
@@ -36,6 +50,14 @@ public class Game {
     
     // MARK: - Player
     
+    /**
+        Create new Player object with words.
+    
+        :param: idx Int id of the player
+        :param: numberOfWords Int number of current player's words
+    
+        :returns: Player object with words.
+    */
     public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
         for i in 0..<numberOfWords {
@@ -45,6 +67,11 @@ public class Game {
         return player
     }
     
+    /**
+        Add player to the list of players and append new words to the full list.
+    
+        :param: player Player object to be added
+    */
     public func addPlayer(player: Player) {
         players.append(player)
         for word in player.getWords() {
@@ -52,10 +79,22 @@ public class Game {
         }
     }
     
+    /**
+        Returns player based on index.
+    
+        :param: index Player's index
+        :returns: Player object with the same index
+    */
     public func getPlayerByIndex(index: Int) -> Player {
         return players[index] // TODO: or nil in case of empty array or index > count
     }
     
+    /**
+        Generate one new name.
+    
+        :param: idx Int index to make the name unique
+        :returns: String based on index
+    */
     class func getRandomName(idx: Int) -> String {
         var name = ""
         name = "Player " + String(idx) // For dev purposes only!
@@ -64,6 +103,12 @@ public class Game {
     
     // MARK: - Word
     
+    /**
+        Generate new word.
+    
+        :param: owner Player object in need of a new word
+        :returns: Word object for the Player
+    */
     func getRandomWord(owner: Player) -> Word {
         let text = self.dict.getNewWord()
         return Word(owner: owner, text: text!)
@@ -71,6 +116,15 @@ public class Game {
     
     // MARK: - Game
     
+    
+    /**
+        Create random game.
+    
+        :param: numberOfPlayers Int number of players
+        :param: numberOfWords Int number of words per player
+    
+        :returns: Game object
+    */
     public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
         var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords, filename: "dict")
         
