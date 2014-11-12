@@ -30,6 +30,7 @@ class GameRoundViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timeLeft = gameTime!
     }
     
     override func viewDidLoad() {
