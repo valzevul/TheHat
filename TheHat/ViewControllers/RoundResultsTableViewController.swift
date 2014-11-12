@@ -16,7 +16,6 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     let FColor = UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)
     let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
     
-    var gameObject: Game?
     var lSettings: LocalSettings?
     var tSystem: TournamentSystem?
     var currentWord: Word?
@@ -100,10 +99,9 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {
             var gameResultsVC = segue.destinationViewController as GameResultsViewController;
-            gameResultsVC.gameObject = gameObject
+            gameResultsVC.tSystem = tSystem
         } else if (segue.identifier == "nextRoundSegue") {
             var nextRound = segue.destinationViewController as StartGameViewController;
-            nextRound.gameObject = gameObject
             nextRound.tSystem = tSystem
             nextRound.lSettings = lSettings
         }

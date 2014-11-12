@@ -10,7 +10,6 @@ import UIKit
 
 class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
 
-    var gameObject: Game?
     var tSystem: TournamentSystem?
     var lSettings: LocalSettings?
     
@@ -36,10 +35,10 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     func addPlayerAction(sender:UIButton!)
     {
-        let newPlayerId = self.gameObject!.players.count + 1
-        let numberOfWords = gameObject!.numberOfWords!
-        let newPlayer = self.gameObject!.getNewPlayer(newPlayerId, numberOfWords: numberOfWords)
-        self.gameObject!.addPlayer(newPlayer)
+        let newPlayerId = self.tSystem!.gameObject.players.count + 1
+        let numberOfWords = self.tSystem!.gameObject.numberOfWords!
+        let newPlayer = self.tSystem!.gameObject.getNewPlayer(newPlayerId, numberOfWords: numberOfWords)
+        self.tSystem!.gameObject.addPlayer(newPlayer)
         
         self.tableView.reloadData()
     }
@@ -47,7 +46,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     // MARK: - Create new cell with existing player
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.gameObject!.players.count
+        return self.tSystem!.gameObject.players.count
     }
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
@@ -67,7 +66,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as CustomPlayerTableCell)
             c.playerLabel?.text = (alertController.textFields![0] as UITextField).text
-            (self.gameObject!.players[cell.tag] as Player).setName(c.playerLabel!.text!)
+            (self.tSystem!.gameObject.players[cell.tag] as Player).setName(c.playerLabel!.text!)
         }
         alertController.addAction(OKAction)
         
@@ -85,7 +84,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
 
         cell.tag = indexPath.row
         cell.delegate = self
-        cell.playerLabel?.text = self.gameObject!.players[indexPath.row].getName()
+        cell.playerLabel?.text = self.tSystem!.gameObject.players[indexPath.row].getName()
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
@@ -100,7 +99,6 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
             if (segue.identifier == "showStartRoundScreen") {
             var startGameVC = segue.destinationViewController as StartGameViewController
-            startGameVC.gameObject = gameObject
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
         }

@@ -17,7 +17,6 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
     @IBOutlet weak var playerALabel: UILabel!
     @IBOutlet weak var playerBLabel: UILabel!
     
-    var gameObject: Game?
     var tSystem: TournamentSystem?
     var currentPair: (Player, Player)?
     var lSettings: LocalSettings?
@@ -64,7 +63,6 @@ class StartGameViewController: UIViewController, RoundSettingsDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "startNewRound") {
             var gameRoundVC = segue.destinationViewController as GameRoundViewController;
-            gameRoundVC.gameObject = gameObject
             gameRoundVC.tSystem = tSystem
             gameRoundVC.lSettings = lSettings
         }

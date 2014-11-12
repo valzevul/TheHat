@@ -10,7 +10,7 @@ import UIKit
 
 class GameResultsViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
-    var gameObject: Game?    
+    var tSystem: TournamentSystem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +23,12 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gameObject!.players.count
+        return self.tSystem!.gameObject.players.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: GameResultsTableViewCell = tableView.dequeueReusableCellWithIdentifier("GameResultsCell") as GameResultsTableViewCell
-        let player: Player = self.gameObject!.players[indexPath.row] as Player
+        let player: Player = self.tSystem!.gameObject.players[indexPath.row] as Player
         
         cell.playerNameLabel?.text = "\(player.getName()!)"
         cell.playerScoreLabel?.text = "\(player.getOverallScore())"

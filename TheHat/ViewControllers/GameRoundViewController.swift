@@ -14,7 +14,6 @@ class GameRoundViewController: UIViewController {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
-    var gameObject: Game?
     var tSystem: TournamentSystem?
     var lSettings: LocalSettings?
     let namePreference = NSUserDefaults.standardUserDefaults()
@@ -148,7 +147,6 @@ class GameRoundViewController: UIViewController {
             }
             tSystem?.playedRoundsNumber += 1
             var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
-            roundResultsVC.gameObject = gameObject
             roundResultsVC.tSystem = tSystem
             roundResultsVC.lSettings = lSettings
             roundResultsVC.currentWord = currentWord
