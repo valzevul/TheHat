@@ -8,17 +8,27 @@
 
 import Foundation
 
+/// Globa settings
 struct Settings {
+    
+    /// Tags for local game settings
     static var keys = ["", "showTutorial", "playersName", "playersNumber", "difficultness", "gameTime", "additionalTime",
         "playerWords"]
 }
 
-class LocalSettings {
+/// Local settings for the current game
+public class LocalSettings {
     
-    var gameType: Int // 0: Casual, 1: Random, 2: Custom
-    var wordsSource: String // URL
+    /// Game type
+    /// - Casual (0) - pair-to-pair
+    /// - Random (1) - one to others
+    /// - Custom (2) - ???
+    public private(set) var gameType = 0
     
-    init(gameType: Int, wordsSource: String) {
+    /// Link to the words' source (if playing with a package)
+    public private(set) var wordsSource: String? = nil
+    
+    public init(gameType: Int, wordsSource: String?) {
         self.gameType = gameType
         self.wordsSource = wordsSource
     }
