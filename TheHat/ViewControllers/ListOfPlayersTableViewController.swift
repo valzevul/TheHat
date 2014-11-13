@@ -37,7 +37,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
         button.frame = CGRectMake(100, 100, 100, 50)
         button.setTitle("From Address Book", forState: UIControlState.Normal)
-        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
+        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
         button.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return button
