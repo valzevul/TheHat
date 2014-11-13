@@ -63,9 +63,7 @@ class AddressBookTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("sel")
         if (delegate != nil) {
-            println("del")
             let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
             let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
             delegate!.personFromAddressBookDidSelected(self, name: playerName)
