@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate, PersonFromAddressBookDelegate {
 
     var tSystem: TournamentSystem?
     var lSettings: LocalSettings?
@@ -44,9 +44,16 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     func addPlayerFromAddressBookAction(sender: UIButton!) {
-        // PROTOCOL 
         self.performSegueWithIdentifier("selectFromAddressBook", sender: nil)
-        //self.tableView.reloadData()
+    }
+    
+    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String) {
+        let newPlayerId = self.tSystem!.gameObject.players.count + 1
+        let numberOfWords = self.tSystem!.gameObject.numberOfWords!
+        let newPlayer: Player = Player(name: name)
+        self.tSystem!.gameObject.addPlayer(newPlayer)
+        
+        self.tableView.reloadData()
     }
     
     func addPlayerAction(sender: UIButton!)
@@ -111,10 +118,13 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-            if (segue.identifier == "showStartRoundScreen") {
+        if (segue.identifier == "showStartRoundScreen") {
             var startGameVC = segue.destinationViewController as StartGameViewController
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
+        } else if (segue.identifier == "selectFromAddressBook") {
+            var ab = segue.destinationViewController as AddressBookTableViewController
+            ab.delegate = self
         }
     }
 }

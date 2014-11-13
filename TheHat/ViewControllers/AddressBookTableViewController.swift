@@ -10,9 +10,15 @@ import UIKit
 import AddressBook
 import AddressBookUI
 
+protocol PersonFromAddressBookDelegate { // Delegete for changed settings
+    
+    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String)
+}
+
 class AddressBookTableViewController: UITableViewController {
 
     var addressBook: ABAddressBookRef?
+    var delegate:PersonFromAddressBookDelegate? = nil
     var contactList: NSArray?
     
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
@@ -26,7 +32,6 @@ class AddressBookTableViewController: UITableViewController {
         var errorRef: Unmanaged<CFError>?
         addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
         contactList = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue()
-        println("records in the array \(contactList!.count)")
         
         self.tableView.reloadData()
     }
@@ -56,6 +61,16 @@ class AddressBookTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("sel")
+        if (delegate != nil) {
+            println("del")
+            let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
+            let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
+            delegate!.personFromAddressBookDidSelected(self, name: playerName)
+        }
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (contactList != nil) {
