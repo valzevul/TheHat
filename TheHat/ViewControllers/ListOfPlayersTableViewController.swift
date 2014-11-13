@@ -33,7 +33,23 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return button
     }
     
-    func addPlayerAction(sender:UIButton!)
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = CGRectMake(100, 100, 100, 50)
+        button.setTitle("From Address Book", forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
+        button.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        return button
+    }
+    
+    func addPlayerFromAddressBookAction(sender: UIButton!) {
+        // PROTOCOL 
+        self.performSegueWithIdentifier("selectFromAddressBook", sender: nil)
+        //self.tableView.reloadData()
+    }
+    
+    func addPlayerAction(sender: UIButton!)
     {
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
