@@ -16,6 +16,7 @@ public class ActiveWord: Word {
     /// - OK (guessed)
     /// - F (failed)
     private var status: String = ""
+    
     /// Variable for the statistics, amount of time spent to guess the word
     private var guessedTime = 0
     /// Variable for the statistics, number of attempts to guess the word

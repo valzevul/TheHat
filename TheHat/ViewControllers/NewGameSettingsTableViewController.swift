@@ -41,11 +41,11 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     // MARK: - Settings Savings
     
     @IBAction func gameTypeChanged(sender: UISegmentedControl) {
-        lSettings!.gameType = gameTypeSegmentedControl.selectedSegmentIndex
+        lSettings!.changeGameType(gameTypeSegmentedControl.selectedSegmentIndex)
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        lSettings!.wordsSource = textField.text
+        lSettings!.changeWordsSource(textField.text)
     }
     
     // MARK: - Segue

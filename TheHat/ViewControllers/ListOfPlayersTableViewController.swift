@@ -54,7 +54,6 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let alertController = UIAlertController(title: "Change player's name", message: "Input new player's name:", preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-            // ...
         }
         alertController.addAction(cancelAction)
         
@@ -72,7 +71,6 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         
         
         self.presentViewController(alertController, animated: true) {
-            // ...
         }
         
         

@@ -33,4 +33,12 @@ public class LocalSettings {
         self.wordsSource = wordsSource
     }
     
+    public func changeGameType(gameType: Int) {
+        self.gameType = gameType
+    }
+    
+    public func changeWordsSource(source: String?) {
+        self.wordsSource = source
+    }
+    
 }
