@@ -10,6 +10,9 @@
 		8200357219F656F100CB62FB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357119F656F100CB62FB /* InfoViewController.swift */; };
 		8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357319F65CE400CB62FB /* StartGameViewController.swift */; };
 		8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
+		8207A23B1A1517CB00A169EC /* AddressBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */; };
+		8207A23D1A1518FD00A169EC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23C1A1518FD00A169EC /* AddressBook.framework */; };
+		8207A23F1A15192900A169EC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23E1A15192900A169EC /* AddressBookUI.framework */; };
 		822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
 		822AD27C19FBE83300E201DA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AD27B19FBE83300E201DA /* Settings.swift */; };
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
@@ -21,6 +24,7 @@
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
+		8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */; };
 		8284A96A19F9931C009A6544 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */; };
 		8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */; };
@@ -62,6 +66,9 @@
 		8200357119F656F100CB62FB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8200357319F65CE400CB62FB /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		8206B67A19FA7A8600BA45A0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewController.swift; sourceTree = "<group>"; };
+		8207A23C1A1518FD00A169EC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8207A23E1A15192900A169EC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		8234604819F681FC00989B3A /* GameRoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRoundViewController.swift; sourceTree = "<group>"; };
 		8234604C19F68F8D00989B3A /* GameResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameResultsViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 		8267531819F619A800071464 /* TheHatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheHatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267531D19F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267531E19F619A800071464 /* TheHatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHatTests.swift; sourceTree = "<group>"; };
+		8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
 		8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameSettingsTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPlayersTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8207A23F1A15192900A169EC /* AddressBookUI.framework in Frameworks */,
+				8207A23D1A1518FD00A169EC /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +180,8 @@
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */,
+				8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */,
 				82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
@@ -205,6 +217,8 @@
 		826752FA19F619A700071464 = {
 			isa = PBXGroup;
 			children = (
+				8207A23E1A15192900A169EC /* AddressBookUI.framework */,
+				8207A23C1A1518FD00A169EC /* AddressBook.framework */,
 				825A88581A0F71C900D35B8B /* Default-568h@2x.png */,
 				8267530519F619A800071464 /* TheHat */,
 				8267531B19F619A800071464 /* TheHatTests */,
@@ -395,6 +409,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */,
+				8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */,
+				8207A23B1A1517CB00A169EC /* AddressBookTableViewController.swift in Sources */,
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
 				82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */,
