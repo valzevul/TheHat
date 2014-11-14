@@ -58,8 +58,9 @@ class TournamentSystem {
     
     func wordMissed(word: ActiveWord) {
         if (word.getStatus() == "?") {
-            gameObject.words.append(word)
-            currentActiveWords.append(word)
+            
+            gameObject.words.insert(word, atIndex: 0)
+            currentActiveWords.insert(word, atIndex: 0)
         }
     }
     

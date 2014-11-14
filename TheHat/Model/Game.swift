@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 /// Game object with players, words, etc.
 public class Game {
     
@@ -112,6 +113,12 @@ public class Game {
     func getRandomWord(owner: Player) -> Word {
         let text = self.dict.getNewWord()
         return Word(owner: owner, text: text!)
+    }
+    
+    func shuffleWords() {
+        
+        
+        
     }
     
     // MARK: - Game
