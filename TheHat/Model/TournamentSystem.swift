@@ -60,7 +60,7 @@ class TournamentSystem {
         if (word.getStatus() == "?") {
             
             gameObject.words.insert(word, atIndex: 0)
-            currentActiveWords.insert(word, atIndex: 0)
+            currentActiveWords.append(word)
         }
     }
     

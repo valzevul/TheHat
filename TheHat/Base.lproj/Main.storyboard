@@ -282,19 +282,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yM8-AM-iN5">
-                                            <rect key="frame" x="8" y="22" width="304" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="304" id="jKr-sO-RGn"/>
-                                                <constraint firstAttribute="height" constant="21" id="jrU-2E-S5Y"/>
-                                            </constraints>
+                                            <rect key="frame" x="81" y="23" width="231" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_user" translatesAutoresizingMaskIntoConstraints="NO" id="6xK-q6-5Qf">
+                                            <rect key="frame" x="15" y="11" width="40" height="40"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="yM8-AM-iN5" firstAttribute="trailing" secondItem="Psk-zl-z5s" secondAttribute="trailingMargin" id="EQp-R8-F3L"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="yM8-AM-iN5" secondAttribute="bottom" constant="10" id="s42-4e-pMg"/>
+                                        <constraint firstItem="yM8-AM-iN5" firstAttribute="top" secondItem="Psk-zl-z5s" secondAttribute="topMargin" constant="15" id="11M-Gc-VMW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6xK-q6-5Qf" secondAttribute="bottom" constant="2" id="1xU-02-DLP"/>
+                                        <constraint firstItem="6xK-q6-5Qf" firstAttribute="leading" secondItem="Psk-zl-z5s" secondAttribute="leadingMargin" constant="7" id="2UO-uR-FZt"/>
+                                        <constraint firstItem="6xK-q6-5Qf" firstAttribute="top" secondItem="Psk-zl-z5s" secondAttribute="topMargin" constant="3" id="BmR-av-hDW"/>
+                                        <constraint firstItem="yM8-AM-iN5" firstAttribute="leading" secondItem="6xK-q6-5Qf" secondAttribute="trailing" constant="26" id="bAE-Tx-fKi"/>
+                                        <constraint firstItem="yM8-AM-iN5" firstAttribute="trailing" secondItem="Psk-zl-z5s" secondAttribute="trailingMargin" id="gP5-6k-qcg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="yM8-AM-iN5" secondAttribute="bottom" constant="9" id="hWL-tj-lgW"/>
+                                        <constraint firstItem="yM8-AM-iN5" firstAttribute="leading" secondItem="Psk-zl-z5s" secondAttribute="leadingMargin" constant="73" id="oc8-AJ-P1h"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -311,7 +316,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2c-Tz-fZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="-579"/>
+            <point key="canvasLocation" x="1160" y="-580"/>
         </scene>
         <!--List of Players-->
         <scene sceneID="CEO-Ar-pC5">
