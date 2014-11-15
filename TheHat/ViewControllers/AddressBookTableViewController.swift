@@ -39,7 +39,6 @@ class AddressBookTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.NotDetermined) {
-            println("requesting access...")
             var errorRef: Unmanaged<CFError>? = nil
             addressBook = extractABAddressBookRef(ABAddressBookCreateWithOptions(nil, &errorRef))
             ABAddressBookRequestAccessWithCompletion(addressBook, { success, error in
@@ -55,7 +54,6 @@ class AddressBookTableViewController: UITableViewController {
             println("access denied")
         }
         else if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Authorized) {
-            println("access granted")
             self.getContactNames()
         }
     }
