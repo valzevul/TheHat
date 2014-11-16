@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartScreenViewController: UIViewController {
+class StartScreenViewController: BaseViewController {
 
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet weak var multiplayerGameButton: UIButton!

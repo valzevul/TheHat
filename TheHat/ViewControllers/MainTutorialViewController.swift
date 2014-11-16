@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainTutorialViewController: UIViewController, UIPageViewControllerDataSource {
+class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSource {
 
     var pageViewController : UIPageViewController?
     var pageTitles = ["A", "B", "C"]

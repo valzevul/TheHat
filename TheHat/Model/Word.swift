@@ -40,7 +40,7 @@ public class Word {
     }
 
     /**
-    Text is a representation of a word at the display.
+    Text is a representation of a word at the screen.
     
     :returns: String object
     */

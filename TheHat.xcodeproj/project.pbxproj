@@ -44,6 +44,7 @@
 		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */; };
+		82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF93FF1A1927B80096A300 /* BaseViewController.swift */; };
 		82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */; };
 		82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185219FEB8A1006BE02E /* MGSwipeButton.m */; };
@@ -98,6 +99,7 @@
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
 		82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		82DF93FF1A1927B80096A300 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		82E0184E19FEB0E7006BE02E /* ActiveWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWord.swift; sourceTree = "<group>"; };
 		82E0185119FEB8A1006BE02E /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
@@ -238,16 +240,13 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
-				82E0185719FEB954006BE02E /* Header.h */,
-				8267530C19F619A800071464 /* Main.storyboard */,
-				8267531119F619A800071464 /* LaunchScreen.xib */,
-				82B3D1F21A02D9F600239116 /* Media.xcassets */,
-				8267530719F619A800071464 /* Info.plist */,
+				82DF93FE1A1927680096A300 /* Different files */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
 				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
 				822AD27F19FBE9CF00E201DA /* Media */,
 				8267530619F619A800071464 /* Supporting Files */,
+				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 			);
 			path = TheHat;
 			sourceTree = "<group>";
@@ -296,6 +295,18 @@
 				828927E71A0F541200BB009E /* PageContentViewController.swift */,
 			);
 			name = "Tutorial Screen";
+			sourceTree = "<group>";
+		};
+		82DF93FE1A1927680096A300 /* Different files */ = {
+			isa = PBXGroup;
+			children = (
+				82E0185719FEB954006BE02E /* Header.h */,
+				8267530C19F619A800071464 /* Main.storyboard */,
+				8267531119F619A800071464 /* LaunchScreen.xib */,
+				82B3D1F21A02D9F600239116 /* Media.xcassets */,
+				8267530719F619A800071464 /* Info.plist */,
+			);
+			name = "Different files";
 			sourceTree = "<group>";
 		};
 		82F1C00C1A03B2DC00CABE56 /* Data */ = {
@@ -436,6 +447,7 @@
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
+				82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

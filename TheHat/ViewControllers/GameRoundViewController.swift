@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameRoundViewController: UIViewController {
+class GameRoundViewController: BaseViewController {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!

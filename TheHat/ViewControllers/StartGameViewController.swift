@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartGameViewController: UIViewController, RoundSettingsDelegate {
+class StartGameViewController: BaseViewController, RoundSettingsDelegate {
 
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var settingsButton: UIBarButtonItem!
