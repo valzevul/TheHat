@@ -19,28 +19,32 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     // MARK: - Add new player
     
+    
+    // TODO: IMPLEMENT http://makeapppie.com/tag/addsubview-in-swift/
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat(45)
+        return CGFloat(80)
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = UIView()
+        
         let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
         button.frame = CGRectMake(100, 100, 100, 50)
         button.setTitle("+", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
         button.addTarget(self, action: "addPlayerAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        return button
-    }
-    
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        button.frame = CGRectMake(100, 100, 100, 50)
-        button.setTitle("From Address Book", forState: UIControlState.Normal)
-        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
-        button.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(button)
         
-        return button
+        let button_ab   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button_ab.frame = CGRectMake(100, 100, 100, 50)
+        button_ab.setTitle("From Address Book", forState: UIControlState.Normal)
+        button_ab.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
+        button_ab.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        view.addSubview(button_ab)
+        
+        return view
     }
     
     func addPlayerFromAddressBookAction(sender: UIButton!) {
