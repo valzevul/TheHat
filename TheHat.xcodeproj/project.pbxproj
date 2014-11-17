@@ -246,7 +246,6 @@
 				8200356C19F656C100CB62FB /* ViewControllers */,
 				822AD27F19FBE9CF00E201DA /* Media */,
 				8267530619F619A800071464 /* Supporting Files */,
-				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 			);
 			path = TheHat;
 			sourceTree = "<group>";
@@ -300,6 +299,7 @@
 		82DF93FE1A1927680096A300 /* Different files */ = {
 			isa = PBXGroup;
 			children = (
+				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 				82E0185719FEB954006BE02E /* Header.h */,
 				8267530C19F619A800071464 /* Main.storyboard */,
 				8267531119F619A800071464 /* LaunchScreen.xib */,
