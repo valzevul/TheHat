@@ -22,27 +22,28 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     // TODO: IMPLEMENT http://makeapppie.com/tag/addsubview-in-swift/
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat(80)
+        return CGFloat(100)
     }
     
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView()
+        let frameSize = tableView.frame
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 50))
         
         let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        button.frame = CGRectMake(100, 100, 100, 50)
+        button.frame = CGRectMake(0, 0, frameSize.width, 50)
         button.setTitle("+", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
         button.addTarget(self, action: "addPlayerAction:", forControlEvents: UIControlEvents.TouchUpInside)
         
         view.addSubview(button)
         
-        let button_ab   = UIButton.buttonWithType(UIButtonType.System) as UIButton
-        button_ab.frame = CGRectMake(100, 100, 100, 50)
-        button_ab.setTitle("From Address Book", forState: UIControlState.Normal)
-        button_ab.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
-        button_ab.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
-        
-        view.addSubview(button_ab)
+        let buttonAddressBook = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        buttonAddressBook.frame = CGRectMake(0, 50, frameSize.width, 50)
+        buttonAddressBook.setTitle("From Address Book", forState: UIControlState.Normal)
+        buttonAddressBook.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
+        buttonAddressBook.addTarget(self, action: "addPlayerFromAddressBookAction:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        view.addSubview(buttonAddressBook)
         
         return view
     }
