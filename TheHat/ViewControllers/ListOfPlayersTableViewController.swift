@@ -52,7 +52,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         self.performSegueWithIdentifier("selectFromAddressBook", sender: nil)
     }
     
-    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String) {
+    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String, image: UIImage) {
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
         let newPlayer: Player = Player(name: name)

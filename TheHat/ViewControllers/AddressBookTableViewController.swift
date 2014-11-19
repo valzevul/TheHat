@@ -12,7 +12,7 @@ import AddressBookUI
 
 protocol PersonFromAddressBookDelegate { // Delegete for changed settings
     
-    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String)
+    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String, image: UIImage)
 }
 
 class AddressBookTableViewController: UITableViewController {
@@ -63,8 +63,13 @@ class AddressBookTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
             let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
+            var image: UIImage = UIImage(named: "blank_person.png")
+            if ABPersonHasImageData(record) {
+                let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
+                image = UIImage(data: imgData)
+            }
             let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
-            delegate!.personFromAddressBookDidSelected(self, name: playerName)
+            delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
         }
     }
     
