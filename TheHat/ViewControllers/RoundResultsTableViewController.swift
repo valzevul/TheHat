@@ -12,10 +12,6 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
 
     @IBOutlet weak var finishGameButton: UIBarButtonItem!
     
-    let OKColor = UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)
-    let FColor = UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)
-    let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
-    
     var lSettings: LocalSettings?
     var tSystem: TournamentSystem?
     var currentWord: Word?
@@ -42,13 +38,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         
         switch (word.getStatus()) {
             case "OK":
-                cell.wordResultImage.backgroundColor = OKColor
+                cell.wordResultImage.backgroundColor = Constants.OKColor
                 cell.wordResultLabel.text = "OK"
             case "F":
-                cell.wordResultImage.backgroundColor = FColor
+                cell.wordResultImage.backgroundColor = Constants.FColor
                 cell.wordResultLabel.text = "F"
             default:
-                cell.wordResultImage.backgroundColor = MColor
+                cell.wordResultImage.backgroundColor = Constants.MColor
                 cell.wordResultLabel.text = "?"
         }
         
@@ -57,9 +53,9 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         cell.wordLabel?.text = word.getText()
         cell.leftSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.leftButtons = [
-            MGSwipeButton(title: "OK", backgroundColor: OKColor),
-            MGSwipeButton(title: "F", backgroundColor: FColor),
-            MGSwipeButton(title: "?", backgroundColor: MColor)]
+            MGSwipeButton(title: "OK", backgroundColor: Constants.OKColor),
+            MGSwipeButton(title: "F", backgroundColor: Constants.FColor),
+            MGSwipeButton(title: "?", backgroundColor: Constants.MColor)]
         return cell
     }
     
@@ -71,15 +67,15 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         switch (index) {
         case 0:
             self.cells[cell.tag].changeStatus("OK")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = OKColor
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.OKColor
             (cell as CustomTableViewCell).wordResultLabel.text = "OK"
         case 1:
             self.cells[cell.tag].changeStatus("Failed")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = FColor
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.FColor
             (cell as CustomTableViewCell).wordResultLabel.text = "F"
         case 2:
             self.cells[cell.tag].changeStatus("?")
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = MColor
+            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.MColor
             (cell as CustomTableViewCell).wordResultLabel.text = "?"
         default:
             println("x")

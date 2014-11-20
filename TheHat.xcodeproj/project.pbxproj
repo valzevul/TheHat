@@ -25,7 +25,6 @@
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
 		8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */; };
-		8284A96A19F9931C009A6544 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */; };
 		8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */; };
 		8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */; };
@@ -36,6 +35,8 @@
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */; };
+		82A62D2F1A1E485800A6A353 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A62D2E1A1E485800A6A353 /* Constants.swift */; };
+		82A62D301A1E4C5900A6A353 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
 		82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82B3D1F21A02D9F600239116 /* Media.xcassets */; };
 		82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
@@ -95,6 +96,7 @@
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerTableCell.swift; sourceTree = "<group>"; };
+		82A62D2E1A1E485800A6A353 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		82B3D1F21A02D9F600239116 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				823DD4611A10C3600005989A /* SwipeCell */,
+				82A62D2E1A1E485800A6A353 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				8207A23B1A1517CB00A169EC /* AddressBookTableViewController.swift in Sources */,
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
+				82A62D2F1A1E485800A6A353 /* Constants.swift in Sources */,
 				82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */,
 				8267530919F619A800071464 /* AppDelegate.swift in Sources */,
 				8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */,
@@ -456,9 +460,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */,
-				8284A96A19F9931C009A6544 /* TournamentSystem.swift in Sources */,
 				82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */,
 				828A1B9F1A01794D00BE793D /* ActiveWord.swift in Sources */,
+				82A62D301A1E4C5900A6A353 /* TournamentSystem.swift in Sources */,
 				82C7085819F7D9CC00D184B8 /* Player.swift in Sources */,
 				822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */,
 				82C7085B19F7DAA700D184B8 /* Word.swift in Sources */,

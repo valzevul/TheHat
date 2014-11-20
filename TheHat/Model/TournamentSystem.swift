@@ -9,8 +9,6 @@
 import Foundation
 
 class TournamentSystem {
-    
-    let PLAYERS_IN_ROUND = 2
     let gameObject: Game
     
     var playerIdx = 0
@@ -70,7 +68,7 @@ class TournamentSystem {
         var player_1 = gameObject.getPlayerByIndex(playerIdx)
         var player_2 = gameObject.getPlayerByIndex(playerIdx + 1)
         
-        playerIdx += PLAYERS_IN_ROUND
+        playerIdx += 2
         if (playerIdx + 1 > gameObject.players.count) {
             playerIdx = 0
         }

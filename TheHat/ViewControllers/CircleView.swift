@@ -40,9 +40,9 @@ class CircleView: UIView {
     func animateCircle(duration: NSTimeInterval, type: String) {
         
         if (type == "green") {
-            circleLayer.strokeColor = UIColor.greenColor().CGColor
+            circleLayer.strokeColor = Constants.OKColor.CGColor
         } else if (type == "red") {
-            circleLayer.strokeColor = UIColor.redColor().CGColor
+            circleLayer.strokeColor = Constants.FColor.CGColor
         }
         
         // We want to animate the strokeEnd property of the circleLayer

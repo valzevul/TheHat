@@ -120,9 +120,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
-            MGSwipeButton(title: "+ words", backgroundColor: UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)),
-            MGSwipeButton(title: "Edit", backgroundColor: UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)),
-            MGSwipeButton(title: "Delete", backgroundColor: UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7))]
+            MGSwipeButton(title: "+ words", backgroundColor: Constants.addColor),
+            MGSwipeButton(title: "Edit", backgroundColor: Constants.editColor),
+            MGSwipeButton(title: "Delete", backgroundColor: Constants.deleteColor)]
         
         return cell
     }
