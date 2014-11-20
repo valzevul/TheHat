@@ -63,7 +63,7 @@ class AddressBookTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
             let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
-            var image: UIImage = UIImage(named: "blank_person.png")
+            var image: UIImage = UIImage(named: "blank_user")
             if ABPersonHasImageData(record) {
                 let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
                 image = UIImage(data: imgData)
@@ -86,7 +86,10 @@ class AddressBookTableViewController: UITableViewController {
             
             let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
             let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
-            
+            if ABPersonHasImageData(record) {
+                let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
+                cell.imageView!.image = UIImage(data: imgData)
+            }
             cell.playerNameLabel.text = "\(playerName)"
         } else {
             cell.playerNameLabel.text = "access denied"

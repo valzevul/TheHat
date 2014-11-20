@@ -55,7 +55,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String, image: UIImage) {
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
-        let newPlayer: Player = Player(name: name)
+        let newPlayer: Player = Player(name: name, image: image)
         self.tSystem!.gameObject.addPlayer(newPlayer)
         
         self.tableView.reloadData()
@@ -110,7 +110,13 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
 
         cell.tag = indexPath.row
         cell.delegate = self
-        cell.playerLabel?.text = self.tSystem!.gameObject.players[indexPath.row].getName()
+        let player = self.tSystem!.gameObject.players[indexPath.row]
+        cell.playerLabel?.text = player.getName()
+        
+        if let image = player.getImage() {
+            cell.playerIconImage.image = image
+        }
+        
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [

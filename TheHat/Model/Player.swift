@@ -7,18 +7,25 @@
 //
 
 import Foundation
+import UIKit
 
 public class Player {
     
     private var words = [Word]()
     private var name: String?
     private var index: Int?
+    private var image: UIImage? // In case of import from address book
     
     private var scoreExplained = 0
     private var scoreGuessed = 0
     
     init(name: String) {
         self.name = name
+    }
+    
+    init(name: String, image: UIImage) {
+        self.name = name
+        self.image = image
     }
     
     func addWord(word: Word) {
@@ -53,5 +60,9 @@ public class Player {
     
     func incScoreGuessed() {
         self.scoreGuessed += 1
+    }
+    
+    func getImage() -> UIImage? {
+        return self.image
     }
 }
