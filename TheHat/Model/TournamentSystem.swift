@@ -102,7 +102,6 @@ class TournamentSystem {
     
     // MARK: - Players
     
-    
     /**
     Generate a new pair of players for the game with a step of two.
     

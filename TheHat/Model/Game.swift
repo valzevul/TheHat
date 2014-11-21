@@ -14,11 +14,13 @@ public class Game {
     
     /// Dictionary with a list of parsed words
     let dict: Dictionary
+    
     /// List of active words (with statuses and statistics)
     public var words = [ActiveWord]() // Words with statuses and statistics
     
     /// List of players
     var players = [Player]()
+    
     /// Expected number of words based on number of players and default settings
     let numberOfWords: Int?
     
@@ -28,6 +30,7 @@ public class Game {
             return words.count
         }
     }
+    
     /// Number of players
     public var numberOfPlayers: Int {
         get {
@@ -114,15 +117,8 @@ public class Game {
         let text = self.dict.getNewWord()
         return Word(owner: owner, text: text!)
     }
-    
-    func shuffleWords() {
-        
-        
-        
-    }
-    
+
     // MARK: - Game
-    
     
     /**
         Create random game.
