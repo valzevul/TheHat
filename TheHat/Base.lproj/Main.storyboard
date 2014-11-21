@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHA-bo-MPc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="-598"/>
+            <point key="canvasLocation" x="278" y="-598"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="CIW-V5-r53">
@@ -72,7 +72,7 @@
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="81c-fQ-w4d" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIs-Zb-Rau" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-132" y="-598"/>
+            <point key="canvasLocation" x="-147" y="-598"/>
         </scene>
         <!--Start Screen View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cu5-Tu-dJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-480" y="-598"/>
+            <point key="canvasLocation" x="-554" y="-598"/>
         </scene>
         <!--Start New Game-->
         <scene sceneID="2HV-wH-0XT">

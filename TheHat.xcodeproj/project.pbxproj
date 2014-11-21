@@ -144,13 +144,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		822AD27F19FBE9CF00E201DA /* Media */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Media;
-			sourceTree = "<group>";
-		};
 		823AECCE1A0CF5E200FC1889 /* Word */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,11 +235,11 @@
 		8267530519F619A800071464 /* TheHat */ = {
 			isa = PBXGroup;
 			children = (
+				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 				82DF93FE1A1927680096A300 /* Different files */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
 				829FB55919F6BEF80090BFB5 /* Model */,
 				8200356C19F656C100CB62FB /* ViewControllers */,
-				822AD27F19FBE9CF00E201DA /* Media */,
 				8267530619F619A800071464 /* Supporting Files */,
 			);
 			path = TheHat;
@@ -302,7 +295,6 @@
 		82DF93FE1A1927680096A300 /* Different files */ = {
 			isa = PBXGroup;
 			children = (
-				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 				82E0185719FEB954006BE02E /* Header.h */,
 				8267530C19F619A800071464 /* Main.storyboard */,
 				8267531119F619A800071464 /* LaunchScreen.xib */,
