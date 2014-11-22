@@ -12,9 +12,8 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    self.view.backgroundColor = Constants.lightGrey // Global background colour
-    
+        
+        self.view.backgroundColor = Constants.lightGrey // Global background colour
     }
     
 }
