@@ -236,6 +236,8 @@
 			isa = PBXGroup;
 			children = (
 				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
+				8267530C19F619A800071464 /* Main.storyboard */,
+				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 				82DF93FE1A1927680096A300 /* Different files */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
 				829FB55919F6BEF80090BFB5 /* Model */,
@@ -296,9 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				82E0185719FEB954006BE02E /* Header.h */,
-				8267530C19F619A800071464 /* Main.storyboard */,
 				8267531119F619A800071464 /* LaunchScreen.xib */,
-				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 				8267530719F619A800071464 /* Info.plist */,
 			);
 			name = "Different files";
