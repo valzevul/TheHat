@@ -87,7 +87,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwq-ei-1Av">
-                                <rect key="frame" x="105" y="265" width="110" height="38"/>
+                                <rect key="frame" x="105" y="135" width="110" height="38"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <state key="normal" title="New Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,7 +101,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="vwq-ei-1Av" secondAttribute="centerX" id="qUm-sg-dQv"/>
-                            <constraint firstAttribute="centerY" secondItem="vwq-ei-1Av" secondAttribute="centerY" id="xLy-Ib-s0w"/>
+                            <constraint firstAttribute="centerY" secondItem="vwq-ei-1Av" secondAttribute="centerY" constant="130" id="xLy-Ib-s0w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tcj-XF-f9S">

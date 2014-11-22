@@ -77,8 +77,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return self.tSystem!.gameObject.players.count
     }
     
-    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        
+    func changeName(cell: MGSwipeTableCell!) {
         let alertController = UIAlertController(title: "Change player's name", message: "Input new player's name:", preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
@@ -100,8 +99,21 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         
         self.presentViewController(alertController, animated: true) {
         }
-        
-        
+
+    }
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch index {
+        case 0: // Add words
+            break
+        case 1: // Change name (= edit)
+            changeName(cell)
+            break
+        case 2: // Delete
+            break
+        default:
+            break
+        }
         return true
     }
     
