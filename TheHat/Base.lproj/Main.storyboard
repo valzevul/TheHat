@@ -902,16 +902,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set number of players" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INa-eH-dCf">
-                                                    <rect key="frame" x="8" y="23" width="187" height="12"/>
+                                                    <rect key="frame" x="8" y="24" width="141" height="13"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HqL-yK-7pZ">
-                                                    <rect key="frame" x="203" y="7" width="109" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
+                                                <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minimumValue="1" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-nF-0vD">
+                                                    <rect key="frame" x="218" y="8" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="PlayersNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="JrO-NN-nTy"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zME-wp-8QZ">
+                                                    <rect key="frame" x="192" y="12" width="18" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -932,11 +939,18 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPV-wc-GjM">
-                                                    <rect key="frame" x="203" y="7" width="109" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
+                                                <stepper opaque="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-bC-NrV">
+                                                    <rect key="frame" x="218" y="7" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="WordsNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="Kgv-4I-fcn"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-eg-y4F">
+                                                    <rect key="frame" x="192" y="11" width="18" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -955,14 +969,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pin-nI-ZF9">
-                                                    <rect key="frame" x="203" y="7" width="109" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select round time (sec)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hli-mV-wCh">
                                                     <rect key="frame" x="8" y="23" width="187" height="12"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="5" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-Vg-wES">
+                                                    <rect key="frame" x="218" y="7" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="GameTimeValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="5lT-Pb-dIh"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-AY-tZG">
+                                                    <rect key="frame" x="192" y="11" width="18" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -980,14 +1001,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-lc-2J6">
-                                                    <rect key="frame" x="203" y="7" width="109" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                                </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select additional round time (sec)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHX-JJ-UtK">
                                                     <rect key="frame" x="8" y="23" width="187" height="12"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="iU7-Uk-CK3">
+                                                    <rect key="frame" x="218" y="7" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="AdditionalTimeValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="Mjy-my-8hC"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSZ-yT-a8e">
+                                                    <rect key="frame" x="192" y="11" width="18" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1004,18 +1032,22 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="0Sh-wg-OeJ"/>
                     <connections>
-                        <outlet property="additionalTimeField" destination="Wcn-lc-2J6" id="O1S-Ps-9r2"/>
+                        <outlet property="additionalTimeLabel" destination="pSZ-yT-a8e" id="vRl-K3-B9I"/>
+                        <outlet property="additionalTimeStepper" destination="iU7-Uk-CK3" id="JxS-8g-Gv4"/>
                         <outlet property="difficultnessSlider" destination="E0F-g7-OD3" id="kZx-0Y-UGU"/>
-                        <outlet property="gameTimeField" destination="Pin-nI-ZF9" id="fu7-no-5ZO"/>
+                        <outlet property="gameTimeLabel" destination="Pb6-AY-tZG" id="ELD-go-U3u"/>
+                        <outlet property="gameTimeStepper" destination="ghe-Vg-wES" id="pbm-q1-CdB"/>
                         <outlet property="playersNameFIeld" destination="kpr-OA-XnD" id="fhh-Dh-9hL"/>
-                        <outlet property="playersNumberField" destination="HqL-yK-7pZ" id="eNI-ff-U0k"/>
+                        <outlet property="playersNumberLabel" destination="zME-wp-8QZ" id="Nsx-u6-T81"/>
+                        <outlet property="playersNumberStepper" destination="8mS-nF-0vD" id="wqA-lb-r0G"/>
+                        <outlet property="playersWordsLabel" destination="lgj-eg-y4F" id="NXM-nA-oeN"/>
                         <outlet property="showTutorialSwitch" destination="8Ac-to-agk" id="mpz-7N-Le9"/>
-                        <outlet property="wordsPerPlayerField" destination="XPV-wc-GjM" id="JKF-pY-cs4"/>
+                        <outlet property="wordsPerPlayerStepper" destination="XfO-bC-NrV" id="q7w-9g-Q0Z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bbk-ns-dxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-480" y="928"/>
+            <point key="canvasLocation" x="-480" y="927"/>
         </scene>
         <!--Info-->
         <scene sceneID="e5I-0C-nOO">
