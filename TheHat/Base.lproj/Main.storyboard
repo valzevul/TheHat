@@ -907,19 +907,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minimumValue="1" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-nF-0vD">
-                                                    <rect key="frame" x="218" y="8" width="94" height="29"/>
-                                                    <connections>
-                                                        <action selector="PlayersNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="JrO-NN-nTy"/>
-                                                    </connections>
-                                                </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zME-wp-8QZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zME-wp-8QZ">
                                                     <rect key="frame" x="194" y="14" width="18" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minimumValue="2" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="8mS-nF-0vD">
+                                                    <rect key="frame" x="218" y="8" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="PlayersNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="JrO-NN-nTy"/>
+                                                    </connections>
+                                                </stepper>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zME-wp-8QZ" firstAttribute="top" secondItem="pML-hl-e3C" secondAttribute="topMargin" constant="6" id="4Ra-s0-PnS"/>
+                                                <constraint firstItem="8mS-nF-0vD" firstAttribute="trailing" secondItem="pML-hl-e3C" secondAttribute="trailingMargin" id="TGP-5K-JZ1"/>
+                                                <constraint firstItem="8mS-nF-0vD" firstAttribute="top" secondItem="pML-hl-e3C" secondAttribute="topMargin" id="c7s-a3-XyF"/>
+                                                <constraint firstItem="8mS-nF-0vD" firstAttribute="leading" secondItem="zME-wp-8QZ" secondAttribute="trailing" constant="6" id="e0w-8S-eHS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="7NG-gh-em2">
@@ -939,19 +945,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-bC-NrV">
-                                                    <rect key="frame" x="218" y="7" width="94" height="29"/>
-                                                    <connections>
-                                                        <action selector="WordsNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="Kgv-4I-fcn"/>
-                                                    </connections>
-                                                </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-eg-y4F">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgj-eg-y4F">
                                                     <rect key="frame" x="192" y="11" width="18" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minimumValue="1" maximumValue="99" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-bC-NrV">
+                                                    <rect key="frame" x="218" y="6" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="WordsNumberValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="Kgv-4I-fcn"/>
+                                                    </connections>
+                                                </stepper>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="lgj-eg-y4F" firstAttribute="top" secondItem="mTT-oe-lv1" secondAttribute="topMargin" constant="3" id="4rt-hx-6cJ"/>
+                                                <constraint firstItem="XfO-bC-NrV" firstAttribute="trailing" secondItem="mTT-oe-lv1" secondAttribute="trailingMargin" id="NnU-0S-jvD"/>
+                                                <constraint firstItem="XfO-bC-NrV" firstAttribute="leading" secondItem="lgj-eg-y4F" secondAttribute="trailing" constant="8" id="Pnf-uu-ndv"/>
+                                                <constraint firstItem="XfO-bC-NrV" firstAttribute="top" secondItem="mTT-oe-lv1" secondAttribute="topMargin" constant="-2" id="mvR-gz-p55"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -975,19 +987,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="5" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-Vg-wES">
-                                                    <rect key="frame" x="218" y="7" width="94" height="29"/>
-                                                    <connections>
-                                                        <action selector="GameTimeValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="5lT-Pb-dIh"/>
-                                                    </connections>
-                                                </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-AY-tZG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb6-AY-tZG">
                                                     <rect key="frame" x="192" y="11" width="18" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="5" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-Vg-wES">
+                                                    <rect key="frame" x="218" y="8" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="GameTimeValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="5lT-Pb-dIh"/>
+                                                    </connections>
+                                                </stepper>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Pb6-AY-tZG" secondAttribute="trailing" constant="102" id="FS4-8m-Msx"/>
+                                                <constraint firstItem="ghe-Vg-wES" firstAttribute="trailing" secondItem="9iL-DY-nDT" secondAttribute="trailingMargin" id="Wud-ht-El7"/>
+                                                <constraint firstItem="Pb6-AY-tZG" firstAttribute="top" secondItem="9iL-DY-nDT" secondAttribute="topMargin" constant="3" id="lJn-LK-0lq"/>
+                                                <constraint firstItem="ghe-Vg-wES" firstAttribute="top" secondItem="9iL-DY-nDT" secondAttribute="topMargin" id="zlR-zW-U1A"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EaA-dL-FCQ">
@@ -1007,19 +1025,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="iU7-Uk-CK3">
+                                                <stepper opaque="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="iU7-Uk-CK3">
                                                     <rect key="frame" x="218" y="7" width="94" height="29"/>
                                                     <connections>
                                                         <action selector="AdditionalTimeValueChanged:" destination="Euj-Ur-1oo" eventType="valueChanged" id="Mjy-my-8hC"/>
                                                     </connections>
                                                 </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSZ-yT-a8e">
-                                                    <rect key="frame" x="192" y="11" width="18" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSZ-yT-a8e">
+                                                    <rect key="frame" x="201" y="12" width="9" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pSZ-yT-a8e" firstAttribute="top" secondItem="PdU-Bh-heI" secondAttribute="topMargin" constant="4" id="8nD-J2-bGV"/>
+                                                <constraint firstItem="iU7-Uk-CK3" firstAttribute="top" secondItem="PdU-Bh-heI" secondAttribute="topMargin" constant="-1" id="DfS-ci-8Ik"/>
+                                                <constraint firstItem="iU7-Uk-CK3" firstAttribute="trailing" secondItem="PdU-Bh-heI" secondAttribute="trailingMargin" id="eZ4-Zm-bWs"/>
+                                                <constraint firstItem="iU7-Uk-CK3" firstAttribute="leading" secondItem="pSZ-yT-a8e" secondAttribute="trailing" constant="8" id="paa-Hu-5W7"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
