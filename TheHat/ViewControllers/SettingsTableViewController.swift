@@ -57,18 +57,22 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         }
         if let pNumber = namePreference.stringForKey("playersNumber") {
             playersNumberStepper.value = (pNumber as NSString).doubleValue
+            playersNumberLabel.text = "\(playersNumberStepper.value)"
         }
         if let diff = namePreference.stringForKey("difficultness") {
             difficultnessSlider.value = (diff as NSString).floatValue
         }
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTimeStepper.value = (gTime as NSString).doubleValue
+            gameTimeLabel.text = "\(gameTimeStepper.value)"
         }
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTimeStepper.value = (aTime  as NSString).doubleValue
+            additionalTimeLabel.text = "\(additionalTimeStepper.value)"
         }
         if let pWords = namePreference.stringForKey("playerWords") {
             wordsPerPlayerStepper.value = (pWords as NSString).doubleValue
+            playersWordsLabel.text = "\(wordsPerPlayerStepper.value)"
         }
     }
     
