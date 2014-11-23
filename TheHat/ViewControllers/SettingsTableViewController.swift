@@ -57,51 +57,50 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         }
         if let pNumber = namePreference.stringForKey("playersNumber") {
             playersNumberStepper.value = (pNumber as NSString).doubleValue
-            playersNumberLabel.text = "\(playersNumberStepper.value)"
+            playersNumberLabel.text = "\((pNumber as NSString).integerValue)"
         }
         if let diff = namePreference.stringForKey("difficultness") {
             difficultnessSlider.value = (diff as NSString).floatValue
         }
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTimeStepper.value = (gTime as NSString).doubleValue
-            gameTimeLabel.text = "\(gameTimeStepper.value)"
+            gameTimeLabel.text = "\((gTime as NSString).integerValue)"
         }
         if let aTime = namePreference.stringForKey("additionalTime") {
-            additionalTimeStepper.value = (aTime  as NSString).doubleValue
-            additionalTimeLabel.text = "\(additionalTimeStepper.value)"
+            additionalTimeStepper.value = (aTime as NSString).doubleValue
+            additionalTimeLabel.text = "\((aTime as NSString).integerValue)"
         }
         if let pWords = namePreference.stringForKey("playerWords") {
             wordsPerPlayerStepper.value = (pWords as NSString).doubleValue
-            playersWordsLabel.text = "\(wordsPerPlayerStepper.value)"
+            playersWordsLabel.text = "\((pWords as NSString).integerValue)"
         }
     }
     
     // MARK: - Settings Saving
 
     @IBAction func PlayersNumberValueChanged(sender: UIStepper) {
-        playersNumberLabel.text = "\(sender.value)"
+        playersNumberLabel.text = "\(Int(sender.value))"
         
         NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     @IBAction func WordsNumberValueChanged(sender: UIStepper) {
-        playersWordsLabel.text = "\(sender.value)"
+        playersWordsLabel.text = "\(Int(sender.value))"
         
         NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     @IBAction func GameTimeValueChanged(sender: UIStepper) {
-        gameTimeLabel.text = "\(sender.value)"
+        gameTimeLabel.text = "\(Int(sender.value))"
         
         NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     @IBAction func AdditionalTimeValueChanged(sender: UIStepper) {
-        additionalTimeLabel.text = "\(sender.value)"
-        println(additionalTimeLabel.text)
+        additionalTimeLabel.text = "\(Int(sender.value))"
         
         NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
