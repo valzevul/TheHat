@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Class for the info view
 class InfoViewController: BaseViewController {
     
     override func viewDidLoad() {

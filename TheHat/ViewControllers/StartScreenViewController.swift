@@ -8,16 +8,25 @@
 
 import UIKit
 
+/// Class for the first screen
 class StartScreenViewController: BaseViewController {
 
+    /// Start New Game button
     @IBOutlet weak var newGameButton: UIButton!
-    @IBOutlet weak var multiplayerGameButton: UIButton!
+    
+    /// Settings button
     @IBOutlet weak var settingsBarButton: UIBarButtonItem!
+    
+    /// Info button
     @IBOutlet weak var infoBarButton: UIBarButtonItem!
 
-    var mask: CALayer! // Animation mask
+    /// Animation mask
+    var mask: CALayer!
+    
+    /// Flag for animation (to avoid multiple runs)
     var firstRun = true // Flag for animation
     
+    /// Global settings
     let namePreference = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
@@ -39,12 +48,18 @@ class StartScreenViewController: BaseViewController {
         }
     }
     
+    /**
+    Performs segue for the tutorial.
+    */
     func showTutorial() {
         performSegueWithIdentifier("showTutorial", sender: nil)
     }
     
     // MARK: - Animation of the hat
     
+    /**
+    Creates layer mask for the hat animation.
+    */
     func createLayerMask() {
         self.mask = CALayer()
         self.mask!.contents = UIImage(named: "thehat").CGImage
@@ -54,6 +69,9 @@ class StartScreenViewController: BaseViewController {
         self.view.layer.mask = mask
     }
     
+    /**
+    Sets keyframe for the hat animation.
+    */
     func setKeyFrameAnimation() {
         let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
         keyFrameAnimation.duration = 1
@@ -63,6 +81,11 @@ class StartScreenViewController: BaseViewController {
         setBounds(keyFrameAnimation)
     }
     
+    /**
+    Sets bound for the hat animation.
+    
+    :param: keyFrameAnimation CAKeyFrameAnimation object
+    */
     func setBounds(keyFrameAnimation: CAKeyframeAnimation) {
         let initalBounds = NSValue(CGRect: mask!.bounds)
         let secondBounds = NSValue(CGRect: CGRect(x: 0, y: 0, width: 90, height: 90))
@@ -73,17 +96,38 @@ class StartScreenViewController: BaseViewController {
         self.mask!.addAnimation(keyFrameAnimation, forKey: "bounds")
     }
 
+    /**
+    Disables mask with the hat.
+    
+    :param: anim CAANimation!
+    :param: flag Bool
+    */
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         self.view.layer.mask = nil // Remove mask when animation completes
     }
 
     
+    /**
+    Starts new game.
+    
+    :param: sender UIButton
+    */
     @IBAction func newGameAction(sender: UIButton) {
     }
-    @IBAction func multiplayerGameAction(sender: UIButton) {
-    }
+    
+    /**
+    Shows game info.
+    
+    :param: sender UIButton
+    */
     @IBAction func infoBarButtonAction(sender: UIBarButtonItem) {
     }
+    
+    /**
+    Shows settings.
+    
+    :param: sender UIButton
+    */
     @IBAction func settingsBarButtonAction(sender: UIBarButtonItem) {
     }
 
