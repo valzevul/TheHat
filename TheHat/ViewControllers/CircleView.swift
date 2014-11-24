@@ -8,12 +8,21 @@
 
 import UIKit
 
+/// Class draws a circle at the view which shows a status of a word
 class CircleView: UIView {
 
+    /// Animation layer
     let circleLayer: CAShapeLayer!
     
+    /**
+    Creates new class object from a frame.
+    
+    :param: frame CGRect frame of the circle
+    :returns: CircleView object
+    */
     override init(frame: CGRect) {
         super.init(frame: frame)
+
         self.backgroundColor = UIColor.clearColor()
         
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
@@ -37,6 +46,12 @@ class CircleView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /**
+    Draws a circle with animation and fills it with a color.
+    
+    :param: duration NSInterval duration of the animation
+    :param: type String type of a circle (green, red, etc)
+    */
     func animateCircle(duration: NSTimeInterval, type: String) {
         
         if (type == "green") {
@@ -68,6 +83,12 @@ class CircleView: UIView {
         circleLayer.addAnimation(animation, forKey: "animateCircle")
     }
     
+    /**
+    Removes circle from the view after animation's end
+    
+    :param: anim CAAnimation object
+    :flag: Bool true if animation finished else false
+    */
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         self.removeFromSuperview()
     }
