@@ -8,22 +8,42 @@
 
 import UIKit
 
+/// CLass for settings table view controller
 class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Settings Fields
     
+    /// Switch determines to show the tutorial every run or not to show
     @IBOutlet weak var showTutorialSwitch: UISwitch!
+    
+    /// Default player's name
     @IBOutlet weak var playersNameFIeld: UITextField!
+    
+    /// Level of difficultness
     @IBOutlet weak var difficultnessSlider: UISlider!
     
+    /// Number of players
     @IBOutlet weak var playersNumberStepper: UIStepper!
+    
+    /// Number of words per player
     @IBOutlet weak var wordsPerPlayerStepper: UIStepper!
+    
+    /// Game time
     @IBOutlet weak var gameTimeStepper: UIStepper!
+    
+    /// Additional game time
     @IBOutlet weak var additionalTimeStepper: UIStepper!
     
+    /// NUmber of players label
     @IBOutlet weak var playersNumberLabel: UILabel!
+    
+    /// Number of words per player label
     @IBOutlet weak var playersWordsLabel: UILabel!
+    
+    /// Game time label
     @IBOutlet weak var gameTimeLabel: UILabel!
+    
+    /// Additional game time label
     @IBOutlet weak var additionalTimeLabel: UILabel!
     
     
@@ -33,6 +53,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         playersNameFIeld.delegate = self
     }
     
+    /**
+    Loads global settings.
+    
+    :param: animated Bool
+    */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -41,6 +66,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Settings Loading
     
+    /**
+    Loads global settings, updates all labels from the User's Defaults.
+    */
     func loadSettings() {
         let namePreference = NSUserDefaults.standardUserDefaults()
         
@@ -78,6 +106,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     // MARK: - Settings Saving
 
+    /**
+    
+    
+    :param: sender UIStepper
+    */
     @IBAction func PlayersNumberValueChanged(sender: UIStepper) {
         playersNumberLabel.text = "\(Int(sender.value))"
         
@@ -85,6 +118,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    /**
+    Updates settings if number of words per player has changed.
+    
+    :param: sender UIStepper
+    */
     @IBAction func WordsNumberValueChanged(sender: UIStepper) {
         playersWordsLabel.text = "\(Int(sender.value))"
         
@@ -92,6 +130,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    /**
+    Updates settings if game time has changed.
+    
+    :param: sender UIStepper
+    */
     @IBAction func GameTimeValueChanged(sender: UIStepper) {
         gameTimeLabel.text = "\(Int(sender.value))"
         
@@ -99,6 +142,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    /**
+        Updates settings if additional time has changed.
+    
+    :param: sender UIStepper
+    */
     @IBAction func AdditionalTimeValueChanged(sender: UIStepper) {
         additionalTimeLabel.text = "\(Int(sender.value))"
         
@@ -106,18 +154,33 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    /**
+    Updates settings if tutorial's status has changed.
+    
+    :param: sender UISwitch
+    */
     @IBAction func tutorialSwitchValueDidChanged(sender: UISwitch) {
         sender.resignFirstResponder()
         NSUserDefaults.standardUserDefaults().setValue(sender.on, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
+    /**
+    Updates settings if difficultness has changed.
+    
+    :param: sender UISlider
+    */
     @IBAction func diffSliderValueDidChanged(sender: UISlider) {
         sender.resignFirstResponder()
         NSUserDefaults.standardUserDefaults().setValue(sender.value, forKey:Settings.keys[sender.tag])
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 
+    /**
+    Updates settings if some of text fields has changed.
+    
+    :param: sender UITextField
+    */
     func textFieldDidEndEditing(textField: UITextField) {
         textField.resignFirstResponder();
         NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey:Settings.keys[textField.tag])

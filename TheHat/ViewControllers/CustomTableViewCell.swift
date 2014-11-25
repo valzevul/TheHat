@@ -8,22 +8,24 @@
 
 import UIKit
 
+/// Class of a custom table cell wuth word's status after the round
 class CustomTableViewCell: MGSwipeTableCell {
 
+    /// Word text
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var wordResultImage: UIImageView!
-    @IBOutlet weak var wordResultLabel: UILabel!
     
+    /// Word status image
+    @IBOutlet weak var wordResultImage: UIImageView!
+    
+    /// Word status label
+    @IBOutlet weak var wordResultLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
