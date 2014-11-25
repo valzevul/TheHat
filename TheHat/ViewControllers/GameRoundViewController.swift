@@ -45,6 +45,11 @@ class GameRoundViewController: BaseViewController {
     /// The last word at the screen
     var currentWord: ActiveWord?
     
+    /**
+    Sets timer for current round.
+    
+    :param: animated Bool
+    */
     override func viewDidAppear(animated: Bool) {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         timeLeft = gameTime!
@@ -78,6 +83,8 @@ class GameRoundViewController: BaseViewController {
 
     /**
     Draws a circle at the view.
+    
+    :param: type String type of the circle (red, green, etc)
     */
     func drawCircle(type: String) {
         var circleWidth = CGFloat(100)
@@ -97,6 +104,8 @@ class GameRoundViewController: BaseViewController {
     
     /**
     Processes left swipe at the view.
+    
+    :param: sender UISwipeGestureRecognizer
     */
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
@@ -116,6 +125,8 @@ class GameRoundViewController: BaseViewController {
     
     /**
     Processes right swipe at the view.
+    
+    :param: sender UISwipeGestureRecognizer
     */
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("green")

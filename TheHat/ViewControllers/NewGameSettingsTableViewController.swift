@@ -8,14 +8,25 @@
 
 import UIKit
 
+/// Class for the local settings before a new game
 class NewGameSettingsTableViewController: UITableViewController, UITextFieldDelegate {
 
+    /// Segmented control for the game type (pair-to-pair, random game, etc)
     @IBOutlet weak var gameTypeSegmentedControl: UISegmentedControl!
+    
+    /// Source of a words' package
     @IBOutlet weak var wordsSourceTextField: UITextField!
     
+    /// Game object
     var gameObject: Game?
+    
+    /// Tournament System object
     var tSystem: TournamentSystem?
+    
+    /// Local settings object
     var lSettings: LocalSettings?
+    
+    /// Loaded global settings
     let namePreference = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
@@ -40,16 +51,32 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     
     // MARK: - Settings Savings
     
+    /**
+    Changes game type and updates local settings.
+    
+    :param: sender UISegmentedControl object
+    */
     @IBAction func gameTypeChanged(sender: UISegmentedControl) {
         lSettings!.changeGameType(gameTypeSegmentedControl.selectedSegmentIndex)
     }
     
+    /**
+    Changes words' source and updates local settings.
+    
+    :param: textField UITextField object
+    */
     func textFieldDidEndEditing(textField: UITextField) {
         lSettings!.changeWordsSource(textField.text)
     }
     
     // MARK: - Segue
     
+    /**
+    Prepares for the game.
+    
+    :param: UIStoryboardSegue object
+    :param: sender AnyObject!
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showNewRoundInfo") {
             var startGameVC = segue.destinationViewController as ListOfPlayersTableViewController;
