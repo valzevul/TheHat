@@ -787,13 +787,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xr6-aJ-SQi" customClass="CircleView" customModule="TheHat" customModuleProvider="target">
+                                <rect key="frame" x="110" y="411" width="100" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bnK-YY-SH1" secondAttribute="centerX" id="1nz-F4-3QR"/>
+                            <constraint firstItem="xr6-aJ-SQi" firstAttribute="leading" secondItem="wvL-PX-QVh" secondAttribute="leadingMargin" constant="94" id="BXt-z2-byH"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="trailing" secondItem="wvL-PX-QVh" secondAttribute="trailingMargin" id="Px5-FZ-KBw"/>
+                            <constraint firstItem="xr6-aJ-SQi" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="347" id="eKU-o5-U1J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xr6-aJ-SQi" secondAttribute="trailing" constant="94" id="fYT-vz-oJh"/>
                             <constraint firstAttribute="centerY" secondItem="bnK-YY-SH1" secondAttribute="centerY" id="lqd-BG-uy6"/>
+                            <constraint firstItem="MYT-e7-72p" firstAttribute="top" secondItem="xr6-aJ-SQi" secondAttribute="bottom" constant="57" id="oGa-jG-jhQ"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="8" id="wmt-f2-d6T"/>
                         </constraints>
                         <connections>
@@ -803,6 +811,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="A → B" id="8pB-gN-tKA"/>
                     <connections>
+                        <outlet property="circleView" destination="xr6-aJ-SQi" id="r1h-Kn-nvE"/>
                         <outlet property="timerLabel" destination="S4r-O9-55B" id="efx-X9-45p"/>
                         <outlet property="wordLabel" destination="bnK-YY-SH1" id="pWE-Cr-9DP"/>
                         <segue destination="47S-Yw-Ce2" kind="push" identifier="timerFinished" id="z3N-CI-fKV"/>

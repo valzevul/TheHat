@@ -12,17 +12,9 @@ import UIKit
 class CircleView: UIView {
 
     /// Animation layer
-    let circleLayer: CAShapeLayer!
+    var circleLayer: CAShapeLayer!
     
-    /**
-    Creates new class object from a frame.
-    
-    :param: frame CGRect frame of the circle
-    :returns: CircleView object
-    */
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
+    func setUp() {
         self.backgroundColor = UIColor.clearColor()
         
         // Use UIBezierPath as an easy way to create the CGPath for the layer.
@@ -42,8 +34,28 @@ class CircleView: UIView {
         layer.addSublayer(circleLayer)
     }
     
+    /**
+    Creates new class object from a frame.
+    
+    :param: frame CGRect frame of the circle
+    :returns: CircleView object
+    */
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setUp()
+    }
+    
+    /**
+    Creates new class object.
+    
+    :param: aDecoder NSDecoder
+    :returns: CircleView object
+    */
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        
+        setUp()
     }
     
     /**
@@ -90,7 +102,10 @@ class CircleView: UIView {
     :flag: Bool true if animation finished else false
     */
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-        self.removeFromSuperview()
+        
+        // Hides animation
+        circleLayer.removeAllAnimations()
+        self.hidden = true
     }
     
 

@@ -45,6 +45,9 @@ class GameRoundViewController: BaseViewController {
     /// The last word at the screen
     var currentWord: ActiveWord?
     
+    /// UIView for circle animation
+    @IBOutlet weak var circleView: CircleView!
+    
     /**
     Sets timer for current round.
     
@@ -87,16 +90,10 @@ class GameRoundViewController: BaseViewController {
     :param: type String type of the circle (red, green, etc)
     */
     func drawCircle(type: String) {
-        var circleWidth = CGFloat(100)
-        var circleHeight = circleWidth
-        
-        // Create a new CircleView
-        var circleView = CircleView(frame: CGRectMake(self.view.frame.width / 2 - 50, self.view.frame.height / 2 + 100, circleWidth, circleHeight))
-        
-        view.addSubview(circleView)
-        
+        self.circleView.hidden = false
+    
         // Animate the drawing of the circle over the course of 1 second
-        circleView.animateCircle(0.3, type: type)
+        self.circleView.animateCircle(0.3, type: type)
     }
     
     
