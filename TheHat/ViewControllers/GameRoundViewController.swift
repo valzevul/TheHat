@@ -7,25 +7,42 @@
 //
 
 import UIKit
-import SpriteKit
+import SpriteKit // To draw a circle at the view
 
+/// Class for the current game round
 class GameRoundViewController: BaseViewController {
 
+    /// Word-to-guess label
     @IBOutlet weak var wordLabel: UILabel!
+    
+    /// Left time label
     @IBOutlet weak var timerLabel: UILabel!
     
+    /// Tournament System object
     var tSystem: TournamentSystem?
+    
+    /// Local Settings object
     var lSettings: LocalSettings?
+    
+    /// Loaded global settings
     let namePreference = NSUserDefaults.standardUserDefaults()
     
-    // Create singletone for this one to aboid crashes
+    /// Timer for the left time
     var timer: NSTimer?
     
+    /// Time spent at the screen
     var counter = 0
+    
+    /// Time left
     var timeLeft = 0
+    
+    /// Game time variable
     var gameTime: Int?
+    
+    /// Additional time variable
     var additionalTime: Int?
     
+    /// The last word at the screen
     var currentWord: ActiveWord?
     
     override func viewDidAppear(animated: Bool) {
@@ -59,6 +76,9 @@ class GameRoundViewController: BaseViewController {
     
     // TODO: Implement: https://github.com/cwRichardKim/TinderSimpleSwipeCards
 
+    /**
+    Draws a circle at the view.
+    */
     func drawCircle(type: String) {
         var circleWidth = CGFloat(100)
         var circleHeight = circleWidth
@@ -75,10 +95,16 @@ class GameRoundViewController: BaseViewController {
     
     // MARK: - Swipe Processing
     
+    /**
+    Processes left swipe at the view.
+    */
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         wordFailed()
     }
     
+    /**
+    Indicates that a word was failed.
+    */
     func wordFailed() {
         currentWord!.incAttemptsNumber()
         currentWord?.incTime(counter)
@@ -88,11 +114,17 @@ class GameRoundViewController: BaseViewController {
         performSegueWithIdentifier("timerFinished", sender: self)
     }
     
+    /**
+    Processes right swipe at the view.
+    */
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("green")
         wordGuessed()
     }
 
+    /**
+    Indicates that a word was guessed.
+    */
     func wordGuessed() {
         currentWord!.incAttemptsNumber()
         currentWord?.incTime(counter)
@@ -113,6 +145,9 @@ class GameRoundViewController: BaseViewController {
     
     // MARK: - Timer
     
+    /**
+    Updates timer info.
+    */
     func update() -> Void {
         timeLeft = gameTime! - ++counter
         timerLabel.text = String(timeLeft)
@@ -140,6 +175,12 @@ class GameRoundViewController: BaseViewController {
     
     // MARK: - Segue
 
+    /**
+    Prepares for a segue.
+    
+    :param: UIStoryboardSegue object
+    :param: sender AnyObject!
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {
             if (timer != nil ) {
