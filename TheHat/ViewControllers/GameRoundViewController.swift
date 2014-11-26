@@ -105,6 +105,7 @@ class GameRoundViewController: BaseViewController {
     :param: sender UISwipeGestureRecognizer
     */
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
+        drawCircle("red")
         wordFailed()
     }
     
