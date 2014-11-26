@@ -8,13 +8,22 @@
 
 import UIKit
 
+/// Class for the content of tutorial pages.
 class PageContentViewController: UIViewController {
     
+    /// Page label
     @IBOutlet weak var titleLabel: UILabel!
+    
+    /// Background image
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    /// Curent page index
     var pageIndex: Int?
+    
+    /// View controller title
     var titleText: String?
+    
+    /// Image file
     var imageFile: UIImage?
     
     override func viewDidLoad() {

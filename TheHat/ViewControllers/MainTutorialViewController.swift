@@ -8,11 +8,19 @@
 
 import UIKit
 
+/// Tutorial class
 class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSource {
 
+    /// Page view controller for different views of the tutorial
     var pageViewController : UIPageViewController?
+    
+    /// List of page titles
     var pageTitles = ["A", "B", "C"]
+    
+    /// List of page backgrounds
     var pageImages = ["page1.png", "page2.png", "page3.png"]
+    
+    /// Current page index
     var currentIndex = 0
     
     override func viewDidLoad() {
@@ -29,11 +37,19 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         showTutorial()
     }
     
+    /**
+    Returns to the main screen.
+    
+    :param: sender UIButton
+    */
     @IBAction func backAction(sender: UIButton) {
         self.navigationController?.navigationBar.hidden = false
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    /**
+    Generates pages for the tutorial.
+    */
     func showTutorial() {
         
         var startingViewController : PageContentViewController = self.viewControllerAtIndex(0)!
@@ -41,6 +57,9 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
     }
     
+    /**
+    Creates subviews with controllers.
+    */
     func createControllers() {
         // Create page view controller
         self.pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as? UIPageViewController
@@ -61,6 +80,12 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
     
     // MARK: - Page View Controller Data Source
     
+    /**
+    Returns a page based on the given index.
+    
+    :param: index Int of the
+    :returns: PageContentViewController object
+    */
     func viewControllerAtIndex(index : Int) -> PageContentViewController? {
         
         if self.pageTitles.count == 0 || index >= self.pageTitles.count {
@@ -76,6 +101,14 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         return pageContentViewController;
     }
     
+    /**
+    Shows the previous screen of the tutorial.
+    
+    :param: pageViewController UIPageViewController
+    :param: viewController UIViewController
+    
+    :returns: UIViewController of nil
+    */
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = (viewController as PageContentViewController).pageIndex
         
@@ -87,6 +120,15 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         return self.viewControllerAtIndex(index!)
     }
     
+    /**
+    Shows the previous screen of the tutorial.
+    
+    :param: pageViewController UIPageViewController
+    :param: viewController UIViewController
+    
+    :returns: UIViewController of nil
+
+    */
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         var index = (viewController as PageContentViewController).pageIndex
         
@@ -98,6 +140,13 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         return self.viewControllerAtIndex(index!)
     }
     
+    /**
+    Shows the dots at the bottom of the screen.
+    
+    :param: pageViewController
+    
+    :returns: Int number of pages (=dots)
+    */
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return self.pageTitles.count
     }
