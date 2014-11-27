@@ -172,7 +172,7 @@ class AddressBookTableViewController: UITableViewController {
     }
 
     /**
-    Get players' names from the final list.
+    Get contact's data by an index of a cell.
     
     :param: row Int index of a person
     */
@@ -194,7 +194,12 @@ class AddressBookTableViewController: UITableViewController {
         
         delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
     }
-
+    
+    /**
+    Get players' names from the final list and dismiss current view controller.
+    
+    :param: sender UIBarButtonItem
+    */
     @IBAction func addPlayersAction(sender: UIBarButtonItem) {
         
         for person in selectedPersons {
