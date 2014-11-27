@@ -273,6 +273,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="cIH-s5-efs">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Title" id="d6S-21-3Pj">
+                                    <barButtonItem key="rightBarButtonItem" systemItem="done" id="tTp-LF-9p2">
+                                        <connections>
+                                            <action selector="addPlayersAction:" destination="35s-Sl-vhg" id="0p6-gX-YdW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="AddressBookCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressBookCell" rowHeight="62" id="Ifc-VT-3Ah" customClass="AddressBookTableViewCell" customModule="TheHat" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -310,11 +323,13 @@
                             <outlet property="delegate" destination="35s-Sl-vhg" id="zk4-fI-Mnj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2Oq-oQ-BIs"/>
+                    <connections>
+                        <outlet property="addPlayersButton" destination="tTp-LF-9p2" id="uud-P5-85h"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2c-Tz-fZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160" y="-580"/>
+            <point key="canvasLocation" x="993" y="-598"/>
         </scene>
         <!--List of Players-->
         <scene sceneID="CEO-Ar-pC5">
@@ -387,7 +402,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="35s-Sl-vhg" kind="push" identifier="selectFromAddressBook" id="yuc-JY-87z"/>
+                        <segue destination="35s-Sl-vhg" kind="modal" identifier="selectFromAddressBook" id="yuc-JY-87z"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZR-dt-I1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1220,6 +1235,6 @@ Cgo
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HVG-rt-qFZ"/>
+        <segue reference="gUm-sP-u0h"/>
     </inferredMetricsTieBreakers>
 </document>

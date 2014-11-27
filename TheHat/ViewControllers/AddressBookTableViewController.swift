@@ -35,6 +35,12 @@ class AddressBookTableViewController: UITableViewController {
     /// List of persons from address book
     var contactList: NSArray?
     
+    /// List of selected persons
+    var selectedPersons = [Int]()
+    
+    /// Button to add a list of persons to the dict
+    @IBOutlet weak var addPlayersButton: UIBarButtonItem!
+    
     /**
     Exctracts reference to the address book.
     
@@ -103,21 +109,14 @@ class AddressBookTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
             
-            /// Contact entry for the person
-            let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
+            var cell = tableView.cellForRowAtIndexPath(indexPath)
             
-            /// Blank image as a template
-            var image: UIImage = UIImage(named: "blank_user")
-            
-            if ABPersonHasImageData(record) {
-                /// New person's image if exists
-                let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
-                image = UIImage(data: imgData)
+            if (cell?.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+                cell?.accessoryType = UITableViewCellAccessoryType.None
+            } else {
+                selectedPersons.append(indexPath.row)
+                cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
             }
-            
-            /// Contact's name from address book
-            let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
-            delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
         }
     }
     
@@ -146,6 +145,7 @@ class AddressBookTableViewController: UITableViewController {
         /// A new cell to be returned
         let cell: AddressBookTableViewCell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
         
+
         // If access granted
         if (contactList != nil) {
             
@@ -168,5 +168,40 @@ class AddressBookTableViewController: UITableViewController {
         return cell
     }
 
+    /**
+    Get players' names from the final list.
+    
+    :param: row Int index of a person
+    */
+    func process(row: Int) {
+        /// Contact entry for the person
+        let record: ABRecordRef = contactList!.objectAtIndex(row)
+        
+        /// Blank image as a template
+        var image: UIImage = UIImage(named: "blank_user")
+        
+        if ABPersonHasImageData(record) {
+            /// New person's image if exists
+            let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
+            image = UIImage(data: imgData)
+        }
+        
+        /// Contact's name from address book
+        let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
+        
+        delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
+    }
+
+    @IBAction func addPlayersAction(sender: UIBarButtonItem) {
+        
+        for person in selectedPersons {
+            process(person)
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+    
 
 }
