@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// A word: the main construction in the game. Consists of owner and text (description).
 public class Word {
     

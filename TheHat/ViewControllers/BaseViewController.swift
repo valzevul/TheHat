@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Base class for global changes
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 /// Game object with players, words, etc.
 public class Game {
     
