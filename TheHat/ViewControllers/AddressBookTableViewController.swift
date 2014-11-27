@@ -113,6 +113,9 @@ class AddressBookTableViewController: UITableViewController {
             
             if (cell?.accessoryType == UITableViewCellAccessoryType.Checkmark) {
                 cell?.accessoryType = UITableViewCellAccessoryType.None
+                if let idx = find(selectedPersons, indexPath.row) {
+                    selectedPersons.removeAtIndex(idx)
+                }
             } else {
                 selectedPersons.append(indexPath.row)
                 cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
