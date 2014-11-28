@@ -155,8 +155,16 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         /// A new cell to be returned
-        let cell: AddressBookTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
-
+        
+        var cell: AddressBookTableViewCell
+        
+        if (tableView == self.searchDisplayController!.searchResultsTableView) {
+            cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as AddressBookTableViewCell
+        } else {
+            cell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
+        }
+        
+        
         // If access granted
         if (contactList != nil) {
             
