@@ -286,6 +286,14 @@
                                 </navigationItem>
                             </items>
                         </navigationBar>
+                        <searchBar key="tableFooterView" contentMode="redraw" id="mRp-Ct-FCL">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="35s-Sl-vhg" id="eU9-AV-bAq"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="AddressBookCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressBookCell" rowHeight="62" id="Ifc-VT-3Ah" customClass="AddressBookTableViewCell" customModule="TheHat" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -325,9 +333,20 @@
                     </tableView>
                     <connections>
                         <outlet property="addPlayersButton" destination="tTp-LF-9p2" id="uud-P5-85h"/>
+                        <outlet property="searchBar" destination="mRp-Ct-FCL" id="fbA-GM-eO0"/>
+                        <outlet property="searchDisplayController" destination="Zzw-JU-cGj" id="uwe-cD-NT8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2c-Tz-fZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Zzw-JU-cGj">
+                    <connections>
+                        <outlet property="delegate" destination="35s-Sl-vhg" id="xHX-m7-5qw"/>
+                        <outlet property="searchBar" destination="mRp-Ct-FCL" id="EoP-Dh-a31"/>
+                        <outlet property="searchContentsController" destination="35s-Sl-vhg" id="EZx-1u-HU4"/>
+                        <outlet property="searchResultsDataSource" destination="35s-Sl-vhg" id="9UN-Tt-LzV"/>
+                        <outlet property="searchResultsDelegate" destination="35s-Sl-vhg" id="20Z-OW-VT7"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="993" y="-598"/>
         </scene>

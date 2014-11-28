@@ -24,7 +24,7 @@ protocol PersonFromAddressBookDelegate {
 }
 
 /// Class for the Address book table
-class AddressBookTableViewController: UITableViewController {
+class AddressBookTableViewController: UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
     /// Address book reference
     var addressBook: ABAddressBookRef?
@@ -37,9 +37,14 @@ class AddressBookTableViewController: UITableViewController {
     
     /// List of selected persons
     var selectedPersons = [Int]()
+    var filteredPersons = [ABAddressBookRef]()
     
     /// Button to add a list of persons to the dict
     @IBOutlet weak var addPlayersButton: UIBarButtonItem!
+    
+    /// Search bar
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     /**
     Exctracts reference to the address book.
@@ -132,7 +137,11 @@ class AddressBookTableViewController: UITableViewController {
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (contactList != nil) {
-            return contactList!.count // If address book was parsed successfuly
+            if tableView == self.searchDisplayController!.searchResultsTableView {
+                return self.filteredPersons.count
+            } else {
+                return contactList!.count // If address book was parsed successfuly
+            }
         }
         return 1
     }
@@ -146,14 +155,19 @@ class AddressBookTableViewController: UITableViewController {
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         /// A new cell to be returned
-        let cell: AddressBookTableViewCell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
-        
+        let cell: AddressBookTableViewCell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
 
         // If access granted
         if (contactList != nil) {
             
+            var record: ABRecordRef
+            
             /// Contact entry for the person
-            let record: ABRecordRef = contactList!.objectAtIndex(indexPath.row)
+            if (tableView == self.searchDisplayController!.searchResultsTableView) && (filteredPersons.count > 0) {
+                record = filteredPersons[indexPath.row]
+            } else {
+                record = contactList![indexPath.row]
+            }
             
             /// Contact's name from address book
             let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
@@ -211,5 +225,23 @@ class AddressBookTableViewController: UITableViewController {
         })
     }
     
+    // MARK: - Search
+    func filterContentForSearchText(searchText: String) {
+        // Filter the array using the filter method
+        self.filteredPersons = (self.contactList as Array).filter({( person: ABRecordRef) -> Bool in
+            let nameMatch = ABRecordCopyCompositeName(person).takeRetainedValue() as NSString
+            return ((nameMatch as String).rangeOfString(searchText) != nil)
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
 
 }
