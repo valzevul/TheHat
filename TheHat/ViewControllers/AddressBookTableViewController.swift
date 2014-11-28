@@ -80,6 +80,9 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Creates table view
+        self.searchDisplayController?.searchResultsTableView.rowHeight = self.tableView.rowHeight
+        
         // If not managed yet
         if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.NotDetermined) {
             var errorRef: Unmanaged<CFError>? = nil
@@ -157,6 +160,8 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         /// A new cell to be returned
         
         var cell: AddressBookTableViewCell
+        
+        // TODO: fix bug with different cells' idsfor search and for casual table view
         
         if (tableView == self.searchDisplayController!.searchResultsTableView) {
             cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as AddressBookTableViewCell
