@@ -243,5 +243,13 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return searchBar
+    }
 
 }
