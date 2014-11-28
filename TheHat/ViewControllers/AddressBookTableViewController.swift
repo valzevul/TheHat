@@ -226,6 +226,12 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
     }
     
     // MARK: - Search
+    
+    /**
+    Creates a list of filtered persons to work with.
+    
+    :param: searchText String text to search.
+    */
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
         self.filteredPersons = (self.contactList as Array).filter({( person: ABRecordRef) -> Bool in
@@ -234,20 +240,43 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         })
     }
     
+    /**
+    Reloads table to provide new search results.
+    
+    :param: controller UISearchDisplayController
+    :param: searchString String
+    */
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
         return true
     }
     
+    /**
+    Reloads table for search scope.
+    
+    :param: controller UISearchDisplayController
+    :param: searchOption Int
+    */
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
     
+    /**
+    Determines the height of the section header.
+    
+    :param: tableView UITableView
+    :param: section Int
+    */
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44
     }
+
+    /**
+    Displays the search at the header of the table.
     
+    :param: tableView UITableView
+    */
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return searchBar
     }
