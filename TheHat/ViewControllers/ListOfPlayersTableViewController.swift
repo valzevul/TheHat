@@ -66,7 +66,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     :param: sender UIButton
     */
     func addPlayerFromAddressBookAction(sender: UIButton!) {
-        self.performSegueWithIdentifier("selectFromAddressBook", sender: nil)
+        self.performSegueWithIdentifier("openAddressBook", sender: nil)
     }
     
     /**
@@ -76,7 +76,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     :param: name Name of a person from AB
     :param: image Image of a person from AB if exists or default picture
     */
-    func personFromAddressBookDidSelected(controller: AddressBookTableViewController, name: String, image: UIImage) {
+    func personFromAddressBookDidSelected(controller: AddressBookViewController, name: String, image: UIImage) {
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
         let newPlayer: Player = Player(name: name, image: image)
@@ -207,8 +207,8 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             var startGameVC = segue.destinationViewController as StartGameViewController
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
-        } else if (segue.identifier == "selectFromAddressBook") {
-            var ab = segue.destinationViewController as AddressBookTableViewController
+        } else if (segue.identifier == "openAddressBook") {
+            var ab = segue.destinationViewController as AddressBookViewController
             ab.delegate = self
         }
     }

@@ -52,6 +52,7 @@
 		82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
 		82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */; };
+		82FFFFF71A2A4A910064C75C /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = /Users/valzevul/projects/ios/TheHat/Header.h; sourceTree = "<absolute>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
+		82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookViewController.swift; path = ViewControllers/AddressBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +239,7 @@
 			children = (
 				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 				8267530C19F619A800071464 /* Main.storyboard */,
+				82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */,
 				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 				82DF93FE1A1927680096A300 /* Different files */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
@@ -444,6 +447,7 @@
 				82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
 				82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */,
+				82FFFFF71A2A4A910064C75C /* AddressBookViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
