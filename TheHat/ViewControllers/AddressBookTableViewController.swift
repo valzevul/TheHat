@@ -81,6 +81,9 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         super.viewDidLoad()
         
         // Creates table view
+        
+        self.tableView.tableHeaderView = searchBar;
+        
         self.searchDisplayController?.searchResultsTableView.rowHeight = self.tableView.rowHeight
         
         // If not managed yet
@@ -161,7 +164,7 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         
         var cell: AddressBookTableViewCell
         
-        // TODO: fix bug with different cells' idsfor search and for casual table view
+        // TODO: fix bug with different cells' ids for search and for casual table view
         
         if (tableView == self.searchDisplayController!.searchResultsTableView) {
             cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as AddressBookTableViewCell
@@ -274,24 +277,4 @@ class AddressBookTableViewController: UITableViewController, UISearchBarDelegate
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
     }
-    
-    /**
-    Determines the height of the section header.
-    
-    :param: tableView UITableView
-    :param: section Int
-    */
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
-    }
-
-    /**
-    Displays the search at the header of the table.
-    
-    :param: tableView UITableView
-    */
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return searchBar
-    }
-
 }
