@@ -235,10 +235,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
             process(person)
         }
         
-        self.dismissViewControllerAnimated(true, completion: { () -> Void in
-            
-        })
+        self.navigationController?.popViewControllerAnimated(true)
     }
+
     
     // MARK: - Search
     
