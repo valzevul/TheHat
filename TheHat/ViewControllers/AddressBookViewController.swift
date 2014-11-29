@@ -190,7 +190,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
             if ABPersonHasImageData(record) {
                 /// New person's image if exists
                 let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
-                cell.imageView!.image = UIImage(data: imgData)
+                cell.playerImageView.image = UIImage(data: imgData)
             }
             cell.playerNameLabel.text = "\(playerName)"
         } else {

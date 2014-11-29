@@ -14,6 +14,10 @@ class AddressBookTableViewCell: UITableViewCell {
     /// Player name to be displayed
     @IBOutlet weak var playerNameLabel: UILabel!
     
+    /// Player's image
+    @IBOutlet weak var playerImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

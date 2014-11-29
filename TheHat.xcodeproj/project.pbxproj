@@ -10,7 +10,6 @@
 		8200357219F656F100CB62FB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357119F656F100CB62FB /* InfoViewController.swift */; };
 		8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357319F65CE400CB62FB /* StartGameViewController.swift */; };
 		8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
-		8207A23B1A1517CB00A169EC /* AddressBookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */; };
 		8207A23D1A1518FD00A169EC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23C1A1518FD00A169EC /* AddressBook.framework */; };
 		8207A23F1A15192900A169EC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23E1A15192900A169EC /* AddressBookUI.framework */; };
 		822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
@@ -69,7 +68,6 @@
 		8200357119F656F100CB62FB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8200357319F65CE400CB62FB /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
 		8206B67A19FA7A8600BA45A0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewController.swift; sourceTree = "<group>"; };
 		8207A23C1A1518FD00A169EC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8207A23E1A15192900A169EC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -111,7 +109,7 @@
 		82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		82E0185719FEB954006BE02E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = /Users/valzevul/projects/ios/TheHat/Header.h; sourceTree = "<absolute>"; };
 		82F05EBB19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentRoundSettingsTableViewController.swift; sourceTree = "<group>"; };
-		82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressBookViewController.swift; path = ViewControllers/AddressBookViewController.swift; sourceTree = "<group>"; };
+		82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,8 +177,8 @@
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */,
 				8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */,
-				8207A23A1A1517CB00A169EC /* AddressBookTableViewController.swift */,
 				82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */,
 				8234604C19F68F8D00989B3A /* GameResultsViewController.swift */,
 				8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */,
@@ -239,7 +237,6 @@
 			children = (
 				82DF93FF1A1927B80096A300 /* BaseViewController.swift */,
 				8267530C19F619A800071464 /* Main.storyboard */,
-				82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */,
 				82B3D1F21A02D9F600239116 /* Media.xcassets */,
 				82DF93FE1A1927680096A300 /* Different files */,
 				82F1C00C1A03B2DC00CABE56 /* Data */,
@@ -419,7 +416,6 @@
 			files = (
 				82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */,
 				8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */,
-				8207A23B1A1517CB00A169EC /* AddressBookTableViewController.swift in Sources */,
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
 				82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */,
 				82A62D2F1A1E485800A6A353 /* Constants.swift in Sources */,

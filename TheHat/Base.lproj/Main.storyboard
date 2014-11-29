@@ -328,6 +328,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="playerImageView" destination="MKK-42-xpT" id="kT6-Q8-Ynm"/>
                                             <outlet property="playerNameLabel" destination="xOI-3P-Kp1" id="pqA-WL-CXL"/>
                                         </connections>
                                     </tableViewCell>
