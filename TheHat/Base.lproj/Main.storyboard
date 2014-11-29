@@ -319,12 +319,13 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="15" id="2Ox-4H-pYH"/>
-                                                <constraint firstItem="MKK-42-xpT" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="3" id="3i9-zx-0pd"/>
-                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" constant="66" id="8hp-5t-7DQ"/>
+                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" constant="66" id="F8b-oi-CRZ"/>
                                                 <constraint firstItem="MKK-42-xpT" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" id="IlD-Bw-rNn"/>
                                                 <constraint firstItem="MKK-42-xpT" firstAttribute="bottom" secondItem="1I4-Rq-zt0" secondAttribute="bottomMargin" id="Ock-E1-eyd"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="xOI-3P-Kp1" secondAttribute="trailing" constant="7" id="zIN-zK-r1j"/>
+                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="leading" secondItem="MKK-42-xpT" secondAttribute="trailing" constant="26" id="Qzu-Lq-Ont"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xOI-3P-Kp1" secondAttribute="trailing" constant="7" id="aay-NY-8PA"/>
+                                                <constraint firstItem="MKK-42-xpT" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="3" id="euP-aH-cEx"/>
+                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="15" id="owz-RQ-qmo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -341,9 +342,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H8b-Ak-POF" firstAttribute="leading" secondItem="mS0-U7-Qes" secondAttribute="leadingMargin" constant="-16" id="CaZ-rB-aRH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H8b-Ak-POF" secondAttribute="trailing" constant="-16" id="XUu-RR-XwE"/>
-                            <constraint firstItem="H8b-Ak-POF" firstAttribute="top" secondItem="mS0-U7-Qes" secondAttribute="topMargin" id="c3C-Km-7V8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H8b-Ak-POF" secondAttribute="trailing" constant="-16" id="G88-BT-iFb"/>
+                            <constraint firstItem="H8b-Ak-POF" firstAttribute="top" secondItem="mS0-U7-Qes" secondAttribute="topMargin" id="bZg-fe-q1w"/>
+                            <constraint firstItem="H8b-Ak-POF" firstAttribute="leading" secondItem="mS0-U7-Qes" secondAttribute="leadingMargin" constant="-16" id="m50-gi-cwp"/>
                             <constraint firstItem="PnP-SW-how" firstAttribute="top" secondItem="H8b-Ak-POF" secondAttribute="bottom" id="mlm-fa-iYp"/>
                             <constraint firstItem="H8b-Ak-POF" firstAttribute="top" secondItem="Z0d-eo-Bti" secondAttribute="bottom" constant="-64" id="omi-T0-x9E"/>
                         </constraints>
