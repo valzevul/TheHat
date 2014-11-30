@@ -35,7 +35,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     var contactList: NSArray?
     
     /// List of selected persons
-    var selectedPersons = [Int]()
+    var selectedPersons = [ABRecordID]()
     var filteredPersons = [ABAddressBookRef]()
     
     /// Button to add a list of persons to the dict
@@ -119,16 +119,15 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
             
-            var cell = tableView.cellForRowAtIndexPath(indexPath)
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as AddressBookTableViewCell
+            let personId = cell.idx
             
-            if (cell?.accessoryType == UITableViewCellAccessoryType.Checkmark) {
-                cell?.accessoryType = UITableViewCellAccessoryType.None
-                if let idx = find(selectedPersons, indexPath.row) {
-                    selectedPersons.removeAtIndex(idx)
-                }
+            if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
+                cell.accessoryType = UITableViewCellAccessoryType.None
+                selectedPersons = selectedPersons.filter({$0 != personId})
             } else {
-                selectedPersons.append(indexPath.row)
-                cell?.accessoryType = UITableViewCellAccessoryType.Checkmark
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                selectedPersons.append(personId!)
             }
         }
     }
@@ -183,6 +182,8 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
             } else {
                 record = contactList![indexPath.row]
             }
+           
+            cell.idx = getId(record)
             
             /// Contact's name from address book
             let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
@@ -205,9 +206,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     
     :param: row Int index of a person
     */
-    func process(row: Int) {
-        /// Contact entry for the person
-        let record: ABRecordRef = contactList!.objectAtIndex(row)
+    func process(record: ABRecordRef) {
         
         /// Blank image as a template
         var image: UIImage = UIImage(named: "blank_user")
@@ -232,7 +231,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     @IBAction func addPlayersAction(sender: UIBarButtonItem) {
         
         for person in selectedPersons {
-            process(person)
+            process(getRecord(person))
         }
         
         self.navigationController?.popViewControllerAnimated(true)
@@ -274,5 +273,17 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
         return true
+    }
+    
+    func getId(record: ABRecordRef) -> ABRecordID {
+        return ABRecordGetRecordID(record)
+    }
+    
+    func getRecord(id: ABRecordID) -> ABRecordRef {
+        
+        var person = ABAddressBookGetPersonWithRecordID(addressBook, id)
+        var personRef: ABRecordRef = Unmanaged<NSObject>.fromOpaque(person.toOpaque()).takeUnretainedValue() as ABRecordRef
+        
+        return personRef
     }
 }

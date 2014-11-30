@@ -30,7 +30,6 @@ public class Player {
     /// Score for the results
     private var scoreGuessed = 0
     
-    
     /**
     Initializes player from the given name.
     

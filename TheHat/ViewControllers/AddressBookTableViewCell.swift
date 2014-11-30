@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AddressBook
 
 /// Class provides an interface for the cell at view with import from address book
 class AddressBookTableViewCell: UITableViewCell {
@@ -17,6 +18,8 @@ class AddressBookTableViewCell: UITableViewCell {
     /// Player's image
     @IBOutlet weak var playerImageView: UIImageView!
     
+    /// Player's idx
+    var idx: ABRecordID?
     
     override func awakeFromNib() {
         super.awakeFromNib()
