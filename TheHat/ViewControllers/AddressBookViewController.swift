@@ -162,14 +162,11 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         
         var cell: AddressBookTableViewCell
         
-        // TODO: fix bug with different cells' ids for search and for casual table view
-        
         if (tableView == self.searchDisplayController!.searchResultsTableView) {
             cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as AddressBookTableViewCell
         } else {
             cell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
         }
-        
         
         // If access granted
         if (contactList != nil) {
@@ -275,10 +272,22 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         return true
     }
     
+    /**
+    Returns contact's unique id.
+    
+    :param: record ABRecordRef
+    :returns: ABRecordID idx of the contact
+    */
     func getId(record: ABRecordRef) -> ABRecordID {
         return ABRecordGetRecordID(record)
     }
     
+    /**
+    Returns contact by the unique id.
+    
+    :param: id ABRecordID
+    :returns: ABRecordRef object of the contact
+    */
     func getRecord(id: ABRecordID) -> ABRecordRef {
         
         var person = ABAddressBookGetPersonWithRecordID(addressBook, id)
