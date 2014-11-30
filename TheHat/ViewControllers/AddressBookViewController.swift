@@ -220,6 +220,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
     }
     
+    /**
+    Get players' names from the final list and dismiss current view controller.
+    */
     func performExitFromView() {
         for person in selectedPersons {
             process(getRecord(person))
@@ -229,7 +232,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Get players' names from the final list and dismiss current view controller.
+    Returns to the previous view.
     
     :param: sender UIBarButtonItem
     */
@@ -299,6 +302,11 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         return personRef
     }
     
+    /**
+    Returns to the previous view.
+    
+    :param: sender UIBarButtonItem
+    */
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         performExitFromView()
     }
