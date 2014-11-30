@@ -314,17 +314,16 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_user" translatesAutoresizingMaskIntoConstraints="NO" id="MKK-42-xpT">
                                                     <rect key="frame" x="8" y="11" width="40" height="40"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="MKK-42-xpT" secondAttribute="height" multiplier="1:1" id="AjA-HI-Ad8"/>
+                                                        <constraint firstAttribute="width" secondItem="MKK-42-xpT" secondAttribute="height" multiplier="1:1" id="Yrb-bK-oCv"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="MKK-42-xpT" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="3" id="5s2-Nl-2Um"/>
                                                 <constraint firstItem="xOI-3P-Kp1" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" constant="66" id="F8b-oi-CRZ"/>
-                                                <constraint firstItem="MKK-42-xpT" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" id="IlD-Bw-rNn"/>
-                                                <constraint firstItem="MKK-42-xpT" firstAttribute="bottom" secondItem="1I4-Rq-zt0" secondAttribute="bottomMargin" id="Ock-E1-eyd"/>
-                                                <constraint firstItem="xOI-3P-Kp1" firstAttribute="leading" secondItem="MKK-42-xpT" secondAttribute="trailing" constant="26" id="Qzu-Lq-Ont"/>
+                                                <constraint firstItem="MKK-42-xpT" firstAttribute="leading" secondItem="1I4-Rq-zt0" secondAttribute="leadingMargin" id="MDb-pD-Lft"/>
+                                                <constraint firstItem="MKK-42-xpT" firstAttribute="bottom" secondItem="1I4-Rq-zt0" secondAttribute="bottomMargin" id="Tqj-te-EJM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xOI-3P-Kp1" secondAttribute="trailing" constant="7" id="aay-NY-8PA"/>
-                                                <constraint firstItem="MKK-42-xpT" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="3" id="euP-aH-cEx"/>
                                                 <constraint firstItem="xOI-3P-Kp1" firstAttribute="top" secondItem="1I4-Rq-zt0" secondAttribute="topMargin" constant="15" id="owz-RQ-qmo"/>
                                             </constraints>
                                         </tableViewCellContentView>
