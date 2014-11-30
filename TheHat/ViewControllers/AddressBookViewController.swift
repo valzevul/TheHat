@@ -220,18 +220,21 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
     }
     
+    func performExitFromView() {
+        for person in selectedPersons {
+            process(getRecord(person))
+        }
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     /**
     Get players' names from the final list and dismiss current view controller.
     
     :param: sender UIBarButtonItem
     */
     @IBAction func addPlayersAction(sender: UIBarButtonItem) {
-        
-        for person in selectedPersons {
-            process(getRecord(person))
-        }
-        
-        self.navigationController?.popViewControllerAnimated(true)
+        performExitFromView()
     }
 
     
@@ -294,5 +297,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         var personRef: ABRecordRef = Unmanaged<NSObject>.fromOpaque(person.toOpaque()).takeUnretainedValue() as ABRecordRef
         
         return personRef
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        performExitFromView()
     }
 }
