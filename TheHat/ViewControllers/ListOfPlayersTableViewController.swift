@@ -159,11 +159,20 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             changeName(cell)
             break
         case 2: // Delete
-            break
+            removePlayer(cell as CustomPlayerTableCell)
         default:
             break
         }
         return true
+    }
+    
+    func removePlayer(cell: CustomPlayerTableCell) {
+        // Remove from database
+        self.tSystem!.gameObject.players.removeAtIndex(cell.tag)
+        
+        // Remove from table
+        self.tableView.reloadData()
+        
     }
     
     /**
