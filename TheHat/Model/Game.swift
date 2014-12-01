@@ -138,4 +138,21 @@ public class Game {
         return newRandomGame
     }
     
+    public func removePlayerAtIndex(index: Int) {
+        
+        // Remove words
+        var counter = words.count - 1
+        while (counter >= 0) {
+            if (words[counter].getOwner().getName() == players[index].getName()) {
+                words.removeAtIndex(counter)
+                counter -= 1
+            }
+            counter -= 1
+        }
+        
+        // Remove player from list
+        players.removeAtIndex(index)
+        
+    }
+    
 }

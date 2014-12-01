@@ -168,7 +168,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     func removePlayer(cell: CustomPlayerTableCell) {
         // Remove from database
-        self.tSystem!.gameObject.players.removeAtIndex(cell.tag)
+        self.tSystem!.gameObject.removePlayerAtIndex(cell.tag)
         
         // Remove from table
         self.tableView.reloadData()
