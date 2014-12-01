@@ -166,6 +166,11 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return true
     }
     
+    /**
+    Remove a player and all his words from both the database and the table.
+    
+    :param: cell CustomPlayerTableCell
+    */
     func removePlayer(cell: CustomPlayerTableCell) {
         // Remove from database
         self.tSystem!.gameObject.removePlayerAtIndex(cell.tag)

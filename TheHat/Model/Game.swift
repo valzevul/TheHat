@@ -138,6 +138,11 @@ public class Game {
         return newRandomGame
     }
     
+    /**
+        Removes a player and all his words from the game.
+    
+        :param: index Int index of the player in array.
+    */
     public func removePlayerAtIndex(index: Int) {
         
         // Remove words
