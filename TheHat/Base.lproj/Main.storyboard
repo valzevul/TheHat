@@ -387,7 +387,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="039-4N-WII">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="039-4N-WII">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -417,6 +417,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="039-4N-WII" secondAttribute="trailing" constant="-16" id="17M-mi-sFm"/>
+                            <constraint firstItem="YbI-aC-noZ" firstAttribute="top" secondItem="039-4N-WII" secondAttribute="bottom" id="Baj-nW-Lqx"/>
+                            <constraint firstItem="039-4N-WII" firstAttribute="leading" secondItem="qgc-aP-c1B" secondAttribute="leadingMargin" constant="-16" id="cSd-vA-QC5"/>
+                            <constraint firstItem="039-4N-WII" firstAttribute="top" secondItem="qgc-aP-c1B" secondAttribute="topMargin" id="hLy-3i-gZ3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Words" id="gFX-ur-zHp">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="glX-ho-OAA">
