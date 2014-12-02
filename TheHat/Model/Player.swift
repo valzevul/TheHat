@@ -130,4 +130,8 @@ public class Player {
     func getImage() -> UIImage? {
         return self.image
     }
+    
+    func getNumberOfWords() -> Int {
+        return words.count
+    }
 }

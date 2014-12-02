@@ -8,29 +8,43 @@
 
 import UIKit
 
-class AddWordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class AddWordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var playerIdx: Int?
+    var player: Player?
+    var tSystem: TournamentSystem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+        player = tSystem!.gameObject.players[playerIdx!]
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return player!.getNumberOfWords()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
+        cell.wordsLabel.text = player!.getWords()[indexPath.row].getText()
+        
+        cell.delegate = self
+        
+        cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
+        cell.rightButtons = [
+            MGSwipeButton(title: "Edit", backgroundColor: Constants.editColor),
+            MGSwipeButton(title: "Delete", backgroundColor: Constants.deleteColor)]
+    
+        return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-
     @IBAction func wordsAddedAction(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }

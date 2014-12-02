@@ -43,6 +43,7 @@
 		82C7085819F7D9CC00D184B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
 		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
+		82D544201A2DC435005E38B3 /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D5441F1A2DC435005E38B3 /* WordTableViewCell.swift */; };
 		82D78FD71A2DBA5A00D7E4D2 /* AddWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D78FD61A2DBA5A00D7E4D2 /* AddWordsViewController.swift */; };
 		82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */; };
 		82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF93FF1A1927B80096A300 /* BaseViewController.swift */; };
@@ -100,6 +101,7 @@
 		82B3D1F21A02D9F600239116 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		82C66C4F19F6C56C00CE2BF0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentSystem.swift; sourceTree = "<group>"; };
+		82D5441F1A2DC435005E38B3 /* WordTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordTableViewCell.swift; sourceTree = "<group>"; };
 		82D78FD61A2DBA5A00D7E4D2 /* AddWordsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddWordsViewController.swift; sourceTree = "<group>"; };
 		82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		82DF93FF1A1927B80096A300 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		824A481C1A06096500C1C9C6 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				82D5441F1A2DC435005E38B3 /* WordTableViewCell.swift */,
 				82D78FD61A2DBA5A00D7E4D2 /* AddWordsViewController.swift */,
 				82FFFFF61A2A4A910064C75C /* AddressBookViewController.swift */,
 				8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */,
@@ -434,6 +437,7 @@
 				82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */,
 				82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */,
 				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
+				82D544201A2DC435005E38B3 /* WordTableViewCell.swift in Sources */,
 				828927EA1A0F58CC00BB009E /* MainTutorialViewController.swift in Sources */,
 				8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */,
 				8200357219F656F100CB62FB /* InfoViewController.swift in Sources */,

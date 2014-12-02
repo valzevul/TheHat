@@ -231,6 +231,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         } else if (segue.identifier == "addWordsSegue") {
             var addWordsVC = segue.destinationViewController as AddWordsViewController
             addWordsVC.playerIdx = (sender as CustomPlayerTableCell).tag
+            addWordsVC.tSystem = tSystem
         }
     }
 }
