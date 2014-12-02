@@ -154,7 +154,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
         case 0: // Add words
-            break
+            addWords(cell as CustomPlayerTableCell)
         case 1: // Change name (= edit)
             changeName(cell)
             break
@@ -164,6 +164,10 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             break
         }
         return true
+    }
+    
+    func addWords(cell: CustomPlayerTableCell) {
+        performSegueWithIdentifier("addWordsSegue", sender: cell)
     }
     
     /**
@@ -224,6 +228,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         } else if (segue.identifier == "openAddressBook") {
             var ab = segue.destinationViewController as AddressBookViewController
             ab.delegate = self
+        } else if (segue.identifier == "addWordsSegue") {
+            var addWordsVC = segue.destinationViewController as AddWordsViewController
+            addWordsVC.playerIdx = (sender as CustomPlayerTableCell).tag
         }
     }
 }
