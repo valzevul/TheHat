@@ -8,9 +8,10 @@
 
 import UIKit
 
+/// Class for a word's representation.
 class WordTableViewCell: MGSwipeTableCell {
 
-    
+    /// Word's label
     @IBOutlet weak var wordsLabel: UILabel!
     
     override func awakeFromNib() {

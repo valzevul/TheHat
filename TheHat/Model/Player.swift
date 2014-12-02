@@ -131,6 +131,11 @@ public class Player {
         return self.image
     }
     
+    /**
+    Returns the number of player's words.
+    
+    :returns: Int number of player's words
+    */
     func getNumberOfWords() -> Int {
         return words.count
     }

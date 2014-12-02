@@ -8,12 +8,19 @@
 
 import UIKit
 
+/// Class for addition new words or checking previous.
 class AddWordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     
+    /// Table view with words
     @IBOutlet weak var tableView: UITableView!
     
+    /// Current player's id
     var playerIdx: Int?
+    
+    /// Player's object
     var player: Player?
+    
+    /// Tournament system object
     var tSystem: TournamentSystem?
     
     override func viewDidLoad() {
@@ -27,10 +34,24 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    /**
+    Returns number of rows.
+    
+    :param: tableView UITableView
+    :param: section Int
+    
+    :return: Int number of words
+    */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return player!.getNumberOfWords()
     }
     
+    /**
+    Returns new cell object.
+    
+    :param: tableView UITableView
+    :param: indexPath NSIndexPath
+    */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
         cell.wordsLabel.text = player!.getWords()[indexPath.row].getText()
@@ -45,6 +66,11 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    /**
+    Confirm changes in player's words.
+    
+    :param: sender UIBarButton
+    */
     @IBAction func wordsAddedAction(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
