@@ -160,4 +160,31 @@ public class Game {
         
     }
     
+    public func wordsForPlayer(idx: Int) -> [ActiveWord] {
+        
+        var results = [ActiveWord]()
+        let player_name = players[idx].getName()
+        
+        for word in words {
+            if (word.getOwner().getName() == player_name) {
+                results.append(word)
+            }
+        }
+        
+        return results
+        
+    }
+    
+    public func removeWord(word: ActiveWord) {
+        
+        for i in 0..<words.count {
+            
+            if ((word.getOwner().getName() == words[i].getOwner().getName()) && (word.getText() == words[i].getText())) {
+                words.removeAtIndex(i)
+                break
+            }
+        }
+        
+    }
+    
 }

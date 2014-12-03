@@ -17,11 +17,10 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     /// Current player's id
     var playerIdx: Int?
     
-    /// Player's object
-    var player: Player?
-    
     /// Tournament system object
     var tSystem: TournamentSystem?
+    
+    var words = [ActiveWord]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +29,8 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         
         self.navigationItem.setHidesBackButton(true, animated: true)
-        player = tSystem!.gameObject.players[playerIdx!]
+        
+        words = tSystem!.gameObject.wordsForPlayer(playerIdx!)
         
     }
     
@@ -43,7 +43,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     :return: Int number of words
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return player!.getNumberOfWords()
+        return words.count
     }
     
     /**
@@ -54,9 +54,10 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
-        cell.wordsLabel.text = player!.getWords()[indexPath.row].getText()
+        cell.wordsLabel.text = words[indexPath.row].getText()
         
         cell.delegate = self
+        cell.tag = indexPath.row + 1 // NEVER use the tag 0
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
@@ -77,15 +78,30 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
         case 0: // edit
-            println("edit")
+            editWord(cell.tag)
             break
         case 1: // delete
-            println("delete")
+            removeWord(cell.tag)
             break
         default:
             break
         }
         return true
+    }
+    
+    func editWord(tag: Int) {
+
+    }
+    
+    func removeWord(tag: Int) {
+        
+        let word = words[tag - 1]
+        
+        tSystem?.gameObject.removeWord(word)
+        words = tSystem!.gameObject.wordsForPlayer(playerIdx!)
+        
+        // Remove from table
+        self.tableView.reloadData()
     }
     
     /**
