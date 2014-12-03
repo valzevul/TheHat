@@ -20,6 +20,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     /// Tournament system object
     var tSystem: TournamentSystem?
     
+    /// List of words of the player
     var words = [ActiveWord]()
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.navigationItem.setHidesBackButton(true, animated: true)
         
+        // Fetch player's words
         words = tSystem!.gameObject.wordsForPlayer(playerIdx!)
         
     }
@@ -57,7 +59,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.wordsLabel.text = words[indexPath.row].getText()
         
         cell.delegate = self
-        cell.tag = indexPath.row + 1 // NEVER use the tag 0
+        cell.tag = indexPath.row + 1 // NEVER use the tag 0 'coz it's default value
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
@@ -89,6 +91,11 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         return true
     }
     
+    /**
+    Provides an alertControll to edit a word.
+    
+    :param: cell MGSwipeTableCell
+    */
     func editWord(cell: MGSwipeTableCell) {
         let alertController = UIAlertController(title: "Change word", message: "Edit this word:", preferredStyle: .Alert)
         
@@ -112,12 +119,15 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.presentViewController(alertController, animated: true) {
         }
-
-        
         
         self.tableView.reloadData()
     }
     
+    /**
+    Remove a word from the game and updates the table.
+    
+    :param: tag Int index of the word to delete.
+    */
     func removeWord(tag: Int) {
         
         let word = words[tag - 1]

@@ -160,6 +160,13 @@ public class Game {
         
     }
     
+    /**
+        Gets all player's words from the list of ActiveWords.
+        
+        :param: idx Int player's index
+        
+        :returns: [ActiveWord] list of Active Words
+    */
     public func wordsForPlayer(idx: Int) -> [ActiveWord] {
         
         var results = [ActiveWord]()
@@ -175,6 +182,11 @@ public class Game {
         
     }
     
+    /**
+        Removes player's word from the list.
+    
+        :param: word ActiveWord to be deleted.
+    */
     public func removeWord(word: ActiveWord) {
         
         for i in 0..<words.count {
@@ -187,6 +199,13 @@ public class Game {
         
     }
     
+    /**
+        Changes player's word.
+    
+        :param: word ActiveWord word to be changed
+        :param: text String new value or nil
+    
+    */
     public func changeWord(word: ActiveWord, text: String?) {
         
         for w in words  {

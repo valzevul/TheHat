@@ -17,12 +17,12 @@ public class Word {
     private var text: String
     
     /**
-    Initializes a new Word object.
+        Initializes a new Word object.
     
-    :param: owner the Player object added the word
-    :param: text the String representation of the word
+        :param: owner the Player object added the word
+        :param: text the String representation of the word
     
-    :returns: New Word object
+        :returns: New Word object
     */
     init(owner: Player, text: String) {
         self.owner = owner
@@ -39,14 +39,19 @@ public class Word {
     }
 
     /**
-    Text is a representation of a word at the screen.
+        Text is a representation of a word at the screen.
     
-    :returns: String object
+        :returns: String object
     */
     public func getText() -> String {
         return text
     }
     
+    /**
+        Changes the text of a word.
+    
+        :param: text String text value or nil
+    */
     func changeText(text: String?) {
         if let t = text {
             self.text = t
