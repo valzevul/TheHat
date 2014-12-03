@@ -187,4 +187,14 @@ public class Game {
         
     }
     
+    public func changeWord(word: ActiveWord, text: String?) {
+        
+        for w in words  {
+            if ((w.getOwner().getName() == word.getOwner().getName()) && (w.getText() == word.getText())) {
+                w.changeText(text)
+            }
+        }
+        
+    }
+    
 }

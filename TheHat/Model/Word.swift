@@ -14,7 +14,7 @@ public class Word {
     /// The owner of the word
     private let owner: Player
     /// The text representation of the word
-    private let text: String
+    private var text: String
     
     /**
     Initializes a new Word object.
@@ -45,5 +45,11 @@ public class Word {
     */
     public func getText() -> String {
         return text
+    }
+    
+    func changeText(text: String?) {
+        if let t = text {
+            self.text = t
+        }
     }
 }

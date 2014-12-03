@@ -78,7 +78,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
         case 0: // edit
-            editWord(cell.tag)
+            editWord(cell)
             break
         case 1: // delete
             removeWord(cell.tag)
@@ -89,8 +89,33 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         return true
     }
     
-    func editWord(tag: Int) {
+    func editWord(cell: MGSwipeTableCell) {
+        let alertController = UIAlertController(title: "Change word", message: "Edit this word:", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+        }
+        alertController.addAction(cancelAction)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = self.words[cell.tag - 1].getText()
+        }
+        
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+            let c = (cell as WordTableViewCell)
+            c.wordsLabel.text = (alertController.textFields![0] as UITextField).text
+            
+            self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+        }
+        alertController.addAction(OKAction)
+        
+        
+        self.presentViewController(alertController, animated: true) {
+        }
 
+        
+        
+        self.tableView.reloadData()
     }
     
     func removeWord(tag: Int) {
