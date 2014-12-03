@@ -67,6 +67,28 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
+    Action for the tapped button.
+    
+    :param: cell MGSwipeTableCell
+    :param: index Int index of tapped button
+    :param: direction MGSwipeDirection
+    :param: fromExpansion Bool
+    */
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        switch index {
+        case 0: // edit
+            println("edit")
+            break
+        case 1: // delete
+            println("delete")
+            break
+        default:
+            break
+        }
+        return true
+    }
+    
+    /**
     Confirm changes in player's words.
     
     :param: sender UIBarButton
