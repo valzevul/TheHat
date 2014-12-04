@@ -111,8 +111,9 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as WordTableViewCell)
             c.wordsLabel.text = (alertController.textFields![0] as UITextField).text
-            
-            self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+            if (countElements(c.wordsLabel.text!) > 0) {
+                self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+            }
         }
         alertController.addAction(OKAction)
         
@@ -147,4 +148,49 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func wordsAddedAction(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    /**
+    Shows button for addition new words.
+    
+    :param: tableView UITableView
+    :param: section Int
+    
+    :returns: UIView?
+    */
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        let frameSize = tableView.frame
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 50))
+        
+        // Button to create a new player
+        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        button.frame = CGRectMake(0, 0, frameSize.width, 50)
+        button.setTitle("+", forState: UIControlState.Normal)
+        button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
+        button.addTarget(self, action: "addWordAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        view.addSubview(button)
+        
+        return view
+    }
+    
+    /**
+    Creates new word.
+    
+    :param: sender UIButton!
+    */
+    func addWordAction(sender: UIButton!) {
+        let newWord = self.tSystem!.gameObject.getRandomWord(self.tSystem!.gameObject.players[playerIdx!])
+        let activeWord = ActiveWord(word: newWord, status: "?")
+        
+        self.tSystem!.gameObject.players[playerIdx!].addWord(newWord)
+        tSystem!.gameObject.words.append(activeWord)
+        
+        words = tSystem!.gameObject.wordsForPlayer(playerIdx!)
+        self.tableView.reloadData()
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
 }
