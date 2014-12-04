@@ -189,6 +189,14 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.reloadData()
     }
     
+    /**
+    Represents height of footer section.
+    
+    :param: tableView UITableView
+    :param: section Int
+    
+    :returns: CGFloat height of footer.
+    */
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 50
     }
