@@ -95,22 +95,26 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     :returns: Bool true if the cell closes after tap else false
     */
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        
+        var status: String
+        let word = self.cells[cell.tag]
+        
         switch (index) {
         case 0:
-            self.cells[cell.tag].changeStatus("OK")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.OKColor
             (cell as CustomTableViewCell).wordResultLabel.text = "OK"
         case 1:
-            self.cells[cell.tag].changeStatus("Failed")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.FColor
             (cell as CustomTableViewCell).wordResultLabel.text = "F"
         case 2:
-            self.cells[cell.tag].changeStatus("?")
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.MColor
             (cell as CustomTableViewCell).wordResultLabel.text = "?"
         default:
             println("x")
         }
+        
+        tSystem?.changeWordsStatus(word, status: (cell as CustomTableViewCell).wordResultLabel.text)
+        
         return true
     }
     

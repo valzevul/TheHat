@@ -147,4 +147,16 @@ class TournamentSystem {
     func clean() {
         currentResult = 0
     }
+    
+    func changeWordsStatus(word: ActiveWord, status: String?) {
+        if (status == "F") {
+            wordFailed(word)
+            gameObject.removeWord(word)
+        } else if (status == "?") {
+            wordMissed(word)
+        } else {
+            wordGuessed(word)
+            gameObject.removeWord(word)
+        }
+    }
 }
