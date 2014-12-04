@@ -148,6 +148,12 @@ class TournamentSystem {
         currentResult = 0
     }
     
+    /**
+    Provides support of word's status change after the round.
+    
+    :param: word ActiveWord
+    :param: status String?
+    */
     func changeWordsStatus(word: ActiveWord, status: String?) {
         if (status == "F") {
             wordFailed(word)
