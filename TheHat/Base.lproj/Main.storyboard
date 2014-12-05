@@ -704,7 +704,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Round N" id="exg-iS-HKr">
                         <barButtonItem key="rightBarButtonItem" image="settings" id="ROh-S4-bWM">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="settingsButtonAction:" destination="cUt-5j-hzo" id="CAI-Gq-LP8"/>
                                 <segue destination="jL8-dn-nzi" kind="push" identifier="RoundSettingsSegue" id="irG-ol-qft"/>
@@ -798,7 +797,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Dp7-W0-scE">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="q4g-c1-WD7">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="STN-Ai-p4z" kind="push" identifier="showGameResults" id="dBe-bu-3aI"/>
                             </connections>
