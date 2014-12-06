@@ -687,11 +687,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="→" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-8Z-zal">
+                                <rect key="frame" x="152" y="274" width="17" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="fbn-Jw-pgc" secondAttribute="centerX" id="190-jO-I4V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WsX-Ff-vfS" secondAttribute="trailing" constant="45" id="2Cf-Kk-1yx"/>
+                            <constraint firstAttribute="centerY" secondItem="J91-8Z-zal" secondAttribute="centerY" constant="-0.5" id="Cc1-C2-XXR"/>
                             <constraint firstItem="0bF-oU-Vaw" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="Mf3-ge-aqX"/>
                             <constraint firstItem="SO0-OM-SPu" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" constant="45" id="SbH-Zg-6hX"/>
                             <constraint firstItem="0bF-oU-Vaw" firstAttribute="top" secondItem="NcQ-mj-yOd" secondAttribute="bottom" constant="34" id="TMw-bi-Yg4"/>
@@ -699,6 +706,7 @@
                             <constraint firstItem="6mx-o1-H1e" firstAttribute="top" secondItem="fbn-Jw-pgc" secondAttribute="bottom" constant="83" id="fhG-Is-yYK"/>
                             <constraint firstItem="h6T-jz-nsD" firstAttribute="leading" secondItem="4ZP-Ro-2o3" secondAttribute="leadingMargin" id="gBh-ht-6fq"/>
                             <constraint firstItem="h6T-jz-nsD" firstAttribute="top" secondItem="NcQ-mj-yOd" secondAttribute="bottom" constant="8" id="m3b-lc-F2N"/>
+                            <constraint firstAttribute="centerX" secondItem="J91-8Z-zal" secondAttribute="centerX" constant="-0.5" id="owu-9K-9Zm"/>
                             <constraint firstAttribute="centerY" secondItem="WsX-Ff-vfS" secondAttribute="centerY" constant="0.5" id="qQK-SH-Ifl"/>
                         </constraints>
                     </view>
