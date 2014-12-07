@@ -12,11 +12,11 @@ import UIKit
 protocol RoundSettingsDelegate {
     
     /**
-    Notify about changed settings of the current round.
-    
-    :param: controller CurrentRoundSettingsTableViewController
-    :param: firstName String first player's name
-    :param: secondName String second player's name
+        Notify about changed settings of the current round.
+        
+        :param: controller CurrentRoundSettingsTableViewController
+        :param: firstName String first player's name
+        :param: secondName String second player's name
     */
     func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String)
 }
@@ -47,9 +47,9 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
     // MARK: - Process Settings
     
     /**
-    Notify delegate about changes in the first player's name.
-    
-    :param: sender UITextField
+        Notify delegate about changes in the first player's name.
+        
+        :param: sender UITextField
     */
     @IBAction func didFirstPlayerNameEdit(sender: UITextField) {
         tSystem!.currentPair!.0.setName(firstPlayerNameTextField.text)
@@ -59,8 +59,9 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
     }
     
     /**
-    Notify delegate about changes in the second player's name.
-    :param: sender UITextField
+        Notify delegate about changes in the second player's name.
+    
+        :param: sender UITextField
     */
     @IBAction func didSecondPlayerNameEdit(sender: UITextField) {
         tSystem!.currentPair!.1.setName(secondPlayerNameTextField.text)

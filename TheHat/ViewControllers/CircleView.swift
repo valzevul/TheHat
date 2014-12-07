@@ -35,10 +35,11 @@ class CircleView: UIView {
     }
     
     /**
-    Creates new class object from a frame.
+        Creates new class object from a frame.
+        
+        :param: frame CGRect frame of the circle
     
-    :param: frame CGRect frame of the circle
-    :returns: CircleView object
+        :returns: CircleView object
     */
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,10 +48,11 @@ class CircleView: UIView {
     }
     
     /**
-    Creates new class object.
-    
-    :param: aDecoder NSDecoder
-    :returns: CircleView object
+        Creates new class object.
+        
+        :param: aDecoder NSDecoder
+        
+        :returns: CircleView object
     */
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -59,10 +61,10 @@ class CircleView: UIView {
     }
     
     /**
-    Draws a circle with animation and fills it with a color.
-    
-    :param: duration NSInterval duration of the animation
-    :param: type String type of a circle (green, red, etc)
+        Draws a circle with animation and fills it with a color.
+        
+        :param: duration NSInterval duration of the animation
+        :param: type String type of a circle (green, red, etc)
     */
     func animateCircle(duration: NSTimeInterval, type: String) {
         
@@ -96,10 +98,10 @@ class CircleView: UIView {
     }
     
     /**
-    Removes circle from the view after animation's end
-    
-    :param: anim CAAnimation object
-    :flag: Bool true if animation finished else false
+        Removes circle from the view after animation's end
+        
+        :param: anim CAAnimation object
+        :flag: Bool true if animation finished else false
     */
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         

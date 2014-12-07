@@ -49,7 +49,7 @@ class StartScreenViewController: BaseViewController {
     }
     
     /**
-    Performs segue for the tutorial.
+        Performs segue for the tutorial.
     */
     func showTutorial() {
         performSegueWithIdentifier("showTutorial", sender: nil)
@@ -58,7 +58,7 @@ class StartScreenViewController: BaseViewController {
     // MARK: - Animation of the hat
     
     /**
-    Creates layer mask for the hat animation.
+        Creates layer mask for the hat animation.
     */
     func createLayerMask() {
         self.mask = CALayer()
@@ -70,7 +70,7 @@ class StartScreenViewController: BaseViewController {
     }
     
     /**
-    Sets keyframe for the hat animation.
+        Sets keyframe for the hat animation.
     */
     func setKeyFrameAnimation() {
         let keyFrameAnimation = CAKeyframeAnimation(keyPath: "bounds")
@@ -82,9 +82,9 @@ class StartScreenViewController: BaseViewController {
     }
     
     /**
-    Sets bound for the hat animation.
-    
-    :param: keyFrameAnimation CAKeyFrameAnimation object
+        Sets bound for the hat animation.
+        
+        :param: keyFrameAnimation CAKeyFrameAnimation object
     */
     func setBounds(keyFrameAnimation: CAKeyframeAnimation) {
         let initalBounds = NSValue(CGRect: mask!.bounds)
@@ -97,10 +97,10 @@ class StartScreenViewController: BaseViewController {
     }
 
     /**
-    Disables mask with the hat.
-    
-    :param: anim CAANimation!
-    :param: flag Bool
+        Disables mask with the hat.
+        
+        :param: anim CAANimation!
+        :param: flag Bool
     */
     override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
         self.view.layer.mask = nil // Remove mask when animation completes
@@ -108,25 +108,25 @@ class StartScreenViewController: BaseViewController {
 
     
     /**
-    Starts new game.
-    
-    :param: sender UIButton
+        Starts new game.
+        
+        :param: sender UIButton
     */
     @IBAction func newGameAction(sender: UIButton) {
     }
     
     /**
-    Shows game info.
-    
-    :param: sender UIButton
+        Shows game info.
+        
+        :param: sender UIButton
     */
     @IBAction func infoBarButtonAction(sender: UIBarButtonItem) {
     }
     
     /**
-    Shows settings.
-    
-    :param: sender UIButton
+        Shows settings.
+        
+        :param: sender UIButton
     */
     @IBAction func settingsBarButtonAction(sender: UIBarButtonItem) {
     }

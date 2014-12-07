@@ -52,18 +52,18 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     // MARK: - Settings Savings
     
     /**
-    Changes game type and updates local settings.
-    
-    :param: sender UISegmentedControl object
+        Changes game type and updates local settings.
+        
+        :param: sender UISegmentedControl object
     */
     @IBAction func gameTypeChanged(sender: UISegmentedControl) {
         lSettings!.changeGameType(gameTypeSegmentedControl.selectedSegmentIndex)
     }
     
     /**
-    Changes words' source and updates local settings.
-    
-    :param: textField UITextField object
+        Changes words' source and updates local settings.
+        
+        :param: textField UITextField object
     */
     func textFieldDidEndEditing(textField: UITextField) {
         lSettings!.changeWordsSource(textField.text)
@@ -72,10 +72,10 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     // MARK: - Segue
     
     /**
-    Prepares for the game.
-    
-    :param: UIStoryboardSegue object
-    :param: sender AnyObject!
+        Prepares for the game.
+        
+        :param: UIStoryboardSegue object
+        :param: sender AnyObject!
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showNewRoundInfo") {

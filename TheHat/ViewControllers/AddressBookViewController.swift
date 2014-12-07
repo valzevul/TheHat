@@ -48,10 +48,10 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     @IBOutlet weak var tableView: UITableView!
     
     /**
-    Exctracts reference to the address book.
+        Exctracts reference to the address book.
     
-    :param: abRef unmanaged reference
-    :returns: Address Book object (if exists)
+        :param: abRef unmanaged reference
+        :returns: Address Book object (if exists)
     */
     func extractABAddressBookRef(abRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
         if let ab = abRef {
@@ -61,7 +61,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Parse all names from the address book and reloads the table.
+        Parse all names from the address book and reloads the table.
     */
     func getContactNames() {
         /// Error object for the extract method
@@ -76,9 +76,6 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
         self.tableView.reloadData()
     }
     
-    /**
-    Main block
-    */
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -111,10 +108,10 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     // MARK: - Table view data source
     
     /**
-    Method to invoke the delegate and send a new player to the list of players.
+        Method to invoke the delegate and send a new player to the list of players.
     
-    :param: tableView Address Book view
-    :param: indexPath Index path of the selected row
+        :param: tableView Address Book view
+        :param: indexPath Index path of the selected row
     */
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
@@ -133,11 +130,11 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Determines a list of contacts.
+        Determines a list of contacts.
     
-    :param: tableView Addres Book table
-    :param: section Number of rows in section
-    :returns: Int number of contacts in addres book or 1 if access restricted
+        :param: tableView Addres Book table
+        :param: section Number of rows in section
+        :returns: Int number of contacts in addres book or 1 if access restricted
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (contactList != nil) {
@@ -153,9 +150,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     /**
     Creates a new cell.
     
-    :param: tableView Address book table
-    :param: indexPath Index of a new cell
-    :return: AddressBookTableViewCell with a new player of "access denied" message
+        :param: tableView Address book table
+        :param: indexPath Index of a new cell
+        :return: AddressBookTableViewCell with a new player of "access denied" message
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         /// A new cell to be returned
@@ -199,9 +196,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Get contact's data by an index of a cell.
+        Get contact's data by an index of a cell.
     
-    :param: row Int index of a person
+        :param: row Int index of a person
     */
     func process(record: ABRecordRef) {
         
@@ -221,7 +218,7 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Get players' names from the final list and dismiss current view controller.
+        Get players' names from the final list and dismiss current view controller.
     */
     func performExitFromView() {
         for person in selectedPersons {
@@ -232,9 +229,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Returns to the previous view.
+        Returns to the previous view.
     
-    :param: sender UIBarButtonItem
+        :param: sender UIBarButtonItem
     */
     @IBAction func addPlayersAction(sender: UIBarButtonItem) {
         performExitFromView()
@@ -244,9 +241,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     // MARK: - Search
     
     /**
-    Creates a list of filtered persons to work with.
+        Creates a list of filtered persons to work with.
     
-    :param: searchText String text to search.
+        :param: searchText String text to search.
     */
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
@@ -257,10 +254,10 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Reloads table to provide new search results.
+        Reloads table to provide new search results.
     
-    :param: controller UISearchDisplayController
-    :param: searchString String
+        :param: controller UISearchDisplayController
+        :param: searchString String
     */
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
         self.filterContentForSearchText(searchString)
@@ -268,10 +265,10 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Reloads table for search scope.
+        Reloads table for search scope.
     
-    :param: controller UISearchDisplayController
-    :param: searchOption Int
+        :param: controller UISearchDisplayController
+        :param: searchOption Int
     */
     func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
@@ -279,20 +276,20 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Returns contact's unique id.
+        Returns contact's unique id.
     
-    :param: record ABRecordRef
-    :returns: ABRecordID idx of the contact
+        :param: record ABRecordRef
+        :returns: ABRecordID idx of the contact
     */
     func getId(record: ABRecordRef) -> ABRecordID {
         return ABRecordGetRecordID(record)
     }
     
     /**
-    Returns contact by the unique id.
+        Returns contact by the unique id.
     
-    :param: id ABRecordID
-    :returns: ABRecordRef object of the contact
+        :param: id ABRecordID
+        :returns: ABRecordRef object of the contact
     */
     func getRecord(id: ABRecordID) -> ABRecordRef {
         
@@ -303,9 +300,9 @@ class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearch
     }
     
     /**
-    Returns to the previous view.
+        Returns to the previous view.
     
-    :param: sender UIBarButtonItem
+        :param: sender UIBarButtonItem
     */
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         performExitFromView()

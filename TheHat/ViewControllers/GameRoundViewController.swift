@@ -49,9 +49,9 @@ class GameRoundViewController: BaseViewController {
     @IBOutlet weak var circleView: CircleView!
     
     /**
-    Sets timer for current round.
-    
-    :param: animated Bool
+        Sets timer for current round.
+        
+        :param: animated Bool
     */
     override func viewDidAppear(animated: Bool) {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
@@ -85,9 +85,9 @@ class GameRoundViewController: BaseViewController {
     // TODO: Implement: https://github.com/cwRichardKim/TinderSimpleSwipeCards
 
     /**
-    Draws a circle at the view.
-    
-    :param: type String type of the circle (red, green, etc)
+        Draws a circle at the view.
+        
+        :param: type String type of the circle (red, green, etc)
     */
     func drawCircle(type: String) {
         self.circleView.hidden = false
@@ -100,9 +100,9 @@ class GameRoundViewController: BaseViewController {
     // MARK: - Swipe Processing
     
     /**
-    Processes left swipe at the view.
-    
-    :param: sender UISwipeGestureRecognizer
+        Processes left swipe at the view.
+        
+        :param: sender UISwipeGestureRecognizer
     */
     @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("red")
@@ -110,7 +110,7 @@ class GameRoundViewController: BaseViewController {
     }
     
     /**
-    Indicates that a word was failed.
+        Indicates that a word was failed.
     */
     func wordFailed() {
         currentWord!.incAttemptsNumber()
@@ -122,9 +122,9 @@ class GameRoundViewController: BaseViewController {
     }
     
     /**
-    Processes right swipe at the view.
-    
-    :param: sender UISwipeGestureRecognizer
+        Processes right swipe at the view.
+        
+        :param: sender UISwipeGestureRecognizer
     */
     @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("green")
@@ -132,7 +132,7 @@ class GameRoundViewController: BaseViewController {
     }
 
     /**
-    Indicates that a word was guessed.
+        Indicates that a word was guessed.
     */
     func wordGuessed() {
         currentWord!.incAttemptsNumber()
@@ -155,7 +155,7 @@ class GameRoundViewController: BaseViewController {
     // MARK: - Timer
     
     /**
-    Updates timer info.
+        Updates timer info.
     */
     func update() -> Void {
         timeLeft = gameTime! - ++counter
@@ -185,10 +185,10 @@ class GameRoundViewController: BaseViewController {
     // MARK: - Segue
 
     /**
-    Prepares for a segue.
-    
-    :param: UIStoryboardSegue object
-    :param: sender AnyObject!
+        Prepares for a segue.
+        
+        :param: UIStoryboardSegue object
+        :param: sender AnyObject!
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "timerFinished") {

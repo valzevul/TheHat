@@ -36,22 +36,22 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     // MARK: - New cell with word
     
     /**
-    Returns number of rows.
-    
-    :param: tableView UITableView with round results
-    :param: section Int section
-    :returns: Int number of rows
+        Returns number of rows.
+        
+        :param: tableView UITableView with round results
+        :param: section Int section
+        :returns: Int number of rows
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.cells.count
     }
     
     /**
-    Creates new cell with a word.
-    
-    :param: tableView UITableView with round results
-    :param: indexPath NSIndexPath for the new cell
-    :returns: CustomTableViewCell object with a word
+        Creates new cell with a word.
+        
+        :param: tableView UITableView with round results
+        :param: indexPath NSIndexPath for the new cell
+        :returns: CustomTableViewCell object with a word
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
@@ -85,14 +85,14 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     // TODO: Update word in activeWords array!
     /**
-    Processes swipe of a cell with a word.
-    
-    :param: cell MGSwipeTableCell object which was swiped
-    :param: index Int index of the cell
-    :param: direction MGSwipeDirection object with a direction of the swipe
-    :param: fromExpansion Bool flag process the expansion swipe
-    
-    :returns: Bool true if the cell closes after tap else false
+        Processes swipe of a cell with a word.
+        
+        :param: cell MGSwipeTableCell object which was swiped
+        :param: index Int index of the cell
+        :param: direction MGSwipeDirection object with a direction of the swipe
+        :param: fromExpansion Bool flag process the expansion swipe
+        
+        :returns: Bool true if the cell closes after tap else false
     */
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         
@@ -121,9 +121,9 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     // MARK: - Segue
     
     /**
-    Performs a segue with a new round or final results.
-    
-    :param: sender UIBarButtonItem object
+        Performs a segue with a new round or final results.
+        
+        :param: sender UIBarButtonItem object
     */
     @IBAction func nextRoundButtonAction(sender: UIBarButtonItem) {
         if (tSystem!.wordsLeft() < 1) {
@@ -134,10 +134,10 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     }
     
     /**
-    Prepares for a segue and passes all vital objects to the next screen.
-    
-    :param: segue UIStoryboardSegue
-    :param: sender AnyObject!
+        Prepares for a segue and passes all vital objects to the next screen.
+        
+        :param: segue UIStoryboardSegue
+        :param: sender AnyObject!
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {

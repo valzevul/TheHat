@@ -32,9 +32,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     /**
     Returns buttons for the footer section.
     
-    :param: tableView UITableView object with a list of players
-    :param: section Int number of section for the footer
-    :returns: View with buttons
+        :param: tableView UITableView object with a list of players
+        :param: section Int number of section for the footer
+        :returns: View with buttons
     */
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -61,20 +61,20 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-    Performs segue for import contacts from the address book
+        Performs segue for import contacts from the address book
     
-    :param: sender UIButton
+        :param: sender UIButton
     */
     func addPlayerFromAddressBookAction(sender: UIButton!) {
         self.performSegueWithIdentifier("openAddressBook", sender: nil)
     }
     
     /**
-    Delegate's implementation for import contacts from address book
+        Delegate's implementation for import contacts from address book
     
-    :param: controller AddressBookTableViewController
-    :param: name Name of a person from AB
-    :param: image Image of a person from AB if exists or default picture
+        :param: controller AddressBookTableViewController
+        :param: name Name of a person from AB
+        :param: image Image of a person from AB if exists or default picture
     */
     func personFromAddressBookDidSelected(controller: AddressBookViewController, name: String, image: UIImage) {
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
@@ -86,9 +86,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-    Action for players generator.
+        Action for players generator.
     
-    :param: sender UIButton
+        :param: sender UIButton
     */
     func addPlayerAction(sender: UIButton!)
     {
@@ -103,20 +103,20 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     // MARK: - Create new cell with existing player
     
     /**
-    Returns number of rows.
+        Returns number of rows.
     
-    :param: tableView UITableView with a list of players
-    :param: section Int index of the section
-    :returns: Int number of rows in the section
+        :param: tableView UITableView with a list of players
+        :param: section Int index of the section
+        :returns: Int number of rows in the section
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tSystem!.gameObject.players.count
     }
     
     /**
-    Alert controll to change the person's name.
+        Alert controll to change the person's name.
     
-    :param: cell MGSwipeTableCell
+        :param: cell MGSwipeTableCell
     */
     func changeName(cell: MGSwipeTableCell!) {
         let alertController = UIAlertController(title: "Change player's name", message: "Input new player's name:", preferredStyle: .Alert)
@@ -144,12 +144,12 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-    Action for the tapped button.
-    
-    :param: cell MGSwipeTableCell
-    :param: index Int index of tapped button
-    :param: direction MGSwipeDirection
-    :param: fromExpansion Bool
+        Action for the tapped button.
+        
+        :param: cell MGSwipeTableCell
+        :param: index Int index of tapped button
+        :param: direction MGSwipeDirection
+        :param: fromExpansion Bool
     */
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
@@ -171,9 +171,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-    Remove a player and all his words from both the database and the table.
-    
-    :param: cell CustomPlayerTableCell
+        Remove a player and all his words from both the database and the table.
+        
+        :param: cell CustomPlayerTableCell
     */
     func removePlayer(cell: CustomPlayerTableCell) {
         // Remove from database
@@ -185,11 +185,11 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-    Creates new cell with player's info.
-    
-    :param: tableView UITableView
-    :param: indexPath NSIndexPath
-    :returns: CustomPlayerTableCell
+        Creates new cell with player's info.
+        
+        :param: tableView UITableView
+        :param: indexPath NSIndexPath
+        :returns: CustomPlayerTableCell
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
@@ -215,10 +215,10 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     
     // MARK: - Segue
     /**
-    Pass vital objects to the next screen.
-    
-    :param: segue UIStoryboardSegue
-    :param: sender AnyObject!
+        Pass vital objects to the next screen.
+        
+        :param: segue UIStoryboardSegue
+        :param: sender AnyObject!
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showStartRoundScreen") {

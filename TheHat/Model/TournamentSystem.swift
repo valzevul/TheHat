@@ -31,10 +31,10 @@ class TournamentSystem {
     
     
     /**
-    Initializes a new Tournament System object.
+        Initializes a new Tournament System object.
     
-    :param: game Game object
-    :returns: new Tournament System object with a link to the Game object.
+        :param: game Game object
+        :returns: new Tournament System object with a link to the Game object.
     
     */
     init(game: Game) {
@@ -44,18 +44,18 @@ class TournamentSystem {
     // MARK: - Words
     
     /**
-    Returns number of words left in the game.
+        Returns number of words left in the game.
 
-    :returns: Int number of words left in the game.
+        :returns: Int number of words left in the game.
     */
     func wordsLeft() -> Int {
         return gameObject.wordsLeft
     }
     
     /**
-    Returns a new Active word and removes it from the list of unguessed words.
+        Returns a new Active word and removes it from the list of unguessed words.
 
-    :returns: Active word or null if there is no more.
+        :returns: Active word or null if there is no more.
     */
     func getNewWord() -> ActiveWord? {
         if (gameObject.words.count > 0) {
@@ -66,9 +66,9 @@ class TournamentSystem {
     }
     
     /**
-    Apply new results to statistics and update the list of active words with a new guessed now.
+        Apply new results to statistics and update the list of active words with a new guessed now.
     
-    :param: word Active Word which was guessed
+        :param: word Active Word which was guessed
     */
     func wordGuessed(word: ActiveWord) {
         currentResult += 1 // Number of words guessed by the pair
@@ -79,9 +79,9 @@ class TournamentSystem {
     }
     
     /**
-    Apply new results to statistics and update the list of active words with a new failed now.
+        Apply new results to statistics and update the list of active words with a new failed now.
     
-    :param: word Active Word which was failed
+        :param: word Active Word which was failed
     */
     func wordFailed(word: ActiveWord) {
         word.changeStatus("F")
@@ -89,9 +89,9 @@ class TournamentSystem {
     }
     
     /**
-    Apply new results to statistics and update the list of active words with a new missed now.
+        Apply new results to statistics and update the list of active words with a new missed now.
     
-    :param: word Active Word which was missed
+        :param: word Active Word which was missed
     */
     func wordMissed(word: ActiveWord) {
         if (word.getStatus() == "?") { // If word is really missed, not failed
@@ -103,9 +103,9 @@ class TournamentSystem {
     // MARK: - Players
     
     /**
-    Generate a new pair of players for the game with a step of two.
+        Generate a new pair of players for the game with a step of two.
     
-    :returns: (Player, Player) tuple or nil if there is no new games
+        :returns: (Player, Player) tuple or nil if there is no new games
     */
     func getNextPair() -> (Player, Player)? { // Create new pair of players
         var player_1 = gameObject.getPlayerByIndex(playerIdx)
@@ -123,8 +123,7 @@ class TournamentSystem {
     // MARK: - Round
     
     /**
-    Starts new round.
-    
+        Starts new round.
     */
     func startNextRound() {
         currentActiveWords = [ActiveWord]()
@@ -133,26 +132,26 @@ class TournamentSystem {
     }
     
     /**
-    Returns a result of the previous round.
+        Returns a result of the previous round.
     
-    :returns: Int result or nil if this is the first round
+        :returns: Int result or nil if this is the first round
     */
     func getPreviousResult() -> Int? {
         return currentResult
     }
     
     /**
-    Starts new round with wiping all previous results.
+        Starts new round with wiping all previous results.
     */
     func clean() {
         currentResult = 0
     }
     
     /**
-    Provides support of word's status change after the round.
+        Provides support of word's status change after the round.
     
-    :param: word ActiveWord
-    :param: status String?
+        :param: word ActiveWord
+        :param: status String?
     */
     func changeWordsStatus(word: ActiveWord, status: String?) {
         if (status == "F") {

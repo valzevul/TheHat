@@ -81,25 +81,25 @@ public class ActiveWord: Word {
     }
     
     /**
-    Setter for the time statistics.
+        Setter for the time statistics.
     
-    :param: time Value for the time statistics to be added.
+        :param: time Value for the time statistics to be added.
     */
     func incTime(time: Int) {
         guessedTime += time
     }
     
     /**
-    Getter for the attempts statistics.
+        Getter for the attempts statistics.
     
-    :returns: Int for the number of attempts spent to guess the word
+        :returns: Int for the number of attempts spent to guess the word
     */
     func getAttemptsNumber() -> Int {
         return attemptsNumber
     }
     
     /**
-    Setter for the attempts statistics.
+        Setter for the attempts statistics.
     */
     func incAttemptsNumber() {
         attemptsNumber += 1

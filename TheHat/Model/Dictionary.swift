@@ -34,18 +34,18 @@ class Dictionary {
     var wordsReturned = 0
     
     /**
-    Initializes Dictionary object with name of the file to be parsed.
+        Initializes Dictionary object with name of the file to be parsed.
     
-    :param: filename String name of the file
+        :param: filename String name of the file
     */
     init(filename: String) {
         self.filename = filename
     }
     
     /**
-    Get new word from the list.
+        Get new word from the list.
     
-    :return: String word from file
+        :return: String word from file
     */
     func getNewWord() -> String? { // Returns new word
         wordsReturned += 1
@@ -53,10 +53,10 @@ class Dictionary {
     }
     
     /**
-    Returns new word by index (i.e for the random shuffle)
+        Returns new word by index (i.e for the random shuffle)
     
-    :param: index Int index of the word
-    :return: String word or nil if the index is out of bound
+        :param: index Int index of the word
+        :return: String word or nil if the index is out of bound
     */
     func getNewWordByIndex(index: Int) -> String? {
         if (index < 0 || index >= textWords.count) {
@@ -66,7 +66,7 @@ class Dictionary {
     }
     
     /**
-    Parses words from a file and shuffle them in the list.
+        Parses words from a file and shuffle them in the list.
     */
     func parse() {
         

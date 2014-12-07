@@ -31,19 +31,19 @@ public class Player {
     private var scoreGuessed = 0
     
     /**
-    Initializes player from the given name.
+        Initializes player from the given name.
     
-    :param: name String name of player
+        :param: name String name of player
     */
     init(name: String) {
         self.name = name
     }
     
     /**
-    Initializes player from the given name and an image from the address book.
+        Initializes player from the given name and an image from the address book.
     
-    :param: name String name of player
-    :param image UIImage from address book
+        :param: name String name of player
+        :param image UIImage from address book
     */
     init(name: String, image: UIImage) {
         self.name = name
@@ -51,18 +51,18 @@ public class Player {
     }
     
     /**
-    Adds new word to the list.
+        Adds new word to the list.
     
-    :param: word Word object to add to the list
+        :param: word Word object to add to the list
     */
     func addWord(word: Word) {
         self.words.append(word)
     }
     
     /**
-    Give player new index.
+        Give player new index.
     
-    :param: Int index
+        :param: Int index
     */
     func setIndex(index: Int) {
         if (index >= 0) {
@@ -71,70 +71,68 @@ public class Player {
     }
     
     /**
-    Returns list of Word objects.
+        Returns list of Word objects.
     
-    :return: list of plain Word objects
+        :return: list of plain Word objects
     */
     func getWords() -> [Word] {
         return words
     }
     
     /**
-    Returns overall score (as sum of explained and guessed words).
+        Returns overall score (as sum of explained and guessed words).
     
-    :return: Int result
+        :return: Int result
     */
     func getOverallScore() -> Int {
         return self.scoreExplained + self.scoreGuessed
     }
     
     /**
-    Setter for the name field.
+        Setter for the name field.
     
-    :param: name String name to set
+        :param: name String name to set
     */
     func setName(name: String) {
         self.name = name
     }
     
     /**
-    Getter for the name field.
+        Getter for the name field.
     
-    :return: player's name or nil if not existed
+        :return: player's name or nil if not existed
     */
     func getName() -> String? {
         return self.name
     }
     
     /**
-    Increase number of explained words.
+        Increase number of explained words.
     */
     func incScoreExplained() {
         self.scoreExplained += 1
     }
     
     /**
-    Increase number of guessed words.
+        Increase number of guessed words.
     */
     func incScoreGuessed() {
         self.scoreGuessed += 1
     }
     
-    // TODO: decrease number of guessed words if the word was set as failed after the round
-    
     /**
-    Getter for the image field.
+        Getter for the image field.
     
-    :return: UIImage object or nil if not existed
+        :return: UIImage object or nil if not existed
     */
     func getImage() -> UIImage? {
         return self.image
     }
     
     /**
-    Returns the number of player's words.
+        Returns the number of player's words.
     
-    :returns: Int number of player's words
+        :returns: Int number of player's words
     */
     func getNumberOfWords() -> Int {
         return words.count

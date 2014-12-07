@@ -22,31 +22,31 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
     }
     
     /**
-    Pops to the root view controller if the game was finished.
+        Pops to the root view controller if the game was finished.
     
-    :param: sender UIBarButton
+        :param: sender UIBarButton
     */
     @IBAction func didEndGameAction(sender: UIBarButtonItem) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     /**
-    Returns number of player in the game.
+        Returns number of player in the game.
     
-    :param: section Index of a section
-    :param: tableView Game Results table
-    :returns: Int number of players
+        :param: section Index of a section
+        :param: tableView Game Results table
+        :returns: Int number of players
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tSystem!.gameObject.players.count
     }
     
     /**
-    Creates new cell with player's results.
+        Creates new cell with player's results.
     
-    :param: tableView Game Results table
-    :param: indexPath cell's index
-    :returns: GameResultTableViewCell object with player's results
+        :param: tableView Game Results table
+        :param: indexPath cell's index
+        :returns: GameResultTableViewCell object with player's results
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         

@@ -29,10 +29,10 @@ public class LocalSettings {
     public private(set) var wordsSource: String? = nil
     
     /**
-    Initializes new Local settings object.
+        Initializes new Local settings object.
     
-    :param: Int game type: casual (0), random (1), custom (2)
-    :param: String words' source or nil if there are no words' packages
+        :param: Int game type: casual (0), random (1), custom (2)
+        :param: String words' source or nil if there are no words' packages
     */
     public init(gameType: Int, wordsSource: String?) {
         self.gameType = gameType
@@ -40,18 +40,18 @@ public class LocalSettings {
     }
     
     /**
-    Public setter for the game type.
+        Public setter for the game type.
     
-    :param: Int game type: casual (0), random (1), custom (2)
+        :param: Int game type: casual (0), random (1), custom (2)
     */
     public func changeGameType(gameType: Int) {
         self.gameType = gameType
     }
     
     /**
-    Public setter for the words' source.
+        Public setter for the words' source.
     
-    :param: String source of nil if there are no words' packages
+        :param: String source of nil if there are no words' packages
     */
     public func changeWordsSource(source: String?) {
         self.wordsSource = source

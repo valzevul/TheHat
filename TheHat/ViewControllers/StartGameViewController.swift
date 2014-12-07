@@ -66,11 +66,11 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
     // MARK: Settings Changed
     
     /**
-    Updates info about players (from round settings' delegate).
-    
-    :param: controller CurrentRoundSettingsTableViewController object
-    :param: firstName String first player's name
-    :param: secondName String second player's name
+        Updates info about players (from round settings' delegate).
+        
+        :param: controller CurrentRoundSettingsTableViewController object
+        :param: firstName String first player's name
+        :param: secondName String second player's name
     */
     func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
         currentPair!.0.setName(firstName)
@@ -81,13 +81,13 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
     }
 
     /**
-    Action for the start game button.
+        Action for the start game button.
     */
     @IBAction func playButtonAction(sender: UIButton) {
     }
     
     /**
-    Action for the settings button.
+        Action for the settings button.
     */
     @IBAction func settingsButtonAction(sender: UIBarButtonItem) {
     }
@@ -95,10 +95,10 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
     // MARK: - Segue
     
     /**
-    Prepares for segues.
-    
-    :param: segue UIStoryboardSegue object
-    :param: sender AnyObject!
+        Prepares for segues.
+        
+        :param: segue UIStoryboardSegue object
+        :param: sender AnyObject!
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "startNewRound") {

@@ -54,9 +54,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     /**
-    Loads global settings.
-    
-    :param: animated Bool
+        Loads global settings.
+        
+        :param: animated Bool
     */
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -67,7 +67,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Settings Loading
     
     /**
-    Loads global settings, updates all labels from the User's Defaults.
+        Loads global settings, updates all labels from the User's Defaults.
     */
     func loadSettings() {
         let namePreference = NSUserDefaults.standardUserDefaults()
@@ -107,9 +107,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Settings Saving
 
     /**
-    
-    
-    :param: sender UIStepper
+        Updates number of players.
+        
+        :param: sender UIStepper
     */
     @IBAction func PlayersNumberValueChanged(sender: UIStepper) {
         playersNumberLabel.text = "\(Int(sender.value))"
@@ -119,9 +119,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     /**
-    Updates settings if number of words per player has changed.
-    
-    :param: sender UIStepper
+        Updates settings if number of words per player has changed.
+        
+        :param: sender UIStepper
     */
     @IBAction func WordsNumberValueChanged(sender: UIStepper) {
         playersWordsLabel.text = "\(Int(sender.value))"
@@ -131,9 +131,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     /**
-    Updates settings if game time has changed.
-    
-    :param: sender UIStepper
+        Updates settings if game time has changed.
+        
+        :param: sender UIStepper
     */
     @IBAction func GameTimeValueChanged(sender: UIStepper) {
         gameTimeLabel.text = "\(Int(sender.value))"
@@ -145,7 +145,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     /**
         Updates settings if additional time has changed.
     
-    :param: sender UIStepper
+        :param: sender UIStepper
     */
     @IBAction func AdditionalTimeValueChanged(sender: UIStepper) {
         additionalTimeLabel.text = "\(Int(sender.value))"
@@ -155,9 +155,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     /**
-    Updates settings if tutorial's status has changed.
-    
-    :param: sender UISwitch
+        Updates settings if tutorial's status has changed.
+        
+        :param: sender UISwitch
     */
     @IBAction func tutorialSwitchValueDidChanged(sender: UISwitch) {
         sender.resignFirstResponder()
@@ -166,9 +166,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     /**
-    Updates settings if difficultness has changed.
-    
-    :param: sender UISlider
+        Updates settings if difficultness has changed.
+        
+        :param: sender UISlider
     */
     @IBAction func diffSliderValueDidChanged(sender: UISlider) {
         sender.resignFirstResponder()
@@ -177,9 +177,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     /**
-    Updates settings if some of text fields has changed.
-    
-    :param: sender UITextField
+        Updates settings if some of text fields has changed.
+        
+        :param: sender UITextField
     */
     func textFieldDidEndEditing(textField: UITextField) {
         textField.resignFirstResponder();

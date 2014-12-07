@@ -37,22 +37,22 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Returns number of rows.
+        Returns number of rows.
     
-    :param: tableView UITableView
-    :param: section Int
+        :param: tableView UITableView
+        :param: section Int
     
-    :return: Int number of words
+        :return: Int number of words
     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return words.count
     }
     
     /**
-    Returns new cell object.
+        Returns new cell object.
     
-    :param: tableView UITableView
-    :param: indexPath NSIndexPath
+        :param: tableView UITableView
+        :param: indexPath NSIndexPath
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
@@ -70,12 +70,12 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Action for the tapped button.
+        Action for the tapped button.
     
-    :param: cell MGSwipeTableCell
-    :param: index Int index of tapped button
-    :param: direction MGSwipeDirection
-    :param: fromExpansion Bool
+        :param: cell MGSwipeTableCell
+        :param: index Int index of tapped button
+        :param: direction MGSwipeDirection
+        :param: fromExpansion Bool
     */
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
@@ -92,9 +92,9 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Provides an alertControll to edit a word.
+        Provides an alertControll to edit a word.
     
-    :param: cell MGSwipeTableCell
+        :param: cell MGSwipeTableCell
     */
     func editWord(cell: MGSwipeTableCell) {
         let alertController = UIAlertController(title: "Change word", message: "Edit this word:", preferredStyle: .Alert)
@@ -125,9 +125,9 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Remove a word from the game and updates the table.
+        Remove a word from the game and updates the table.
     
-    :param: tag Int index of the word to delete.
+        :param: tag Int index of the word to delete.
     */
     func removeWord(tag: Int) {
         
@@ -141,21 +141,21 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Confirm changes in player's words.
+        Confirm changes in player's words.
     
-    :param: sender UIBarButton
+        :param: sender UIBarButton
     */
     @IBAction func wordsAddedAction(sender: UIBarButtonItem) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     /**
-    Shows button for addition new words.
+        Shows button for addition new words.
     
-    :param: tableView UITableView
-    :param: section Int
+        :param: tableView UITableView
+        :param: section Int
     
-    :returns: UIView?
+        :returns: UIView?
     */
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -174,9 +174,9 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Creates new word.
+        Creates new word.
     
-    :param: sender UIButton!
+        :param: sender UIButton!
     */
     func addWordAction(sender: UIButton!) {
         let newWord = self.tSystem!.gameObject.getRandomWord(self.tSystem!.gameObject.players[playerIdx!])
@@ -190,12 +190,12 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     /**
-    Represents height of footer section.
+        Represents height of footer section.
     
-    :param: tableView UITableView
-    :param: section Int
+        :param: tableView UITableView
+        :param: section Int
     
-    :returns: CGFloat height of footer.
+        :returns: CGFloat height of footer.
     */
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 50
