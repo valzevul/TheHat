@@ -206,7 +206,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
-            MGSwipeButton(title: "+ words", backgroundColor: Constants.addColor),
+            MGSwipeButton(title: "Words", backgroundColor: Constants.addColor),
             MGSwipeButton(title: "Edit", backgroundColor: Constants.editColor),
             MGSwipeButton(title: "Delete", backgroundColor: Constants.deleteColor)]
         
@@ -237,12 +237,25 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
+    func notifyAboutAnError() {
+        let alertController = UIAlertController(title: "Error!", message: "Add more than one player!", preferredStyle: .Alert)
+        
+        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+
+        alertController.addAction(OKAction)
+        
+        
+        self.presentViewController(alertController, animated: true) {
+        }
+    }
+    
     @IBAction func doneButtonPressedAction(sender: AnyObject) {
         
-        if (tSystem?.gameObject.numberOfPlayers > 0) {
+        // It's quite difficult to play without a pair of players, isn't it?
+        if (tSystem?.gameObject.numberOfPlayers > 1) {
             performSegueWithIdentifier("showStartRoundScreen", sender: nil)
         } else {
-            println("There are no players to start")
+            notifyAboutAnError()
         }
         
     }
