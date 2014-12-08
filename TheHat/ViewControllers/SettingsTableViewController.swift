@@ -182,9 +182,11 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         :param: sender UITextField
     */
     func textFieldDidEndEditing(textField: UITextField) {
-        textField.resignFirstResponder();
-        NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey:Settings.keys[textField.tag])
-        NSUserDefaults.standardUserDefaults().synchronize()
+        if (textField.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "") {
+            textField.resignFirstResponder();
+            NSUserDefaults.standardUserDefaults().setValue(textField.text, forKey:Settings.keys[textField.tag])
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
     }
     
 }
