@@ -237,6 +237,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
+    /**
+        Shows the alert view if the number of players is less than two.
+    */
     func notifyAboutAnError() {
         let alertController = UIAlertController(title: "Error!", message: "Add more than one player!", preferredStyle: .Alert)
         
@@ -249,6 +252,11 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         }
     }
     
+    /**
+        Performs a check for the number of players and if the condition is not violated perfoms the segue.
+    
+        :param: sender AnyObject
+    */
     @IBAction func doneButtonPressedAction(sender: AnyObject) {
         
         // It's quite difficult to play without a pair of players, isn't it?
