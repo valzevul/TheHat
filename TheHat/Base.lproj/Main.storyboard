@@ -505,13 +505,14 @@
                     <navigationItem key="navigationItem" title="List of Players" id="SOa-wo-BFw">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="J8q-d5-OxY">
                             <connections>
-                                <segue destination="cUt-5j-hzo" kind="push" identifier="showStartRoundScreen" id="gUm-sP-u0h"/>
+                                <action selector="doneButtonPressedAction:" destination="UZ3-4R-yN9" id="GZ8-4V-dCS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="7Y2-QT-ceb" kind="push" identifier="openAddressBook" id="h6u-IV-eQz"/>
                         <segue destination="UGt-fp-maR" kind="push" identifier="addWordsSegue" id="PuU-SI-VUT"/>
+                        <segue destination="cUt-5j-hzo" kind="push" identifier="showStartRoundScreen" id="KAt-ux-fcH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YZR-dt-I1A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1350,6 +1351,6 @@ Cgo
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HVG-rt-qFZ"/>
+        <segue reference="KAt-ux-fcH"/>
     </inferredMetricsTieBreakers>
 </document>

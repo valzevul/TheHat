@@ -213,6 +213,8 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         return cell
     }
     
+    
+    
     // MARK: - Segue
     /**
         Pass vital objects to the next screen.
@@ -234,4 +236,15 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             addWordsVC.tSystem = tSystem
         }
     }
+    
+    @IBAction func doneButtonPressedAction(sender: AnyObject) {
+        
+        if (tSystem?.gameObject.numberOfPlayers > 0) {
+            performSegueWithIdentifier("showStartRoundScreen", sender: nil)
+        } else {
+            println("There are no players to start")
+        }
+        
+    }
+    
 }

@@ -27,4 +27,6 @@ struct Constants {
     static let OKColor = UIColor(red: 0.07, green: 0.75, blue: 0.16, alpha: 0.7)
     static let FColor = UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)
     static let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
+    
+    // MARK: - Failed lessons
 }
