@@ -23,6 +23,9 @@ public class Game {
     /// Expected number of words based on number of players and default settings
     let numberOfWords: Int?
     
+    /// Loaded global settings
+    let namePreference = NSUserDefaults.standardUserDefaults()
+    
     /// Active words left
     public var wordsLeft: Int {
         get {
@@ -48,7 +51,10 @@ public class Game {
         self.numberOfWords = words
         dict = Dictionary(filename: filename)
         dict.parse()
-        self.addPlayer(getNewPlayer(1, numberOfWords: words))
+        
+        let ownerName: String = namePreference.stringForKey("playersName")!
+        
+        self.addPlayer(getNewPlayer(ownerName, numberOfWords: words))
     }
     
     // MARK: - Player
@@ -63,6 +69,23 @@ public class Game {
     */
     public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
+        for i in 0..<numberOfWords {
+            let word = getRandomWord(player) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
+            player.addWord(word)
+        }
+        return player
+    }
+    
+    /**
+    Create new Player object with words and name.
+    
+    :param: name String player's name
+    :param: numberOfWords Int number of current player's words
+    
+    :returns: Player object with words.
+    */
+    public func getNewPlayer(name: String, numberOfWords: Int) -> Player {
+        let player = Player(name: name)
         for i in 0..<numberOfWords {
             let word = getRandomWord(player) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
             player.addWord(word)
