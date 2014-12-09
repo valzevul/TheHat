@@ -52,9 +52,14 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
         :param: sender UITextField
     */
     @IBAction func didFirstPlayerNameEdit(sender: UITextField) {
-        tSystem!.currentPair!.0.setName(firstPlayerNameTextField.text)
-        if (delegate != nil) {
-            delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
+        
+        sender.text = sender.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        if (!sender.text.isEmpty) {
+            tSystem!.currentPair!.0.setName(firstPlayerNameTextField.text)
+            if (delegate != nil) {
+                delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
+            }
         }
     }
     
@@ -64,9 +69,14 @@ class CurrentRoundSettingsTableViewController: UITableViewController {
         :param: sender UITextField
     */
     @IBAction func didSecondPlayerNameEdit(sender: UITextField) {
-        tSystem!.currentPair!.1.setName(secondPlayerNameTextField.text)
-        if (delegate != nil) {
-            delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
+        
+        sender.text = sender.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        
+        if (!sender.text.isEmpty) {
+            tSystem!.currentPair!.1.setName(secondPlayerNameTextField.text)
+            if (delegate != nil) {
+                delegate!.roundSettingsDidChanged(self, firstName: firstPlayerNameTextField.text, secondName: secondPlayerNameTextField.text)
+            }
         }
     }
 }
