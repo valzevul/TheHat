@@ -59,7 +59,7 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.wordsLabel.text = words[indexPath.row].getText()
         
         cell.delegate = self
-        cell.tag = indexPath.row + 1 // NEVER use the tag 0 'coz it's default value
+        cell.tag = indexPath.row + 1 // NEVER use the tag 0 'cause it's default value
         
         cell.rightSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.rightButtons = [
@@ -110,9 +110,13 @@ class AddWordsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as WordTableViewCell)
-            c.wordsLabel.text = (alertController.textFields![0] as UITextField).text
-            if (countElements(c.wordsLabel.text!) > 0) {
-                self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+            let text = (alertController.textFields![0] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+
+            if (!text.isEmpty) {
+                c.wordsLabel.text = text
+                if (countElements(c.wordsLabel.text!) > 0) {
+                    self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+                }
             }
         }
         alertController.addAction(OKAction)
