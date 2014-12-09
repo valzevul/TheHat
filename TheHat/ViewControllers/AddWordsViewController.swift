@@ -9,7 +9,7 @@
 import UIKit
 
 /// Class for addition new words or checking previous.
-class AddWordsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
+class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate {
     
     /// Table view with words
     @IBOutlet weak var tableView: UITableView!

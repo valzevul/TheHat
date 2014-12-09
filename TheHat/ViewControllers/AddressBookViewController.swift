@@ -23,7 +23,7 @@ protocol PersonFromAddressBookDelegate {
     func personFromAddressBookDidSelected(controller: AddressBookViewController, name: String, image: UIImage)
 }
 
-class AddressBookViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource {
+class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDelegate, UITableViewDataSource {
     
     /// Address book reference
     var addressBook: ABAddressBookRef?
