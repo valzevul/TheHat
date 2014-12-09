@@ -288,13 +288,6 @@
                                         <outlet property="delegate" destination="7Y2-QT-ceb" id="00l-Bh-k4B"/>
                                     </connections>
                                 </searchBar>
-                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vQd-EZ-uUq">
-                                    <rect key="frame" x="0.0" y="591" width="320" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="AddressBookCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressBookCell" rowHeight="60" id="MKq-dO-82X" customClass="AddressBookTableViewCell" customModule="TheHat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
