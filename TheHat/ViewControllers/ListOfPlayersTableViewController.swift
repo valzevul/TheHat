@@ -132,9 +132,14 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as CustomPlayerTableCell)
-            c.playerLabel?.text = (alertController.textFields![0] as UITextField).text
-            (self.tSystem!.gameObject.players[cell.tag] as Player).setName(c.playerLabel!.text!)
+            
+            var text: String = (alertController.textFields![0] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            if (!text.isEmpty) {
+                c.playerLabel?.text = text
+                (self.tSystem!.gameObject.players[cell.tag] as Player).setName(text)
+            }
         }
+        
         alertController.addAction(OKAction)
         
         
