@@ -9,7 +9,7 @@
 import UIKit
 
 /// Class for the content of tutorial pages.
-class PageContentViewController: UIViewController {
+class PageContentViewController: BaseViewController {
     
     /// Page label
     @IBOutlet weak var titleLabel: UILabel!
