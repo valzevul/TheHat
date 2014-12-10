@@ -72,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="Gn4-LV-RDP" id="n7p-jH-kOw"/>
+                        <outlet property="descriptionLabel" destination="luo-KQ-xha" id="EUw-h7-jME"/>
                         <outlet property="titleLabel" destination="9NQ-0p-ClC" id="gYk-v9-EOi"/>
                     </connections>
                 </viewController>

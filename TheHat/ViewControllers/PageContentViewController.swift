@@ -14,6 +14,9 @@ class PageContentViewController: UIViewController {
     /// Page label
     @IBOutlet weak var titleLabel: UILabel!
     
+    /// Page description
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
     /// Background image
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -22,6 +25,9 @@ class PageContentViewController: UIViewController {
     
     /// View controller title
     var titleText: String?
+    
+    /// View controller description
+    var descriptionText: String?
     
     /// Image file
     var imageFile: UIImage?
@@ -34,6 +40,9 @@ class PageContentViewController: UIViewController {
         }
         if (titleText != nil) {
             self.titleLabel.text = titleText
+        }
+        if (descriptionText != nil) {
+            self.descriptionLabel.text = descriptionText
         }
     }
 }

@@ -15,10 +15,13 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
     var pageViewController : UIPageViewController?
     
     /// List of page titles
-    var pageTitles = ["A", "B", "C"]
+    let pageTitles = ["A", "B", "C"]
     
     /// List of page backgrounds
-    var pageImages = ["page1.png", "page2.png", "page3.png"]
+    let pageImages = ["page1.png", "page2.png", "page3.png"]
+    
+    /// List of descriptions
+    let pageDescriptions = ["Test1", "Test2", "Test3"]
     
     /// Current page index
     var currentIndex = 0
@@ -96,6 +99,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         let pageContentViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageContentController") as PageContentViewController
         pageContentViewController.imageFile = UIImage(named:self.pageImages[index])
         pageContentViewController.titleText = self.pageTitles[index]
+        pageContentViewController.descriptionText = self.pageDescriptions[index]
         pageContentViewController.pageIndex = index
         
         return pageContentViewController;
