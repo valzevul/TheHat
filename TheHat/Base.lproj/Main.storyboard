@@ -36,12 +36,12 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-LV-RDP">
                                 <rect key="frame" x="16" y="139" width="288" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="q8K-3E-Isw"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
-                                <rect key="frame" x="16" y="65" width="288" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Xl1-X3-qOq"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="62" width="288" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,19 +55,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="width" secondItem="Gn4-LV-RDP" secondAttribute="width" id="1aO-Ja-kSj"/>
-                            <constraint firstItem="9NQ-0p-ClC" firstAttribute="top" secondItem="Bws-Q1-4In" secondAttribute="bottom" constant="45" id="2Ln-ax-pNQ"/>
-                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="359" id="BA1-rB-SZl"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="width" secondItem="9NQ-0p-ClC" secondAttribute="width" id="E1D-U2-zLM"/>
-                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="luo-KQ-xha" secondAttribute="bottom" constant="160" id="E8Q-x8-nfQ"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="top" secondItem="Bws-Q1-4In" secondAttribute="bottom" constant="253" id="LHo-5d-wP8"/>
-                            <constraint firstItem="9NQ-0p-ClC" firstAttribute="trailing" secondItem="HFD-ED-9lD" secondAttribute="trailingMargin" id="Z8k-qO-p8G"/>
-                            <constraint firstAttribute="centerX" secondItem="9NQ-0p-ClC" secondAttribute="centerX" id="ZFf-q9-ppr"/>
-                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="Bws-Q1-4In" secondAttribute="bottom" constant="119" id="alz-Nj-rVa"/>
-                            <constraint firstAttribute="centerX" secondItem="Gn4-LV-RDP" secondAttribute="centerX" id="arW-EH-ICH"/>
-                            <constraint firstItem="9NQ-0p-ClC" firstAttribute="leading" secondItem="HFD-ED-9lD" secondAttribute="leadingMargin" id="bwS-fU-NHC"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="leading" secondItem="HFD-ED-9lD" secondAttribute="leadingMargin" id="vMB-UU-q1T"/>
-                            <constraint firstAttribute="centerX" secondItem="luo-KQ-xha" secondAttribute="centerX" id="yAi-2H-tan"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="HFD-ED-9lD" secondAttribute="top" constant="139" id="5CV-tN-Diw"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="leading" secondItem="9NQ-0p-ClC" secondAttribute="leading" id="G3I-fg-Myk"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="leading" secondItem="Gn4-LV-RDP" secondAttribute="leading" id="GGB-eC-YMj"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="trailing" secondItem="HFD-ED-9lD" secondAttribute="trailingMargin" id="IXz-o9-M6n"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="leading" secondItem="HFD-ED-9lD" secondAttribute="leadingMargin" id="Kw1-MD-eSh"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="trailing" secondItem="Gn4-LV-RDP" secondAttribute="trailing" id="MWa-Bj-Tpz"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="trailing" secondItem="9NQ-0p-ClC" secondAttribute="trailing" id="MtW-4E-DNi"/>
+                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="luo-KQ-xha" secondAttribute="bottom" constant="160" id="c9g-KH-1tt"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="64" id="lpL-O0-G7T"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="53" id="xaE-8G-opG"/>
                         </constraints>
                     </view>
                     <connections>

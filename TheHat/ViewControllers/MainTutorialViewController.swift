@@ -15,13 +15,15 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
     var pageViewController : UIPageViewController?
     
     /// List of page titles
-    let pageTitles = ["A", "B", "C"]
+    let pageTitles = ["Настройки", "Настройки", "Настройки", "Добавление игроков", "Добавление игроков", "Добавление игроков",
+        "Адресная книга", "Редактирование слов", "Редактирование слов", "Игра", "Игра", "Редактирование раунда", "Редактирование раунда"]
     
     /// List of page backgrounds
-    let pageImages = ["page1.png", "page2.png", "page3.png"]
+    let pageImages = ["page1.png", "page2.png", "page3.png", "page1.png", "page2.png", "page3.png", "page1.png", "page2.png",
+        "page3.png", "page1.png", "page2.png", "page3.png", "page1.png"]
     
     /// List of descriptions
-    let pageDescriptions = ["Test1", "Test2", "Test3"]
+    let pageDescriptions = ["Test1", "Test2", "Test3", "Test1", "Test2", "Test3", "Test1", "Test2", "Test3", "Test1", "Test2", "Test3", "Test1"]
     
     /// Current page index
     var currentIndex = 0
