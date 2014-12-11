@@ -150,8 +150,13 @@ public class Game {
     
         :returns: Game object
     */
+    
     public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int) -> Game {
-        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords, filename: "dict")
+        return createRandomGame(numberOfPlayers, numberOfWords: numberOfWords, dict: "dict")
+    }
+    
+    public class func createRandomGame(numberOfPlayers: Int, numberOfWords: Int, dict: String) -> Game {
+        var newRandomGame = Game(numberOfPlayers: numberOfPlayers, words: numberOfWords, filename: dict)
         
         for idx in 2...numberOfPlayers {
             let newPlayer = newRandomGame.getNewPlayer(idx, numberOfWords: numberOfWords)
