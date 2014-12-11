@@ -226,28 +226,32 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TeK-SO-ga6" id="8kK-CV-Xpc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
-                                                    <rect key="frame" x="8" y="8" width="110" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words package" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
+                                                    <rect key="frame" x="8" y="8" width="119" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
                                                     <rect key="frame" x="8" y="26" width="81" height="12"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://drobinin.com/projects/thehat/words.txt" borderStyle="roundedRect" placeholder="http://drobinin.com/projects/thehat/words.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
-                                                    <rect key="frame" x="126" y="7" width="183" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data.txt" borderStyle="roundedRect" placeholder="data.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
+                                                    <rect key="frame" x="135" y="9" width="174" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" constant="-1" id="AgA-mQ-aif"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qE4-Gs-YjD" secondAttribute="trailing" constant="3" id="WOa-MN-Ef5"/>
-                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="leading" secondItem="8kK-CV-Xpc" secondAttribute="leadingMargin" constant="118" id="hlw-hH-1IW"/>
+                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" constant="1" id="1Or-Hy-XAs"/>
+                                                <constraint firstItem="0v9-rK-jSt" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" constant="18" id="50T-1r-eku"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="qE4-Gs-YjD" secondAttribute="trailing" constant="3" id="AZr-kS-bFN"/>
+                                                <constraint firstItem="NDE-Mg-swN" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" id="I7x-uj-XOO"/>
+                                                <constraint firstItem="0v9-rK-jSt" firstAttribute="leading" secondItem="NDE-Mg-swN" secondAttribute="leading" id="MgJ-wz-Adi"/>
+                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="leading" secondItem="NDE-Mg-swN" secondAttribute="trailing" constant="8" symbolic="YES" id="fOf-Q4-px7"/>
+                                                <constraint firstItem="NDE-Mg-swN" firstAttribute="leading" secondItem="8kK-CV-Xpc" secondAttribute="leadingMargin" id="ujd-41-SvU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -273,7 +277,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGA-T9-KkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="127"/>
+            <point key="canvasLocation" x="611" y="125"/>
         </scene>
         <!--Address Book-->
         <scene sceneID="WeL-IK-uef">
