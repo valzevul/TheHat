@@ -35,6 +35,10 @@ class PageContentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Swift
+        descriptionLabel!.lineBreakMode = .ByWordWrapping
+        descriptionLabel!.numberOfLines = 0
+        
         if (imageFile != nil) {
             self.backgroundImage.image = imageFile
         }

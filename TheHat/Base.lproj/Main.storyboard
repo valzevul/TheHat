@@ -47,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luo-KQ-xha">
-                                <rect key="frame" x="16" y="273" width="288" height="135"/>
+                                <rect key="frame" x="16" y="273" width="288" height="275"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,14 +57,14 @@
                         <constraints>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="HFD-ED-9lD" secondAttribute="top" constant="139" id="5CV-tN-Diw"/>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="leading" secondItem="9NQ-0p-ClC" secondAttribute="leading" id="G3I-fg-Myk"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="leading" secondItem="Gn4-LV-RDP" secondAttribute="leading" id="GGB-eC-YMj"/>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="trailing" secondItem="HFD-ED-9lD" secondAttribute="trailingMargin" id="IXz-o9-M6n"/>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="leading" secondItem="HFD-ED-9lD" secondAttribute="leadingMargin" id="Kw1-MD-eSh"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="trailing" secondItem="Gn4-LV-RDP" secondAttribute="trailing" id="MWa-Bj-Tpz"/>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="trailing" secondItem="9NQ-0p-ClC" secondAttribute="trailing" id="MtW-4E-DNi"/>
-                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="luo-KQ-xha" secondAttribute="bottom" constant="160" id="c9g-KH-1tt"/>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="64" id="lpL-O0-G7T"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="leading" secondItem="Gn4-LV-RDP" secondAttribute="leading" id="aaq-m3-PtQ"/>
+                            <constraint firstAttribute="bottom" secondItem="luo-KQ-xha" secondAttribute="bottom" constant="20" symbolic="YES" id="bz8-sF-wqM"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="64" id="qR0-q2-yNf"/>
                             <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="53" id="xaE-8G-opG"/>
+                            <constraint firstItem="luo-KQ-xha" firstAttribute="trailing" secondItem="Gn4-LV-RDP" secondAttribute="trailing" id="yKG-1C-vuX"/>
                         </constraints>
                     </view>
                     <connections>
