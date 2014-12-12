@@ -46,7 +46,6 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         var pageControl: UIPageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
         pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
-        pageControl.backgroundColor = UIColor.whiteColor()
         
         createControllers()
         showTutorial()

@@ -35,7 +35,7 @@ class PageContentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Swift
+        // Multiline-support
         descriptionLabel!.lineBreakMode = .ByWordWrapping
         descriptionLabel!.numberOfLines = 0
         
