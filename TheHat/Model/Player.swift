@@ -31,7 +31,7 @@ public class Player {
     private var scoreGuessed = 0
     
     /// Team ID
-    public private(set) var teamId = 0
+    public private(set) var teamId = -1
     
     /**
         Initializes player from the given name.

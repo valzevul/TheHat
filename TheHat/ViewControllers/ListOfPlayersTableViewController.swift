@@ -202,7 +202,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         cell.tag = indexPath.row
         cell.delegate = self
         let player = self.tSystem!.gameObject.players[indexPath.row]
-        cell.playerLabel?.text = player.getName()
+        cell.playerLabel?.text = player.getName()! + " (\(player.teamId))"
         
         if let image = player.getImage() {
             cell.playerIconImage.image = image

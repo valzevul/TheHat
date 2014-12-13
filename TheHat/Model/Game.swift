@@ -53,8 +53,9 @@ public class Game {
         dict.parse()
         
         let ownerName: String = namePreference.stringForKey("playersName")!
-        
-        self.addPlayer(getNewPlayer(ownerName, numberOfWords: words))
+        let newPlayer = getNewPlayer(ownerName, numberOfWords: words)
+        newPlayer.setTeamId(0)
+        self.addPlayer(newPlayer)
     }
     
     // MARK: - Player
@@ -160,6 +161,7 @@ public class Game {
         
         for idx in 2...numberOfPlayers {
             let newPlayer = newRandomGame.getNewPlayer(idx, numberOfWords: numberOfWords)
+            newPlayer.setTeamId((idx - 1) / 2)
             newRandomGame.addPlayer(newPlayer)
         }
         
