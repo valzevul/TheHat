@@ -119,7 +119,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         :param: cell MGSwipeTableCell
     */
     func changeName(cell: MGSwipeTableCell!) {
-        let alertController = UIAlertController(title: "Change player's name", message: "Input new player's name:", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Change player's name and team ID", message: "Input new values:", preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
         }
@@ -129,6 +129,10 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             textField.placeholder = "New name"
         }
         
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Team ID"
+            textField.text = "\((self.tSystem!.gameObject.players[cell.tag] as Player).teamId)"
+        }
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             let c = (cell as CustomPlayerTableCell)
@@ -137,6 +141,16 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             if (!text.isEmpty) {
                 c.playerLabel?.text = text
                 (self.tSystem!.gameObject.players[cell.tag] as Player).setName(text)
+            }
+            
+            var teamId: String = (alertController.textFields![1] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            if (!teamId.isEmpty) {
+                if let x = teamId.toInt() {
+                    if (x < self.tSystem!.gameObject.numberOfPlayers / 2) {
+                        c.playerLabel.text = "\((self.tSystem!.gameObject.players[cell.tag] as Player).getName()!) (\(x))"
+                        (self.tSystem!.gameObject.players[cell.tag] as Player).setTeamId(x)
+                    }
+                }
             }
         }
         
