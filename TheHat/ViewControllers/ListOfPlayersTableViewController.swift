@@ -114,7 +114,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     }
     
     /**
-        Alert controll to change the person's name.
+        Alert controll to change the person's name and team ID.
     
         :param: cell MGSwipeTableCell
     */

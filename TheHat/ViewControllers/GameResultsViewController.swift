@@ -13,12 +13,14 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
 
     /// Tournament System object
     var tSystem: TournamentSystem?
+    var results = [Player]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Hides back button
         self.navigationItem.setHidesBackButton(true, animated: true)
+        results = tSystem!.getOverallResults()
     }
     
     /**
@@ -54,7 +56,7 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
         let cell: GameResultsTableViewCell = tableView.dequeueReusableCellWithIdentifier("GameResultsCell") as GameResultsTableViewCell
         
         /// Player object from Tournament System
-        let player: Player = self.tSystem!.gameObject.players[indexPath.row] as Player
+        let player: Player = results[indexPath.row]
         
         cell.playerNameLabel?.text = "\(player.getName()!)"
         cell.playerScoreLabel?.text = "\(player.getOverallScore())"

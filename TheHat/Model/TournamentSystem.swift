@@ -164,4 +164,18 @@ class TournamentSystem {
             gameObject.removeWord(word)
         }
     }
+    
+    /**
+    Returns list of players sorted by points and separated on teams.
+    
+    :returns: [Player] list
+    */
+    func getOverallResults() -> [Player] {
+        var result: [Player] = gameObject.players
+        result.sort { (a, b) -> Bool in
+            return a.getOverallScore() > b.getOverallScore()
+        }
+
+        return result
+    }
 }
