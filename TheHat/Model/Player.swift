@@ -30,6 +30,9 @@ public class Player {
     /// Score for the results
     private var scoreGuessed = 0
     
+    /// Team ID
+    public private(set) var teamId = 0
+    
     /**
         Initializes player from the given name.
     
@@ -136,5 +139,14 @@ public class Player {
     */
     func getNumberOfWords() -> Int {
         return words.count
+    }
+    
+    /**
+        Set player's team id.
+    
+        :param: id Int player's team id
+    */
+    func setTeamId(id: Int) {
+        teamId = id
     }
 }
