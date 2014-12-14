@@ -20,6 +20,13 @@ class GameResultsTableViewCell: UITableViewCell {
     /// Player's summary score (guessed + explained words)
     @IBOutlet weak var playerScoreLabel: UILabel!
     
+    /// Team ID Label
+    @IBOutlet weak var teamIdLabel: UILabel!
+    
+    /// Team ID imageView
+    @IBOutlet weak var teamIdimageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

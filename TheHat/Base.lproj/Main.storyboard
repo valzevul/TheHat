@@ -867,10 +867,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_user" translatesAutoresizingMaskIntoConstraints="NO" id="GDU-zX-ghs">
-                                            <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                            <rect key="frame" x="56" y="8" width="40" height="40"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player #" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-Fz-KGl">
-                                            <rect key="frame" x="56" y="17" width="160" height="21"/>
+                                            <rect key="frame" x="104" y="17" width="160" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="MYb-Gn-Xlu"/>
                                                 <constraint firstAttribute="width" constant="160" id="Qpf-5H-DiT"/>
@@ -885,22 +885,45 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCb-hs-1MK">
+                                            <rect key="frame" x="8" y="13" width="40" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="85w-aB-aIK"/>
+                                                <constraint firstAttribute="height" constant="30" id="tWh-rv-qJV"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oce-vP-CgI">
+                                            <rect key="frame" x="18" y="18" width="20" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="9Bs-7R-asi"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="GDU-zX-ghs" firstAttribute="leading" secondItem="xCb-hs-1MK" secondAttribute="trailing" constant="8" id="0YI-Av-9yA"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ymm-Fz-KGl" secondAttribute="bottom" constant="9" id="CS0-mH-Wz7"/>
                                         <constraint firstItem="GDU-zX-ghs" firstAttribute="top" secondItem="gg9-GL-HuF" secondAttribute="topMargin" id="IYf-Jw-nbG"/>
-                                        <constraint firstItem="Ymm-Fz-KGl" firstAttribute="leading" secondItem="gg9-GL-HuF" secondAttribute="leadingMargin" constant="48" id="Ifm-VA-Qbi"/>
+                                        <constraint firstItem="Ymm-Fz-KGl" firstAttribute="leading" secondItem="gg9-GL-HuF" secondAttribute="leadingMargin" constant="96" id="Ifm-VA-Qbi"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="GDU-zX-ghs" secondAttribute="bottom" constant="-1" id="LhA-9j-7xe"/>
+                                        <constraint firstItem="Oce-vP-CgI" firstAttribute="centerX" secondItem="xCb-hs-1MK" secondAttribute="centerX" id="M8x-9J-SAn"/>
                                         <constraint firstItem="Ymm-Fz-KGl" firstAttribute="leading" secondItem="GDU-zX-ghs" secondAttribute="trailing" constant="8" id="U9L-1i-zCn"/>
-                                        <constraint firstItem="GDU-zX-ghs" firstAttribute="leading" secondItem="gg9-GL-HuF" secondAttribute="leadingMargin" id="UyH-2M-tYa"/>
+                                        <constraint firstItem="GDU-zX-ghs" firstAttribute="leading" secondItem="gg9-GL-HuF" secondAttribute="leadingMargin" constant="48" id="UyH-2M-tYa"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="aXI-qW-RDC" secondAttribute="bottom" constant="6" id="cTD-jc-rfz"/>
+                                        <constraint firstItem="xCb-hs-1MK" firstAttribute="leading" secondItem="gg9-GL-HuF" secondAttribute="leadingMargin" id="cna-HT-oGA"/>
+                                        <constraint firstAttribute="centerY" secondItem="xCb-hs-1MK" secondAttribute="centerY" constant="-0.5" id="gi7-79-ETc"/>
                                         <constraint firstItem="aXI-qW-RDC" firstAttribute="trailing" secondItem="gg9-GL-HuF" secondAttribute="trailingMargin" id="pbz-Bk-gfw"/>
+                                        <constraint firstItem="Oce-vP-CgI" firstAttribute="centerY" secondItem="xCb-hs-1MK" secondAttribute="centerY" constant="0.5" id="qDi-Jc-ma8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="PlayerImageView" destination="GDU-zX-ghs" id="di0-2V-3ex"/>
                                     <outlet property="playerNameLabel" destination="Ymm-Fz-KGl" id="G8B-Nu-KjF"/>
                                     <outlet property="playerScoreLabel" destination="aXI-qW-RDC" id="k0y-AZ-SBs"/>
+                                    <outlet property="teamIdLabel" destination="Oce-vP-CgI" id="A6z-c6-vYh"/>
+                                    <outlet property="teamIdimageView" destination="xCb-hs-1MK" id="Fho-y3-Rrb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

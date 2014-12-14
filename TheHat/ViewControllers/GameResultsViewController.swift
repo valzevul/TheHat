@@ -58,8 +58,9 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
         /// Player object from Tournament System
         let player: Player = results[indexPath.row]
         
-        cell.playerNameLabel?.text = "\(player.getName()!) [\(player.teamId)]"
+        cell.playerNameLabel?.text = "\(player.getName()!)"
         cell.playerScoreLabel?.text = "\(player.getOverallScore())"
+        cell.teamIdLabel?.text = "\(player.teamId)"
         
         return cell
 
