@@ -18,6 +18,14 @@ class CustomPlayerTableCell: MGSwipeTableCell {
     /// Player's icon
     @IBOutlet weak var playerIconImage: UIImageView!
     
+    /// Team imageView
+    @IBOutlet weak var teamImageView: UILabel!
+    
+    
+    /// Team ID
+    @IBOutlet weak var teamIdLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

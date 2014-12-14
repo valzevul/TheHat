@@ -147,7 +147,8 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             if (!teamId.isEmpty) {
                 if let x = teamId.toInt() {
                     if (x < self.tSystem!.gameObject.numberOfPlayers / 2) {
-                        c.playerLabel.text = "\((self.tSystem!.gameObject.players[cell.tag] as Player).getName()!) (\(x))"
+                        c.playerLabel.text = "\((self.tSystem!.gameObject.players[cell.tag] as Player).getName()!)"
+                        c.teamIdLabel.text = "\(x)"
                         (self.tSystem!.gameObject.players[cell.tag] as Player).setTeamId(x)
                     }
                 }
@@ -216,7 +217,8 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         cell.tag = indexPath.row
         cell.delegate = self
         let player = self.tSystem!.gameObject.players[indexPath.row]
-        cell.playerLabel?.text = player.getName()! + " (\(player.teamId))"
+        cell.playerLabel?.text = player.getName()!
+        cell.teamIdLabel.text = "\(player.teamId)"
         
         if let image = player.getImage() {
             cell.playerIconImage.image = image
