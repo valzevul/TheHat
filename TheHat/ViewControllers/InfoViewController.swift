@@ -14,4 +14,9 @@ class InfoViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func showTutorialAction(sender: AnyObject) {
+        performSegueWithIdentifier("showTutorialScreen", sender: nil)
+    }
+    
 }

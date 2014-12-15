@@ -1320,7 +1320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
-                                <rect key="frame" x="25" y="64" width="270" height="504"/>
+                                <rect key="frame" x="25" y="64" width="270" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -1383,11 +1383,21 @@ Cgo
                             <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" id="ycy-aj-2k1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE"/>
+                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE">
+                        <barButtonItem key="rightBarButtonItem" title="Show Tutorial" id="dRZ-Dd-akR">
+                            <connections>
+                                <action selector="showTutorialAction:" destination="HWV-bu-K4e" id="mkA-oT-AX5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="3ry-M4-7Q2" kind="push" identifier="showTutorialScreen" id="w0q-4N-r4z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1q-0t-plx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="928"/>
+            <point key="canvasLocation" x="84" y="924"/>
         </scene>
     </scenes>
     <resources>
@@ -1401,6 +1411,7 @@ Cgo
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="w0q-4N-r4z"/>
         <segue reference="KAt-ux-fcH"/>
     </inferredMetricsTieBreakers>
 </document>
