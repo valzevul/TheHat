@@ -156,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
                                 <rect key="frame" x="118" y="530" width="84" height="30"/>
                                 <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1320,7 +1320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
-                                <rect key="frame" x="25" y="64" width="270" height="455"/>
+                                <rect key="frame" x="25" y="148" width="270" height="371"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -1374,23 +1374,29 @@ Cgo
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHY-mh-UvS">
+                                <rect key="frame" x="115" y="90" width="91" height="30"/>
+                                <state key="normal" title="Show tutorial">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTutorialButton:" destination="HWV-bu-K4e" eventType="touchUpInside" id="k1S-q9-uKE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZHY-mh-UvS" secondAttribute="centerX" id="4Zy-SW-vHh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nSl-Wi-Eop" secondAttribute="trailing" constant="9" id="9IL-1z-t62"/>
                             <constraint firstItem="nSl-Wi-Eop" firstAttribute="leading" secondItem="bSG-bu-lkg" secondAttribute="leadingMargin" constant="9" id="BJd-9K-I8S"/>
-                            <constraint firstItem="acw-jI-rGZ" firstAttribute="top" secondItem="nSl-Wi-Eop" secondAttribute="bottom" id="fi7-SD-Y59"/>
-                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" id="ycy-aj-2k1"/>
+                            <constraint firstItem="ZHY-mh-UvS" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" constant="26" id="YQV-i5-2dd"/>
+                            <constraint firstItem="acw-jI-rGZ" firstAttribute="top" secondItem="nSl-Wi-Eop" secondAttribute="bottom" constant="5" id="fi7-SD-Y59"/>
+                            <constraint firstItem="nSl-Wi-Eop" firstAttribute="top" secondItem="hPa-8Y-lyb" secondAttribute="bottom" constant="84" id="ycy-aj-2k1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE">
-                        <barButtonItem key="rightBarButtonItem" title="Show Tutorial" id="dRZ-Dd-akR">
-                            <connections>
-                                <action selector="showTutorialAction:" destination="HWV-bu-K4e" id="mkA-oT-AX5"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="3ry-M4-7Q2" kind="push" identifier="showTutorialScreen" id="w0q-4N-r4z"/>
                     </connections>

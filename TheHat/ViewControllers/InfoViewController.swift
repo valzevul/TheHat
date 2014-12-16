@@ -15,7 +15,12 @@ class InfoViewController: BaseViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func showTutorialAction(sender: AnyObject) {
+    /**
+    Shows tutorial screen.
+    
+    :param: sender AbyObject
+    */
+    @IBAction func showTutorialButton(sender: AnyObject) {
         performSegueWithIdentifier("showTutorialScreen", sender: nil)
     }
     
