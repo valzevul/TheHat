@@ -156,9 +156,13 @@ class TournamentSystem {
     func changeWordsStatus(word: ActiveWord, status: String?) {
         if (status == "F") {
             wordFailed(word)
+            (currentPair!.0).decScoreExplained()
+            (currentPair!.1).decScoreGuessed()
             gameObject.removeWord(word)
         } else if (status == "?") {
             wordMissed(word)
+            (currentPair!.0).decScoreExplained()
+            (currentPair!.1).decScoreGuessed()
         } else {
             wordGuessed(word)
             gameObject.removeWord(word)

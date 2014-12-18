@@ -110,6 +110,21 @@ public class Player {
     }
     
     /**
+        Decrease number of explained words.
+    */
+    func decScoreExplained() {
+        self.scoreExplained -= 1
+    }
+    
+    /**
+        Decrease number of guessed words.
+    */
+    func decScoreGuessed() {
+        self.scoreGuessed -= 1
+    }
+
+    
+    /**
         Increase number of explained words.
     */
     func incScoreExplained() {
