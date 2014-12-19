@@ -15,6 +15,8 @@ public class Word {
     private let owner: Player
     /// The text representation of the word
     private var text: String
+    /// Complexity level [0;100]
+    private var complexity: Int
     
     /**
         Initializes a new Word object.
@@ -27,6 +29,7 @@ public class Word {
     init(owner: Player, text: String) {
         self.owner = owner
         self.text = text
+        self.complexity = 50
     }
 
     /**
@@ -55,6 +58,23 @@ public class Word {
     func changeText(text: String?) {
         if let t = text {
             self.text = t
+        }
+    }
+    
+    /**
+        Returns string representation of the word's complexity level.
+        
+        :returns: String representation of complexity level.
+    */
+    func getComplexity() -> String {
+        if (complexity <= 20) {
+            return "Easy"
+        } else if (complexity <= 50) {
+            return "Normal"
+        } else if (complexity <= 80) {
+            return "Difficult"
+        } else {
+            return "Hard"
         }
     }
 }

@@ -432,6 +432,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="complexityLabel" destination="FCA-l5-6m1" id="Ea8-Gs-Lko"/>
                                             <outlet property="wordsLabel" destination="ICF-Wc-Iax" id="a3D-FK-2Zf"/>
                                         </connections>
                                     </tableViewCell>

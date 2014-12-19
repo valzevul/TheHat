@@ -58,6 +58,8 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
         let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
         cell.wordsLabel.text = words[indexPath.row].getText()
         
+        cell.complexityLabel.text = words[indexPath.row].getComplexity()
+        
         cell.delegate = self
         cell.tag = indexPath.row + 1 // NEVER use the tag 0 'cause it's default value
         
