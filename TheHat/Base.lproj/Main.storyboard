@@ -157,7 +157,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
-                                <rect key="frame" x="118" y="486" width="84" height="30"/>
+                                <rect key="frame" x="118" y="530" width="84" height="30"/>
                                 <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -414,10 +414,21 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Difficult" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCA-l5-6m1">
+                                                    <rect key="frame" x="254" y="16" width="51" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="51" id="xKj-7L-j0C"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ICF-Wc-Iax" firstAttribute="leading" secondItem="i9W-I4-v12" secondAttribute="leadingMargin" constant="12" id="PJO-q7-0Ih"/>
                                                 <constraint firstAttribute="centerY" secondItem="ICF-Wc-Iax" secondAttribute="centerY" id="PYx-Vh-aXT"/>
+                                                <constraint firstAttribute="centerY" secondItem="FCA-l5-6m1" secondAttribute="centerY" constant="-0.5" id="TBP-rF-8WT"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="FCA-l5-6m1" secondAttribute="trailing" constant="7" id="uHm-Pm-R6D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

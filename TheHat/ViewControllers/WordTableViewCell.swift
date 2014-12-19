@@ -14,6 +14,9 @@ class WordTableViewCell: MGSwipeTableCell {
     /// Word's label
     @IBOutlet weak var wordsLabel: UILabel!
     
+    /// Difficultness label
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
