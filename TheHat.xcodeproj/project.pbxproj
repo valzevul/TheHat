@@ -18,6 +18,8 @@
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
 		82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */; };
+		823C75C51A44C65600B56389 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
+		823C75C61A44C66300B56389 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A62D2E1A1E485800A6A353 /* Constants.swift */; };
 		825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825A88581A0F71C900D35B8B /* Default-568h@2x.png */; };
 		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
@@ -42,7 +44,6 @@
 		82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		82C7085819F7D9CC00D184B8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
 		82C7085A19F7DA9800D184B8 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C4F19F6C56C00CE2BF0 /* Game.swift */; };
-		82C7085B19F7DAA700D184B8 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82D544201A2DC435005E38B3 /* WordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D5441F1A2DC435005E38B3 /* WordTableViewCell.swift */; };
 		82D78FD71A2DBA5A00D7E4D2 /* AddWordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D78FD61A2DBA5A00D7E4D2 /* AddWordsViewController.swift */; };
 		82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */; };
@@ -460,13 +461,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */,
+				823C75C51A44C65600B56389 /* Word.swift in Sources */,
 				82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */,
 				828A1B9F1A01794D00BE793D /* ActiveWord.swift in Sources */,
 				82A62D301A1E4C5900A6A353 /* TournamentSystem.swift in Sources */,
 				82C7085819F7D9CC00D184B8 /* Player.swift in Sources */,
 				822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */,
-				82C7085B19F7DAA700D184B8 /* Word.swift in Sources */,
 				82C7085A19F7DA9800D184B8 /* Game.swift in Sources */,
+				823C75C61A44C66300B56389 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

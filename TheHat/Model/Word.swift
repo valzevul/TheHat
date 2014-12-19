@@ -68,13 +68,13 @@ public class Word {
     */
     func getComplexity() -> String {
         if (complexity <= 20) {
-            return "Easy"
+            return Constants.EASY
         } else if (complexity <= 50) {
-            return "Normal"
+            return Constants.NORMAL
         } else if (complexity <= 80) {
-            return "Difficult"
+            return Constants.DIFFICULT
         } else {
-            return "Hard"
+            return Constants.HARD
         }
     }
 }

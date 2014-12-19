@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// List of global constants
 struct Constants {
@@ -28,5 +29,9 @@ struct Constants {
     static let FColor = UIColor(red: 1.0, green: 0.231, blue: 0.188, alpha: 0.7)
     static let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
     
-    // MARK: - Failed lessons
+    // MARK: - Words complexity
+    static let EASY = "Easy"
+    static let NORMAL = "Normal"
+    static let DIFFICULT = "Difficult"
+    static let HARD = "Hard"
 }
