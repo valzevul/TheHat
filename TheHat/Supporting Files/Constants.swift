@@ -30,8 +30,14 @@ struct Constants {
     static let MColor = UIColor(red: 0.78, green: 0.78, blue: 0.8, alpha: 0.7)
     
     // MARK: - Words complexity
+    static let EASY_POINTS = 21
+    static let NORMAL_POINTS = 51
+    static let DIFFICULT_POINTS = 81
+    static let HARD_POINTS = 101
+    
     static let EASY = "Easy"
     static let NORMAL = "Normal"
     static let DIFFICULT = "Difficult"
     static let HARD = "Hard"
+    static let UNKNOWN = "Unknown"
 }

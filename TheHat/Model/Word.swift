@@ -67,14 +67,16 @@ public class Word {
         :returns: String representation of complexity level.
     */
     func getComplexity() -> String {
-        if (complexity <= 20) {
+        if (complexity < Constants.EASY_POINTS) {
             return Constants.EASY
-        } else if (complexity <= 50) {
+        } else if (complexity < Constants.NORMAL_POINTS) {
             return Constants.NORMAL
-        } else if (complexity <= 80) {
+        } else if (complexity < Constants.DIFFICULT_POINTS) {
             return Constants.DIFFICULT
-        } else {
+        } else if (complexity < Constants.HARD_POINTS) {
             return Constants.HARD
+        } else {
+            return Constants.UNKNOWN
         }
     }
 }
