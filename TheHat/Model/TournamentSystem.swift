@@ -160,6 +160,7 @@ class TournamentSystem {
             (currentPair!.1).decScoreGuessed()
             gameObject.removeWord(word)
         } else if (status == Constants.M) {
+            word.changeStatus(Constants.M)
             wordMissed(word)
             (currentPair!.0).decScoreExplained()
             (currentPair!.1).decScoreGuessed()
