@@ -12,10 +12,10 @@ import Foundation
 public class ActiveWord: Word {
     
     /// Status of the word:
-    /// - ? (unknown)
-    /// - OK (guessed)
-    /// - F (failed)
-    private var status: String = ""
+    /// - Constants.M (unknown)
+    /// - Constants.OK (guessed)
+    /// - Constants.F (failed)
+    private var status: String = Constants.M
     
     /// Variable for the statistics, amount of time spent to guess the word
     private var guessedTime = 0

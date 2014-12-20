@@ -74,7 +74,7 @@ class TournamentSystem {
         currentResult += 1 // Number of words guessed by the pair
         (currentPair!.0).incScoreExplained()
         (currentPair!.1).incScoreGuessed()
-        word.changeStatus("OK")
+        word.changeStatus(Constants.OK)
         currentActiveWords.append(word)
     }
     
@@ -84,7 +84,7 @@ class TournamentSystem {
         :param: word Active Word which was failed
     */
     func wordFailed(word: ActiveWord) {
-        word.changeStatus("F")
+        word.changeStatus(Constants.F)
         currentActiveWords.append(word)
     }
     
@@ -94,7 +94,7 @@ class TournamentSystem {
         :param: word Active Word which was missed
     */
     func wordMissed(word: ActiveWord) {
-        if (word.getStatus() == "?") { // If word is really missed, not failed
+        if (word.getStatus() == Constants.M) { // If word is really missed, not failed
             gameObject.words.insert(word, atIndex: 0) // Returns it back to the list of words
             currentActiveWords.append(word)
         }
@@ -154,12 +154,12 @@ class TournamentSystem {
         :param: status String?
     */
     func changeWordsStatus(word: ActiveWord, status: String?) {
-        if (status == "F") {
+        if (status == Constants.F) {
             wordFailed(word)
             (currentPair!.0).decScoreExplained()
             (currentPair!.1).decScoreGuessed()
             gameObject.removeWord(word)
-        } else if (status == "?") {
+        } else if (status == Constants.M) {
             wordMissed(word)
             (currentPair!.0).decScoreExplained()
             (currentPair!.1).decScoreGuessed()

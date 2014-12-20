@@ -102,7 +102,7 @@ public class Game {
     public func addPlayer(player: Player) {
         players.append(player)
         for word in player.getWords() {
-            words.append(ActiveWord(word: word, status: "?"))
+            words.append(ActiveWord(word: word, status: Constants.M))
         }
     }
     

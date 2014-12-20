@@ -29,7 +29,7 @@ public class Word {
     init(owner: Player, text: String) {
         self.owner = owner
         self.text = text
-        self.complexity = 50
+        self.complexity = Constants.DEFAULT_COMPLEXITY
     }
 
     /**

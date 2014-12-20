@@ -59,15 +59,15 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         cell.tag = indexPath.row
         
         switch (word.getStatus()) {
-            case "OK":
+            case Constants.OK:
                 cell.wordResultImage.backgroundColor = Constants.OKColor
-                cell.wordResultLabel.text = "OK"
-            case "F":
+                cell.wordResultLabel.text = Constants.OK
+            case Constants.F:
                 cell.wordResultImage.backgroundColor = Constants.FColor
-                cell.wordResultLabel.text = "F"
+                cell.wordResultLabel.text = Constants.F
             default:
                 cell.wordResultImage.backgroundColor = Constants.MColor
-                cell.wordResultLabel.text = "?"
+                cell.wordResultLabel.text = Constants.M
         }
         
         cell.delegate = self
@@ -75,9 +75,9 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         cell.wordLabel?.text = word.getText()
         cell.leftSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.leftButtons = [
-            MGSwipeButton(title: "OK", backgroundColor: Constants.OKColor),
-            MGSwipeButton(title: "F", backgroundColor: Constants.FColor),
-            MGSwipeButton(title: "?", backgroundColor: Constants.MColor)]
+            MGSwipeButton(title: Constants.OK, backgroundColor: Constants.OKColor),
+            MGSwipeButton(title: Constants.F, backgroundColor: Constants.FColor),
+            MGSwipeButton(title: Constants.M, backgroundColor: Constants.MColor)]
         return cell
     }
     
@@ -102,13 +102,13 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         switch (index) {
         case 0:
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.OKColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "OK"
+            (cell as CustomTableViewCell).wordResultLabel.text = Constants.OK
         case 1:
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.FColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "F"
+            (cell as CustomTableViewCell).wordResultLabel.text = Constants.F
         case 2:
             (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.MColor
-            (cell as CustomTableViewCell).wordResultLabel.text = "?"
+            (cell as CustomTableViewCell).wordResultLabel.text = Constants.M
         default:
             println("x")
         }
