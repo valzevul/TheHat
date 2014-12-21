@@ -246,4 +246,19 @@ public class Game {
         
     }
     
+    /**
+        Checks if there is a player with the same name.
+    
+        :param: name String
+        :returns Bool true if the name exists
+    */
+    public func isNameUnique(name: String) -> Bool {
+        for player in players {
+            if (player.getName() == name) {
+                return true
+            }
+        }
+        return false
+    }
+    
 }

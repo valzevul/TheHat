@@ -81,8 +81,12 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
         let newPlayer: Player = Player(name: name, image: image)
         newPlayer.setTeamId((newPlayerId - 1) / 2)
-        self.tSystem!.gameObject.addPlayer(newPlayer)
-        self.tableView.reloadData()
+        
+        // Check for the same player
+        if (tSystem!.gameObject.isNameUnique(name)) {
+            self.tSystem!.gameObject.addPlayer(newPlayer)
+            self.tableView.reloadData()
+        }
     }
     
     /**
