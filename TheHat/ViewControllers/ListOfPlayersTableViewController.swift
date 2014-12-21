@@ -80,8 +80,8 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
         let newPlayer: Player = Player(name: name, image: image)
+        newPlayer.setTeamId((newPlayerId - 1) / 2)
         self.tSystem!.gameObject.addPlayer(newPlayer)
-        
         self.tableView.reloadData()
     }
     
@@ -95,8 +95,9 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let newPlayerId = self.tSystem!.gameObject.players.count + 1
         let numberOfWords = self.tSystem!.gameObject.numberOfWords!
         let newPlayer = self.tSystem!.gameObject.getNewPlayer(newPlayerId, numberOfWords: numberOfWords)
-        self.tSystem!.gameObject.addPlayer(newPlayer)
+        newPlayer.setTeamId((newPlayerId - 1) / 2)
         
+        self.tSystem!.gameObject.addPlayer(newPlayer)
         self.tableView.reloadData()
     }
     
