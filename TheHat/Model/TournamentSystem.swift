@@ -94,7 +94,7 @@ class TournamentSystem {
         :param: word Active Word which was missed
     */
     func wordMissed(word: ActiveWord) {
-        if (word.getStatus() == Constants.M) { // If word is really missed, not failed
+        if (word.getStatus() == Constants.M) { // If a word is really missed, not failed
             gameObject.words.insert(word, atIndex: 0) // Returns it back to the list of words
             currentActiveWords.append(word)
         }
@@ -116,8 +116,7 @@ class TournamentSystem {
             playerIdx = 0 // Starts from the first player for the next "round" of rounds
         }
         
-        currentPair = (player_1, player_2)
-        return currentPair
+        return (player_1, player_2)
     }
     
     // MARK: - Round
@@ -128,7 +127,7 @@ class TournamentSystem {
     func startNextRound() {
         currentActiveWords = [ActiveWord]()
         playedRoundsNumber += 1
-        var currentPair = getNextPair() // Or without "var", it depends // TODO: Change this structure
+        currentPair = getNextPair()
     }
     
     /**
