@@ -143,7 +143,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
             let c = (cell as CustomPlayerTableCell)
             
             var text: String = (alertController.textFields![0] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-            if (!text.isEmpty) {
+            if ((!text.isEmpty) && (self.tSystem!.gameObject.isNameUnique(text))) {
                 c.playerLabel?.text = text
                 (self.tSystem!.gameObject.players[cell.tag] as Player).setName(text)
             }
