@@ -255,10 +255,10 @@ public class Game {
     public func isNameUnique(name: String) -> Bool {
         for player in players {
             if (player.getName() == name) {
-                return true
+                return false
             }
         }
-        return false
+        return true
     }
     
 }
