@@ -155,12 +155,14 @@ class TournamentSystem {
     func changeWordsStatus(word: ActiveWord, status: String?) {
         if (status == Constants.F) {
             wordFailed(word)
+            currentResult -= 1
             (currentPair!.0).decScoreExplained()
             (currentPair!.1).decScoreGuessed()
             gameObject.removeWord(word)
         } else if (status == Constants.M) {
             word.changeStatus(Constants.M)
             wordMissed(word)
+            currentResult -= 1
             (currentPair!.0).decScoreExplained()
             (currentPair!.1).decScoreGuessed()
         } else {
