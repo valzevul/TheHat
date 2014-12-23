@@ -43,7 +43,7 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
         
         if (tSystem != nil) {
             
-            tSystem!.currentActiveWords = [] // Wipe previous played words
+            tSystem!.currentActiveWords = [] // Wipe the last played words
 
             // Show info about the round
             self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
@@ -58,6 +58,8 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
             if let prevResult = tSystem!.getPreviousResult() {
                 previousPairResultLabel.text = "Previous result: \(prevResult)"
                 tSystem!.clean()
+            } else {
+                previousPairResultLabel.text = "There is no previous results"
             }
         }
         
