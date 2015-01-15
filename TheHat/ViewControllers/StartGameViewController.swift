@@ -34,25 +34,21 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
     
     /// Local settings object
     var lSettings: LocalSettings?
-
-    /// Pair of players for the current round
-    var currentPair: (Player, Player)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if (tSystem != nil) {
             
-            tSystem!.currentActiveWords = [] // Wipe the last played words
+            tSystem!.startNextRound()
 
             // Show info about the round
             self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
             wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
             
             // Generate new pair
-            currentPair = tSystem!.getNextPair()
-            playerALabel.text = currentPair!.0.getName()
-            playerBLabel.text = currentPair!.1.getName()
+            playerALabel.text = tSystem!.currentPair!.0.getName()
+            playerBLabel.text = tSystem!.currentPair!.1.getName()
             
             // If previous results exist, show them
             if let prevResult = tSystem!.getPreviousResult() {
@@ -75,11 +71,11 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
         :param: secondName String second player's name
     */
     func roundSettingsDidChanged(controller: CurrentRoundSettingsTableViewController, firstName: String, secondName: String) {
-        currentPair!.0.setName(firstName)
-        currentPair!.1.setName(secondName)
+        tSystem!.currentPair!.0.setName(firstName)
+        tSystem!.currentPair!.1.setName(secondName)
         
-        playerALabel.text = currentPair!.0.getName()
-        playerBLabel.text = currentPair!.1.getName()
+        playerALabel.text = tSystem!.currentPair!.0.getName()
+        playerBLabel.text = tSystem!.currentPair!.1.getName()
     }
 
     /**
