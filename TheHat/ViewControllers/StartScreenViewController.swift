@@ -62,7 +62,7 @@ class StartScreenViewController: BaseViewController {
     */
     func createLayerMask() {
         self.mask = CALayer()
-        self.mask!.contents = UIImage(named: "thehat").CGImage
+        self.mask!.contents = UIImage(named: "thehat")!.CGImage
         self.mask!.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
         self.mask!.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.mask!.position = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height/2)

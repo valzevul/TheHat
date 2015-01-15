@@ -74,7 +74,7 @@ class Dictionary {
         let path = bundle.pathForResource(filename, ofType: "txt")
         
         var error:NSError?
-        if let content = NSString.stringWithContentsOfFile(path!, encoding: NSUTF8StringEncoding, error: &error) {
+        if let content = NSString(contentsOfFile:path!, encoding: NSUTF8StringEncoding, error: &error) {
             var array = content.componentsSeparatedByString("\n")
             
             for elem in array {

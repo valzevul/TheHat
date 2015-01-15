@@ -203,12 +203,12 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
     func process(record: ABRecordRef) {
         
         /// Blank image as a template
-        var image: UIImage = UIImage(named: "blank_user")
+        var image: UIImage = UIImage(named: "blank_user")!
         
         if ABPersonHasImageData(record) {
             /// New person's image if exists
             let imgData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue()
-            image = UIImage(data: imgData)
+            image = UIImage(data: imgData)!
         }
         
         /// Contact's name from address book
