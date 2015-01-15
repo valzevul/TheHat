@@ -35,26 +35,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Gn4-LV-RDP">
-                                <rect key="frame" x="16" y="139" width="288" height="70"/>
+                                <rect key="frame" x="16" y="255" width="288" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="0NJ-sP-saU"/>
                                     <constraint firstAttribute="height" constant="70" id="JMp-Py-FEp"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
-                                <rect key="frame" x="16" y="62" width="288" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luo-KQ-xha">
+                                <rect key="frame" x="16" y="410" width="288" height="138"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="qIO-2F-Kb7"/>
+                                    <constraint firstAttribute="width" constant="288" id="Ocf-G4-MzH"/>
+                                    <constraint firstAttribute="height" constant="138" id="se1-jg-rlJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luo-KQ-xha">
-                                <rect key="frame" x="16" y="273" width="288" height="275"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NQ-0p-ClC">
+                                <rect key="frame" x="16" y="209" width="288" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="288" id="Ocf-G4-MzH"/>
-                                    <constraint firstAttribute="height" constant="275" id="se1-jg-rlJ"/>
+                                    <constraint firstAttribute="width" constant="288" id="qIO-2F-Kb7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -63,12 +63,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="luo-KQ-xha" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="64" id="0mP-ps-Zry"/>
                             <constraint firstAttribute="centerX" secondItem="Gn4-LV-RDP" secondAttribute="centerX" id="E2h-ah-rTp"/>
                             <constraint firstAttribute="centerX" secondItem="9NQ-0p-ClC" secondAttribute="centerX" id="OwF-Gj-Qd1"/>
+                            <constraint firstItem="7F1-X2-HjQ" firstAttribute="top" secondItem="Gn4-LV-RDP" secondAttribute="bottom" constant="243" id="bHA-AV-NtD"/>
                             <constraint firstAttribute="bottom" secondItem="luo-KQ-xha" secondAttribute="bottom" constant="20" symbolic="YES" id="bz8-sF-wqM"/>
                             <constraint firstAttribute="centerX" secondItem="luo-KQ-xha" secondAttribute="centerX" id="dTO-2r-JhZ"/>
-                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="53" id="oys-vt-SgD"/>
+                            <constraint firstItem="Gn4-LV-RDP" firstAttribute="top" secondItem="9NQ-0p-ClC" secondAttribute="bottom" constant="22" id="oys-vt-SgD"/>
                         </constraints>
                     </view>
                     <connections>
