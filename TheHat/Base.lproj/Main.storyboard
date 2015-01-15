@@ -975,13 +975,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One long word to guess" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnK-YY-SH1">
-                                <rect key="frame" x="53" y="272" width="214" height="24"/>
+                                <rect key="frame" x="53" y="326" width="214" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xr6-aJ-SQi" customClass="CircleView" customModule="TheHat" customModuleProvider="target">
-                                <rect key="frame" x="110" y="411" width="100" height="100"/>
+                                <rect key="frame" x="110" y="185" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ja3-a4-3gJ"/>
@@ -994,8 +994,8 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bnK-YY-SH1" secondAttribute="centerX" id="1nz-F4-3QR"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="trailing" secondItem="wvL-PX-QVh" secondAttribute="trailingMargin" id="Px5-FZ-KBw"/>
-                            <constraint firstItem="MYT-e7-72p" firstAttribute="top" secondItem="xr6-aJ-SQi" secondAttribute="bottom" constant="57" id="Xjs-dY-KDm"/>
-                            <constraint firstAttribute="centerY" secondItem="bnK-YY-SH1" secondAttribute="centerY" id="lqd-BG-uy6"/>
+                            <constraint firstItem="bnK-YY-SH1" firstAttribute="top" secondItem="xr6-aJ-SQi" secondAttribute="bottom" constant="41" id="gCx-gE-OW7"/>
+                            <constraint firstAttribute="centerY" secondItem="bnK-YY-SH1" secondAttribute="centerY" constant="-54" id="lqd-BG-uy6"/>
                             <constraint firstAttribute="centerX" secondItem="xr6-aJ-SQi" secondAttribute="centerX" id="nub-pf-Ibe"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="8" id="wmt-f2-d6T"/>
                         </constraints>
