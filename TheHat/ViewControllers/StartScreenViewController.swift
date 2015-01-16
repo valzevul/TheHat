@@ -39,12 +39,12 @@ class StartScreenViewController: BaseViewController {
         }
         
         if let tutorial = namePreference.stringForKey("showTutorial") {
-            if (tutorial == "1") {
-                showTutorial()
+            if (tutorial != "0") {                showTutorial()
             }
         } else {
+            NSUserDefaults.standardUserDefaults().setValue("0", forKey:Settings.keys[1])
+            NSUserDefaults.standardUserDefaults().synchronize()
             showTutorial()
-            // TODO: add default settings about tutorial after the first show
         }
     }
     
