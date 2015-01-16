@@ -61,6 +61,8 @@ class GameRoundViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        wordLabel.adjustsFontSizeToFitWidth = true
+        
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.title = "\(tSystem!.currentPair!.0.getName()!) → \(tSystem!.currentPair!.1.getName()!)"
         
@@ -104,7 +106,7 @@ class GameRoundViewController: BaseViewController {
         
         :param: sender UISwipeGestureRecognizer
     */
-    @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
+    @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("red")
         wordFailed()
     }
@@ -126,7 +128,7 @@ class GameRoundViewController: BaseViewController {
         
         :param: sender UISwipeGestureRecognizer
     */
-    @IBAction func didRightSwipe(sender: UISwipeGestureRecognizer) {
+    @IBAction func didLeftSwipe(sender: UISwipeGestureRecognizer) {
         drawCircle("green")
         wordGuessed()
     }
