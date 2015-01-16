@@ -52,7 +52,7 @@ public class Game {
         dict = Dictionary(filename: filename)
         dict.parse()
         
-        let ownerName: String = namePreference.stringForKey("playersName")!
+        let ownerName: String = namePreference.stringForKey("playersName") ?? Constants.DEFAULT_NAME
         let newPlayer = getNewPlayer(ownerName, numberOfWords: words)
         newPlayer.setTeamId(0)
         self.addPlayer(newPlayer)

@@ -11,8 +11,13 @@ import UIKit
 /// Class for the info view
 class InfoViewController: BaseViewController {
     
+    /// TextView with rules
+    @IBOutlet weak var rulesTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        rulesTextView.showsVerticalScrollIndicator = false
     }
     
     /**

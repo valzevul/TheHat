@@ -1336,7 +1336,6 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nSl-Wi-Eop">
                                 <rect key="frame" x="25" y="148" width="270" height="371"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">The Hat is a word guessing game, also known as Charades. In the form most played today, it is an acting game in which one player acts out a word or phrase, often by miming similar-sounding words, and the other players guess the word or phrase. </string>
@@ -1413,6 +1412,7 @@ Cgo
                     <navigationItem key="navigationItem" title="Info" id="StT-5M-CoE"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="rulesTextView" destination="nSl-Wi-Eop" id="OQV-wK-gs5"/>
                         <segue destination="3ry-M4-7Q2" kind="push" identifier="showTutorialScreen" id="w0q-4N-r4z"/>
                     </connections>
                 </viewController>
@@ -1433,6 +1433,6 @@ Cgo
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="KAt-ux-fcH"/>
-        <segue reference="IkR-4i-xi8"/>
+        <segue reference="w0q-4N-r4z"/>
     </inferredMetricsTieBreakers>
 </document>

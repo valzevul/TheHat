@@ -47,4 +47,6 @@ struct Constants {
     static let DIFFICULT = "Difficult"
     static let HARD = "Hard"
     static let UNKNOWN = "Unknown"
+    
+    static let DEFAULT_NAME = "Player 1"
 }
