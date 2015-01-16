@@ -42,6 +42,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.hidden = true
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         var pageControl: UIPageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
