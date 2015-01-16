@@ -196,7 +196,6 @@ class GameRoundViewController: BaseViewController {
                 timer!.invalidate()
                 timer = nil
             }
-            tSystem?.playedRoundsNumber += 1
             var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
             roundResultsVC.tSystem = tSystem
             roundResultsVC.lSettings = lSettings

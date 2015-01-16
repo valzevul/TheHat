@@ -267,7 +267,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         Shows the alert view if the number of players is less than two.
     */
     func notifyAboutAnError() {
-        let alertController = UIAlertController(title: "Error!", message: "Add more than one player!", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Error!", message: "Add even number of players!", preferredStyle: .Alert)
         
         let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
 
@@ -286,7 +286,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     @IBAction func doneButtonPressedAction(sender: AnyObject) {
         
         // It's quite difficult to play without a pair of players, isn't it?
-        if (tSystem?.gameObject.numberOfPlayers > 1) {
+        if ((tSystem!.gameObject.numberOfPlayers > 1) && (tSystem!.gameObject.numberOfPlayers % 2 == 0)) { // Added check for even number of players
             performSegueWithIdentifier("showStartRoundScreen", sender: nil)
         } else {
             notifyAboutAnError()

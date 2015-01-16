@@ -43,7 +43,7 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
             tSystem!.startNextRound()
 
             // Show info about the round
-            self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber + 1)"
+            self.navigationItem.title = "Round \(tSystem!.playedRoundsNumber)"
             wordsLeftLabel.text = "Words left: \(tSystem!.wordsLeft())"
             
             // Generate new pair
