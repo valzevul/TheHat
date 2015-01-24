@@ -22,7 +22,8 @@
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
-		827FF5EE1A73B00A00D9E19D /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 827FF5ED1A73B00A00D9E19D /* dict.json */; };
+		826F98D11A73E7E0007CBA84 /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = 826F98D01A73E7E0007CBA84 /* english.json */; };
+		827FF5EE1A73B00A00D9E19D /* russian.json in Resources */ = {isa = PBXBuildFile; fileRef = 827FF5ED1A73B00A00D9E19D /* russian.json */; };
 		827FF5F01A73B01400D9E19D /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */; };
 		827FF5F11A73B02300D9E19D /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */; };
 		827FF5F31A73B03C00D9E19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */; };
@@ -85,7 +86,8 @@
 		8267531819F619A800071464 /* TheHatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheHatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267531D19F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267531E19F619A800071464 /* TheHatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHatTests.swift; sourceTree = "<group>"; };
-		827FF5ED1A73B00A00D9E19D /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
+		826F98D01A73E7E0007CBA84 /* english.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
+		827FF5ED1A73B00A00D9E19D /* russian.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russian.json; sourceTree = "<group>"; };
 		827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
 		827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
@@ -302,7 +304,8 @@
 		82F1C00C1A03B2DC00CABE56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				827FF5ED1A73B00A00D9E19D /* dict.json */,
+				827FF5ED1A73B00A00D9E19D /* russian.json */,
+				826F98D01A73E7E0007CBA84 /* english.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -389,9 +392,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
-				827FF5EE1A73B00A00D9E19D /* dict.json in Resources */,
+				827FF5EE1A73B00A00D9E19D /* russian.json in Resources */,
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
+				826F98D11A73E7E0007CBA84 /* english.json in Resources */,
 				825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

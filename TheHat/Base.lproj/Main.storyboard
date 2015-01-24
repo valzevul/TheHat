@@ -156,7 +156,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
                                 <rect key="frame" x="118" y="530" width="84" height="30"/>
                                 <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -189,74 +189,33 @@
                         <sections>
                             <tableViewSection headerTitle="Current Game Settings" id="rPg-WT-dCf">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cnf-fy-1Zc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="201" id="cnf-fy-1Zc">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnf-fy-1Zc" id="JsD-Ox-Ddg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azg-Dx-7rC">
-                                                    <rect key="frame" x="8" y="8" width="84" height="20"/>
+                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-PV-VDI">
+                                                    <rect key="frame" x="0.0" y="48" width="320" height="162"/>
+                                                </pickerView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words package" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
+                                                    <rect key="frame" x="8" y="6" width="119" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select game type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hv4-2G-r6s">
-                                                    <rect key="frame" x="8" y="27" width="78" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
+                                                    <rect key="frame" x="8" y="24" width="81" height="12"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4f2-0e-e1e">
-                                                    <rect key="frame" x="115" y="7" width="197" height="29"/>
-                                                    <segments>
-                                                        <segment title="Casual"/>
-                                                        <segment title="Random"/>
-                                                        <segment title="Custom"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="gameTypeChanged:" destination="iFh-Sq-qrq" eventType="valueChanged" id="Sdu-mx-Q3U"/>
-                                                    </connections>
-                                                </segmentedControl>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="4f2-0e-e1e" firstAttribute="trailing" secondItem="JsD-Ox-Ddg" secondAttribute="trailingMargin" id="FCS-o4-1lp"/>
-                                                <constraint firstItem="4f2-0e-e1e" firstAttribute="top" secondItem="JsD-Ox-Ddg" secondAttribute="topMargin" constant="-1" id="Ifw-2G-8HE"/>
-                                                <constraint firstItem="4f2-0e-e1e" firstAttribute="leading" secondItem="JsD-Ox-Ddg" secondAttribute="leadingMargin" constant="107" id="vA9-cw-0DV"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TeK-SO-ga6">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="TeK-SO-ga6">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TeK-SO-ga6" id="8kK-CV-Xpc">
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words package" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
-                                                    <rect key="frame" x="8" y="8" width="119" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
-                                                    <rect key="frame" x="8" y="26" width="81" height="12"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="data.txt" borderStyle="roundedRect" placeholder="data.txt" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qE4-Gs-YjD">
-                                                    <rect key="frame" x="135" y="9" width="174" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" constant="1" id="1Or-Hy-XAs"/>
-                                                <constraint firstItem="0v9-rK-jSt" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" constant="18" id="50T-1r-eku"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="qE4-Gs-YjD" secondAttribute="trailing" constant="3" id="AZr-kS-bFN"/>
-                                                <constraint firstItem="NDE-Mg-swN" firstAttribute="top" secondItem="8kK-CV-Xpc" secondAttribute="topMargin" id="I7x-uj-XOO"/>
-                                                <constraint firstItem="0v9-rK-jSt" firstAttribute="leading" secondItem="NDE-Mg-swN" secondAttribute="leading" id="MgJ-wz-Adi"/>
-                                                <constraint firstItem="qE4-Gs-YjD" firstAttribute="leading" secondItem="NDE-Mg-swN" secondAttribute="trailing" constant="8" symbolic="YES" id="fOf-Q4-px7"/>
-                                                <constraint firstItem="NDE-Mg-swN" firstAttribute="leading" secondItem="8kK-CV-Xpc" secondAttribute="leadingMargin" id="ujd-41-SvU"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -275,8 +234,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gameTypeSegmentedControl" destination="4f2-0e-e1e" id="pex-Eb-3kN"/>
-                        <outlet property="wordsSourceTextField" destination="qE4-Gs-YjD" id="XzY-BA-7xD"/>
+                        <outlet property="packagesPicker" destination="B4a-PV-VDI" id="wfc-Vx-I3v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGA-T9-KkF" userLabel="First Responder" sceneMemberID="firstResponder"/>

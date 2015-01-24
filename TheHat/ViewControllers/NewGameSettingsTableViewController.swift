@@ -9,13 +9,9 @@
 import UIKit
 
 /// Class for the local settings before a new game
-class NewGameSettingsTableViewController: UITableViewController, UITextFieldDelegate {
+class NewGameSettingsTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
-    /// Segmented control for the game type (pair-to-pair, random game, etc)
-    @IBOutlet weak var gameTypeSegmentedControl: UISegmentedControl!
-    
-    /// Source of a words' package
-    @IBOutlet weak var wordsSourceTextField: UITextField!
+    @IBOutlet weak var packagesPicker: UIPickerView!
     
     /// Game object
     var gameObject: Game?
@@ -29,44 +25,27 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     /// Loaded global settings
     let namePreference = NSUserDefaults.standardUserDefaults()
     
+    let pickerData = ["russian", "english"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        wordsSourceTextField.delegate = self
-        
-        if let pWords = namePreference.stringForKey("playerWords") {
-            if let pNumber = namePreference.stringForKey("playersNumber") {
-                gameObject = Game.createRandomGame(pNumber.toInt()!, numberOfWords: pWords.toInt()!)
-            }
-        } else {
-            gameObject = Game.createRandomGame(4, numberOfWords: 10)
-        }
-        
-        // Create Tournament System and Local Settings objects
-        
-        tSystem = TournamentSystem(game: gameObject!)
-        lSettings = LocalSettings(gameType: gameTypeSegmentedControl.selectedSegmentIndex, wordsSource: wordsSourceTextField.text!)
-        
+        self.packagesPicker.dataSource = self
+        self.packagesPicker.delegate = self
     }
     
     // MARK: - Settings Savings
     
-    /**
-        Changes game type and updates local settings.
-        
-        :param: sender UISegmentedControl object
-    */
-    @IBAction func gameTypeChanged(sender: UISegmentedControl) {
-        lSettings!.changeGameType(gameTypeSegmentedControl.selectedSegmentIndex)
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
     }
     
-    /**
-        Changes words' source and updates local settings.
-        
-        :param: textField UITextField object
-    */
-    func textFieldDidEndEditing(textField: UITextField) {
-        lSettings!.changeWordsSource(textField.text)
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[row]
     }
     
     // MARK: - Segue
@@ -79,6 +58,17 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showNewRoundInfo") {
+            // Create Tournament System and Local Settings objects
+            lSettings = LocalSettings(gameType: 0, wordsSource: pickerData[packagesPicker.selectedRowInComponent(0)])
+            if let pWords = namePreference.stringForKey("playerWords") {
+                if let pNumber = namePreference.stringForKey("playersNumber") {
+                    gameObject = Game.createRandomGame(pNumber.toInt()!, numberOfWords: pWords.toInt()!, dict: lSettings!.wordsSource!)
+                }
+            } else {
+                gameObject = Game.createRandomGame(4, numberOfWords: 10, dict: lSettings!.wordsSource!)
+            }
+            tSystem = TournamentSystem(game: gameObject!)
+            
             var startGameVC = segue.destinationViewController as ListOfPlayersTableViewController;
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
