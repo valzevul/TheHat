@@ -105,14 +105,7 @@ class TheHatTests: XCTestCase {
         
         XCTAssertNotEqual(word, newWord)
     }
-    
-    func testDictionaryParser() {
-        
-        var d = Dictionary(filename: "dict")
-        
-        d.parse()
-        
-    }
+
     
     // MARK: - Tests for all game process
     
@@ -151,7 +144,7 @@ class TheHatTests: XCTestCase {
             }
         
             // Show results
-            for word in tSystem.currentActiveWords {
+            for word in tSystem.currentGameWords {
                 println("Word: \(word.text), status: \(word.status.status)")
             }
         }

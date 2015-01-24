@@ -1,3 +1,11 @@
+//
+//  JSONDictionary.swift
+//  TheHat
+//
+//  Created by Vadim Drobinin on 23/01/15.
+//  Copyright (c) 2015 Vadim Drobinin. All rights reserved.
+//
+
 import Foundation
 
 public class WordStatus {
@@ -119,6 +127,7 @@ public class JSONDictionary {
     }
     
     public func getNewWord() -> ImportedWord? {
-        return words.last
+        let index = Int(arc4random_uniform(UInt32(words.count)))
+        return words[index]
     }
 }

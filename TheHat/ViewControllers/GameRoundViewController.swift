@@ -55,7 +55,6 @@ class GameRoundViewController: BaseViewController {
     */
     override func viewDidAppear(animated: Bool) {
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-        timeLeft = gameTime!
     }
     
     override func viewDidLoad() {
@@ -73,6 +72,8 @@ class GameRoundViewController: BaseViewController {
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTime = aTime.toInt()
         }
+        
+        timeLeft = gameTime ?? 0
         
         currentWord = tSystem!.getNewWord()
         if (currentWord == nil) {
@@ -157,7 +158,7 @@ class GameRoundViewController: BaseViewController {
         Updates timer info.
     */
     func update() -> Void {
-        timeLeft = gameTime! - ++counter
+        timeLeft = (gameTime ?? 0) - ++counter
         timerLabel.text = String(timeLeft)
         
         if (timeLeft < 1) {
@@ -166,7 +167,7 @@ class GameRoundViewController: BaseViewController {
             })
         }
         
-        if (timeLeft == additionalTime! * (-1)) {
+        if (timeLeft == (additionalTime ?? 0) * (-1)) {
             if (currentWord != nil) {
                 currentWord?.status.updateStatus(counter, isNewAttempt: true, status: currentWord!.status.status)
             

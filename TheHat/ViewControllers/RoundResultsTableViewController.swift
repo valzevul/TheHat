@@ -30,7 +30,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.cells = tSystem!.currentActiveWords
+        self.cells = tSystem!.currentGameWords
     }
     
     // MARK: - New cell with word
@@ -83,7 +83,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     // MARK: - Swipe for cell
     
-    // TODO: Update word in activeWords array!
+    // TODO: Update word in gameWords array!
     /**
         Processes swipe of a cell with a word.
         

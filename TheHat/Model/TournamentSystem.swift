@@ -11,7 +11,7 @@ import Foundation
 /// Tournament Systems maintains rounds and operations for interaction with them.
 class TournamentSystem {
     
-    /// Game object with players and Active Words
+    /// Game object with players and Game Words
     let gameObject: Game
     
     /// First player in pair
@@ -21,7 +21,7 @@ class TournamentSystem {
     var playedRoundsNumber: Int = 0
     
     /// Words played in the current round
-    var currentActiveWords = [GameWord]()
+    var currentGameWords = [GameWord]()
     
     /// Results of the current round
     var currentResult: Int = 0
@@ -68,35 +68,35 @@ class TournamentSystem {
     /**
         Apply new results to statistics and update the list of active words with a new guessed now.
     
-        :param: word Active Word which was guessed
+        :param: word Game Word which was guessed
     */
     func wordGuessed(word: GameWord) {
         currentResult += 1 // Number of words guessed by the pair
         (currentPair!.0).incScoreExplained()
         (currentPair!.1).incScoreGuessed()
         word.status.updateStatus(0, isNewAttempt: false, status: .Guessed)
-        currentActiveWords.append(word)
+        currentGameWords.append(word)
     }
     
     /**
         Apply new results to statistics and update the list of active words with a new failed now.
     
-        :param: word Active Word which was failed
+        :param: word Game Word which was failed
     */
     func wordFailed(word: GameWord) {
         word.status.updateStatus(0, isNewAttempt: false, status: .Failed)
-        currentActiveWords.append(word)
+        currentGameWords.append(word)
     }
     
     /**
         Apply new results to statistics and update the list of active words with a new missed now.
     
-        :param: word Active Word which was missed
+        :param: word Game Word which was missed
     */
     func wordMissed(word: GameWord) {
         if (word.status.status == .Unknown) { // If a word is really missed, not failed
             gameObject.words.insert(word, atIndex: 0) // Returns it back to the list of words
-            currentActiveWords.append(word)
+            currentGameWords.append(word)
         }
     }
     
@@ -125,7 +125,7 @@ class TournamentSystem {
         Starts new round.
     */
     func startNextRound() {
-        currentActiveWords = [GameWord]()
+        currentGameWords = [GameWord]()
         playedRoundsNumber += 1
         currentPair = getNextPair()
     }
@@ -149,7 +149,7 @@ class TournamentSystem {
     /**
         Provides support of word's status change after the round.
     
-        :param: word ActiveWord
+        :param: word GameWord
         :param: status String?
     */
     func changeWordsStatus(word:GameWord, status: String?) {

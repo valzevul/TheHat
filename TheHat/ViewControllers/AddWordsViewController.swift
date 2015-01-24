@@ -187,10 +187,10 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
     */
     func addWordAction(sender: UIButton!) {
         let newWord = self.tSystem!.gameObject.getRandomWord(self.tSystem!.gameObject.players[playerIdx!])
-        let activeWord = GameWord(owner: self.tSystem!.gameObject.players[playerIdx!], word: newWord)
+        let gameWord = GameWord(owner: self.tSystem!.gameObject.players[playerIdx!], word: newWord)
         
         self.tSystem!.gameObject.players[playerIdx!].addWord(newWord)
-        tSystem!.gameObject.words.append(activeWord)
+        tSystem!.gameObject.words.append(gameWord)
         
         words = tSystem!.gameObject.wordsForPlayer(playerIdx!)
         self.tableView.reloadData()

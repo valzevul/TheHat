@@ -190,11 +190,11 @@ public class Game {
     }
     
     /**
-        Gets all player's words from the list of ActiveWords.
+        Gets all player's words from the list of GameWords.
         
         :param: idx Int player's index
         
-        :returns: [ActiveWord] list of Active Words
+        :returns: [GameWord] list of Game Words
     */
     public func wordsForPlayer(idx: Int) -> [GameWord] {
         
@@ -214,7 +214,7 @@ public class Game {
     /**
         Removes player's word from the list.
     
-        :param: word ActiveWord to be deleted.
+        :param: word GameWord to be deleted.
     */
     public func removeWord(word: GameWord) {
         
