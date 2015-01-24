@@ -29,6 +29,14 @@ class TheHatTests: XCTestCase {
         super.tearDown()
     }
     
+    
+    func testJSONDict() {
+        
+        var a = JSONDictionary(filename: "dict")
+        
+    }
+    
+    
     // MARK: - Tests for Game
     
     func testGameNumberOfPlayers() {
