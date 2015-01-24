@@ -9,32 +9,31 @@
 /* Begin PBXBuildFile section */
 		8200357219F656F100CB62FB /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357119F656F100CB62FB /* InfoViewController.swift */; };
 		8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8200357319F65CE400CB62FB /* StartGameViewController.swift */; };
-		8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
 		8207A23D1A1518FD00A169EC /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23C1A1518FD00A169EC /* AddressBook.framework */; };
 		8207A23F1A15192900A169EC /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8207A23E1A15192900A169EC /* AddressBookUI.framework */; };
-		822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206B67A19FA7A8600BA45A0 /* Dictionary.swift */; };
 		822AD27C19FBE83300E201DA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822AD27B19FBE83300E201DA /* Settings.swift */; };
 		8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267531E19F619A800071464 /* TheHatTests.swift */; };
 		8234604919F681FC00989B3A /* GameRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604819F681FC00989B3A /* GameRoundViewController.swift */; };
 		8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8234604C19F68F8D00989B3A /* GameResultsViewController.swift */; };
 		82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82362DE81A1235C6007930AB /* GameResultsTableViewCell.swift */; };
-		823C75C51A44C65600B56389 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		823C75C61A44C66300B56389 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A62D2E1A1E485800A6A353 /* Constants.swift */; };
 		825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 825A88581A0F71C900D35B8B /* Default-568h@2x.png */; };
 		82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82611E2719FBF9CF00C2B14A /* SettingsTableViewController.swift */; };
 		8267530919F619A800071464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530819F619A800071464 /* AppDelegate.swift */; };
 		8267530E19F619A800071464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8267530C19F619A800071464 /* Main.storyboard */; };
 		8267531319F619A800071464 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8267531119F619A800071464 /* LaunchScreen.xib */; };
+		827FF5EE1A73B00A00D9E19D /* dict.json in Resources */ = {isa = PBXBuildFile; fileRef = 827FF5ED1A73B00A00D9E19D /* dict.json */; };
+		827FF5F01A73B01400D9E19D /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */; };
+		827FF5F11A73B02300D9E19D /* JSONDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */; };
+		827FF5F31A73B03C00D9E19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */; };
+		827FF5F41A73B8D700D9E19D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */; };
 		8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */; };
 		8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */; };
 		8286EAD319FD574B00F08D28 /* ListOfPlayersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */; };
 		8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */; };
-		828927E11A0EA5F500BB009E /* dict.txt in Resources */ = {isa = PBXBuildFile; fileRef = 828927DF1A0EA5F500BB009E /* dict.txt */; };
 		828927E81A0F541200BB009E /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828927E71A0F541200BB009E /* PageContentViewController.swift */; };
 		828927EA1A0F58CC00BB009E /* MainTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828927E91A0F58CC00BB009E /* MainTutorialViewController.swift */; };
-		828A1B9F1A01794D00BE793D /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55A19F6BF1E0090BFB5 /* Player.swift */; };
-		829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829FB55C19F6C05F0090BFB5 /* Word.swift */; };
 		82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */; };
 		82A62D2F1A1E485800A6A353 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A62D2E1A1E485800A6A353 /* Constants.swift */; };
 		82A62D301A1E4C5900A6A353 /* TournamentSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */; };
@@ -49,7 +48,6 @@
 		82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */; };
 		82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82DF93FF1A1927B80096A300 /* BaseViewController.swift */; };
 		82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */; };
-		82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E0184E19FEB0E7006BE02E /* ActiveWord.swift */; };
 		82E0185519FEB8A1006BE02E /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185219FEB8A1006BE02E /* MGSwipeButton.m */; };
 		82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E0185419FEB8A1006BE02E /* MGSwipeTableCell.m */; };
 		82E3ACDF19F6553F004AC9BF /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8267530A19F619A800071464 /* StartScreenViewController.swift */; };
@@ -70,7 +68,6 @@
 /* Begin PBXFileReference section */
 		8200357119F656F100CB62FB /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		8200357319F65CE400CB62FB /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
-		8206B67A19FA7A8600BA45A0 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		8207A23C1A1518FD00A169EC /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8207A23E1A15192900A169EC /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		822AD27B19FBE83300E201DA /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -88,15 +85,16 @@
 		8267531819F619A800071464 /* TheHatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheHatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8267531D19F619A800071464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8267531E19F619A800071464 /* TheHatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheHatTests.swift; sourceTree = "<group>"; };
+		827FF5ED1A73B00A00D9E19D /* dict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dict.json; sourceTree = "<group>"; };
+		827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDictionary.swift; sourceTree = "<group>"; };
+		827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8284A47F1A15214100D10730 /* AddressBookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookTableViewCell.swift; sourceTree = "<group>"; };
 		8286EAD019FD431000F08D28 /* NewGameSettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameSettingsTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD219FD574B00F08D28 /* ListOfPlayersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfPlayersTableViewController.swift; sourceTree = "<group>"; };
 		8286EAD419FD6B0300F08D28 /* RoundResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundResultsTableViewController.swift; sourceTree = "<group>"; };
-		828927DF1A0EA5F500BB009E /* dict.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dict.txt; sourceTree = "<group>"; };
 		828927E71A0F541200BB009E /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageContentViewController.swift; path = /Users/valzevul/projects/ios/TheHat/TheHat/ViewControllers/PageContentViewController.swift; sourceTree = "<absolute>"; };
 		828927E91A0F58CC00BB009E /* MainTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTutorialViewController.swift; sourceTree = "<group>"; };
 		829FB55A19F6BF1E0090BFB5 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		829FB55C19F6C05F0090BFB5 /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		82A3794219FFFCEC00C77877 /* CustomPlayerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPlayerTableCell.swift; sourceTree = "<group>"; };
 		82A62D2E1A1E485800A6A353 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		82B3D1F21A02D9F600239116 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		82DC1FA91A0FFAC4007EFDD5 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		82DF93FF1A1927B80096A300 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
 		82E0184C19FEA8C0006BE02E /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		82E0184E19FEB0E7006BE02E /* ActiveWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveWord.swift; sourceTree = "<group>"; };
 		82E0185119FEB8A1006BE02E /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
 		82E0185219FEB8A1006BE02E /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
 		82E0185319FEB8A1006BE02E /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
@@ -149,20 +146,12 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		823AECCE1A0CF5E200FC1889 /* Word */ = {
-			isa = PBXGroup;
-			children = (
-				829FB55C19F6C05F0090BFB5 /* Word.swift */,
-				82E0184E19FEB0E7006BE02E /* ActiveWord.swift */,
-			);
-			name = Word;
-			sourceTree = "<group>";
-		};
 		823AECCF1A0CF7AA00FC1889 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
+				827FF5EF1A73B01400D9E19D /* JSONDictionary.swift */,
 				82C66C4F19F6C56C00CE2BF0 /* Game.swift */,
+				82C66C5119F6CB4F00CE2BF0 /* TournamentSystem.swift */,
 				822AD27B19FBE83300E201DA /* Settings.swift */,
 			);
 			name = Game;
@@ -257,6 +246,7 @@
 		8267530619F619A800071464 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				827FF5F21A73B03C00D9E19D /* SwiftyJSON.swift */,
 				823DD4611A10C3600005989A /* SwipeCell */,
 				82A62D2E1A1E485800A6A353 /* Constants.swift */,
 			);
@@ -283,10 +273,8 @@
 		829FB55919F6BEF80090BFB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				823AECCE1A0CF5E200FC1889 /* Word */,
 				823AECCF1A0CF7AA00FC1889 /* Game */,
 				829FB55A19F6BF1E0090BFB5 /* Player.swift */,
-				8206B67A19FA7A8600BA45A0 /* Dictionary.swift */,
 			);
 			name = Model;
 			path = /Users/valzevul/projects/ios/TheHat/TheHat/Model;
@@ -314,7 +302,7 @@
 		82F1C00C1A03B2DC00CABE56 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				828927DF1A0EA5F500BB009E /* dict.txt */,
+				827FF5ED1A73B00A00D9E19D /* dict.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -368,6 +356,7 @@
 				TargetAttributes = {
 					8267530219F619A800071464 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = X72G5VQBS8;
 					};
 					8267531719F619A800071464 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -400,10 +389,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8267530E19F619A800071464 /* Main.storyboard in Resources */,
+				827FF5EE1A73B00A00D9E19D /* dict.json in Resources */,
 				82B3D1F31A02D9F600239116 /* Media.xcassets in Resources */,
 				8267531319F619A800071464 /* LaunchScreen.xib in Resources */,
 				825A88591A0F71C900D35B8B /* Default-568h@2x.png in Resources */,
-				828927E11A0EA5F500BB009E /* dict.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				827FF5F01A73B01400D9E19D /* JSONDictionary.swift in Sources */,
 				82362DE91A1235C6007930AB /* GameResultsTableViewCell.swift in Sources */,
 				8284A4801A15214100D10730 /* AddressBookTableViewCell.swift in Sources */,
 				82E0184D19FEA8C0006BE02E /* CustomTableViewCell.swift in Sources */,
@@ -433,10 +423,8 @@
 				8286EAD119FD431000F08D28 /* NewGameSettingsTableViewController.swift in Sources */,
 				82C66C5219F6CB4F00CE2BF0 /* TournamentSystem.swift in Sources */,
 				82F05EBC19FD745F00CE5316 /* CurrentRoundSettingsTableViewController.swift in Sources */,
-				829FB55D19F6C05F0090BFB5 /* Word.swift in Sources */,
 				82C66C5019F6C56C00CE2BF0 /* Game.swift in Sources */,
 				82E0185619FEB8A1006BE02E /* MGSwipeTableCell.m in Sources */,
-				82E0184F19FEB0E7006BE02E /* ActiveWord.swift in Sources */,
 				822AD27C19FBE83300E201DA /* Settings.swift in Sources */,
 				82D544201A2DC435005E38B3 /* WordTableViewCell.swift in Sources */,
 				828927EA1A0F58CC00BB009E /* MainTutorialViewController.swift in Sources */,
@@ -446,11 +434,11 @@
 				829FB55B19F6BF1E0090BFB5 /* Player.swift in Sources */,
 				82611E2819FBF9CF00C2B14A /* SettingsTableViewController.swift in Sources */,
 				8286EAD519FD6B0300F08D28 /* RoundResultsTableViewController.swift in Sources */,
-				8206B67B19FA7A8600BA45A0 /* Dictionary.swift in Sources */,
 				82DC1FAA1A0FFAC4007EFDD5 /* CircleView.swift in Sources */,
 				8234604D19F68F8D00989B3A /* GameResultsViewController.swift in Sources */,
 				82A3794319FFFCEC00C77877 /* CustomPlayerTableCell.swift in Sources */,
 				8200357419F65CE400CB62FB /* StartGameViewController.swift in Sources */,
+				827FF5F31A73B03C00D9E19D /* SwiftyJSON.swift in Sources */,
 				82DF94001A1927B80096A300 /* BaseViewController.swift in Sources */,
 				82FFFFF71A2A4A910064C75C /* AddressBookViewController.swift in Sources */,
 			);
@@ -461,12 +449,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8232F1CA19F9926F00D473CF /* TheHatTests.swift in Sources */,
-				823C75C51A44C65600B56389 /* Word.swift in Sources */,
 				82C7085519F7D61E00D184B8 /* AppDelegate.swift in Sources */,
-				828A1B9F1A01794D00BE793D /* ActiveWord.swift in Sources */,
+				827FF5F41A73B8D700D9E19D /* SwiftyJSON.swift in Sources */,
 				82A62D301A1E4C5900A6A353 /* TournamentSystem.swift in Sources */,
+				827FF5F11A73B02300D9E19D /* JSONDictionary.swift in Sources */,
 				82C7085819F7D9CC00D184B8 /* Player.swift in Sources */,
-				822AD27A19FAD04C00E201DA /* Dictionary.swift in Sources */,
 				82C7085A19F7DA9800D184B8 /* Game.swift in Sources */,
 				823C75C61A44C66300B56389 /* Constants.swift in Sources */,
 			);
@@ -583,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TheHat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -594,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TheHat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
