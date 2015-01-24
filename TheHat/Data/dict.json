@@ -1,14 +1,35 @@
 {
     "description": "test",
     "words": [
-    {
-        "word": "book"
+              {
+              "word": "book",
+              "description": "something to read",
+              "part_of_speech": "Noun",
+              "complexity": 50
               },
               {
-              "word": "lol"
+              "word": "table",
+              "description": "something to eat on",
+              "part_of_speech": "Noun",
+              "complexity": 60
               },
               {
-              "word": "test"
-              }
-    ]
+              "word": "water",
+              "description": "something to drink",
+              "part_of_speech": "Noun",
+              "complexity": 1
+              },
+              {
+              "word": "juice",
+              "description": "something to drink",
+              "part_of_speech": "Noun",
+              "complexity": 50
+              },
+              {
+              "word": "lalka",
+              "description": "",
+              "part_of_speech": "Noun",
+              "complexity": 100
+              },
+            ]
 }

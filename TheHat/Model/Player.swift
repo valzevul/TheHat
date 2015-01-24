@@ -13,7 +13,7 @@ import UIKit
 public class Player {
     
     /// List of plain words
-    private var words = [Word]()
+    public private(set) var words = [ImportedWord]()
     
     ///  Player's name
     private var name: String?
@@ -58,7 +58,7 @@ public class Player {
     
         :param: word Word object to add to the list
     */
-    func addWord(word: Word) {
+    func addWord(word: ImportedWord) {
         self.words.append(word)
     }
     
@@ -71,15 +71,6 @@ public class Player {
         if (index >= 0) {
             self.index = index
         }
-    }
-    
-    /**
-        Returns list of Word objects.
-    
-        :return: list of plain Word objects
-    */
-    func getWords() -> [Word] {
-        return words
     }
     
     /**

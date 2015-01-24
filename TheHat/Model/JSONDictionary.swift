@@ -31,9 +31,9 @@ public class ImportedWord {
         case Noun, Verb, Adjective
     }
     
-    private let text: String
-    private let description: String
-    private let complexity: Int
+    public let text: String
+    public let description: String
+    public let complexity: Int
     private let part: PartOfSpeech
     
     init(text: String, description: String, part_of_speech: String, complexity: Int) {
@@ -53,6 +53,16 @@ public class ImportedWord {
             break
         }
         
+    }
+}
+
+extension Array {
+    mutating func shuffle() {
+        for _ in 0..<10 {
+            sort {
+                (_,_) in arc4random() < arc4random()
+            }
+        }
     }
 }
 
@@ -87,7 +97,7 @@ public class GameWord: ImportedWord {
 }
 
 public class JSONDictionary {
-    private let words = [ImportedWord]()
+    public var words = [ImportedWord]()
     public let description: String
     
     init(filename: String) {
@@ -108,5 +118,7 @@ public class JSONDictionary {
         }
     }
     
-    
+    public func getNewWord() -> ImportedWord? {
+        return words.last
+    }
 }

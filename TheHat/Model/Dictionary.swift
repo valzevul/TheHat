@@ -10,15 +10,15 @@ import Foundation
 
 
 /// Extension for the Array class to implement the random shuffle sort.
-extension Array {
-    mutating func shuffle() {
-        for _ in 0..<10 {
-            sort {
-                (_,_) in arc4random() < arc4random()
-            }
-        }
-    }
-}
+//extension Array {
+//    mutating func shuffle() {
+//        for _ in 0..<10 {
+//            sort {
+//                (_,_) in arc4random() < arc4random()
+//            }
+//        }
+//    }
+//}
 
 
 /// Dictionary class to operate with parsed from a file words

@@ -21,7 +21,7 @@ class TournamentSystem {
     var playedRoundsNumber: Int = 0
     
     /// Words played in the current round
-    var currentActiveWords = [ActiveWord]()
+    var currentActiveWords = [GameWord]()
     
     /// Results of the current round
     var currentResult: Int = 0
@@ -57,7 +57,7 @@ class TournamentSystem {
 
         :returns: Active word or null if there is no more.
     */
-    func getNewWord() -> ActiveWord? {
+    func getNewWord() -> GameWord? {
         if (gameObject.words.count > 0) {
             return gameObject.words.removeLast()
         } else {
@@ -70,11 +70,11 @@ class TournamentSystem {
     
         :param: word Active Word which was guessed
     */
-    func wordGuessed(word: ActiveWord) {
+    func wordGuessed(word: GameWord) {
         currentResult += 1 // Number of words guessed by the pair
         (currentPair!.0).incScoreExplained()
         (currentPair!.1).incScoreGuessed()
-        word.changeStatus(Constants.OK)
+        word.status.updateStatus(0, isNewAttempt: false, status: .Guessed)
         currentActiveWords.append(word)
     }
     
@@ -83,8 +83,8 @@ class TournamentSystem {
     
         :param: word Active Word which was failed
     */
-    func wordFailed(word: ActiveWord) {
-        word.changeStatus(Constants.F)
+    func wordFailed(word: GameWord) {
+        word.status.updateStatus(0, isNewAttempt: false, status: .Failed)
         currentActiveWords.append(word)
     }
     
@@ -93,8 +93,8 @@ class TournamentSystem {
     
         :param: word Active Word which was missed
     */
-    func wordMissed(word: ActiveWord) {
-        if (word.getStatus() == Constants.M) { // If a word is really missed, not failed
+    func wordMissed(word: GameWord) {
+        if (word.status.status == .Unknown) { // If a word is really missed, not failed
             gameObject.words.insert(word, atIndex: 0) // Returns it back to the list of words
             currentActiveWords.append(word)
         }
@@ -125,7 +125,7 @@ class TournamentSystem {
         Starts new round.
     */
     func startNextRound() {
-        currentActiveWords = [ActiveWord]()
+        currentActiveWords = [GameWord]()
         playedRoundsNumber += 1
         currentPair = getNextPair()
     }
@@ -152,7 +152,7 @@ class TournamentSystem {
         :param: word ActiveWord
         :param: status String?
     */
-    func changeWordsStatus(word: ActiveWord, status: String?) {
+    func changeWordsStatus(word:GameWord, status: String?) {
         if (status == Constants.F) {
             wordFailed(word)
             currentResult -= 1
@@ -160,7 +160,7 @@ class TournamentSystem {
             (currentPair!.1).decScoreGuessed()
             gameObject.removeWord(word)
         } else if (status == Constants.M) {
-            word.changeStatus(Constants.M)
+            word.status.updateStatus(0, isNewAttempt: false, status: .Unknown)
             wordMissed(word)
             currentResult -= 1
             (currentPair!.0).decScoreExplained()

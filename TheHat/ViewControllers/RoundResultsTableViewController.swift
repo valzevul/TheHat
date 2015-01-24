@@ -21,10 +21,10 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     var tSystem: TournamentSystem?
     
     /// Last played word
-    var currentWord: Word?
+    var currentWord: GameWord?
     
     /// List of all words from the round
-    var cells = [ActiveWord]()
+    var cells = [GameWord]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +58,11 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         let word = self.cells[indexPath.row]
         cell.tag = indexPath.row
         
-        switch (word.getStatus()) {
-            case Constants.OK:
+        switch (word.status.status) {
+            case .Guessed:
                 cell.wordResultImage.backgroundColor = Constants.OKColor
                 cell.wordResultLabel.text = Constants.OK
-            case Constants.F:
+            case .Failed:
                 cell.wordResultImage.backgroundColor = Constants.FColor
                 cell.wordResultLabel.text = Constants.F
             default:
@@ -72,7 +72,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         
         cell.delegate = self
         
-        cell.wordLabel?.text = word.getText()
+        cell.wordLabel?.text = word.text
         cell.leftSwipeSettings.transition = MGSwipeTransition.Transition3D
         cell.leftButtons = [
             MGSwipeButton(title: Constants.OK, backgroundColor: Constants.OKColor),

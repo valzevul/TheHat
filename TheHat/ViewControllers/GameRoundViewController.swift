@@ -43,7 +43,7 @@ class GameRoundViewController: BaseViewController {
     var additionalTime: Int?
     
     /// The last word at the screen
-    var currentWord: ActiveWord?
+    var currentWord: GameWord?
     
     /// UIView for circle animation
     @IBOutlet weak var circleView: CircleView!
@@ -78,7 +78,7 @@ class GameRoundViewController: BaseViewController {
         if (currentWord == nil) {
             performSegueWithIdentifier("timerFinished", sender: nil)
         }
-        wordLabel.text = currentWord?.getText()
+        wordLabel.text = currentWord?.text
        
     }
     
@@ -115,8 +115,7 @@ class GameRoundViewController: BaseViewController {
         Indicates that a word was failed.
     */
     func wordFailed() {
-        currentWord!.incAttemptsNumber()
-        currentWord?.incTime(counter)
+        currentWord?.status.updateStatus(counter, isNewAttempt: true, status: currentWord!.status.status)
         tSystem!.wordFailed(currentWord!)
         
         // TODO: Change segue to "wordFailed" & Fix redundant segue for failed word
@@ -137,16 +136,14 @@ class GameRoundViewController: BaseViewController {
         Indicates that a word was guessed.
     */
     func wordGuessed() {
-        currentWord!.incAttemptsNumber()
-        currentWord?.incTime(counter)
-        
+        currentWord?.status.updateStatus(counter, isNewAttempt: true, status: currentWord!.status.status)
         tSystem!.wordGuessed(currentWord!)
         if (timeLeft > 1) {
             currentWord = tSystem!.getNewWord()
             if (currentWord == nil) {
                 performSegueWithIdentifier("timerFinished", sender: nil)
             } else {
-                wordLabel.text = currentWord!.getText()
+                wordLabel.text = currentWord!.text
             }
         } else {
             performSegueWithIdentifier("timerFinished", sender: nil)
@@ -171,8 +168,7 @@ class GameRoundViewController: BaseViewController {
         
         if (timeLeft == additionalTime! * (-1)) {
             if (currentWord != nil) {
-                currentWord!.incAttemptsNumber()
-                currentWord?.incTime(counter)
+                currentWord?.status.updateStatus(counter, isNewAttempt: true, status: currentWord!.status.status)
             
                 tSystem!.wordMissed(currentWord!)
             }

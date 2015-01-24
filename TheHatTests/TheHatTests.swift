@@ -29,14 +29,7 @@ class TheHatTests: XCTestCase {
         super.tearDown()
     }
     
-    
-    func testJSONDict() {
-        
-        var a = JSONDictionary(filename: "dict")
-        
-    }
-    
-    
+
     // MARK: - Tests for Game
     
     func testGameNumberOfPlayers() {
@@ -47,7 +40,7 @@ class TheHatTests: XCTestCase {
     
     func testGameGetPlayerByIndex() {
         var newPlayer = Player(name: "Test 1")
-        var newWord = Word(owner: newPlayer, text: "Test for word")
+        var newWord = ImportedWord(text: "Test", description: "Lol", part_of_speech: "Noun", complexity: 50)
         newPlayer.addWord(newWord)
         newPlayer.addWord(newWord)
         gameObject!.addPlayer(newPlayer)
@@ -87,22 +80,6 @@ class TheHatTests: XCTestCase {
     
     // MARK: - Tests for Word
     
-    func testWordOwner() {
-        let newPlayer = Player(name: "Tester")
-        let newWord = Word(owner: newPlayer, text: "Test")
-        
-        let owner = newWord.getOwner()
-        XCTAssertEqual(owner.getName()!, newPlayer.getName()!, "Players are different")
-    }
-    
-    func testWordText() {
-        let newPlayer = Player(name: "Tester")
-        let newWord = Word(owner: newPlayer, text: "Test")
-        
-        let text = newWord.getText()
-        XCTAssertEqual(text, "Test", "Players are different")
-    }
-    
     // MARK: - Tests for Tournament System
     
     func testTournamentSystemGetNewPair() {
@@ -118,25 +95,15 @@ class TheHatTests: XCTestCase {
     
     func testDictionaryShuffle() {
         
-        var d = Dictionary(filename: "dict")
-        d.parse()
+        var d = JSONDictionary(filename: "dict")
         
-        var word = d.getNewWordByIndex(0)
+        var word = d.words[0].text
         
-        d.textWords.shuffle()
+        d.words.shuffle()
         
-        var newWord = d.getNewWordByIndex(0)
+        var newWord = d.words[0].text
         
-        XCTAssertNotEqual(word!, newWord!)
-    }
-    
-    func testDictionaryWrongIndex() {
-        
-        var d = Dictionary(filename: "dict")
-        
-        var word = d.getNewWordByIndex(-5)
-        XCTAssertNil(word)
-        
+        XCTAssertNotEqual(word, newWord)
     }
     
     func testDictionaryParser() {
@@ -174,7 +141,7 @@ class TheHatTests: XCTestCase {
             // While timer > -additionalTime
             for i in 1..<5 {
                 if let currentWord = tSystem.getNewWord() {
-                    println(currentWord.getText())
+                    println(currentWord.text)
                     if (i <= 3) {
                         tSystem.wordGuessed(currentWord)
                     } else {
@@ -185,7 +152,7 @@ class TheHatTests: XCTestCase {
         
             // Show results
             for word in tSystem.currentActiveWords {
-                println("Word: \(word.getText()), status: \(word.getStatus())")
+                println("Word: \(word.text), status: \(word.status.status)")
             }
         }
         

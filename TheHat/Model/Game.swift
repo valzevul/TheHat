@@ -12,10 +12,10 @@ import Foundation
 public class Game {
     
     /// Dictionary with a list of parsed words
-    let dict: Dictionary
+    let dict: JSONDictionary
     
     /// List of active words (with statuses and statistics)
-    public var words = [ActiveWord]() // Words with statuses and statistics
+    public var words = [GameWord]() // Words with statuses and statistics
     
     /// List of players
     var players = [Player]()
@@ -49,8 +49,7 @@ public class Game {
     */
     init(numberOfPlayers: Int, words: Int, filename: String) {
         self.numberOfWords = words
-        dict = Dictionary(filename: filename)
-        dict.parse()
+        dict = JSONDictionary(filename: filename)
         
         let ownerName: String = namePreference.stringForKey("playersName") ?? Constants.DEFAULT_NAME
         let newPlayer = getNewPlayer(ownerName, numberOfWords: words)
@@ -101,8 +100,9 @@ public class Game {
     */
     public func addPlayer(player: Player) {
         players.append(player)
-        for word in player.getWords() {
-            words.append(ActiveWord(word: word, status: Constants.M))
+        for word in player.words {
+            let gw = GameWord(owner: player, word: word)
+            self.words.append(gw)
         }
     }
     
@@ -136,9 +136,8 @@ public class Game {
         :param: owner Player object in need of a new word
         :returns: Word object for the Player
     */
-    func getRandomWord(owner: Player) -> Word {
-        let text = self.dict.getNewWord()
-        return Word(owner: owner, text: text!)
+    func getRandomWord(owner: Player) -> ImportedWord {
+        return self.dict.getNewWord()!
     }
 
     // MARK: - Game
@@ -178,7 +177,7 @@ public class Game {
         // Remove words
         var counter = words.count - 1
         while (counter >= 0) {
-            if (words[counter].getOwner().getName() == players[index].getName()) {
+            if (words[counter].owner.getName() == players[index].getName()) {
                 words.removeAtIndex(counter)
                 counter -= 1
             }
@@ -197,13 +196,13 @@ public class Game {
         
         :returns: [ActiveWord] list of Active Words
     */
-    public func wordsForPlayer(idx: Int) -> [ActiveWord] {
+    public func wordsForPlayer(idx: Int) -> [GameWord] {
         
-        var results = [ActiveWord]()
+        var results = [GameWord]()
         let player_name = players[idx].getName()
         
         for word in words {
-            if (word.getOwner().getName() == player_name) {
+            if (word.owner.getName() == player_name) {
                 results.append(word)
             }
         }
@@ -217,11 +216,11 @@ public class Game {
     
         :param: word ActiveWord to be deleted.
     */
-    public func removeWord(word: ActiveWord) {
+    public func removeWord(word: GameWord) {
         
         for i in 0..<words.count {
             
-            if ((word.getOwner().getName() == words[i].getOwner().getName()) && (word.getText() == words[i].getText())) {
+            if ((word.owner.getName() == words[i].owner.getName()) && (word.text == words[i].text)) {
                 words.removeAtIndex(i)
                 break
             }
@@ -229,22 +228,6 @@ public class Game {
         
     }
     
-    /**
-        Changes player's word.
-    
-        :param: word ActiveWord word to be changed
-        :param: text String new value or nil
-    
-    */
-    public func changeWord(word: ActiveWord, text: String?) {
-        
-        for w in words  {
-            if ((w.getOwner().getName() == word.getOwner().getName()) && (w.getText() == word.getText())) {
-                w.changeText(text)
-            }
-        }
-        
-    }
     
     /**
         Checks if there is a player with the same name.

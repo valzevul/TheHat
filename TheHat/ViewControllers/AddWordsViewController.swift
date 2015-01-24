@@ -21,7 +21,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
     var tSystem: TournamentSystem?
     
     /// List of words of the player
-    var words = [ActiveWord]()
+    var words = [GameWord]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
-        cell.wordsLabel.text = words[indexPath.row].getText()
+        cell.wordsLabel.text = words[indexPath.row].text
         
         cell.complexityLabel.text = words[indexPath.row].getComplexity()
         
@@ -106,7 +106,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
         alertController.addAction(cancelAction)
         
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            textField.placeholder = self.words[cell.tag - 1].getText()
+            textField.placeholder = self.words[cell.tag - 1].text
         }
         
         
@@ -117,7 +117,8 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
             if (!text.isEmpty) {
                 c.wordsLabel.text = text
                 if (countElements(c.wordsLabel.text!) > 0) {
-                    self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+                    // TODO: insert new word & delete old
+                    //self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
                 }
             }
         }
@@ -186,7 +187,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
     */
     func addWordAction(sender: UIButton!) {
         let newWord = self.tSystem!.gameObject.getRandomWord(self.tSystem!.gameObject.players[playerIdx!])
-        let activeWord = ActiveWord(word: newWord, status: Constants.M)
+        let activeWord = GameWord(owner: self.tSystem!.gameObject.players[playerIdx!], word: newWord)
         
         self.tSystem!.gameObject.players[playerIdx!].addWord(newWord)
         tSystem!.gameObject.words.append(activeWord)
