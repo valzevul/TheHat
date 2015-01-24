@@ -70,7 +70,7 @@ public class Game {
     public func getNewPlayer(idx: Int, numberOfWords: Int) -> Player {
         let player = Player(name: Game.getRandomName(idx))
         for i in 0..<numberOfWords {
-            let word = getRandomWord(player) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
+            let word = getRandomWord(player)
             player.addWord(word)
         }
         return player
@@ -87,7 +87,7 @@ public class Game {
     public func getNewPlayer(name: String, numberOfWords: Int) -> Player {
         let player = Player(name: name)
         for i in 0..<numberOfWords {
-            let word = getRandomWord(player) // TODO: Fix for the case when words more than 10 & for the case when idx > number of words
+            let word = getRandomWord(player)
             player.addWord(word)
         }
         return player
@@ -112,8 +112,11 @@ public class Game {
         :param: index Player's index
         :returns: Player object with the same index
     */
-    public func getPlayerByIndex(index: Int) -> Player {
-        return players[index] // TODO: or nil in case of empty array or index > count
+    public func getPlayerByIndex(index: Int) -> Player? {
+        if (index < 0 || index > players.count) {
+            return nil
+        }
+        return players[index]
     }
     
     /**
@@ -124,7 +127,7 @@ public class Game {
     */
     class func getRandomName(idx: Int) -> String {
         var name = ""
-        name = "Player " + String(idx) // For dev purposes only!
+        name = "Player " + String(idx) // TODO: For dev purposes only!
         return name
     }
     
@@ -186,6 +189,14 @@ public class Game {
         
         // Remove player from list
         players.removeAtIndex(index)
+        
+    }
+    
+    public func changeWord(word: GameWord, newText: String) {
+        
+        let newWord = GameWord(owner: word.owner, word: ImportedWord(text: newText, description: word.description, part_of_speech: "\(word.part)", complexity: word.complexity))
+        removeWord(word)
+        words.append(newWord)
         
     }
     

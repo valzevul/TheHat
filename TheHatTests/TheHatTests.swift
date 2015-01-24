@@ -46,7 +46,7 @@ class TheHatTests: XCTestCase {
         gameObject!.addPlayer(newPlayer)
         
         var returnedPlayer = gameObject!.getPlayerByIndex(gameObject!.numberOfPlayers - 1)
-        XCTAssertEqual(newPlayer.getName()!, returnedPlayer.getName()!)
+        XCTAssertEqual(newPlayer.getName()!, returnedPlayer!.getName()!)
     }
     
     func testGameAddPlayer() {
@@ -108,8 +108,6 @@ class TheHatTests: XCTestCase {
 
     
     // MARK: - Tests for all game process
-    
-    // TODO: Test for the full game imitation
     
     func testFullGameImitation() {
         

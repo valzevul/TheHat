@@ -117,8 +117,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
             if (!text.isEmpty) {
                 c.wordsLabel.text = text
                 if (countElements(c.wordsLabel.text!) > 0) {
-                    // TODO: insert new word & delete old
-                    //self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], text: c.wordsLabel.text)
+                    self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], newText: c.wordsLabel.text!)
                 }
             }
         }

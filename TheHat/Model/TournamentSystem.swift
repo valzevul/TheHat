@@ -116,7 +116,7 @@ class TournamentSystem {
             playerIdx = 0 // Starts from the first player for the next "round" of rounds
         }
         
-        return (player_1, player_2)
+        return (player_1!, player_2!)
     }
     
     // MARK: - Round

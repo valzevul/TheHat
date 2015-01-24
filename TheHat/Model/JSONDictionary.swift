@@ -35,14 +35,14 @@ public class WordStatus {
 
 public class ImportedWord {
     
-    enum PartOfSpeech {
+    public enum PartOfSpeech {
         case Noun, Verb, Adjective
     }
     
     public let text: String
     public let description: String
     public let complexity: Int
-    private let part: PartOfSpeech
+    public let part: PartOfSpeech
     
     init(text: String, description: String, part_of_speech: String, complexity: Int) {
         self.text =  text

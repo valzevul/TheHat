@@ -83,7 +83,6 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     
     // MARK: - Swipe for cell
     
-    // TODO: Update word in gameWords array!
     /**
         Processes swipe of a cell with a word.
         
