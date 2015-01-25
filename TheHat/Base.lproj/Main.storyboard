@@ -156,8 +156,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
-                                <rect key="frame" x="118" y="530" width="84" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-k3-Vsr">
+                                <rect key="frame" x="118" y="486" width="84" height="30"/>
                                 <state key="normal" title="Hide tutorial">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -194,22 +194,40 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnf-fy-1Zc" id="JsD-Ox-Ddg">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-PV-VDI">
-                                                    <rect key="frame" x="0.0" y="48" width="320" height="162"/>
-                                                </pickerView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Words package" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
-                                                    <rect key="frame" x="8" y="6" width="119" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words package:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDE-Mg-swN">
+                                                    <rect key="frame" x="8" y="20" width="124" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Set words' source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v9-rK-jSt">
-                                                    <rect key="frame" x="8" y="24" width="81" height="12"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYw-eR-snf">
+                                                    <rect key="frame" x="8" y="44" width="304" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="304" id="gko-rA-lOl"/>
+                                                        <constraint firstAttribute="height" constant="20" id="xTR-p0-OnU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-PV-VDI">
+                                                    <rect key="frame" x="0.0" y="51" width="320" height="162"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="120" id="bDP-3H-CUI"/>
+                                                    </constraints>
+                                                </pickerView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="B4a-PV-VDI" secondAttribute="trailing" constant="-8" id="4VJ-9p-Sh5"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="B4a-PV-VDI" secondAttribute="bottom" id="8PO-EH-pai"/>
+                                                <constraint firstItem="B4a-PV-VDI" firstAttribute="top" secondItem="JsD-Ox-Ddg" secondAttribute="topMargin" constant="64" id="9OZ-zr-4eg"/>
+                                                <constraint firstItem="NDE-Mg-swN" firstAttribute="leading" secondItem="JsD-Ox-Ddg" secondAttribute="leadingMargin" id="Yqh-FZ-UlW"/>
+                                                <constraint firstItem="VYw-eR-snf" firstAttribute="top" secondItem="NDE-Mg-swN" secondAttribute="bottom" constant="4" id="bgz-f1-Gea"/>
+                                                <constraint firstItem="VYw-eR-snf" firstAttribute="trailing" secondItem="JsD-Ox-Ddg" secondAttribute="trailingMargin" id="ipe-Pm-q88"/>
+                                                <constraint firstItem="VYw-eR-snf" firstAttribute="leading" secondItem="JsD-Ox-Ddg" secondAttribute="leadingMargin" id="ixf-7R-YZQ"/>
+                                                <constraint firstItem="VYw-eR-snf" firstAttribute="top" secondItem="JsD-Ox-Ddg" secondAttribute="topMargin" constant="36" id="pee-js-ILV"/>
+                                                <constraint firstItem="B4a-PV-VDI" firstAttribute="leading" secondItem="JsD-Ox-Ddg" secondAttribute="leadingMargin" constant="-8" id="sdN-Iq-xbh"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="TeK-SO-ga6">
@@ -234,12 +252,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="packageDescription" destination="VYw-eR-snf" id="Lxr-bz-D7R"/>
                         <outlet property="packagesPicker" destination="B4a-PV-VDI" id="wfc-Vx-I3v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGA-T9-KkF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="125"/>
+            <point key="canvasLocation" x="611" y="116"/>
         </scene>
         <!--Address Book-->
         <scene sceneID="WeL-IK-uef">

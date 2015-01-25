@@ -25,13 +25,17 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     /// Loaded global settings
     let namePreference = NSUserDefaults.standardUserDefaults()
     
-    let pickerData = ["russian", "english"]
+    let pickerData = [["russian", "Russian dictionary", "Casual Russian words"], ["english", "English dictionary", "Casual English words"]]
+    
+    @IBOutlet weak var packageDescription: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.packagesPicker.dataSource = self
         self.packagesPicker.delegate = self
+        packageDescription.text = pickerData[0][2]
     }
     
     // MARK: - Settings Savings
@@ -45,7 +49,12 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerData[row]
+        return pickerData[row][1]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        packageDescription.text = pickerData[packagesPicker.selectedRowInComponent(0)][2]
+        
     }
     
     // MARK: - Segue
@@ -59,7 +68,7 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showNewRoundInfo") {
             // Create Tournament System and Local Settings objects
-            lSettings = LocalSettings(gameType: 0, wordsSource: pickerData[packagesPicker.selectedRowInComponent(0)])
+            lSettings = LocalSettings(gameType: 0, wordsSource: pickerData[packagesPicker.selectedRowInComponent(0)][0])
             if let pWords = namePreference.stringForKey("playerWords") {
                 if let pNumber = namePreference.stringForKey("playersNumber") {
                     gameObject = Game.createRandomGame(pNumber.toInt()!, numberOfWords: pWords.toInt()!, dict: lSettings!.wordsSource!)
