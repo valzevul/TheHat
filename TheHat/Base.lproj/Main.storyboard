@@ -968,15 +968,43 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdt-jj-A3q">
+                                <rect key="frame" x="138" y="400" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="95T-Yx-p1r"/>
+                                    <constraint firstAttribute="width" constant="45" id="adI-Ju-ghI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <state key="normal" title="?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showHintAction:" destination="EEx-wo-lxw" eventType="touchUpInside" id="qpU-St-Kdu"/>
+                                </connections>
+                            </button>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dT4-G9-FlB">
+                                <rect key="frame" x="40" y="453" width="240" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3Im-gI-BBT"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bnK-YY-SH1" secondAttribute="centerX" id="1nz-F4-3QR"/>
+                            <constraint firstItem="Rdt-jj-A3q" firstAttribute="top" secondItem="bnK-YY-SH1" secondAttribute="bottom" constant="8" id="5nL-C6-4gM"/>
+                            <constraint firstAttribute="centerX" secondItem="dT4-G9-FlB" secondAttribute="centerX" id="5wx-IV-mC7"/>
+                            <constraint firstItem="dT4-G9-FlB" firstAttribute="top" secondItem="Rdt-jj-A3q" secondAttribute="bottom" constant="8" id="7SP-SR-bVf"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="trailing" secondItem="wvL-PX-QVh" secondAttribute="trailingMargin" id="Px5-FZ-KBw"/>
                             <constraint firstItem="bnK-YY-SH1" firstAttribute="top" secondItem="xr6-aJ-SQi" secondAttribute="bottom" constant="41" id="gCx-gE-OW7"/>
+                            <constraint firstItem="MYT-e7-72p" firstAttribute="top" secondItem="dT4-G9-FlB" secondAttribute="bottom" constant="20" id="j1V-aF-k66"/>
                             <constraint firstAttribute="centerY" secondItem="bnK-YY-SH1" secondAttribute="centerY" constant="-78" id="lqd-BG-uy6"/>
                             <constraint firstAttribute="centerX" secondItem="xr6-aJ-SQi" secondAttribute="centerX" id="nub-pf-Ibe"/>
+                            <constraint firstAttribute="centerX" secondItem="Rdt-jj-A3q" secondAttribute="centerX" id="r67-wF-GwJ"/>
                             <constraint firstItem="S4r-O9-55B" firstAttribute="top" secondItem="4fk-rM-n0z" secondAttribute="bottom" constant="8" id="wmt-f2-d6T"/>
                         </constraints>
                         <connections>
@@ -987,6 +1015,7 @@
                     <navigationItem key="navigationItem" title="A → B" id="8pB-gN-tKA"/>
                     <connections>
                         <outlet property="circleView" destination="xr6-aJ-SQi" id="r1h-Kn-nvE"/>
+                        <outlet property="hintTextView" destination="dT4-G9-FlB" id="QnA-Hc-Xv4"/>
                         <outlet property="timerLabel" destination="S4r-O9-55B" id="efx-X9-45p"/>
                         <outlet property="wordLabel" destination="bnK-YY-SH1" id="pWE-Cr-9DP"/>
                         <segue destination="47S-Yw-Ce2" kind="push" identifier="timerFinished" id="z3N-CI-fKV"/>

@@ -48,6 +48,8 @@ class GameRoundViewController: BaseViewController {
     /// UIView for circle animation
     @IBOutlet weak var circleView: CircleView!
     
+    @IBOutlet weak var hintTextView: UITextView!
+    
     /**
         Sets timer for current round.
         
@@ -137,6 +139,8 @@ class GameRoundViewController: BaseViewController {
         Indicates that a word was guessed.
     */
     func wordGuessed() {
+        hintTextView.hidden = true
+        
         currentWord?.status.updateStatus(counter, isNewAttempt: true, status: currentWord!.status.status)
         tSystem!.wordGuessed(currentWord!)
         if (timeLeft > 1) {
@@ -180,6 +184,12 @@ class GameRoundViewController: BaseViewController {
         }
         
     }
+    
+    @IBAction func showHintAction(sender: AnyObject) {
+        hintTextView.hidden = false
+        hintTextView.text = currentWord?.description
+    }
+    
     
     // MARK: - Segue
 
