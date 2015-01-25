@@ -152,22 +152,28 @@ class TournamentSystem {
         :param: word GameWord
         :param: status String?
     */
-    func changeWordsStatus(word:GameWord, status: String?) {
+    func changeWordsStatus(word: GameWord, status: String?) {
         if (status == Constants.F) {
-            wordFailed(word)
-            currentResult -= 1
-            (currentPair!.0).decScoreExplained()
-            (currentPair!.1).decScoreGuessed()
-            gameObject.removeWord(word)
+            if (word.status.status != .Failed) {
+                currentResult -= 1
+                wordFailed(word)
+                (currentPair!.0).decScoreExplained()
+                (currentPair!.1).decScoreGuessed()
+                gameObject.removeWord(word)
+            }
         } else if (status == Constants.M) {
-            word.status.updateStatus(0, isNewAttempt: false, status: .Unknown)
-            wordMissed(word)
-            currentResult -= 1
-            (currentPair!.0).decScoreExplained()
-            (currentPair!.1).decScoreGuessed()
+            if (word.status.status != .Unknown) {
+                word.status.updateStatus(0, isNewAttempt: false, status: .Unknown)
+                wordMissed(word)
+                currentResult -= 1
+                (currentPair!.0).decScoreExplained()
+                (currentPair!.1).decScoreGuessed()
+            }
         } else {
-            wordGuessed(word)
-            gameObject.removeWord(word)
+            if (word.status.status != .Guessed) {
+                wordGuessed(word)
+                gameObject.removeWord(word)
+            }
         }
     }
     
