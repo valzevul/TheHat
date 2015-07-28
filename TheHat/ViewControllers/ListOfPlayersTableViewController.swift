@@ -42,7 +42,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         let view = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 50))
         
         // Button to create a new player
-        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.frame = CGRectMake(0, 0, frameSize.width, 50)
         button.setTitle("+", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))
@@ -50,7 +50,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         view.addSubview(button)
         
         // Button to add from address book
-        let buttonAddressBook = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let buttonAddressBook = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         buttonAddressBook.frame = CGRectMake(0, 50, frameSize.width, 50)
         buttonAddressBook.setTitle("From Address Book", forState: UIControlState.Normal)
         buttonAddressBook.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(16))
@@ -140,15 +140,15 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         }
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            let c = (cell as CustomPlayerTableCell)
+            let c = (cell as! CustomPlayerTableCell)
             
-            var text: String = (alertController.textFields![0] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var text: String = (alertController.textFields![0] as! UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             if ((!text.isEmpty) && (self.tSystem!.gameObject.isNameUnique(text))) {
                 c.playerLabel?.text = text
                 (self.tSystem!.gameObject.players[cell.tag] as Player).setName(text)
             }
             
-            var teamId: String = (alertController.textFields![1] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            var teamId: String = (alertController.textFields![1] as! UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             if (!teamId.isEmpty) {
                 if let x = teamId.toInt() {
                     if (x < self.tSystem!.gameObject.numberOfPlayers / 2) {
@@ -179,12 +179,12 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         switch index {
         case 0: // Add words
-            addWords(cell as CustomPlayerTableCell)
+            addWords(cell as! CustomPlayerTableCell)
         case 1: // Change name (= edit)
             changeName(cell)
             break
         case 2: // Delete
-            removePlayer(cell as CustomPlayerTableCell)
+            removePlayer(cell as! CustomPlayerTableCell)
         default:
             break
         }
@@ -217,7 +217,7 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
         :returns: CustomPlayerTableCell
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as CustomPlayerTableCell
+        let cell: CustomPlayerTableCell = tableView.dequeueReusableCellWithIdentifier("PlayerNameCell") as! CustomPlayerTableCell
 
         cell.tag = indexPath.row
         cell.delegate = self
@@ -250,15 +250,15 @@ class ListOfPlayersTableViewController: UITableViewController, UITableViewDataSo
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showStartRoundScreen") {
-            var startGameVC = segue.destinationViewController as StartGameViewController
+            var startGameVC = segue.destinationViewController as! StartGameViewController
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
         } else if (segue.identifier == "openAddressBook") {
-            var ab = segue.destinationViewController as AddressBookViewController
+            var ab = segue.destinationViewController as! AddressBookViewController
             ab.delegate = self
         } else if (segue.identifier == "addWordsSegue") {
-            var addWordsVC = segue.destinationViewController as AddWordsViewController
-            addWordsVC.playerIdx = (sender as CustomPlayerTableCell).tag
+            var addWordsVC = segue.destinationViewController as! AddWordsViewController
+            addWordsVC.playerIdx = (sender as! CustomPlayerTableCell).tag
             addWordsVC.tSystem = tSystem
         }
     }

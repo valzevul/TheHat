@@ -78,7 +78,7 @@ class NewGameSettingsTableViewController: UITableViewController, UITextFieldDele
             }
             tSystem = TournamentSystem(game: gameObject!)
             
-            var startGameVC = segue.destinationViewController as ListOfPlayersTableViewController;
+            var startGameVC = segue.destinationViewController as! ListOfPlayersTableViewController;
             startGameVC.tSystem = tSystem
             startGameVC.lSettings = lSettings
         }

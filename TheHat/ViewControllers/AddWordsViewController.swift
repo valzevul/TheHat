@@ -55,7 +55,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
         :param: indexPath NSIndexPath
     */
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as WordTableViewCell
+        let cell: WordTableViewCell = tableView.dequeueReusableCellWithIdentifier("WordCell") as! WordTableViewCell
         cell.wordsLabel.text = words[indexPath.row].text
         
         cell.complexityLabel.text = words[indexPath.row].getComplexity()
@@ -111,12 +111,12 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
         
         
         let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-            let c = (cell as WordTableViewCell)
-            let text = (alertController.textFields![0] as UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            let c = (cell as! WordTableViewCell)
+            let text = (alertController.textFields![0] as! UITextField).text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
 
             if (!text.isEmpty) {
                 c.wordsLabel.text = text
-                if (countElements(c.wordsLabel.text!) > 0) {
+                if (count(c.wordsLabel.text!) > 0) {
                     self.tSystem?.gameObject.changeWord(self.words[cell.tag - 1], newText: c.wordsLabel.text!)
                 }
             }
@@ -169,7 +169,7 @@ class AddWordsViewController: BaseViewController, UITableViewDelegate, UITableVi
         let view = UIView(frame: CGRect(x: 0, y: 0, width: frameSize.width, height: 50))
         
         // Button to create a new player
-        let button   = UIButton.buttonWithType(UIButtonType.System) as UIButton
+        let button   = UIButton.buttonWithType(UIButtonType.System) as! UIButton
         button.frame = CGRectMake(0, 0, frameSize.width, 50)
         button.setTitle("+", forState: UIControlState.Normal)
         button.titleLabel!.font = UIFont(name: "Helvetica Neue", size: CGFloat(40))

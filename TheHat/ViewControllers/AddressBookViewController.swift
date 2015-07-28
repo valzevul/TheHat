@@ -116,7 +116,7 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (delegate != nil) {
             
-            var cell = tableView.cellForRowAtIndexPath(indexPath) as AddressBookTableViewCell
+            var cell = tableView.cellForRowAtIndexPath(indexPath) as! AddressBookTableViewCell
             let personId = cell.idx
             
             if (cell.accessoryType == UITableViewCellAccessoryType.Checkmark) {
@@ -160,9 +160,9 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
         var cell: AddressBookTableViewCell
         
         if (tableView == self.searchDisplayController!.searchResultsTableView) {
-            cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as AddressBookTableViewCell
+            cell = self.tableView.dequeueReusableCellWithIdentifier("AddressBookCell") as! AddressBookTableViewCell
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as AddressBookTableViewCell
+            cell = tableView.dequeueReusableCellWithIdentifier("AddressBookCell", forIndexPath: indexPath) as! AddressBookTableViewCell
         }
         
         // If access granted
@@ -180,7 +180,7 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
             cell.idx = getId(record)
             
             /// Contact's name from address book
-            let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
+            let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as String
             
             if ABPersonHasImageData(record) {
                 /// New person's image if exists
@@ -212,7 +212,7 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
         }
         
         /// Contact's name from address book
-        let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as NSString
+        let playerName: String = ABRecordCopyCompositeName(record).takeRetainedValue() as String
         
         delegate!.personFromAddressBookDidSelected(self, name: playerName, image: image)
     }
@@ -247,7 +247,7 @@ class AddressBookViewController: BaseViewController, UISearchBarDelegate, UISear
     */
     func filterContentForSearchText(searchText: String) {
         // Filter the array using the filter method
-        self.filteredPersons = (self.contactList as Array).filter({( person: ABRecordRef) -> Bool in
+        self.filteredPersons = (self.contactList as! Array).filter({( person: ABRecordRef) -> Bool in
             let nameMatch = ABRecordCopyCompositeName(person).takeRetainedValue() as NSString
             return ((nameMatch as String).rangeOfString(searchText) != nil)
         })

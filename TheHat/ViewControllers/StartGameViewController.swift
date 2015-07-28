@@ -100,12 +100,12 @@ class StartGameViewController: BaseViewController, RoundSettingsDelegate {
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "startNewRound") {
-            var gameRoundVC = segue.destinationViewController as GameRoundViewController;
+            var gameRoundVC = segue.destinationViewController as! GameRoundViewController;
             gameRoundVC.tSystem = tSystem
             gameRoundVC.lSettings = lSettings
         }
         if (segue.identifier == "RoundSettingsSegue") {
-            var roundSettingsVC = segue.destinationViewController as CurrentRoundSettingsTableViewController;
+            var roundSettingsVC = segue.destinationViewController as! CurrentRoundSettingsTableViewController;
             roundSettingsVC.delegate = self
             roundSettingsVC.tSystem = tSystem
         }

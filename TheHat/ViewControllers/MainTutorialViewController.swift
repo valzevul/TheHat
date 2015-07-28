@@ -69,7 +69,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         
         var startingViewController : PageContentViewController = self.viewControllerAtIndex(0)!
         var viewControllers : NSArray = [startingViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+        self.pageViewController!.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: false, completion: nil)
     }
     
     /**
@@ -82,7 +82,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         
         let startingViewController : PageContentViewController = self.viewControllerAtIndex(0)!
         let viewControllers: NSArray = [startingViewController]
-        self.pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+        self.pageViewController!.setViewControllers(viewControllers as [AnyObject], direction: .Forward, animated: false, completion: nil)
         
         // Change the size of page view controller
         self.pageViewController!.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 30);
@@ -108,7 +108,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         }
         
         // Create a new view controller and pass suitable data.
-        let pageContentViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageContentController") as PageContentViewController
+        let pageContentViewController = self.storyboard!.instantiateViewControllerWithIdentifier("PageContentController") as! PageContentViewController
         pageContentViewController.imageFile = UIImage(named:self.pageImages[index])
         pageContentViewController.titleText = self.pageTitles[index]
         pageContentViewController.descriptionText = self.pageDescriptions[index]
@@ -126,7 +126,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         :returns: UIViewController of nil
     */
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as PageContentViewController).pageIndex
+        var index = (viewController as! PageContentViewController).pageIndex
         
         if ((index == 0) || (index == NSNotFound)) {
             return nil
@@ -145,7 +145,7 @@ class MainTutorialViewController: BaseViewController, UIPageViewControllerDataSo
         :returns: UIViewController of nil
     */
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as PageContentViewController).pageIndex
+        var index = (viewController as! PageContentViewController).pageIndex
         
         if (index == NSNotFound) {
             return nil

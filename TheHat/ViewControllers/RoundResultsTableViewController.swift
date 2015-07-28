@@ -54,7 +54,7 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         :returns: CustomTableViewCell object with a word
     */
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as CustomTableViewCell
+        let cell: CustomTableViewCell = tableView.dequeueReusableCellWithIdentifier("CustomCell") as! CustomTableViewCell
         let word = self.cells[indexPath.row]
         cell.tag = indexPath.row
         
@@ -100,19 +100,19 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
         
         switch (index) {
         case 0:
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.OKColor
-            (cell as CustomTableViewCell).wordResultLabel.text = Constants.OK
+            (cell as! CustomTableViewCell).wordResultImage.backgroundColor = Constants.OKColor
+            (cell as! CustomTableViewCell).wordResultLabel.text = Constants.OK
         case 1:
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.FColor
-            (cell as CustomTableViewCell).wordResultLabel.text = Constants.F
+            (cell as! CustomTableViewCell).wordResultImage.backgroundColor = Constants.FColor
+            (cell as! CustomTableViewCell).wordResultLabel.text = Constants.F
         case 2:
-            (cell as CustomTableViewCell).wordResultImage.backgroundColor = Constants.MColor
-            (cell as CustomTableViewCell).wordResultLabel.text = Constants.M
+            (cell as! CustomTableViewCell).wordResultImage.backgroundColor = Constants.MColor
+            (cell as! CustomTableViewCell).wordResultLabel.text = Constants.M
         default:
             println("x")
         }
         
-        tSystem?.changeWordsStatus(word, status: (cell as CustomTableViewCell).wordResultLabel.text)
+        tSystem?.changeWordsStatus(word, status: (cell as! CustomTableViewCell).wordResultLabel.text)
         
         return true
     }
@@ -140,10 +140,10 @@ class RoundResultsTableViewController: UITableViewController, UITableViewDataSou
     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showGameResults") {
-            var gameResultsVC = segue.destinationViewController as GameResultsViewController;
+            var gameResultsVC = segue.destinationViewController as! GameResultsViewController;
             gameResultsVC.tSystem = tSystem
         } else if (segue.identifier == "nextRoundSegue") {
-            var nextRound = segue.destinationViewController as StartGameViewController;
+            var nextRound = segue.destinationViewController as! StartGameViewController;
             nextRound.tSystem = tSystem
             nextRound.lSettings = lSettings
         }

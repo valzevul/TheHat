@@ -70,9 +70,14 @@ class GameRoundViewController: BaseViewController {
         if let gTime = namePreference.stringForKey("gameTime") {
             gameTime = gTime.toInt()
             timerLabel.text = "\(gameTime!)"
+        } else {
+            gameTime = 20
+            timerLabel.text = "\(gameTime!)"
         }
         if let aTime = namePreference.stringForKey("additionalTime") {
             additionalTime = aTime.toInt()
+        } else {
+            additionalTime = 3
         }
         
         timeLeft = gameTime ?? 0
@@ -205,7 +210,7 @@ class GameRoundViewController: BaseViewController {
                 timer!.invalidate()
                 timer = nil
             }
-            var roundResultsVC = segue.destinationViewController as RoundResultsTableViewController;
+            var roundResultsVC = segue.destinationViewController as! RoundResultsTableViewController;
             roundResultsVC.tSystem = tSystem
             roundResultsVC.lSettings = lSettings
             roundResultsVC.currentWord = currentWord

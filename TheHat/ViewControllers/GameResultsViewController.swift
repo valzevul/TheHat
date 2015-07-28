@@ -53,7 +53,7 @@ class GameResultsViewController: UITableViewController, UITableViewDataSource, U
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         /// Cell with results
-        let cell: GameResultsTableViewCell = tableView.dequeueReusableCellWithIdentifier("GameResultsCell") as GameResultsTableViewCell
+        let cell: GameResultsTableViewCell = tableView.dequeueReusableCellWithIdentifier("GameResultsCell") as! GameResultsTableViewCell
         
         /// Player object from Tournament System
         let player: Player = results[indexPath.row]
